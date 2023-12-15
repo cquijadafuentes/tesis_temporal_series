@@ -2,11 +2,8 @@ import sys
 import numpy as np
 
 
-def calc_euclidean(actual, predic):
-    return np.sqrt(np.sum((actual - predic) ** 2))
-
 def calc_mape(actual, predic):
-    return np.mean(np.abs((actual - predic) / actual))
+    return np.mean(np.abs((actual - predic) / (actual + 1)))
 
 if len(sys.argv) != 2:
   print("Error! en la cantidad de argumentos.")
@@ -29,19 +26,19 @@ with open(sys.argv[1], 'r') as file:
       lineas.append(line.strip())
 
 #print(lineas)
-mED = np.zeros((len(lineas), len(lineas)))
-print(mED.shape)
+mMAPE = np.zeros((len(lineas), len(lineas)))
+print(mMAPE.shape)
 f = 0;
 c = 0;
 for i in lineas:
   npI = np.fromfile(i, dtype='int32')
   for j in lineas:
     npJ = np.fromfile(j, dtype='int32')
-    ed = calc_euclidean(npI, npJ)
-    #print(f"{ed:.2f}", end=' ')
-    mED[f,c] = f"{ed:.2f}"
+    mape = calc_mape(npI, npJ)
+    #print(f"{mape:.2f}", end=' ')
+    mMAPE[f,c] = f"{mape:.2f}"
     c+=1
   f+=1
   c = 0
-print(mED)
+print(mMAPE)
 
