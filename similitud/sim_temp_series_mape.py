@@ -9,7 +9,7 @@ if len(sys.argv) != 2:
   print("Error! en la cantidad de argumentos.")
   print(sys.argv[0], "<filename.txt>")
   sys.exit()
-print("DATASET: ", sys.argv[1])
+print("MAPE DATASET: ", sys.argv[1])
 
 
 lineas = []
@@ -36,6 +36,7 @@ for i in lineas:
     npJ = np.fromfile(j, dtype='int32')
     mape = calc_mape(npI, npJ)
     #print(f"{mape:.2f}", end=' ')
+    print(mape)
     mMAPE[f,c] = f"{mape:.2f}"
     c+=1
   f+=1

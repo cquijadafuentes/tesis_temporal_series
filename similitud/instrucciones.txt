@@ -1,0 +1,25 @@
+
+nohup python3 sim_temp_series.py APCP_NLDAS_FORA0125_H.txt > ~/resultados_APC_euclidean.txt &
+nohup python3 sim_temp_series.py CAPE_NLDAS_FORA0125_H.txt > ~/resultados_CAP_euclidean.txt &
+nohup python3 sim_temp_series.py CONVfrac_NLDAS_FORA0125_H.txt > ~/resultados_CON_euclidean.txt &
+nohup python3 sim_temp_series.py DLWRF_NLDAS_FORA0125_H.txt > ~/resultados_DLW_euclidean.txt &
+nohup python3 sim_temp_series.py DSWRF_NLDAS_FORA0125_H.txt > ~/resultados_DSW_euclidean.txt &
+nohup python3 sim_temp_series.py PEVAP_NLDAS_FORA0125_H.txt > ~/resultados_PEV_euclidean.txt &
+nohup python3 sim_temp_series.py PRES_NLDAS_FORA0125_H.txt > ~/resultados_PRE_euclidean.txt &
+nohup python3 sim_temp_series.py SPFH_NLDAS_FORA0125_H.txt > ~/resultados_SPF_euclidean.txt &
+nohup python3 sim_temp_series.py TMP_NLDAS_FORA0125_H.txt > ~/resultados_TMP_euclidean.txt &
+nohup python3 sim_temp_series.py UGRD_NLDAS_FORA0125_H.txt > ~/resultados_UGR_euclidean.txt &
+nohup python3 sim_temp_series.py VGRD_NLDAS_FORA0125_H.txt > ~/resultados_VGR_euclidean.txt &
+
+
+nohup python3 sim_temp_series_mape.py APCP_NLDAS_FORA0125_H.txt > ~/resultados_APC_mape.txt &
+nohup python3 sim_temp_series_mape.py CAPE_NLDAS_FORA0125_H.txt > ~/resultados_CAP_mape.txt &
+nohup python3 sim_temp_series_mape.py CONVfrac_NLDAS_FORA0125_H.txt > ~/resultados_CON_mape.txt &
+nohup python3 sim_temp_series_mape.py DLWRF_NLDAS_FORA0125_H.txt > ~/resultados_DLW_mape.txt &
+nohup python3 sim_temp_series_mape.py DSWRF_NLDAS_FORA0125_H.txt > ~/resultados_DSW_mape.txt &
+nohup python3 sim_temp_series_mape.py PEVAP_NLDAS_FORA0125_H.txt > ~/resultados_PEV_mape.txt &
+nohup python3 sim_temp_series_mape.py PRES_NLDAS_FORA0125_H.txt > ~/resultados_PRE_mape.txt &
+nohup python3 sim_temp_series_mape.py SPFH_NLDAS_FORA0125_H.txt > ~/resultados_SPF_mape.txt &
+nohup python3 sim_temp_series_mape.py TMP_NLDAS_FORA0125_H.txt > ~/resultados_TMP_mape.txt &
+nohup python3 sim_temp_series_mape.py UGRD_NLDAS_FORA0125_H.txt > ~/resultados_UGR_mape.txt &
+nohup python3 sim_temp_series_mape.py VGRD_NLDAS_FORA0125_H.txt > ~/resultados_VGR_mape.txt &
