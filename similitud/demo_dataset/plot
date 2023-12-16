@@ -1,0 +1,15 @@
+set title "Heat Map generated from a file containing Z values only"
+unset key
+set tic scale 0
+
+# Color runs from white to green
+set palette defined (-1 "blue", 150 "red")
+set cbrange [-1:150]
+set cblabel "Score"
+unset cbtics
+
+set xrange [0.5:224.5]
+set yrange [0.5:464.5]
+
+set view map
+plot 'matriz.txt' matrix with image
