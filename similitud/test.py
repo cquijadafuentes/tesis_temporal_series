@@ -7,5 +7,12 @@ if len(sys.argv) != 2:
   sys.exit()
 
 npI = np.fromfile(sys.argv[1], dtype='int32')
+min = npI[0]
+max = npI[0]
 for x in npI:
   print(x)
+  if(x < min):
+    min = x
+  if(x > max):
+    max = x
+print("Min:",min,"- Max:",max)
