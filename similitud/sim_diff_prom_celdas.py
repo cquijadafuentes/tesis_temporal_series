@@ -44,7 +44,7 @@ for i in lineas:
         prevs[f][c] = int(npI[index])
         index += 1
 
-min = 100000
+min = 10000000
 max = -min
 divisor = (len(lineas)-1)
 for f in range(rows):
