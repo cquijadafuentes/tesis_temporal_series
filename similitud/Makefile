@@ -6,7 +6,8 @@ POSFLAGS=
 
 BINS=c_distribucion_resultados\
 		c_sim_temporal_series_euc\
-		c_test_sim_temporal_euc
+		c_test_sim_temporal_euc\
+		c_test_sim_temporal_euc_random
 
 all: bin
 
@@ -20,6 +21,9 @@ c_sim_temporal_series_euc:
 
 c_test_sim_temporal_euc:
 	$(CPP) $(PREFLAGS) -o c_test_sim_temporal_euc c_test_sim_temporal_euc.cpp $(POSFLAGS)
+
+c_test_sim_temporal_euc_random:
+	$(CPP) $(PREFLAGS) -o c_test_sim_temporal_euc_random c_test_sim_temporal_euc_random.cpp $(POSFLAGS)
 	
 clean:
 	rm -f $(BINS)

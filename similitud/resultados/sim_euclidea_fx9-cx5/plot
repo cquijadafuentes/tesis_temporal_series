@@ -4,4 +4,7 @@ set ylabel "Similitud"
 set xlabel "Distancia"
 
 set output 'salida_test_sim_temporal_eucl.png'
-plot 'salida_test_sim_temporal_eucl.txt' using 1:2 with points pt 0
+plot 'salida_test_sim_temporal_eucl.txt' using 1:2 with points pt 0 t 'Dispersión 50x50-250 TS consecutiva a partir fila+columna'
+
+set output 'salida_test_sim_temporal_eucl_random.png'
+plot 'salida_test_sim_temporal_eucl_random.txt' using 1:2 with points pt 0 t 'Dispersión 50x50-250 TS aleatoria'
