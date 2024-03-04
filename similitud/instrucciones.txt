@@ -34,3 +34,16 @@ nohup python3 sim_temp_series_mape.py SPFH_NLDAS_FORA0125_H.txt > ~/resultados_S
 nohup python3 sim_temp_series_mape.py TMP_NLDAS_FORA0125_H.txt > ~/resultados_TMP_mape.txt &
 nohup python3 sim_temp_series_mape.py UGRD_NLDAS_FORA0125_H.txt > ~/resultados_UGR_mape.txt &
 nohup python3 sim_temp_series_mape.py VGRD_NLDAS_FORA0125_H.txt > ~/resultados_VGR_mape.txt &
+
+
+APCP: Precipitation hourly total
+CAPE: Convective Available Potential Energy
+CONVfrac: Fraction of total precipitation that is convective
+DLWRF: LW radiation flux downwards
+DSWRF: SW radiation flux downwards
+PEVAP: Potential evaporation
+PRES: Pressure
+SPFH: Specific humidity
+TMP: Temperature
+UGRD: Zonal wind speed
+VGRD: Meridional wind speed

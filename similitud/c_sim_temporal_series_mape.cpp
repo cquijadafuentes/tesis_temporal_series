@@ -17,7 +17,7 @@ double calc_mape(vector<int> actual, vector<int> pred){
 double dist_euclidea(int a1, int b1, int a2, int b2){
     int a = a1 - a2;
     int b = b1 - b2;
-    int c = a*a + b*b;
+    long long c = (a*a) + (b*b);
     return sqrt(c);
 }
 
