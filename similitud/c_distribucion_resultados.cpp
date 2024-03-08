@@ -52,10 +52,10 @@ int main(int argc, char const *argv[]){
 		cout << mit->first << "\t" << mit->second << endl;
 	}
 
-	cout << "Total datos: " << cont << endl;
-	cout << "Total -nan: " << contNan << endl;
-	cout << "Mínimo: " << min << endl;
-	cout << "Máximo: " << max << endl;
+//	cout << "Total datos: " << cont << endl;
+//	cout << "Total -nan: " << contNan << endl;
+//	cout << "Mínimo: " << min << endl;
+//	cout << "Máximo: " << max << endl;
 
 	return 0;
 }

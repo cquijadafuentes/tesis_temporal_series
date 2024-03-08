@@ -27,7 +27,7 @@ int main(int argc, char const *argv[]){
 		cout << argv[0] << " <filename>" << endl;
 		return 0;
 	}
-    cout << "DATASET: " << argv[1] << endl;
+//    cout << "DATASET: " << argv[1] << endl;
 	int rows, cols, a1, a2, a3, a4;
     // Leyendo datos desde el archivo de entrada
 	ifstream txtInput(argv[1], ifstream::in);
@@ -35,8 +35,8 @@ int main(int argc, char const *argv[]){
 	string fileName;
 	vector<vector<vector<int>>> temporalSeries(rows, vector<vector<int>>(cols));
     int lenTempSerie = 0;
-    cout << rows << " " << cols << endl;
-    cout << "Leyendo series temporales..." << endl;
+//    cout << rows << " " << cols << endl;
+//    cout << "Leyendo series temporales..." << endl;
 	while(txtInput >> fileName){
         // Abrir el archivo binario en modo binario utilizando ifstream
         ifstream archivo(fileName, ios::binary);
@@ -56,13 +56,13 @@ int main(int argc, char const *argv[]){
         lenTempSerie++;
 	}
 
-    cout << lenTempSerie << endl;
-    cout << "Calculando similitud MAPE" << endl;
+//    cout << lenTempSerie << endl;
+//    cout << "Calculando similitud MAPE" << endl;
 
     // Procesando datos desde el archivo de entrada
     int cantComb = (rows*cols)*(rows*cols);
-    double distancia, simMAPE;
-    cout << "#\tdistancia\tsim_mape" << endl;
+    double distancia, simMAPE;    
+    cout << "#\tdistancia_entre_celdas\tsimilitud_mape" << endl;
     for(int f=0; f<rows; f+=9){
         for(int c=0; c<cols; c+=5){
             for(int f1=0; f1<rows; f1+=9){

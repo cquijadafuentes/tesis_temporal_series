@@ -9,7 +9,7 @@ double calc_euclidean(vector<int> actual, vector<int> pred){
     long long acum = 0;
     for(int i=0; i<actual.size(); i++){
         long diff = actual[i] - pred[i];
-        diff *= diff;
+        diff = diff * diff;
         acum += diff;
     }
     return sqrt(acum);
@@ -18,7 +18,7 @@ double calc_euclidean(vector<int> actual, vector<int> pred){
 double dist_euclidea(int a1, int b1, int a2, int b2){
     int a = a1 - a2;
     int b = b1 - b2;
-    long long c = a*a + b*b;
+    long long c = (a*a) + (b*b);
     return sqrt(c);
 }
 
@@ -28,7 +28,7 @@ int main(int argc, char const *argv[]){
 		cout << argv[0] << " <filename>" << endl;
 		return 0;
 	}
-    cout << "DATASET: " << argv[1] << endl;
+//    cout << "DATASET: " << argv[1] << endl;
 	int rows, cols, a1, a2, a3, a4;
     // Leyendo datos desde el archivo de entrada
 	ifstream txtInput(argv[1], ifstream::in);
@@ -36,8 +36,8 @@ int main(int argc, char const *argv[]){
 	string fileName;
 	vector<vector<vector<int>>> temporalSeries(rows, vector<vector<int>>(cols));
     int lenTempSerie = 0;
-    cout << rows << " " << cols << endl;
-    cout << "Leyendo series temporales..." << endl;
+//    cout << rows << " " << cols << endl;
+//    cout << "Leyendo series temporales..." << endl;
 	while(txtInput >> fileName){
         // Abrir el archivo binario en modo binario utilizando ifstream
         ifstream archivo(fileName, ios::binary);
@@ -57,13 +57,13 @@ int main(int argc, char const *argv[]){
         lenTempSerie++;
 	}
 
-    cout << lenTempSerie << endl;
-    cout << "Calculando similitud euclidea" << endl;
+//    cout << lenTempSerie << endl;
+//    cout << "Calculando similitud euclidea" << endl;
 
     // Procesando datos desde el archivo de entrada
     int cantComb = (rows*cols)*(rows*cols);
     double distancia, simEuclidea;
-    cout << "#\tdistancia\tsimilitud" << endl;
+    cout << "#\tdistancia_entre_celdas\tsimilitud_euclidea" << endl;
     for(int f=0; f<rows; f+=9){
         for(int c=0; c<cols; c+=5){
             for(int f1=0; f1<rows; f1+=9){
