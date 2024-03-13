@@ -51,23 +51,32 @@ for i in lineas:
 nombre = str(fila)+"_"+str(columna)
 print("Mostrando desde la celda "+nombre)
 
-plt.figure(figsize=(12, 3))
-plt.plot(tSeries[fila][columna], label='Original Time Series '+nombre)
-plt.legend()
-plt.savefig(sys.argv[1] + '.timeserie.'+nombre+'.png', bbox_inches='tight')
-#plt.show()
+for i in range(-1,2):
+  for j in range(-1,2):
+    xFila = fila+i
+    xColumna = columna+j
+    nombre = str(xFila)+"_"+str(xColumna)
 
-# Iniciando la descomposición de la serie de tiempo
-result_add = seasonal_decompose(tSeries[fila][columna], model='additive', period=1)
+    plt.figure(figsize=(9, 3))
+    plt.plot(tSeries[xFila][xColumna], label='Original Time Series '+nombre)
+    plt.legend()
+    plt.savefig(sys.argv[1] + '.timeserie.'+nombre+'.png', bbox_inches='tight')
+    #plt.show()
+    plt.close()
 
-plt.figure(figsize=(9, 3)) 
-plt.plot(result_add.trend, label='Additive Trend '+nombre)
-plt.legend()
-plt.savefig(sys.argv[1] + '.timeserie_trend.'+nombre+'.png', bbox_inches='tight')
-#plt.show()
+    # Iniciando la descomposición de la serie de tiempo
+    result_add = seasonal_decompose(tSeries[xFila][xColumna], model='additive', period=24)
 
-plt.figure(figsize=(9, 3))
-plt.plot(result_add.seasonal, label='Additive Seasonal '+nombre)
-plt.savefig(sys.argv[1] + '.timeserie_seasonal.'+nombre+'.png', bbox_inches='tight')
-plt.legend()
-#plt.show()
+    plt.figure(figsize=(9, 3)) 
+    plt.plot(result_add.trend, label='Additive Trend '+nombre)
+    plt.legend()
+    plt.savefig(sys.argv[1] + '.timeserie_trend.'+nombre+'.png', bbox_inches='tight')
+    #plt.show()
+    plt.close()
+
+    plt.figure(figsize=(9, 3))
+    plt.plot(result_add.seasonal, label='Additive Seasonal '+nombre)
+    plt.savefig(sys.argv[1] + '.timeserie_seasonal.'+nombre+'.png', bbox_inches='tight')
+    plt.legend()
+    #plt.show()
+    plt.close()
