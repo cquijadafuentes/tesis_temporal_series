@@ -45,9 +45,6 @@ for i in lineas:
   iFile += 1
 
 print("Calculando similitud euclidea")
-
-distancias = []
-similEuc = []
 print("#\tdistancia\tsimilitud")
 for f in range(rows):
   for c in range(cols):

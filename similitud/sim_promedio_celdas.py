@@ -61,4 +61,5 @@ cmap = sns.color_palette("coolwarm", as_cmap=True)
 heatmap = sns.heatmap(proms, cmap=cmap, cbar_kws={'label':'Promedio'}, vmin=min, vmax=max)
 plt.savefig(sys.argv[1] + '.heatmap.promedio.png', bbox_inches='tight')
 #plt.show()
+plt.close()
 

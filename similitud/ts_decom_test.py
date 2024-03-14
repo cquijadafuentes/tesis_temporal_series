@@ -36,7 +36,7 @@ with open(sys.argv[1], 'r') as file:
 print("Leyendo series temporales...")
 
 numFiles = len(lineas)
-print(numFiles)
+print("numFiles:",numFiles)
 tSeries = np.zeros((rows, cols, numFiles))
 iFile = 0
 for i in lineas:
@@ -57,26 +57,46 @@ for i in range(-1,2):
     xColumna = columna+j
     nombre = str(xFila)+"_"+str(xColumna)
 
+    # Iniciando la descomposición de la serie de tiempo
+    result_add = seasonal_decompose(tSeries[xFila][xColumna], model='additive', period=24)
+
     plt.figure(figsize=(9, 3))
-    plt.plot(tSeries[xFila][xColumna], label='Original Time Series '+nombre)
+    plt.plot(result_add.trend, label='Trend '+nombre)
+    plt.legend()
+    plt.plot(result_add.seasonal, label='Seasonal '+nombre)
+    plt.legend()
+    plt.plot(result_add.resid, label='Noise '+nombre)
+    plt.legend()
+    plt.plot(result_add.observed, label='Time Serie '+nombre)
+    plt.legend()
+    plt.savefig(sys.argv[1] + '.full.'+nombre+'.png', bbox_inches='tight')
+    #plt.show()
+    plt.close()
+
+    plt.figure(figsize=(9, 3))
+    plt.plot(tSeries[xFila][xColumna], label='Time Serie '+nombre)
     plt.legend()
     plt.savefig(sys.argv[1] + '.timeserie.'+nombre+'.png', bbox_inches='tight')
     #plt.show()
     plt.close()
 
-    # Iniciando la descomposición de la serie de tiempo
-    result_add = seasonal_decompose(tSeries[xFila][xColumna], model='additive', period=24)
-
     plt.figure(figsize=(9, 3)) 
-    plt.plot(result_add.trend, label='Additive Trend '+nombre)
+    plt.plot(result_add.trend, label='Trend '+nombre)
     plt.legend()
     plt.savefig(sys.argv[1] + '.timeserie_trend.'+nombre+'.png', bbox_inches='tight')
     #plt.show()
     plt.close()
 
     plt.figure(figsize=(9, 3))
-    plt.plot(result_add.seasonal, label='Additive Seasonal '+nombre)
-    plt.savefig(sys.argv[1] + '.timeserie_seasonal.'+nombre+'.png', bbox_inches='tight')
+    plt.plot(result_add.seasonal, label='Seasonal '+nombre)
     plt.legend()
+    plt.savefig(sys.argv[1] + '.timeserie_seasonal.'+nombre+'.png', bbox_inches='tight')
+    #plt.show()
+    plt.close()
+
+    plt.figure(figsize=(9, 3))
+    plt.plot(result_add.resid, label='Noise '+nombre)
+    plt.legend()
+    plt.savefig(sys.argv[1] + '.timeserie_noise.'+nombre+'.png', bbox_inches='tight')
     #plt.show()
     plt.close()
