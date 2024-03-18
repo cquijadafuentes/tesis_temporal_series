@@ -57,8 +57,8 @@ for f in range(rows):
       for c1 in range(-1,2):
         if ((f+f1)>0 and (f+f1)<rows and (c+c1)>0 and (c+c1)<cols and (f1!=0 or c1!=0)):
           cant+=1;
-          simEuc += calc_euclidean(tSeries[f][c], tSeries[f1][c1])
-          simMape += calc_mape(tSeries[f][c], tSeries[f1][c1])
+          simEuc += calc_euclidean(tSeries[f][c], tSeries[f+f1][c+c1])
+          simMape += calc_mape(tSeries[f][c], tSeries[f+f1][c+c1])
     simPromEuc[f][c] = float(simEuc)/cant
     simPromMape[f][c] = float(simMape)/cant
 
@@ -83,11 +83,11 @@ for f in range(rows):
 cmap = sns.color_palette("coolwarm", as_cmap=True)
 # Crear un mapa de calor para promedios Euclideos
 heatmap = sns.heatmap(simPromEuc, cmap=cmap, cbar_kws={'label':'Promedio Euclideo'}, vmin=minEuc, vmax=maxEuc)
-plt.savefig(sys.argv[1] + '.heatmap.promEuc.png', bbox_inches='tight')
+plt.savefig(sys.argv[1] + '.heatmap.prom3x3Euc.png', bbox_inches='tight')
 #plt.show()
 plt.close()
 # Crear un mapa de calor para promedios por MAPE
 heatmap = sns.heatmap(simPromMape, cmap=cmap, cbar_kws={'label':'Promedio MAPE'}, vmin=minMape, vmax=maxMape)
-plt.savefig(sys.argv[1] + '.heatmap.promMAPE.png', bbox_inches='tight')
+plt.savefig(sys.argv[1] + '.heatmap.prom3x3MAPE.png', bbox_inches='tight')
 #plt.show()
 plt.close()
