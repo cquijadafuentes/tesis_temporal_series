@@ -78,15 +78,14 @@ for f in range(rows):
     if(simPromMape[f][c] > maxMape):
       maxMape = simPromMape[f][c]
 
+
 # Configurar paleta de colores
 cmap = sns.color_palette("coolwarm", as_cmap=True)
-
 # Crear un mapa de calor para promedios Euclideos
 heatmap = sns.heatmap(simPromEuc, cmap=cmap, cbar_kws={'label':'Promedio Euclideo'}, vmin=minEuc, vmax=maxEuc)
 plt.savefig(sys.argv[1] + '.heatmap.prom3x3Euc.png', bbox_inches='tight')
 #plt.show()
 plt.close()
-
 # Crear un mapa de calor para promedios por MAPE
 heatmap = sns.heatmap(simPromMape, cmap=cmap, cbar_kws={'label':'Promedio MAPE'}, vmin=minMape, vmax=maxMape)
 plt.savefig(sys.argv[1] + '.heatmap.prom3x3MAPE.png', bbox_inches='tight')
