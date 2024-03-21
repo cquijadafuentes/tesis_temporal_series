@@ -8,14 +8,14 @@ def calc_euclidean(actual, predic):
     return np.sqrt(np.sum((actual - predic) ** 2))
 
 def calc_mape(actual, predic):
-    return np.mean(np.abs((actual - predic) / (actual + 0.000001)))
+    return np.mean(np.abs((actual - predic) / (abs(actual) + 0.000001)))
 
 
 if len(sys.argv) != 2:
   print("Error! en la cantidad de argumentos.")
   print(sys.argv[0], "<filename.txt>")
   sys.exit()
-print("DATASET:", sys.argv[1])
+print("File Dataset:", sys.argv[1])
 
 lineas = []
 with open(sys.argv[1], 'r') as file:
@@ -25,12 +25,15 @@ with open(sys.argv[1], 'r') as file:
       nums = line.split()
       rows = int(nums[0])
       cols = int(nums[1])
-      print(rows, cols)
+      print("Dimensiones grilla:", rows, cols)
       firstLine = False
     else:
       lineas.append(line.strip())
 
 print("Leyendo series temporales...")
+
+ts_max = sys.float_info.min
+ts_min = sys.float_info.max
 
 numFiles = len(lineas)
 print("numFiles:",numFiles)
@@ -41,13 +44,33 @@ for i in lineas:
   index = 0;
   for c in range(cols):
     for f in range(rows):
-      tSeries[f][c][iFile] = int(npI[index])
+      tSeries[f][c][iFile] = npI[index]
+      if npI[index] > ts_max:
+        ts_max = npI[index]
+      if npI[index] < ts_min:
+        ts_min = npI[index]
       index += 1
   iFile += 1
 
+ts_range = float(ts_max - ts_min)
+print("min:", ts_min, "max:", ts_max, "rango:", ts_range)
+proms = np.zeros((rows, cols))
+
+print("Normalizando y promediando los valores de las series de tiempo...")
+for f in range(rows):
+  for c in range(cols):
+    proms[f][c] = float(0)
+    for ti in range(tSeries[f][c].size):
+      cellValue = tSeries[f][c][ti]
+      tSeries[f][c][ti] = (cellValue - ts_min)/ts_range
+      proms[f][c] += tSeries[f][c][ti]
+    proms[f][c] = proms[f][c]/numFiles
+
+print("Valores normalizados y promediados...")
+
 simPromEuc = np.zeros((rows, cols))
 simPromMape = np.zeros((rows, cols))
-print("Calculando similitudes")
+print("Calculando similitudes euc y mape")
 for f in range(rows):
   for c in range(cols):
     cant = 0
@@ -62,7 +85,7 @@ for f in range(rows):
     simPromEuc[f][c] = float(simEuc)/cant
     simPromMape[f][c] = float(simMape)/cant
 
-print("Buscando mins y maxs en promedios")
+print("Buscando mins y maxs en similitudes euc y mape")
 minEuc = simPromEuc[0][0]
 minMape = simPromMape[0][0]
 maxEuc = simPromEuc[0][0]
@@ -81,14 +104,20 @@ for f in range(rows):
 # Configurar paleta de colores
 cmap = sns.color_palette("coolwarm", as_cmap=True)
 
+# Crear un mapa de calor
+heatmap = sns.heatmap(proms, cmap=cmap, cbar_kws={'label':'Promedio'}, vmin=0, vmax=1)
+plt.savefig(sys.argv[1] + '.heatmap.promedio_normalizado.png', bbox_inches='tight')
+#plt.show()
+plt.close()
+
 # Crear un mapa de calor para promedios Euclideos
-heatmap = sns.heatmap(simPromEuc, cmap=cmap, cbar_kws={'label':'Promedio Euclideo'}, vmin=minEuc, vmax=maxEuc)
-plt.savefig(sys.argv[1] + '.heatmap.prom3x3Euc.png', bbox_inches='tight')
+heatmap = sns.heatmap(simPromEuc, cmap=cmap, cbar_kws={'label':'Promedio Sim Euclideo (3x3)'}, vmin=minEuc, vmax=maxEuc)
+plt.savefig(sys.argv[1] + '.heatmap.prom3x3Euc_normalizado.png', bbox_inches='tight')
 #plt.show()
 plt.close()
 
 # Crear un mapa de calor para promedios por MAPE
-heatmap = sns.heatmap(simPromMape, cmap=cmap, cbar_kws={'label':'Promedio MAPE'}, vmin=minMape, vmax=maxMape)
-plt.savefig(sys.argv[1] + '.heatmap.prom3x3MAPE.png', bbox_inches='tight')
+heatmap = sns.heatmap(simPromMape, cmap=cmap, cbar_kws={'label':'Promedio Sim MAPE (3x3)'}, vmin=minMape, vmax=maxMape)
+plt.savefig(sys.argv[1] + '.heatmap.prom3x3MAPE_normalizado.png', bbox_inches='tight')
 #plt.show()
 plt.close()
