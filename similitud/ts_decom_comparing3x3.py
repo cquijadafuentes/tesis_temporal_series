@@ -53,13 +53,13 @@ ts_range = float(ts_max - ts_min)
 print("min:", ts_min, "max:", ts_max, "rango:", ts_range)
 
 print("Normalizando y descomponiendo series de tiempo...")
-ts_decomposed = np.zeros((rows, cols))
+ts_decomposed = [[None for _ in range(cols)] for _ in range(rows)]
 for f in range(rows):
   for c in range(cols):
     for ti in range(tSeries[f][c].size):
       cellValue = tSeries[f][c][ti]
       tSeries[f][c][ti] = (cellValue - ts_min)/ts_range
-    ts_decomposed[f][c] = seasonal_decompose(tSeries[f][c], model='additive', period=24)
+    ts_decomposed[f][c] = seasonal_decompose(tSeries[f][c], model='additive', period=3)
 
 print("Valores normalizados y decomposed...")
 
