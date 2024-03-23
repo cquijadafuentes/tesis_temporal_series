@@ -74,13 +74,19 @@ for f in range(rows):
     simEucTrend = 0
     simEucSeasonal = 0
     simEucResid = 0
+    xTrend = np.array(ts_decomposed[f][c].trend)[2:-3]
+    xSeason = np.array(ts_decomposed[f][c].seasonal)
+    xResid = np.array(ts_decomposed[f][c].resid)[2:-3]
     for f1 in range(-1,2):
       for c1 in range(-1,2):
         if ((f+f1)>0 and (f+f1)<rows and (c+c1)>0 and (c+c1)<cols and (f1!=0 or c1!=0)):
           cant+=1;
-          simEucTrend += calc_euclidean(ts_decomposed[f][c].trend, ts_decomposed[f+f1][c+c1].trend)
-          simEucSeasonal += calc_euclidean(ts_decomposed[f][c].seasonal, ts_decomposed[f+f1][c+c1].seasonal)
-          simEucResid += calc_euclidean(ts_decomposed[f][c].resid, ts_decomposed[f+f1][c+c1].resid)
+          yTrend = np.array(ts_decomposed[f+f1][c+c1].trend)[2:-3]
+          ySeason = np.array(ts_decomposed[f+f1][c+c1].seasonal)
+          yResid = np.array(ts_decomposed[f+f1][c+c1].resid)[2:-3]
+          simEucTrend += calc_euclidean(xTrend, yTrend)
+          simEucSeasonal += calc_euclidean(xSeason, ySeason)
+          simEucResid += calc_euclidean(xResid, yResid)
     dcts_euc_trend[f][c] = float(simEucTrend)/cant
     dcts_euc_seasonal[f][c] = float(simEucSeasonal)/cant
     dcts_euc_resid[f][c] = float(simEucResid)/cant
