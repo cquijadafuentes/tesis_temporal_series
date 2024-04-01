@@ -77,9 +77,11 @@ for f in range(rows):
     xTrend = np.array(ts_decomposed[f][c].trend)[2:-3]
     xSeason = np.array(ts_decomposed[f][c].seasonal)
     xResid = np.array(ts_decomposed[f][c].resid)[2:-3]
-    for f1 in range(-1,2):
-      for c1 in range(-1,2):
-        if ((f+f1)>0 and (f+f1)<rows and (c+c1)>0 and (c+c1)<cols and (f1!=0 or c1!=0)):
+    if (f-50 >= 0):
+      # Se puede revisar la línea horizontal-superior
+      f1 = -50
+      for c1 in range(-50,51):
+        if ((c+c1 >= 0) and (c+c1 < cols)):
           cant+=1;
           yTrend = np.array(ts_decomposed[f+f1][c+c1].trend)[2:-3]
           ySeason = np.array(ts_decomposed[f+f1][c+c1].seasonal)
@@ -87,6 +89,46 @@ for f in range(rows):
           simEucTrend += calc_euclidean(xTrend, yTrend)
           simEucSeasonal += calc_euclidean(xSeason, ySeason)
           simEucResid += calc_euclidean(xResid, yResid)
+
+    if (f+50 < rows):
+      # Se puede calcular la línea horizontal-inferior
+      f1 = 50
+      for c1 in range(-50,51):
+        if ((c+c1 >= 0) and (c+c1 < cols)):
+          cant+=1;
+          yTrend = np.array(ts_decomposed[f+f1][c+c1].trend)[2:-3]
+          ySeason = np.array(ts_decomposed[f+f1][c+c1].seasonal)
+          yResid = np.array(ts_decomposed[f+f1][c+c1].resid)[2:-3]
+          simEucTrend += calc_euclidean(xTrend, yTrend)
+          simEucSeasonal += calc_euclidean(xSeason, ySeason)
+          simEucResid += calc_euclidean(xResid, yResid)
+    
+    if (c-50 >= 0):
+      # Se puede revisar la línea vertical-izquierda
+      c1 = -50
+      for f1 in range(-49,50):
+        if ((f+f1 >= 0) and (f+f1 < rows)):
+          cant+=1;
+          yTrend = np.array(ts_decomposed[f+f1][c+c1].trend)[2:-3]
+          ySeason = np.array(ts_decomposed[f+f1][c+c1].seasonal)
+          yResid = np.array(ts_decomposed[f+f1][c+c1].resid)[2:-3]
+          simEucTrend += calc_euclidean(xTrend, yTrend)
+          simEucSeasonal += calc_euclidean(xSeason, ySeason)
+          simEucResid += calc_euclidean(xResid, yResid)
+
+    if (c+50 < cols):
+      # Se puede revisar la línea vertical-derecha
+      c1 = 50
+      for f1 in range(-49,50):
+        if ((f+f1 >= 0) and (f+f1 < rows)):
+          cant+=1;
+          yTrend = np.array(ts_decomposed[f+f1][c+c1].trend)[2:-3]
+          ySeason = np.array(ts_decomposed[f+f1][c+c1].seasonal)
+          yResid = np.array(ts_decomposed[f+f1][c+c1].resid)[2:-3]
+          simEucTrend += calc_euclidean(xTrend, yTrend)
+          simEucSeasonal += calc_euclidean(xSeason, ySeason)
+          simEucResid += calc_euclidean(xResid, yResid)
+
     dcts_euc_trend[f][c] = float(simEucTrend)/cant
     dcts_euc_seasonal[f][c] = float(simEucSeasonal)/cant
     dcts_euc_resid[f][c] = float(simEucResid)/cant
@@ -119,20 +161,20 @@ for f in range(rows):
 cmap = sns.color_palette("coolwarm", as_cmap=True)
 
 # Crear un mapa de calor
-heatmap = sns.heatmap(dcts_euc_trend, cmap=cmap, cbar_kws={'label':'Trend 3x3 Norm'}, vmin=minEucTrend, vmax=maxEucTrend)
-plt.savefig(sys.argv[1] + '.heatmap.norm_decomposed_trend_3x3.png', bbox_inches='tight')
+heatmap = sns.heatmap(dcts_euc_trend, cmap=cmap, cbar_kws={'label':'Trend 101x101 Norm'}, vmin=minEucTrend, vmax=maxEucTrend)
+plt.savefig(sys.argv[1] + '.heatmap.norm_decomposed_trend_101x101.png', bbox_inches='tight')
 #plt.show()
 plt.close()
 
 # Crear un mapa de calor para promedios Euclideos
-heatmap = sns.heatmap(dcts_euc_seasonal, cmap=cmap, cbar_kws={'label':'Seasonal 3x3 Norm'}, vmin=minEucSeason, vmax=maxEucSeason)
-plt.savefig(sys.argv[1] + '.heatmap.norm_decomposed_seasonal_3x3.png', bbox_inches='tight')
+heatmap = sns.heatmap(dcts_euc_seasonal, cmap=cmap, cbar_kws={'label':'Seasonal 101x101 Norm'}, vmin=minEucSeason, vmax=maxEucSeason)
+plt.savefig(sys.argv[1] + '.heatmap.norm_decomposed_seasonal_101x101.png', bbox_inches='tight')
 #plt.show()
 plt.close()
 
 # Crear un mapa de calor para promedios por MAPE
-heatmap = sns.heatmap(dcts_euc_resid, cmap=cmap, cbar_kws={'label':'Resid 3x3 Norm'}, vmin=minEucResid, vmax=maxEucResid)
-plt.savefig(sys.argv[1] + '.heatmap.norm_decomposed_resid_3x3.png', bbox_inches='tight')
+heatmap = sns.heatmap(dcts_euc_resid, cmap=cmap, cbar_kws={'label':'Resid 101x101 Norm'}, vmin=minEucResid, vmax=maxEucResid)
+plt.savefig(sys.argv[1] + '.heatmap.norm_decomposed_resid_101x101.png', bbox_inches='tight')
 #plt.show()
 plt.close()
 
