@@ -6,6 +6,7 @@ POSFLAGS=
 
 BINS=c_distribucion_resultados\
 		c_sim_espacial_moran_i_fullgrid\
+		c_sim_espacial_moran_i_reina_orden_1\
 		c_sim_temporal_series_euc\
 		c_sim_temporal_series_mape\
 		c_test_sim_temporal_euc\

@@ -11,14 +11,16 @@ echo "Iniciado en: $(date +'%Y/%m/%d %H:%M:%S')" > ${2}
 
 for i in APCP CAPE CONV DLWRF DSWRF PEVAP PRES SPFH TMP UGRD VGRD
 do
-	echo "Ejecutando: ./${1} ./listados_por_semana/${i}_NLDAS_week_01.txt"
+	echo " +++++++++ Ejecutando: ./${1} ./listados_por_semana/${i}_NLDAS_week_01.txt" >> ${2}
 	./${1} ./listados_por_semana/${i}_NLDAS_week_01.txt >> ${2}
+	echo " " >> ${2}
 done
 
 for i in APCP CAPE CONVfrac DLWRF DSWRF PEVAP PRES SPFH TMP UGRD VGRD
 do
-	echo "Ejecutando: ./${1} ${i}_NLDAS_FORA0125_H.txt"
+	echo " +++++++++ Ejecutando: ./${1} ${i}_NLDAS_FORA0125_H.txt" >> ${2}
 	./${1} ${i}_NLDAS_FORA0125_H.txt >> ${2}
+	echo " " >> ${2}
 done
 
 echo "Finalizado en: $(date +'%Y/%m/%d %H:%M:%S')" >> ${2}
