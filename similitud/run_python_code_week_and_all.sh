@@ -18,6 +18,3 @@ do
 	python3 ${1} ${i}_NLDAS_FORA0125_H.txt
 done
 
-
-
-
