@@ -74,7 +74,7 @@ int main(int argc, char const *argv[]){
                     for(int f2=(f1-1); f2<rows && f2<=(f1+1); f2++){
                         for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
                             double w = 0;
-                            if(f1 != f2 && c1 != c2){
+                            if((f1 != f2 || c1 != c2) && f2 >= 0 && c2 >= 0){
                                 double distAux = dist_euclidea(f1, c1, f2, c2);
                                 // Para la contigüidad tipo reina las celdas vecinas que tocan
                                 // toman un valor de 1
