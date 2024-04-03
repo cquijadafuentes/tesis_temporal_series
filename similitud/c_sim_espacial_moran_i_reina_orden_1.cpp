@@ -60,13 +60,13 @@ int main(int argc, char const *argv[]){
             }
             archivo.close();
 //            cout << "OK" << endl;
-            double promedio = acum / totalCeldas;
+            double promedio = (acum+0.0) / totalCeldas;
             // Cálculo de la Estadística de Moran
             i = 0;
             j = 0;
             double sumaW = 0.0;
-            double denominador = 0.0;
             double numerador = 0.0;
+            double denominador = 0.0;
 //            cout << "Calculando I de Moran.. " << endl;
             for(int f1 = 0; f1 < rows; f1++){
                 for(int c1 = 0; c1 < cols; c1++) {
@@ -80,12 +80,12 @@ int main(int argc, char const *argv[]){
                                 // toman un valor de 1
                                 w = 1;
                                 sumaW += w;
-                                denominador += (w * (diff_i_promedio) * (grilla[j] - promedio));
+                                numerador += (w * (diff_i_promedio) * (grilla[j] - promedio));
                             }
                             j++;
                         }
                     }
-                    numerador += (diff_i_promedio * diff_i_promedio);
+                    denominador += (diff_i_promedio * diff_i_promedio);
                     i++;
                     j = 0;
                 }

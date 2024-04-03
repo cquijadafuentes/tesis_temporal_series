@@ -23,9 +23,9 @@ double dist_euclidea(int a1, int b1, int a2, int b2){
 }
 
 int main(int argc, char const *argv[]){
-    vector<int> grilla = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
-	int rows = 4;
-    int cols = 4;
+    vector<int> grilla = {1,2,3,4,5,6,7,8,9};
+	int rows = 3;
+    int cols = 3;
     int totalCeldas = rows*cols;
     double distMax = dist_euclidea(0, 0, rows, cols);
     // Generando matriz de pesos
@@ -37,15 +37,15 @@ int main(int argc, char const *argv[]){
     for(int i=0; i<grilla.size(); i++){
         acum += grilla[i];
     }
-    double promedio = acum / totalCeldas;
+    double promedio = (acum+0.0) / totalCeldas;
     cout << "acum: " << acum << endl;
     cout << "promedio: " << promedio << endl;
     // Cálculo de la Estadística de Moran
     i = 0;
     j = 0;
     double sumaW = 0.0;
-    double denominador = 0.0;
     double numerador = 0.0;
+    double denominador = 0.0;
 //            cout << "Calculando I de Moran.. " << endl;
     for(int f1 = 0; f1 < rows; f1++){
         for(int c1 = 0; c1 < cols; c1++) {
@@ -63,7 +63,7 @@ int main(int argc, char const *argv[]){
                         w = 1;
                         sumaW += w;
                         aux = w * (diff_i_promedio) * (grilla[j] - promedio);
-                        denominador += aux;
+                        numerador += aux;
                         cout << " con valor: " << aux << endl;
                     }else{
                         cout << endl;
@@ -71,7 +71,7 @@ int main(int argc, char const *argv[]){
                     j++;
                 }
             }
-            numerador += (diff_i_promedio * diff_i_promedio);
+            denominador += (diff_i_promedio * diff_i_promedio);
             i++;
             j = 0;
         }
