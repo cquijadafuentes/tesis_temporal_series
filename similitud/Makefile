@@ -22,6 +22,9 @@ c_distribucion_resultados:
 c_sim_espacial_moran_i_fullgrid:
 	$(CPP) $(PREFLAGS) -o c_sim_espacial_moran_i_fullgrid c_sim_espacial_moran_i_fullgrid.cpp $(POSFLAGS)
 
+c_sim_espacial_moran_i_reina_orden_1:
+	$(CPP) $(PREFLAGS) -o c_sim_espacial_moran_i_reina_orden_1 c_sim_espacial_moran_i_reina_orden_1.cpp $(POSFLAGS)
+
 c_sim_temporal_series_euc:
 	$(CPP) $(PREFLAGS) -o c_sim_temporal_series_euc c_sim_temporal_series_euc.cpp $(POSFLAGS)
 
