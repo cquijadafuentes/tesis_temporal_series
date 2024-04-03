@@ -43,13 +43,13 @@ int main(int argc, char const *argv[]){
 	while(txtInput >> fileName){
         // Abrir el archivo binario en modo binario utilizando ifstream
         ifstream archivo(fileName, ios::binary);
-        cout << "Leyendo el archivo " << fileName << endl;
+//        cout << "Leyendo el archivo " << fileName << endl;
         i = 0;
         if(archivo.is_open()) {
             // Lectura de los enteros de 32 bits del archivo
             int entero;
             long long acum = 0;
-            cout << "Cargando grilla.. ";
+//            cout << "Cargando grilla.. ";
             for(int f = 0; f < rows; f++){
                 for(int c = 0; c < cols; c++) {
                     archivo.read(reinterpret_cast<char*>(&entero), sizeof(entero));
@@ -58,7 +58,8 @@ int main(int argc, char const *argv[]){
                     i++;
                 }
             }
-            cout << "OK" << endl;
+            archivo.close();
+//            cout << "OK" << endl;
             double promedio = acum / totalCeldas;
             // Cálculo de la Estadística de Moran
             i = 0;
@@ -66,7 +67,7 @@ int main(int argc, char const *argv[]){
             double sumaW = 0.0;
             double denominador = 0.0;
             double numerador = 0.0;
-            cout << "Calculando I de Moran.. " << endl;
+//            cout << "Calculando I de Moran.. " << endl;
             for(int f1 = 0; f1 < rows; f1++){
                 for(int c1 = 0; c1 < cols; c1++) {
                     double diff_i_promedio = grilla[i] - promedio;
@@ -90,14 +91,11 @@ int main(int argc, char const *argv[]){
                 }
             }
             double moran_I = (totalCeldas / sumaW) * (numerador / denominador);
-            cout << "Moran's I = " << moran_I << endl;
-            archivo.close();
+            cout << lenTempSerie << "\t" << moran_I << endl;
         } else {
             cerr << "Error al abrir el archivo: " << fileName << endl;
         }
         lenTempSerie++;
 	}
-    cout << "lenTempSerie: " << lenTempSerie << endl;
-
     return 0;
 }
