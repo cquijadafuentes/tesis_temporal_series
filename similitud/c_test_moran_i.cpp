@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <math.h>
+#include <string>
 
 /*
     La estadística de Moran se calculará en base a la fórmula que indica:
@@ -20,6 +21,12 @@ double dist_euclidea(int a1, int b1, int a2, int b2){
     int b = b1 - b2;
     long long c = (a*a) + (b*b);
     return sqrt(c);
+}
+
+string print_celda(int x, int y, int v){
+    string s = "";
+    s += "[" + to_string(x) + "][" + to_string(y) + "] (" + to_string(v) + ")";
+    return s;
 }
 
 int main(int argc, char const *argv[]){
@@ -49,20 +56,19 @@ int main(int argc, char const *argv[]){
 //            cout << "Calculando I de Moran.. " << endl;
     for(int f1 = 0; f1 < rows; f1++){
         for(int c1 = 0; c1 < cols; c1++) {
-            double diff_i_promedio = grilla[i] - promedio;
-            cout << "Desde celda: [" << f1 << "][" << c1 << "]" << endl;
+            double diff_i_promedio = grilla[f1*rows+c1] - promedio;
+            cout << "Desde celda: " << print_celda(f1, c1, grilla[f1*rows+c1]) << endl;
             for(int f2=(f1-1); f2<rows && f2<=(f1+1); f2++){
                 for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
                     double w = 0;
                     double aux;
-                    cout << "\tRevisando celda: [" << f2 << "][" << c2 << "]";
+                    cout << "\tRevisando celda: " << print_celda(f2, c2, grilla[f2+rows+c2]);
                     if((f1 != f2 || c1 != c2) && f2 >= 0 && c2 >= 0){
-                        double distAux = dist_euclidea(f1, c1, f2, c2);
                         // Para la contigüidad tipo reina las celdas vecinas que tocan
                         // toman un valor de 1
                         w = 1;
                         sumaW += w;
-                        aux = w * (diff_i_promedio) * (grilla[j] - promedio);
+                        aux = w * (diff_i_promedio) * (grilla[f2*rows+c2] - promedio);
                         numerador += aux;
                         cout << " con valor: " << aux << endl;
                     }else{
