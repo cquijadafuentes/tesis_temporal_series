@@ -34,12 +34,6 @@ int main(int argc, char const *argv[]){
 	int rows = 3;
     int cols = 3;
     int totalCeldas = rows*cols;
-    double distMax = dist_euclidea(0, 0, rows, cols);
-    // Generando matriz de pesos
-    int i,j;
-    int lenTempSerie = 0;
-	// Lectura de los enteros de 32 bits del archivo
-//            cout << "OK" << endl;
     long long acum = 0;
     for(int i=0; i<grilla.size(); i++){
         acum += grilla[i];
@@ -47,6 +41,11 @@ int main(int argc, char const *argv[]){
     double promedio = (acum+0.0) / totalCeldas;
     cout << "acum: " << acum << endl;
     cout << "promedio: " << promedio << endl;
+    // Generando matriz de pesos
+    int i,j;
+    int lenTempSerie = 0;
+	// Lectura de los enteros de 32 bits del archivo
+//            cout << "OK" << endl;
     // Cálculo de la Estadística de Moran
     i = 0;
     j = 0;
@@ -57,6 +56,7 @@ int main(int argc, char const *argv[]){
     for(int f1 = 0; f1 < rows; f1++){
         for(int c1 = 0; c1 < cols; c1++) {
             double diff_i_promedio = grilla[f1*rows+c1] - promedio;
+            j = 0;
             cout << "Desde celda: " << print_celda(f1, c1, grilla[f1*rows+c1]) << endl;
             for(int f2=(f1-1); f2<rows && f2<=(f1+1); f2++){
                 for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
@@ -79,7 +79,6 @@ int main(int argc, char const *argv[]){
             }
             denominador += (diff_i_promedio * diff_i_promedio);
             i++;
-            j = 0;
         }
     }
     cout << "totalCeldas: " << totalCeldas << endl;
