@@ -53,14 +53,44 @@ int main(int argc, char const *argv[]){
 //    cout << "DATASET: " << argv[1] << endl;
 	int rows, cols, a1, a2, a3, a4;
     // Leyendo datos desde el archivo de entrada
-	ifstream txtInput(argv[1], ifstream::in);
-	txtInput >> rows >> cols >> a1 >> a2 >> a3 >> a4;
-	int totalCeldas = rows*cols;
-    vector<int> grilla(totalCeldas);
-    // Generando matriz de pesos
-    int i,j;
+    ifstream txtInput(argv[1], ifstream::in);
+    txtInput >> rows >> cols >> a1 >> a2 >> a3 >> a4;
     string fileName;
+    vector<vector<vector<int>>> temporalSeries(rows, vector<vector<int>>(cols));
     int lenTempSerie = 0;
+//    cout << rows << " " << cols << endl;
+//    cout << "Leyendo series temporales..." << endl;
+    while(txtInput >> fileName){
+        // Abrir el archivo binario en modo binario utilizando ifstream
+        ifstream archivo(fileName, ios::binary);
+        if(archivo.is_open()) {
+            // Leer enteros de 32 bits del archivo
+            int entero;
+            for(int c = 0; c < cols; c++) {
+                for(int f = 0; f < rows; f++){
+                    archivo.read(reinterpret_cast<char*>(&entero), sizeof(entero));
+                    temporalSeries[f][c].push_back(entero);
+                }
+            }
+            archivo.close();
+        } else {
+            cerr << "Error al abrir el archivo: " << fileName << endl;
+        }
+        lenTempSerie++;
+    }
+
+    vector<int> stPromedio(lenTempSerie);
+    for(int i=0; i<lenTempSerie; i++){
+        double acum = 0.0;
+        for(int f=0; f<rows; f++){
+            for(int c=0; c<cols; c++){
+                acum += temporalSeries[f][c][i];
+            }
+        }
+        stPromedio[i] = (acum / lenTempSerie);
+    }
+
+    int i,j;
 	while(txtInput >> fileName){
         // Abrir el archivo binario en modo binario utilizando ifstream
         ifstream archivo(fileName, ios::binary);

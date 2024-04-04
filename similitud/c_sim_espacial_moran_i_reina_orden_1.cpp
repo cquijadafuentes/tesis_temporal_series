@@ -42,7 +42,6 @@ int main(int argc, char const *argv[]){
 	txtInput >> rows >> cols >> a1 >> a2 >> a3 >> a4;
 	int totalCeldas = rows*cols;
     vector<int> grilla(totalCeldas);
-    // Generando matriz de pesos
     int i,j;
     string fileName;
     int lenTempSerie = 0;
