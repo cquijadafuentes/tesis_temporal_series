@@ -47,8 +47,6 @@ int main(int argc, char const *argv[]){
 	// Lectura de los enteros de 32 bits del archivo
 //            cout << "OK" << endl;
     // Cálculo de la Estadística de Moran
-    i = 0;
-    j = 0;
     double sumaW = 0.0;
     double numerador = 0.0;
     double denominador = 0.0;
@@ -56,7 +54,6 @@ int main(int argc, char const *argv[]){
     for(int f1 = 0; f1 < rows; f1++){
         for(int c1 = 0; c1 < cols; c1++) {
             double diff_i_promedio = grilla[f1*rows+c1] - promedio;
-            j = 0;
             cout << "Desde celda: " << print_celda(f1, c1, grilla[f1*rows+c1]) << endl;
             for(int f2=(f1-1); f2<rows && f2<=(f1+1); f2++){
                 for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
@@ -74,11 +71,9 @@ int main(int argc, char const *argv[]){
                     }else{
                         cout << endl;
                     }
-                    j++;
                 }
             }
             denominador += (diff_i_promedio * diff_i_promedio);
-            i++;
         }
     }
     cout << "totalCeldas: " << totalCeldas << endl;

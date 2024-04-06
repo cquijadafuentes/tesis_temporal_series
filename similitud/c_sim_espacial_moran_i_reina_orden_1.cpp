@@ -42,17 +42,16 @@ int main(int argc, char const *argv[]){
 	txtInput >> rows >> cols >> a1 >> a2 >> a3 >> a4;
 	int totalCeldas = rows*cols;
     vector<int> grilla(totalCeldas);
-    int i,j;
     string fileName;
     int lenTempSerie = 0;
 	while(txtInput >> fileName){
         // Abrir el archivo binario en modo binario utilizando ifstream
         ifstream archivo(fileName, ios::binary);
 //        cout << "Leyendo el archivo " << fileName << endl;
-        i = 0;
         if(archivo.is_open()) {
             // Lectura de los enteros de 32 bits del archivo
             int entero;
+            int i = 0;
             long long acum = 0;
 //            cout << "Cargando grilla.. ";
             for(int f = 0; f < rows; f++){
@@ -68,7 +67,6 @@ int main(int argc, char const *argv[]){
 //            cout << "acum: " << acum << endl;
 //            cout << "promedio: " << promedio << endl;
             // Cálculo de la Estadística de Moran
-            i = 0;
             double sumaW = 0.0;
             double numerador = 0.0;
             double denominador = 0.0;
@@ -76,7 +74,6 @@ int main(int argc, char const *argv[]){
             for(int f1 = 0; f1 < rows; f1++){
                 for(int c1 = 0; c1 < cols; c1++) {
                     double diff_i_promedio = grilla[f1*rows+c1] - promedio;
-                    j = 0;
                     for(int f2=(f1-1); f2<rows && f2<=(f1+1); f2++){
                         for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
                             double w = 0;
@@ -89,11 +86,9 @@ int main(int argc, char const *argv[]){
                                 aux = w * (diff_i_promedio) * (grilla[f2*rows+c2] - promedio);
                                 numerador += aux;
                             }
-                            j++;
                         }
                     }
                     denominador += (diff_i_promedio * diff_i_promedio);
-                    i++;
                 }
             }
 //            cout << "totalCeldas: " << totalCeldas << endl;
