@@ -8,6 +8,7 @@ BINS=c_distribucion_resultados\
 		c_sim_espacial_moran_i_fullgrid\
 		c_sim_espacial_moran_i_reina_orden_1\
 		c_sim_serietemporal_moran_i_reina_orden_1\
+		c_sim_serietemporal_moran_i_reina_orden_2\
 		c_sim_temporal_series_euc\
 		c_sim_temporal_series_mape\
 		c_test_moran_i\
@@ -29,6 +30,9 @@ c_sim_espacial_moran_i_reina_orden_1:
 
 c_sim_serietemporal_moran_i_reina_orden_1:
 	$(CPP) $(PREFLAGS) -o c_sim_serietemporal_moran_i_reina_orden_1 c_sim_serietemporal_moran_i_reina_orden_1.cpp $(POSFLAGS)
+
+c_sim_serietemporal_moran_i_reina_orden_2:
+	$(CPP) $(PREFLAGS) -o c_sim_serietemporal_moran_i_reina_orden_2 c_sim_serietemporal_moran_i_reina_orden_2.cpp $(POSFLAGS)
 
 c_sim_temporal_series_euc:
 	$(CPP) $(PREFLAGS) -o c_sim_temporal_series_euc c_sim_temporal_series_euc.cpp $(POSFLAGS)
