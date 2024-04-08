@@ -48,8 +48,6 @@ bitsS = 0
 bitsR = 0
 bitsOmT = 0
 
-
-print("Descomponiendo series de tiempo...")
 ts_decomposed = [[None for _ in range(cols)] for _ in range(rows)]
 for f in range(rows):
   for c in range(cols):
