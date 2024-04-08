@@ -87,6 +87,12 @@ for f in range(rows):
     rango = int(ma-mi)
     if(rango != 0):
       bitsOmT += (math.ceil(math.log2(rango)) * numFiles)
+# Transformación a KB
+bitsO = bitsO / (8 * 1024)
+bitsT = bitsT / (8 * 1024)
+bitsS = bitsS / (8 * 1024)
+bitsR = bitsR / (8 * 1024)
+bitsOmT = bitsOmT / (8 * 1024)
 
-print("serie", "original", "trend", "season", "resid", "org-trend")
+print("serie", "original", "trend", "season", "resid", "org-trend", "[KB]")
 print(sys.argv[1], bitsO, bitsT, bitsS, bitsR, bitsOmT)
