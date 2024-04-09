@@ -1,0 +1,62 @@
+red = "#FF0000"; green = "#00FF00"; blue = "#0000FF"; skyblue = "#87CEEB"; black = "#000000"; darkgreen = "#006400"; darkred = "#8b0000";
+set grid ytics
+set key out horiz
+set terminal png size 800,400
+
+set ylabel "Tamaño [KB]"
+set xlabel "TimeSeries"
+
+set output 'img_size_decomposeTS_full.png'
+set title 'Tamaño Series de Tiempo FULL'
+
+plot 'sizes_full_toplot.txt' using 2:xtic(1) title 'original' with linespoints lt 2 pt 3 lc rgb red,   \
+     'sizes_full_toplot.txt' using 3 title 'trend' with linespoints lt 2 pt 4 lc rgb green,   \
+     'sizes_full_toplot.txt' using 4 title 'season' with linespoints lt 2 pt 5 lc rgb darkgreen,   \
+     'sizes_full_toplot.txt' using 5 title 'resid' with linespoints lt 2 pt 6 lc rgb darkred,   \
+     'sizes_full_toplot.txt' using 6 title 'org-trend' with linespoints lt 2 pt 7 lc rgb blue
+
+
+
+set output 'img_size_decomposeTS_week.png'
+set title 'Tamaño Series de Tiempo WEEK'
+
+plot 'sizes_week_toplot.txt' using 2:xtic(1) title 'original' with linespoints lt 2 pt 3 lc rgb red,   \
+     'sizes_week_toplot.txt' using 3 title 'trend' with linespoints lt 2 pt 4 lc rgb green,   \
+     'sizes_week_toplot.txt' using 4 title 'season' with linespoints lt 2 pt 5 lc rgb darkgreen,   \
+     'sizes_week_toplot.txt' using 5 title 'resid' with linespoints lt 2 pt 6 lc rgb darkred,   \
+     'sizes_week_toplot.txt' using 6 title 'org-trend' with linespoints lt 2 pt 7 lc rgb blue
+
+
+
+set output 'img_size_geoespacial_week.png'
+set title 'Evolucion Moran I WEEK'
+
+plot 'geospacial_morani_reina1_week.txt' using 2:xtic(1) title 'APCP' with linespoints lt 2 pt 3,   \
+     '' using 3 title 'CAPE' with linespoints lt 2 pt 4,   \
+     '' using 4 title 'CONVfrac' with linespoints lt 2 pt 4,   \
+     '' using 5 title 'DLWRF' with linespoints lt 2 pt 4,   \
+     '' using 6 title 'DSWRF' with linespoints lt 2 pt 4,   \
+     '' using 7 title 'PEVAP' with linespoints lt 2 pt 4,   \
+     '' using 8 title 'PRES' with linespoints lt 2 pt 5,   \
+     '' using 9 title 'SPFH' with linespoints lt 2 pt 6,   \
+     '' using 10 title 'TMP' with linespoints lt 2 pt 6,   \
+     '' using 11 title 'UGRD' with linespoints lt 2 pt 6,   \
+     '' using 12 title 'VGRD' with linespoints lt 2 pt 7
+
+
+
+set output 'img_size_geoespacial_full.png'
+set title 'Evolucion Moran I Full'
+
+plot 'geospacial_morani_reina1_full.txt' using 2:xtic(1) title 'APCP' with linespoints lt 2 pt 3,   \
+     '' using 3 title 'CAPE' with linespoints lt 2 pt 4,   \
+     '' using 4 title 'CONVfrac' with linespoints lt 2 pt 4,   \
+     '' using 5 title 'DLWRF' with linespoints lt 2 pt 4,   \
+     '' using 6 title 'DSWRF' with linespoints lt 2 pt 4,   \
+     '' using 7 title 'PEVAP' with linespoints lt 2 pt 4,   \
+     '' using 8 title 'PRES' with linespoints lt 2 pt 5,   \
+     '' using 9 title 'SPFH' with linespoints lt 2 pt 6,   \
+     '' using 10 title 'TMP' with linespoints lt 2 pt 6,   \
+     '' using 11 title 'UGRD' with linespoints lt 2 pt 6,   \
+     '' using 12 title 'VGRD' with linespoints lt 2 pt 7
+

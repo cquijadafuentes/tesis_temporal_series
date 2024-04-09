@@ -1,0 +1,8 @@
+
+set output 'img_i_moran.png'
+set title 'I de Moran'
+
+plot 'reina_orden_1_full_toplot.txt' using 2:xtic(1) title 'O1_{full}' with linespoints lt 2 pt 3 lc rgb red,   \
+     'reina_orden_1_week_toplot.txt' using 2 'O1_{week}' with linespoints lt 2 pt 4 lc rgb green,   \
+     'reina_orden_2_full_toplot.txt' using 2 'O2_{full}' with linespoints lt 2 pt 5 lc rgb darkgreen,   \
+     'reina_orden_2_week_toplot.txt' using 2 'O2_{week}' with linespoints lt 2 pt 6 lc rgb darkred
