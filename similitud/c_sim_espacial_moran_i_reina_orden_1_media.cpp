@@ -29,6 +29,7 @@ int main(int argc, char const *argv[]){
     string fileName;
     vector<vector<int>> grilla(rows, vector<int>(cols));
     int lenTempSerie = 0;
+    double moranMedia = 0.0;
     while(txtInput >> fileName){
         // Abrir el archivo binario en modo binario utilizando ifstream
         ifstream archivo(fileName, ios::binary);
@@ -78,11 +79,13 @@ int main(int argc, char const *argv[]){
 //            cout << "numerador: " << numerador << endl;
 //            cout << "denominador: " << denominador << endl;
             double moran_I = (totalCeldas / sumaW) * (numerador / denominador);
-            cout << lenTempSerie << "\t" << moran_I << endl;
+            moranMedia += moran_I;
         } else {
             cerr << "Error al abrir el archivo: " << fileName << endl;
         }
         lenTempSerie++;
 	}
+    moranMedia /= lenTempSerie;
+    cout << argv[1] << "\t" << moranMedia << endl;
     return 0;
 }
