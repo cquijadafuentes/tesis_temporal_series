@@ -30,6 +30,16 @@ string print_celda(int x, int y, vector<int> v){
     return s;
 }
 
+string print_celda(int x, int y, vector<double> v){
+    string s = "";
+    s += "[" + to_string(x) + "][" + to_string(y) + "] (" + to_string(v[0]);
+    for(int i=1; i<v.size(); i++){
+        s += "," + to_string(v[i]);
+    }
+    s += ")";
+    return s;
+}
+
 string print_serie(vector<int> v){
     string s = "";
     for(int i=0; i<v.size(); i++){
@@ -38,7 +48,15 @@ string print_serie(vector<int> v){
     return s;
 }
 
-double calc_euclidean(vector<int> actual, vector<int> pred){
+string print_serie(vector<double> v){
+    string s = "";
+    for(int i=0; i<v.size(); i++){
+        s += to_string(v[i]) + " ";
+    }
+    return s;
+}
+
+double calc_euclidean(vector<int> actual, vector<double> pred){
     unsigned long long acum = 0;
     for(int i=0; i<actual.size(); i++){
         long diff = actual[i] - pred[i];
@@ -46,13 +64,6 @@ double calc_euclidean(vector<int> actual, vector<int> pred){
         acum += diff;
     }
     return sqrt(acum);
-}
-
-double dist_euclidea(int a1, int b1, int a2, int b2){
-    int a = a1 - a2;
-    int b = b1 - b2;
-    long long c = (a*a) + (b*b);
-    return sqrt(c);
 }
 
 int main(int argc, char const *argv[]){
@@ -90,7 +101,7 @@ int main(int argc, char const *argv[]){
         lenTempSerie++;
     }
 
-    vector<int> stPromedio(lenTempSerie);
+    vector<double> stPromedio(lenTempSerie);
     for(int i=0; i<lenTempSerie; i++){
         double acum = 0.0;
         for(int f=0; f<rows; f++){
@@ -100,7 +111,7 @@ int main(int argc, char const *argv[]){
         }
         stPromedio[i] = (acum / (rows*cols));
     }
-//    cout << "Serie promedio: " << print_serie(stPromedio) << endl;
+    cout << "Serie promedio: " << print_serie(stPromedio) << endl;
 
     // Cálculo de la Estadística de Moran
     double sumaW = 0.0;
@@ -121,7 +132,6 @@ int main(int argc, char const *argv[]){
                         // toman un valor de 1
                         w = 1.0;
                         sumaW += w;
-                        double xxx = calc_euclidean(temporalSeries[f2][c2], stPromedio);
                         aux = w * (diff_i_promedio) * calc_euclidean(temporalSeries[f2][c2], stPromedio);
 //                        cout << " con w=" << w << " xi=" << diff_i_promedio << " y xj " << xxx << " y resultado " << aux <<endl;
                         numerador += aux;
@@ -136,6 +146,6 @@ int main(int argc, char const *argv[]){
 //    cout << "numerador: " << numerador << endl;
 //    cout << "denominador: " << denominador << endl;
     double moran_I = ((rows*cols + 0.0) / sumaW) * ((numerador + 0.0) / denominador);
-    cout << argv[1] << " Moran's I= " << moran_I << endl;
+    cout << argv[1] << " Moran's I (ro1)= " << moran_I << endl;
     return 0;
 }
