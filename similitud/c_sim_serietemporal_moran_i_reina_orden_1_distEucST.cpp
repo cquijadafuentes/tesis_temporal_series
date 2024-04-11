@@ -111,7 +111,7 @@ int main(int argc, char const *argv[]){
         }
         stPromedio[i] = (acum / (rows*cols));
     }
-    cout << "Serie promedio: " << print_serie(stPromedio) << endl;
+//    cout << "Serie promedio: " << print_serie(stPromedio) << endl;
 
     // Cálculo de la Estadística de Moran
     double sumaW = 0.0;
