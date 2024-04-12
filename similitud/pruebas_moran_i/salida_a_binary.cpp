@@ -1,23 +1,42 @@
-#include <fstream>      // std::ofstream
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
 
 using namespace std;
 
-int main () {
-  ofstream ofs;
-  ofstream afs_a("st_a1.bin",ios_base::binary);
-  ofstream afs_b("st_a2.bin",ios_base::binary);  
-  ofstream afs_c("st_a3.bin",ios_base::binary);
-  int a, b, c;
-  for(int i=1; i<=9; i++){
-    a = i;
-    b = i + 1;
-    c = i + 2;
-    afs_a.write(reinterpret_cast<const char *>(&a), sizeof(a));
-    afs_b.write(reinterpret_cast<const char *>(&b), sizeof(b));
-    afs_c.write(reinterpret_cast<const char *>(&c), sizeof(c));
+int main(int argc, char const *argv[]){
+  if(argc < 2){
+    // El archivo debe indicar numero_filas y numero_columnas
+    // en la primera línea. Luego todos los datos
+    cout << "Error! Faltan argumentos:" << endl;
+    cout << argv[0] << " <input_file>" << endl;
+    return 0;
   }
-  afs_a.close();
-  afs_b.close();
-  afs_c.close();
+
+  ifstream inputfile(argv[1]);
+  if (!inputfile.is_open()){
+    cout << "Error al abrir" << argv[1] << endl;
+    exit(EXIT_FAILURE);
+  }
+  int rows, cols;
+  inputfile >> rows >> cols;
+  vector<vector<int>> grilla(rows, vector<int>(cols));
+  for(int f=0; f<rows; f++){
+    for(int c=0; c<cols; c++){
+      inputfile >> grilla[f][c];
+    }
+  }
+  inputfile.close();
+  string filename = argv[1];
+  filename += ".bin";
+  ofstream outputfile(filename,ios_base::binary);
+  for(int c=0; c<cols; c++){
+    for(int f=0; f<rows; f++){
+      outputfile.write(reinterpret_cast<const char *>(&grilla[f][c]), sizeof(grilla[f][c]));
+    }
+  }
+  outputfile.close();
+
   return 0;
 }

@@ -30,33 +30,52 @@ int main(int argc, char const *argv[]){
         // El archivo debe indicar numero_filas y numero_columnas
         // en la primera línea. Luego todos los datos
         cout << "Error! Faltan argumentos:" << endl;
-        cout << argv[0] << " <input_file>" << endl;
+        cout << argv[0] << " <input_file> [v]" << endl;
+        cout << "v for Verbose" << endl;
         return 0;
     }
-    ifstream f(argv[1]);
-    if (!f.is_open()){
+    bool verbose = false;
+    if(argc == 3){
+        cout << argv[2][0] << endl;
+        if(argv[2][0] == 'v'){
+            verbose = true;
+        }
+    }
+    ifstream inputfile(argv[1]);
+    if (!inputfile.is_open()){
         cout << "Error al abrir ejemplo.dat\n";
         exit(EXIT_FAILURE);
     }
 	int rows, cols;
-    f >> rows >> cols;
+    inputfile >> rows >> cols;
     vector<vector<int>> grilla(rows, vector<int>(cols));
     long long acum = 0;
     for(int f=0; f<rows; f++){
         for(int c=0; c<cols; c++){
-            f >> grilla[f][c];
+            inputfile >> grilla[f][c];
             acum += grilla[f][c];
         }
     }
+    inputfile.close();
+
     int totalCeldas = rows*cols;
     double promedio = (acum+0.0) / totalCeldas;
     
-    cout << "Grilla de " << rows << " X " << cols << endl;
-    cout << "acum: " << acum << endl;
-    cout << "promedio: " << promedio << endl;
+    if(verbose){
+        cout << "Grilla de " << rows << " X " << cols << endl;
+        cout << "acum: " << acum << endl;
+        cout << "promedio: " << promedio << endl;
+        for(int f=0; f<rows; f++){
+            for(int c=0; c<cols; c++){
+                cout << grilla[f][c] << " ";
+            }
+            cout << endl;
+        }
+    }
+
+
     // Generando matriz de pesos
     int i,j;
-    int lenTempSerie = 0;
 	// Lectura de los enteros de 32 bits del archivo
 //            cout << "OK" << endl;
     // Cálculo de la Estadística de Moran
@@ -67,34 +86,40 @@ int main(int argc, char const *argv[]){
     for(int f1 = 0; f1 < rows; f1++){
         for(int c1 = 0; c1 < cols; c1++) {
             double diff_i_promedio = grilla[f1][c1] - promedio;
-            cout << "Desde celda: " << print_celda(f1, c1, grilla[f1][c1]) << endl;
+            if(verbose){
+                cout << "Desde celda: " << print_celda(f1, c1, grilla[f1][c1]) << endl;
+            }
             for(int f2=(f1-1); f2<rows && f2<=(f1+1); f2++){
                 for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
                     double w = 0;
                     double aux;
                     if((f1 != f2 || c1 != c2) && f2 >= 0 && c2 >= 0){
-                        cout << "\tRevisando celda: " << print_celda(f2, c2, grilla[f2][c2]);
+                        if(verbose){
+                            cout << "\tRevisando celda: " << print_celda(f2, c2, grilla[f2][c2]);
+                        }
                         // Para la contigüidad tipo reina las celdas vecinas que tocan
                         // toman un valor de 1
                         w = 1;
                         sumaW += w;
                         aux = w * (diff_i_promedio) * (grilla[f2][c2] - promedio);
                         numerador += aux;
-                        cout << " con valor: " << aux << endl;
-                    }else{
-                        cout << endl;
+                        if(verbose){
+                            cout << " con valor: " << aux << endl;
+                        }
                     }
                 }
             }
             denominador += (diff_i_promedio * diff_i_promedio);
         }
     }
-    cout << "totalCeldas: " << totalCeldas << endl;
-    cout << "sumaW: " << sumaW << endl;
-    cout << "numerador: " << numerador << endl;
-    cout << "denominador: " << denominador << endl;
+    if(verbose){
+        cout << "totalCeldas: " << totalCeldas << endl;
+        cout << "sumaW: " << sumaW << endl;
+        cout << "numerador: " << numerador << endl;
+        cout << "denominador: " << denominador << endl;
+        cout << "Grilla de " << rows << " X " << cols << endl;
+    }
     double moran_I = (totalCeldas / sumaW) * (numerador / denominador);
-    cout << lenTempSerie << "\t" << moran_I << endl;
-    cout << "Grilla de " << rows << " X " << cols << endl;
+    cout << argv[1] << "\t" << moran_I << endl;
     return 0;
 }

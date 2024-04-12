@@ -1,0 +1,7 @@
+tablero_0.txt	-0.0666667
+tablero_1.txt	-0.333333
+tablero_2.txt	0.790476
+tablero_3.txt	0.619048
+tablero_4.txt	0.737868
+tablero_5.txt	0.790476
+FIN

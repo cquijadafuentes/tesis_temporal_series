@@ -1,0 +1,7 @@
+DATASET:  tablero_lista.txt
+tablero_0.txt.bin -0.09583333333333333
+tablero_1.txt.bin -0.3333333333333333
+tablero_2.txt.bin 0.809375
+tablero_3.txt.bin 0.65
+tablero_4.txt.bin 0.7485449735449735
+tablero_5.txt.bin 0.809375

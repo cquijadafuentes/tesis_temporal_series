@@ -1,0 +1,7 @@
+8 8 2 2 2 2
+tablero_0.txt.bin
+tablero_1.txt.bin
+tablero_2.txt.bin
+tablero_3.txt.bin
+tablero_4.txt.bin
+tablero_5.txt.bin
