@@ -1,0 +1,68 @@
+Iniciado en: 2024/04/10 18:13:16
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST ./listados_por_semana/APCP_NLDAS_week_01.txt
+./listados_por_semana/APCP_NLDAS_week_01.txt Moran's I (ro1 suma de diferencias)= 0.965633
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST ./listados_por_semana/CAPE_NLDAS_week_01.txt
+./listados_por_semana/CAPE_NLDAS_week_01.txt Moran's I (ro1 suma de diferencias)= 0.739224
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST ./listados_por_semana/CONV_NLDAS_week_01.txt
+./listados_por_semana/CONV_NLDAS_week_01.txt Moran's I (ro1 suma de diferencias)= 0.941875
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST ./listados_por_semana/DLWRF_NLDAS_week_01.txt
+./listados_por_semana/DLWRF_NLDAS_week_01.txt Moran's I (ro1 suma de diferencias)= 0.950443
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST ./listados_por_semana/DSWRF_NLDAS_week_01.txt
+./listados_por_semana/DSWRF_NLDAS_week_01.txt Moran's I (ro1 suma de diferencias)= 0.962925
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST ./listados_por_semana/PEVAP_NLDAS_week_01.txt
+./listados_por_semana/PEVAP_NLDAS_week_01.txt Moran's I (ro1 suma de diferencias)= 0.966063
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST ./listados_por_semana/PRES_NLDAS_week_01.txt
+./listados_por_semana/PRES_NLDAS_week_01.txt Moran's I (ro1 suma de diferencias)= 0.964173
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST ./listados_por_semana/SPFH_NLDAS_week_01.txt
+./listados_por_semana/SPFH_NLDAS_week_01.txt Moran's I (ro1 suma de diferencias)= 0.955975
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST ./listados_por_semana/TMP_NLDAS_week_01.txt
+./listados_por_semana/TMP_NLDAS_week_01.txt Moran's I (ro1 suma de diferencias)= 0.959184
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST ./listados_por_semana/UGRD_NLDAS_week_01.txt
+./listados_por_semana/UGRD_NLDAS_week_01.txt Moran's I (ro1 suma de diferencias)= 0.974317
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST ./listados_por_semana/VGRD_NLDAS_week_01.txt
+./listados_por_semana/VGRD_NLDAS_week_01.txt Moran's I (ro1 suma de diferencias)= 0.977453
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST APCP_NLDAS_FORA0125_H.txt
+APCP_NLDAS_FORA0125_H.txt Moran's I (ro1 suma de diferencias)= 0.97776
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST CAPE_NLDAS_FORA0125_H.txt
+CAPE_NLDAS_FORA0125_H.txt Moran's I (ro1 suma de diferencias)= 0.942005
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST CONVfrac_NLDAS_FORA0125_H.txt
+CONVfrac_NLDAS_FORA0125_H.txt Moran's I (ro1 suma de diferencias)= 0.956876
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST DLWRF_NLDAS_FORA0125_H.txt
+DLWRF_NLDAS_FORA0125_H.txt Moran's I (ro1 suma de diferencias)= 0.957135
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST DSWRF_NLDAS_FORA0125_H.txt
+DSWRF_NLDAS_FORA0125_H.txt Moran's I (ro1 suma de diferencias)= 0.961265
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST PEVAP_NLDAS_FORA0125_H.txt
+PEVAP_NLDAS_FORA0125_H.txt Moran's I (ro1 suma de diferencias)= 0.971609
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST PRES_NLDAS_FORA0125_H.txt
+PRES_NLDAS_FORA0125_H.txt Moran's I (ro1 suma de diferencias)= 0.964139
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST SPFH_NLDAS_FORA0125_H.txt
+SPFH_NLDAS_FORA0125_H.txt Moran's I (ro1 suma de diferencias)= 0.956649
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST TMP_NLDAS_FORA0125_H.txt
+TMP_NLDAS_FORA0125_H.txt Moran's I (ro1 suma de diferencias)= 0.96272
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST UGRD_NLDAS_FORA0125_H.txt
+UGRD_NLDAS_FORA0125_H.txt Moran's I (ro1 suma de diferencias)= 0.97397
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST VGRD_NLDAS_FORA0125_H.txt
+VGRD_NLDAS_FORA0125_H.txt Moran's I (ro1 suma de diferencias)= 0.975594
+ 
+Finalizado en: 2024/04/10 18:21:19

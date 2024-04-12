@@ -1,0 +1,68 @@
+Iniciado en: 2024/04/10 18:11:41
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media ./listados_por_semana/APCP_NLDAS_week_01.txt
+./listados_por_semana/APCP_NLDAS_week_01.txt	0.860307
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media ./listados_por_semana/CAPE_NLDAS_week_01.txt
+./listados_por_semana/CAPE_NLDAS_week_01.txt	0.821441
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media ./listados_por_semana/CONV_NLDAS_week_01.txt
+./listados_por_semana/CONV_NLDAS_week_01.txt	0.795982
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media ./listados_por_semana/DLWRF_NLDAS_week_01.txt
+./listados_por_semana/DLWRF_NLDAS_week_01.txt	0.958707
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media ./listados_por_semana/DSWRF_NLDAS_week_01.txt
+./listados_por_semana/DSWRF_NLDAS_week_01.txt	0.939977
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media ./listados_por_semana/PEVAP_NLDAS_week_01.txt
+./listados_por_semana/PEVAP_NLDAS_week_01.txt	0.965184
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media ./listados_por_semana/PRES_NLDAS_week_01.txt
+./listados_por_semana/PRES_NLDAS_week_01.txt	0.964206
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media ./listados_por_semana/SPFH_NLDAS_week_01.txt
+./listados_por_semana/SPFH_NLDAS_week_01.txt	0.95205
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media ./listados_por_semana/TMP_NLDAS_week_01.txt
+./listados_por_semana/TMP_NLDAS_week_01.txt	0.961241
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media ./listados_por_semana/UGRD_NLDAS_week_01.txt
+./listados_por_semana/UGRD_NLDAS_week_01.txt	0.974592
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media ./listados_por_semana/VGRD_NLDAS_week_01.txt
+./listados_por_semana/VGRD_NLDAS_week_01.txt	0.978003
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media APCP_NLDAS_FORA0125_H.txt
+APCP_NLDAS_FORA0125_H.txt	0.871434
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media CAPE_NLDAS_FORA0125_H.txt
+CAPE_NLDAS_FORA0125_H.txt	0.888642
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media CONVfrac_NLDAS_FORA0125_H.txt
+CONVfrac_NLDAS_FORA0125_H.txt	0.813624
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media DLWRF_NLDAS_FORA0125_H.txt
+DLWRF_NLDAS_FORA0125_H.txt	0.96327
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media DSWRF_NLDAS_FORA0125_H.txt
+DSWRF_NLDAS_FORA0125_H.txt	0.960609
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media PEVAP_NLDAS_FORA0125_H.txt
+PEVAP_NLDAS_FORA0125_H.txt	0.970518
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media PRES_NLDAS_FORA0125_H.txt
+PRES_NLDAS_FORA0125_H.txt	0.96417
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media SPFH_NLDAS_FORA0125_H.txt
+SPFH_NLDAS_FORA0125_H.txt	0.953146
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media TMP_NLDAS_FORA0125_H.txt
+TMP_NLDAS_FORA0125_H.txt	0.964157
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media UGRD_NLDAS_FORA0125_H.txt
+UGRD_NLDAS_FORA0125_H.txt	0.974664
+ 
+ +++++++++ Ejecutando: ./c_sim_espacial_moran_i_reina_orden_1_media VGRD_NLDAS_FORA0125_H.txt
+VGRD_NLDAS_FORA0125_H.txt	0.976456
+ 
+Finalizado en: 2024/04/10 18:16:57

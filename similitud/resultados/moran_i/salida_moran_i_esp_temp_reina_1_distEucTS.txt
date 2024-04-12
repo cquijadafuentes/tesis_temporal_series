@@ -1,0 +1,98 @@
+Iniciado en: 2024/04/11 10:01:08
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST ./listados_por_semana/APCP_NLDAS_week_01.txt
+./listados_por_semana/APCP_NLDAS_week_01.txt Moran's I (ro1)= 0.973001
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST ./listados_por_semana/CAPE_NLDAS_week_01.txt
+./listados_por_semana/CAPE_NLDAS_week_01.txt Moran's I (ro1)= 0.883018
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST ./listados_por_semana/CONV_NLDAS_week_01.txt
+./listados_por_semana/CONV_NLDAS_week_01.txt Moran's I (ro1)= 0.966962
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST ./listados_por_semana/DLWRF_NLDAS_week_01.txt
+./listados_por_semana/DLWRF_NLDAS_week_01.txt Moran's I (ro1)= 0.996139
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST ./listados_por_semana/DSWRF_NLDAS_week_01.txt
+./listados_por_semana/DSWRF_NLDAS_week_01.txt Moran's I (ro1)= 0.997214
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST ./listados_por_semana/PEVAP_NLDAS_week_01.txt
+./listados_por_semana/PEVAP_NLDAS_week_01.txt Moran's I (ro1)= 0.992486
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST ./listados_por_semana/PRES_NLDAS_week_01.txt
+./listados_por_semana/PRES_NLDAS_week_01.txt Moran's I (ro1)= 0.991858
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST ./listados_por_semana/SPFH_NLDAS_week_01.txt
+./listados_por_semana/SPFH_NLDAS_week_01.txt Moran's I (ro1)= 0.898305
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST ./listados_por_semana/TMP_NLDAS_week_01.txt
+./listados_por_semana/TMP_NLDAS_week_01.txt Moran's I (ro1)= 0.995797
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST ./listados_por_semana/UGRD_NLDAS_week_01.txt
+./listados_por_semana/UGRD_NLDAS_week_01.txt Moran's I (ro1)= 0.990077
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST ./listados_por_semana/VGRD_NLDAS_week_01.txt
+./listados_por_semana/VGRD_NLDAS_week_01.txt Moran's I (ro1)= 0.990384
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST APCP_NLDAS_FORA0125_H.txt
+CAPE_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.983027
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST CONVfrac_NLDAS_FORA0125_H.txt
+APCP_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.988709
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST CAPE_NLDAS_FORA0125_H.txt
+CAPE_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.983027
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST CONVfrac_NLDAS_FORA0125_H.txt
+CONVfrac_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.987524
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST DLWRF_NLDAS_FORA0125_H.txt
+CONVfrac_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.987524
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST DLWRF_NLDAS_FORA0125_H.txt
+DLWRF_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.996614
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST DSWRF_NLDAS_FORA0125_H.txt
+DLWRF_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.996614
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST DSWRF_NLDAS_FORA0125_H.txt
+DSWRF_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.997632
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST PEVAP_NLDAS_FORA0125_H.txt
+DSWRF_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.997632
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST PEVAP_NLDAS_FORA0125_H.txt
+PEVAP_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.991959
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST PRES_NLDAS_FORA0125_H.txt
+PEVAP_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.991959
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST PRES_NLDAS_FORA0125_H.txt
+PRES_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.991864
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST SPFH_NLDAS_FORA0125_H.txt
+PRES_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.991864
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST SPFH_NLDAS_FORA0125_H.txt
+SPFH_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.957854
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST TMP_NLDAS_FORA0125_H.txt
+SPFH_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.957854
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST TMP_NLDAS_FORA0125_H.txt
+TMP_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.995623
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST UGRD_NLDAS_FORA0125_H.txt
+TMP_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.995623
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST UGRD_NLDAS_FORA0125_H.txt
+UGRD_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.990432
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST VGRD_NLDAS_FORA0125_H.txt
+UGRD_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.990432
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_distEucST VGRD_NLDAS_FORA0125_H.txt
+VGRD_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.991012
+ 
+Finalizado en: 2024/04/11 10:17:22
+VGRD_NLDAS_FORA0125_H.txt Moran's I (ro1)= 0.991012
+ 
+Finalizado en: 2024/04/11 10:17:23
