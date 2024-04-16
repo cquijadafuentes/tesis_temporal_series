@@ -1,7 +1,8 @@
 from random import randrange
 from pandas import Series
 from statsmodels.tsa.seasonal import seasonal_decompose
-series = [i+randrange(10) for i in range(1,100)]
+
+series = [i+randrange(10) for i in range(1,15)]
 result = seasonal_decompose(series, model='additive', period=7)
 #print(help(result))
 
@@ -25,4 +26,3 @@ for z in range(0,result.observed.size):
 
 
 
-print(help(result))
