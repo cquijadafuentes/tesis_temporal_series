@@ -89,6 +89,7 @@ int main(int argc, char const *argv[]){
             if(verbose){
                 cout << "Desde celda: " << print_celda(f1, c1, grilla[f1][c1]) << endl;
             }
+            double auxDenom = 0;
             for(int f2=(f1-1); f2<rows && f2<=(f1+1); f2++){
                 for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
                     double w = 0;
@@ -102,6 +103,7 @@ int main(int argc, char const *argv[]){
                         w = 1;
                         sumaW += w;
                         aux = w * (diff_i_promedio) * (grilla[f2][c2] - promedio);
+                        auxDenom += aux;
                         numerador += aux;
                         if(verbose){
                             cout << " con valor: " << aux << endl;
@@ -110,6 +112,7 @@ int main(int argc, char const *argv[]){
                 }
             }
             denominador += (diff_i_promedio * diff_i_promedio);
+            cout << "\tTotal: " << auxDenom << endl;
         }
     }
     if(verbose){

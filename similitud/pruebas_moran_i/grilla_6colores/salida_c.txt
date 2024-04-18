@@ -1,0 +1,6 @@
+grillaA.txt	0.656877
+grillaB.txt	0.403662
+grillaC.txt	0.0545048
+grillaD.txt	-0.0622694
+grillaE.txt	-0.0882772
+FIN

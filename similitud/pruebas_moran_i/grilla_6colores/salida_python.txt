@@ -1,0 +1,6 @@
+DATASET:  grilla_lista.txt
+grillaA.txt.bin 0.6581916338372784
+grillaB.txt.bin 0.4056491155714416
+grillaC.txt.bin 0.040011227201906335
+grillaD.txt.bin -0.08159197140500414
+grillaE.txt.bin -0.11131770690129227
