@@ -1,0 +1,32 @@
+Serie A: 11 12 13 14 15 16 17 18 19 20
+Serie B: 1 2 3 4 5 6 7 8 9 10
+Tablero en forma tradicional
+A B A B A B A B 
+B A B A B A B A 
+A B A B A B A B 
+B A B A B A B A 
+A B A B A B A B 
+B A B A B A B A 
+A B A B A B A B 
+B A B A B A B A 
+Moran's I por diferencias acumuladas:-0.0666667
+Tablero en mitades
+A A A A A A A A 
+A A A A A A A A 
+A A A A A A A A 
+A A A A A A A A 
+B B B B B B B B 
+B B B B B B B B 
+B B B B B B B B 
+B B B B B B B B 
+Moran's I por diferencias acumuladas:0.790476
+Tablero en cuartos
+A A A A B B B B 
+A A A A B B B B 
+A A A A B B B B 
+A A A A B B B B 
+B B B B A A A A 
+B B B B A A A A 
+B B B B A A A A 
+B B B B A A A A 
+Moran's I por diferencias acumuladas:0.619048
