@@ -65,13 +65,13 @@ double calc_sumadiffST(vector<int> x, vector<double> y){
 }
 
 int main(int argc, char const *argv[]){
-	if(argc < 2){
-		cout << "Error! Faltan argumentos." << endl;
-		cout << argv[0] << " <filename>" << endl;
-		return 0;
-	}
+    if(argc < 2){
+        cout << "Error! Faltan argumentos." << endl;
+        cout << argv[0] << " <filename>" << endl;
+        return 0;
+    }
 //    cout << "DATASET: " << argv[1] << endl;
-	int rows, cols, a1, a2, a3, a4;
+    int rows, cols, a1, a2, a3, a4;
     // Leyendo datos desde el archivo de entrada
     ifstream txtInput(argv[1], ifstream::in);
     txtInput >> rows >> cols >> a1 >> a2 >> a3 >> a4;
@@ -111,6 +111,13 @@ int main(int argc, char const *argv[]){
     }
 //    cout << "Serie promedio: " << print_serie(stPromedio) << endl;
 
+    vector<vector<double>> sumaDiffPromedio(rows, vector<double>(cols));
+    for(int i=0; i<rows; i++){
+        for(int j=0; j<cols; j++){
+            sumaDiffPromedio[i][j] = calc_sumadiffST(temporalSeries[i][j], stPromedio);
+        }
+    }
+
     // Cálculo de la Estadística de Moran
     double sumaW = 0.0;
     double numerador = 0.0;
@@ -118,8 +125,7 @@ int main(int argc, char const *argv[]){
 //    cout << "Calculando I de Moran.. " << endl;
     for(int f1 = 0; f1 < rows; f1++){
         for(int c1 = 0; c1 < cols; c1++) {
-            double diff_i_promedio = calc_sumadiffST(temporalSeries[f1][c1], stPromedio);
-//            cout << "Desde celda: " << print_celda(f1, c1, temporalSeries[f1][c1]) << " - " << diff_i_promedio << endl;
+//            cout << "Desde celda: " << print_celda(f1, c1, temporalSeries[f1][c1]) << " - " << sumaDiffPromedio[f1][c1] << endl;
             for(int f2=(f1-1); f2<rows && f2<=(f1+1); f2++){
                 for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
                     double w = 0;
@@ -130,13 +136,12 @@ int main(int argc, char const *argv[]){
                         // toman un valor de 1
                         w = 1.0;
                         sumaW += w;
-                        aux = w * (diff_i_promedio) * calc_sumadiffST(temporalSeries[f2][c2], stPromedio);
-//                        cout << " con w=" << w << " xi=" << diff_i_promedio << " y xj " << xxx << " y resultado " << aux <<endl;
+                        aux = w * sumaDiffPromedio[f1][c1] * sumaDiffPromedio[f2][c2];
                         numerador += aux;
                     }
                 }
             }
-            denominador += (diff_i_promedio * diff_i_promedio);
+            denominador += (sumaDiffPromedio[f1][c1] * sumaDiffPromedio[f1][c1]);
         }
     }
 //    cout << "totalCeldas: " << (rows*cols) << endl;
