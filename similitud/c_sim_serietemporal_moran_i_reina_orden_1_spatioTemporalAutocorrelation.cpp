@@ -28,25 +28,26 @@ double ZETA(vector<int> X, vector<double> Y){
             and greater values means less similar time series.
         - Finally is multiplied by the difference of accumulative volumes
     */
-    double numerador = 0.0;
-    double denFactorX = 0.0;
-    double denFactorY = 0.0;
+    double numeradorCORT = 0.0;
+    double denCORTFactorX = 0.0;
+    double denCORTFactorY = 0.0;
     double auxDiffX, auxDiffY;
     double accVolX = 0.0 + X[0];
     double accVolY = 0.0 + X[0];
     for(int i=1; i <X.size(); i++){
         auxDiffX = X[i]-X[i-1];
         auxDiffY = Y[i]-Y[i-1];
-        numerador += (auxDiffX*auxDiffY);
-        denFactorX += (auxDiffX*auxDiffX);
-        denFactorY += (auxDiffY*auxDiffY);
+        numeradorCORT += (auxDiffX*auxDiffY);
+        denCORTFactorX += (auxDiffX*auxDiffX);
+        denCORTFactorY += (auxDiffY*auxDiffY);
         accVolX += X[i];
         accVolY += Y[i];
     }
-    double denominador = sqrt(denFactorX) * sqrt(denFactorY);
-    double CORT = numerador / denominador;
+    double denominadorCORT = sqrt(denCORTFactorX) * sqrt(denCORTFactorY);
+    double CORT = numeradorCORT / denominadorCORT;
     double PHI = 2 / (1 + exp(2*CORT));
     double ZETA = PHI * (accVolX - accVolY);
+//    cout << numeradorCORT << "\t" << denominadorCORT << "\t" << denCORTFactorX << "\t" << denCORTFactorY<< endl;
     return ZETA;
 }
 
@@ -132,9 +133,9 @@ int main(int argc, char const *argv[]){
     for(int i=0; i<rows; i++){
         for(int j=0; j<cols; j++){
             matrizZetha[i][j] = ZETA(temporalSeries[i][j], stPromedio);
-            cout << matrizZetha[i][j] << "\t";
+//            cout << matrizZetha[i][j] << "\t";
         }
-        cout << endl;
+//        cout << endl;
     }
 
     // Cálculo de Medida de utocorrelación espacio-temporal
