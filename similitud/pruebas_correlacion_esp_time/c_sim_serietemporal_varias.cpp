@@ -57,6 +57,49 @@ double calc_euclidean(vector<int> actual, vector<int> pred){
     return sqrt(acum);
 }
 
+double ZETA(vector<int> X, vector<int> Y){
+    /*
+        - First CORT is calculated: 
+            Adaptative temporal dissimilarity:
+            covers temporal correlation and data distance
+            Result in range -1 to 1:
+                -1 X and Y share similar growth in rate but opposite in direction
+                1 X and Y have a similiar growth in rate and direction
+                0 different temporal behaviors
+        - Then PHI is applied:
+            tunes the first order correlation coefficient from [-1,1] to [0,2] where
+            phi(0) = 1, phi(1) = 0, and phi(-1) = 2.
+            Then, less value means more similar time series, 
+            and greater values means less similar time series.
+        - Finally is multiplied by the difference of accumulative volumes
+    */
+    double numeradorCORT = 0.0;
+    double denCORTFactorX = 0.0;
+    double denCORTFactorY = 0.0;
+    double auxDiffX, auxDiffY;
+    double accVolX = 0.0 + X[0];
+    double accVolY = 0.0 + X[0];
+    for(int i=1; i <X.size(); i++){
+        auxDiffX = X[i]-X[i-1];
+        auxDiffY = Y[i]-Y[i-1];
+        numeradorCORT += (auxDiffX*auxDiffY);
+        denCORTFactorX += (auxDiffX*auxDiffX);
+        denCORTFactorY += (auxDiffY*auxDiffY);
+        accVolX += X[i];
+        accVolY += Y[i];
+    }
+    double denominadorCORT = sqrt(denCORTFactorX) * sqrt(denCORTFactorY);
+    double CORT = numeradorCORT / denominadorCORT;
+    double PHI = 2 / (1 + exp(2*CORT));
+    double ZETA = PHI * (accVolX - accVolY);
+//    if(denCORTFactorX * denCORTFactorY == 0){
+//        cout << "Denominador en 0: " << auxDiffX << " " << auxDiffY << endl;
+//        cout << print_serie(X) << endl;
+//        cout << print_serie(Y) << endl;
+//    }
+    return ZETA;
+}
+
 int main(int argc, char const *argv[]){
     vector<vector<int>> series = {{1,2,3,4,5,6,7,8,9,10}            // st_00
                                 ,{2,3,4,5,6,7,8,9,10,11}            // st_01
@@ -128,6 +171,18 @@ int main(int argc, char const *argv[]){
         cout << " [" << i << "]\t";
         for(int j=0; j<series.size(); j++){
             cout << calc_mape(series[i], series[j]) << "\t";
+        }
+        cout << endl;
+    }
+    cout << endl;
+
+    // Calculando matriz de comparación por ZETA entre series de tiempo
+    cout << "Comparativa por ZETA entre las series de tiempo:" << endl;
+    cout << header << endl;
+    for(int i=0; i<series.size(); i++){
+        cout << " [" << i << "]\t";
+        for(int j=0; j<series.size(); j++){
+            cout << ZETA(series[i], series[j]) << "\t";
         }
         cout << endl;
     }

@@ -57,6 +57,125 @@ double calc_euclidean(vector<int> actual, vector<int> pred){
     return sqrt(acum);
 }
 
+double ZETA(vector<int> X, vector<double> Y){
+    /*
+        - First CORT is calculated: 
+            Adaptative temporal dissimilarity:
+            covers temporal correlation and data distance
+            Result in range -1 to 1:
+                -1 X and Y share similar growth in rate but opposite in direction
+                1 X and Y have a similiar growth in rate and direction
+                0 different temporal behaviors
+        - Then PHI is applied:
+            tunes the first order correlation coefficient from [-1,1] to [0,2] where
+            phi(0) = 1, phi(1) = 0, and phi(-1) = 2.
+            Then, less value means more similar time series, 
+            and greater values means less similar time series.
+        - Finally is multiplied by the difference of accumulative volumes
+    */
+    double numeradorCORT = 0.0;
+    double denCORTFactorX = 0.0;
+    double denCORTFactorY = 0.0;
+    double auxDiffX, auxDiffY;
+    double accVolX = 0.0 + X[0];
+    double accVolY = 0.0 + X[0];
+    for(int i=1; i <X.size(); i++){
+        auxDiffX = X[i]-X[i-1];
+        auxDiffY = Y[i]-Y[i-1];
+        numeradorCORT += (auxDiffX*auxDiffY);
+        denCORTFactorX += (auxDiffX*auxDiffX);
+        denCORTFactorY += (auxDiffY*auxDiffY);
+        accVolX += X[i];
+        accVolY += Y[i];
+    }
+    double denominadorCORT = sqrt(denCORTFactorX) * sqrt(denCORTFactorY);
+    double CORT = numeradorCORT / denominadorCORT;
+    double PHI = 2 / (1 + exp(2*CORT));
+    double ZETA = PHI * (accVolX - accVolY);
+//    if(denCORTFactorX * denCORTFactorY == 0){
+//        cout << "Denominador en 0: " << auxDiffX << " " << auxDiffY << endl;
+//        cout << print_serie(X) << endl;
+//        cout << print_serie(Y) << endl;
+//    }
+    return ZETA;
+}
+
+void indiceAET(vector<vector<vector<int>>> grilla){
+    int rows = grilla.size();
+    int cols = grilla[0].size();
+    int lenTempSerie = grilla[0][0].size();
+    //  Calculando serie temporal promedio
+    vector<double> stPromedio(lenTempSerie);
+    for(int i=0; i<lenTempSerie; i++){
+        double acum = 0.0;
+        for(int f=0; f<rows; f++){
+            for(int c=0; c<cols; c++){
+                acum += grilla[f][c][i];
+            }
+        }
+        stPromedio[i] = (acum / (rows*cols));
+    }
+    //  Marcando series temporales fijas: todos sus elementos iguales
+    vector<vector<bool>> serieFija(rows, vector<bool>(cols, true));
+    for(int f=0; f<rows; f++){
+        for(int c=0; c<cols; c++){
+            for(int i=1; i<lenTempSerie; i++){
+                serieFija[f][c] = serieFija[f][c] && (grilla[f][c][i] == grilla[f][c][i-1]);
+            }
+        }
+    }
+    
+    vector<vector<double>> matrizZetha(rows, vector<double>(cols));
+    for(int i=0; i<rows; i++){
+        for(int j=0; j<cols; j++){
+            matrizZetha[i][j] = ZETA(grilla[i][j], stPromedio);
+//            cout << matrizZetha[i][j] << "\t";
+        }
+//        cout << endl;
+    }
+
+    // Cálculo de Medida de utocorrelación espacio-temporal
+    int sumaW = 0;
+    int cantFijas = 0;
+    double numerador = 0.0;
+    double denominador = 0.0;
+    for(int f1 = 0; f1 < rows; f1++){
+        for(int c1 = 0; c1 < cols; c1++) {
+
+            if(!serieFija[f1][c1]){
+                for(int f2=(f1-1); f2<rows && f2<=(f1+1); f2++){
+                    for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
+                        double w = 0;
+                        double factor;
+                        if(!serieFija[f2][c2] && (f1 != f2 || c1 != c2) && f2 >= 0 && c2 >= 0){
+    //                        cout << "\tRevisando celda: " << print_celda(f2, c2, stPromedio[f2][c2]);
+                            // Para la contigüidad tipo reina las celdas vecinas que tocan
+                            // toman un valor de 1
+                            w = 1;
+                            sumaW += w;
+                            factor = w * matrizZetha[f1][c1] * matrizZetha[f2][c2];
+    //                        cout << " con w=" << w << " xi=" << diff_i_promedio << " y xj " << xxx << " y resultado " << aux <<endl;
+                            numerador += factor;
+                        }
+                    }
+                }
+                denominador += (matrizZetha[f1][c1] * matrizZetha[f1][c1]);
+            }else{
+                cantFijas++;
+            }
+        }
+    }
+//    cout << "totalCeldas: " << (rows*cols) << endl;
+//    cout << "cantFijas: " << cantFijas << endl;
+//    cout << "sumaW: " << sumaW << endl;
+//    cout << "numerador: " << numerador << endl;
+//    cout << "denominador: " << denominador << endl;
+    double moran_I = (((rows*cols) + 0.0) / sumaW) * (numerador / denominador);
+//    cout << argv[1] << " STA = " << moran_I << endl;
+    cout << "IAET\ttotalCeldas\tceldasFijas\ttotalW" << endl;
+    cout << moran_I << "\t" << (rows*cols) << "\t" << cantFijas << "\t" << sumaW << endl;
+}
+
 double moranI_sumadiferencias(vector<vector<vector<int>>> grilla){
     int rows = grilla.size();
     int cols = grilla[0].size();
@@ -136,6 +255,7 @@ int main(int argc, char const *argv[]){
     int cols = 8;
     vector<vector<vector<int>>> grilla(rows, vector<vector<int>>(cols));
 
+    cout << " +++++++++++++++++++++++++ " << endl;
     cout << "Tablero en forma tradicional" << endl;
     for(int i=0; i<rows; i++){
         for(int j=0; j<cols; j++){
@@ -150,7 +270,9 @@ int main(int argc, char const *argv[]){
         cout << endl;
     }
     cout << "Moran's I por diferencias acumuladas:" << moranI_sumadiferencias(grilla) << endl;
+    indiceAET(grilla);
 
+    cout << " +++++++++++++++++++++++++ " << endl;
     cout << "Tablero en mitades" << endl;
     for(int i=0; i<rows; i++){
         for(int j=0; j<cols; j++){
@@ -165,7 +287,9 @@ int main(int argc, char const *argv[]){
         cout << endl;
     }
     cout << "Moran's I por diferencias acumuladas:" << moranI_sumadiferencias(grilla) << endl;
+    indiceAET(grilla);
 
+    cout << " +++++++++++++++++++++++++ " << endl;
     cout << "Tablero en cuartos" << endl;
     for(int i=0; i<rows; i++){
         for(int j=0; j<cols; j++){
@@ -190,6 +314,7 @@ int main(int argc, char const *argv[]){
         cout << endl;
     }
     cout << "Moran's I por diferencias acumuladas:" << moranI_sumadiferencias(grilla) << endl;
+    indiceAET(grilla);
 
     return 0;
 }
