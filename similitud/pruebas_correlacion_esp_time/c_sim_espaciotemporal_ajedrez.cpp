@@ -141,13 +141,12 @@ void indiceAET(vector<vector<vector<int>>> grilla){
     double denominador = 0.0;
     for(int f1 = 0; f1 < rows; f1++){
         for(int c1 = 0; c1 < cols; c1++) {
-
             if(!serieFija[f1][c1]){
                 for(int f2=(f1-1); f2<rows && f2<=(f1+1); f2++){
                     for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
-                        double w = 0;
+                        double w = 0.0;
                         double factor;
-                        if(!serieFija[f2][c2] && (f1 != f2 || c1 != c2) && f2 >= 0 && c2 >= 0){
+                        if((f1 != f2 || c1 != c2) && f2 >= 0 && c2 >= 0 && !serieFija[f2][c2]){
     //                        cout << "\tRevisando celda: " << print_celda(f2, c2, stPromedio[f2][c2]);
                             // Para la contigüidad tipo reina las celdas vecinas que tocan
                             // toman un valor de 1

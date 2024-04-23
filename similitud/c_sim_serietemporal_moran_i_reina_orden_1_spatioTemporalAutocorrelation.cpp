@@ -163,7 +163,7 @@ int main(int argc, char const *argv[]){
                     for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
                         double w = 0;
                         double factor;
-                        if(!serieFija[f2][c2] && (f1 != f2 || c1 != c2) && f2 >= 0 && c2 >= 0){
+                        if((f1 != f2 || c1 != c2) && f2 >= 0 && c2 >= 0 && !serieFija[f2][c2]){
     //                        cout << "\tRevisando celda: " << print_celda(f2, c2, stPromedio[f2][c2]);
                             // Para la contigüidad tipo reina las celdas vecinas que tocan
                             // toman un valor de 1
