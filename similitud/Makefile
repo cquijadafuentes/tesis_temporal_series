@@ -12,6 +12,7 @@ BINS=c_distribucion_resultados\
 		c_sim_serietemporal_moran_i_reina_orden_1_mediaST\
 		c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation\
 		c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST\
+		c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas\
 		c_sim_serietemporal_moran_i_reina_orden_2_distEucST\
 		c_sim_temporal_series_euc\
 		c_sim_temporal_series_mape\
@@ -47,6 +48,9 @@ c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation:
 
 c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST:
 	$(CPP) $(PREFLAGS) -o c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST.cpp $(POSFLAGS)
+
+c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas:
+	$(CPP) $(PREFLAGS) -o c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas.cpp $(POSFLAGS)
 
 c_sim_serietemporal_moran_i_reina_orden_2_distEucST:
 	$(CPP) $(PREFLAGS) -o c_sim_serietemporal_moran_i_reina_orden_2_distEucST c_sim_serietemporal_moran_i_reina_orden_2_distEucST.cpp $(POSFLAGS)

@@ -169,7 +169,8 @@ void indiceAET(vector<vector<vector<int>>> grilla){
 //    cout << "sumaW: " << sumaW << endl;
 //    cout << "numerador: " << numerador << endl;
 //    cout << "denominador: " << denominador << endl;
-    double moran_I = (((rows*cols) + 0.0) / sumaW) * (numerador / denominador);
+    double N = (rows*cols) + 0.0 - cantFijas;
+    double moran_I = (N / sumaW) * (numerador / denominador);
 //    cout << argv[1] << " STA = " << moran_I << endl;
     cout << "IAET\ttotalCeldas\tceldasFijas\ttotalW" << endl;
     cout << moran_I << "\t" << (rows*cols) << "\t" << cantFijas << "\t" << sumaW << endl;

@@ -187,7 +187,8 @@ int main(int argc, char const *argv[]){
 //    cout << "sumaW: " << sumaW << endl;
 //    cout << "numerador: " << numerador << endl;
 //    cout << "denominador: " << denominador << endl;
-    double IAET = (((rows*cols) + 0.0) / sumaW) * (numerador / denominador);
+    double N = rows*cols + 0.0 - cantFijas;
+    double IAET = (N / sumaW) * (numerador / denominador);
 //    cout << argv[1] << " STA = " << IAET << endl;
     cout << "dataset\tIAET\ttotalCeldas\tceldasFijas\ttotalW" << endl;
     cout << argv[1] << "\t" << IAET << "\t" << (rows*cols) << "\t" << cantFijas << "\t" << sumaW << endl;

@@ -163,7 +163,8 @@ int main(int argc, char const *argv[]){
 //    cout << "sumaW: " << sumaW << endl;
 //    cout << "numerador: " << numerador << endl;
 //    cout << "denominador: " << denominador << endl;
-    double moran_I = ((rows*cols + 0.0) / sumaW) * ((numerador + 0.0) / denominador);
+    double N = rows*cols + 0.0 - cantFijas;
+    double moran_I = (N / sumaW) * ((numerador + 0.0) / denominador);
     cout << "dataset\tmoranIdiff\ttotalCeldas\tceldasFijas\ttotalW" << endl;
     cout << argv[1] << "\t" << moran_I << "\t" << (rows*cols) << "\t" << cantFijas << "\t" << sumaW << endl;
     return 0;
