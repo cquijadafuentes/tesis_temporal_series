@@ -132,6 +132,7 @@ int main(int argc, char const *argv[]){
         }
         stPromedio[i] = (acum / (rows*cols));
     }
+    
     //  Marcando series temporales fijas: todos sus elementos iguales
     vector<vector<bool>> serieFija(rows, vector<bool>(cols, true));
     for(int f=0; f<rows; f++){
@@ -186,9 +187,9 @@ int main(int argc, char const *argv[]){
 //    cout << "sumaW: " << sumaW << endl;
 //    cout << "numerador: " << numerador << endl;
 //    cout << "denominador: " << denominador << endl;
-    double moran_I = (((rows*cols) + 0.0) / sumaW) * (numerador / denominador);
-//    cout << argv[1] << " STA = " << moran_I << endl;
-    cout << "dataset\tmoranI\ttotalCeldas\tceldasFijas\ttotalW" << endl;
-    cout << argv[1] << "\t" << moran_I << "\t" << (rows*cols) << "\t" << cantFijas << "\t" << sumaW << endl;
+    double IAET = (((rows*cols) + 0.0) / sumaW) * (numerador / denominador);
+//    cout << argv[1] << " STA = " << IAET << endl;
+    cout << "dataset\tIAET\ttotalCeldas\tceldasFijas\ttotalW" << endl;
+    cout << argv[1] << "\t" << IAET << "\t" << (rows*cols) << "\t" << cantFijas << "\t" << sumaW << endl;
     return 0;
 }
