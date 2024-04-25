@@ -1,0 +1,90 @@
+Iniciado en: 2024/04/24 15:38:56
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation ./listados_por_semana/APCP_NLDAS_week_01.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+./listados_por_semana/APCP_NLDAS_week_01.txt	0.967917	103936	27002	608036
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation ./listados_por_semana/CAPE_NLDAS_week_01.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+./listados_por_semana/CAPE_NLDAS_week_01.txt	0.718275	103936	26591	610732
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation ./listados_por_semana/CONV_NLDAS_week_01.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+./listados_por_semana/CONV_NLDAS_week_01.txt	0.947419	103936	47986	434526
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation ./listados_por_semana/DLWRF_NLDAS_week_01.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+./listados_por_semana/DLWRF_NLDAS_week_01.txt	0.938855	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation ./listados_por_semana/DSWRF_NLDAS_week_01.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+./listados_por_semana/DSWRF_NLDAS_week_01.txt	0.977695	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation ./listados_por_semana/PEVAP_NLDAS_week_01.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+./listados_por_semana/PEVAP_NLDAS_week_01.txt	0.924895	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation ./listados_por_semana/PRES_NLDAS_week_01.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+./listados_por_semana/PRES_NLDAS_week_01.txt	0.975611	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation ./listados_por_semana/SPFH_NLDAS_week_01.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+./listados_por_semana/SPFH_NLDAS_week_01.txt	0.925613	103936	89448	108650
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation ./listados_por_semana/TMP_NLDAS_week_01.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+./listados_por_semana/TMP_NLDAS_week_01.txt	0.925854	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation ./listados_por_semana/UGRD_NLDAS_week_01.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+./listados_por_semana/UGRD_NLDAS_week_01.txt	0.996902	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation ./listados_por_semana/VGRD_NLDAS_week_01.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+./listados_por_semana/VGRD_NLDAS_week_01.txt	0.999977	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation APCP_NLDAS_FORA0125_H.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+APCP_NLDAS_FORA0125_H.txt	0.979284	103936	23607	637070
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation CAPE_NLDAS_FORA0125_H.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+CAPE_NLDAS_FORA0125_H.txt	0.909357	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation CONVfrac_NLDAS_FORA0125_H.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+CONVfrac_NLDAS_FORA0125_H.txt	0.964976	103936	26465	610732
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation DLWRF_NLDAS_FORA0125_H.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+DLWRF_NLDAS_FORA0125_H.txt	0.942292	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation DSWRF_NLDAS_FORA0125_H.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+DSWRF_NLDAS_FORA0125_H.txt	0.977335	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation PEVAP_NLDAS_FORA0125_H.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+PEVAP_NLDAS_FORA0125_H.txt	0.960998	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation PRES_NLDAS_FORA0125_H.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+PRES_NLDAS_FORA0125_H.txt	0.976017	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation SPFH_NLDAS_FORA0125_H.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+SPFH_NLDAS_FORA0125_H.txt	0.972764	103936	78353	195410
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation TMP_NLDAS_FORA0125_H.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+TMP_NLDAS_FORA0125_H.txt	0.939243	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation UGRD_NLDAS_FORA0125_H.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+UGRD_NLDAS_FORA0125_H.txt	0.996152	103936	23497	638170
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_spatioTemporalAutocorrelation VGRD_NLDAS_FORA0125_H.txt
+dataset	IAET	totalCeldas	celdasFijas	totalW
+VGRD_NLDAS_FORA0125_H.txt	0.999759	103936	23497	638170
+ 
+Finalizado en: 2024/04/24 15:46:12

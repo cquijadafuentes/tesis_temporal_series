@@ -1,0 +1,90 @@
+Iniciado en: 2024/04/24 15:38:35
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas ./listados_por_semana/APCP_NLDAS_week_01.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+./listados_por_semana/APCP_NLDAS_week_01.txt	0.961796	103936	27002	613482
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas ./listados_por_semana/CAPE_NLDAS_week_01.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+./listados_por_semana/CAPE_NLDAS_week_01.txt	0.736924	103936	26591	616740
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas ./listados_por_semana/CONV_NLDAS_week_01.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+./listados_por_semana/CONV_NLDAS_week_01.txt	0.937782	103936	47986	446539
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas ./listados_por_semana/DLWRF_NLDAS_week_01.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+./listados_por_semana/DLWRF_NLDAS_week_01.txt	0.931744	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas ./listados_por_semana/DSWRF_NLDAS_week_01.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+./listados_por_semana/DSWRF_NLDAS_week_01.txt	0.963807	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas ./listados_por_semana/PEVAP_NLDAS_week_01.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+./listados_por_semana/PEVAP_NLDAS_week_01.txt	0.958151	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas ./listados_por_semana/PRES_NLDAS_week_01.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+./listados_por_semana/PRES_NLDAS_week_01.txt	0.959898	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas ./listados_por_semana/SPFH_NLDAS_week_01.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+./listados_por_semana/SPFH_NLDAS_week_01.txt	0.816751	103936	89448	115727
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas ./listados_por_semana/TMP_NLDAS_week_01.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+./listados_por_semana/TMP_NLDAS_week_01.txt	0.953871	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas ./listados_por_semana/UGRD_NLDAS_week_01.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+./listados_por_semana/UGRD_NLDAS_week_01.txt	0.97982	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas ./listados_por_semana/VGRD_NLDAS_week_01.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+./listados_por_semana/VGRD_NLDAS_week_01.txt	0.987753	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas APCP_NLDAS_FORA0125_H.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+APCP_NLDAS_FORA0125_H.txt	0.975398	103936	23607	640561
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas CAPE_NLDAS_FORA0125_H.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+CAPE_NLDAS_FORA0125_H.txt	0.941874	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas CONVfrac_NLDAS_FORA0125_H.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+CONVfrac_NLDAS_FORA0125_H.txt	0.954237	103936	26465	617841
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas DLWRF_NLDAS_FORA0125_H.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+DLWRF_NLDAS_FORA0125_H.txt	0.946603	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas DSWRF_NLDAS_FORA0125_H.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+DSWRF_NLDAS_FORA0125_H.txt	0.95502	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas PEVAP_NLDAS_FORA0125_H.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+PEVAP_NLDAS_FORA0125_H.txt	0.974156	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas PRES_NLDAS_FORA0125_H.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+PRES_NLDAS_FORA0125_H.txt	0.959889	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas SPFH_NLDAS_FORA0125_H.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+SPFH_NLDAS_FORA0125_H.txt	0.90416	103936	78353	204448
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas TMP_NLDAS_FORA0125_H.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+TMP_NLDAS_FORA0125_H.txt	0.959516	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas UGRD_NLDAS_FORA0125_H.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+UGRD_NLDAS_FORA0125_H.txt	0.979094	103936	23497	641441
+ 
+ +++++++++ Ejecutando: ./c_sim_serietemporal_moran_i_reina_orden_1_sumadiffST_sinSeriesFijas VGRD_NLDAS_FORA0125_H.txt
+dataset	moranIdiff	totalCeldas	celdasFijas	totalW
+VGRD_NLDAS_FORA0125_H.txt	0.983586	103936	23497	641441
+ 
+Finalizado en: 2024/04/24 15:45:19

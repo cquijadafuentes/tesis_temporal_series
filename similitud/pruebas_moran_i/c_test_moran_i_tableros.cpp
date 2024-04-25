@@ -112,7 +112,9 @@ int main(int argc, char const *argv[]){
                 }
             }
             denominador += (diff_i_promedio * diff_i_promedio);
-            cout << "\tTotal: " << auxDenom << endl;
+            if(verbose){
+                cout << "\tTotal: " << auxDenom << endl;
+            }
         }
     }
     if(verbose){
