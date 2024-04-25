@@ -178,10 +178,10 @@ void indiceAET(vector<vector<vector<int>>> grilla){
 //    cout << "numerador: " << numerador << endl;
 //    cout << "denominador: " << denominador << endl;
     double N = (rows*cols) + 0.0 - cantFijas;
-    double moran_I = (N / sumaW) * (numerador / denominador);
-//    cout << argv[1] << " STA = " << moran_I << endl;
+    double IAET = (N / sumaW) * (numerador / denominador);
+//    cout << argv[1] << " STA = " << IAET << endl;
     cout << "IAET\ttotalCeldas\tceldasFijas\ttotalW" << endl;
-    cout << moran_I << "\t" << (rows*cols) << "\t" << cantFijas << "\t" << sumaW << endl;
+    cout << IAET << "\t" << (rows*cols) << "\t" << cantFijas << "\t" << sumaW << endl;
 }
 
 double moranI_sumadiferencias(vector<vector<vector<int>>> grilla){
@@ -254,7 +254,7 @@ int main(int argc, char const *argv[]){
     //{20,19,18,17,16,15,14,13,12,11};  // st_14
     //{20,18,16,14,12,10,8,6,4,2};      // st_15
     vector<int> serieA = {1,2,3,4,5,6,7,8,9,10};
-    vector<int> serieB = {11,12,13,14,15,16,17,18,19,20};
+    vector<int> serieB = {20,19,18,17,16,15,14,13,13,13};
 
     cout << "Serie A: " << print_serie(serieA) << endl;
     cout << "Serie B: " << print_serie(serieB) << endl;
