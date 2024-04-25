@@ -254,7 +254,7 @@ int main(int argc, char const *argv[]){
     //{20,19,18,17,16,15,14,13,12,11};  // st_14
     //{20,18,16,14,12,10,8,6,4,2};      // st_15
     vector<int> serieA = {1,2,3,4,5,6,7,8,9,10};
-    vector<int> serieB = {20,19,18,17,16,15,14,13,13,13};
+    vector<int> serieB = {11,12,13,14,15,16,17,18,19,20};
 
     cout << "Serie A: " << print_serie(serieA) << endl;
     cout << "Serie B: " << print_serie(serieB) << endl;
