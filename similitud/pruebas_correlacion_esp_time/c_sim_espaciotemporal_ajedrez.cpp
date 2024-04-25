@@ -5,6 +5,14 @@
 
 using namespace std;
 
+string print_serie(vector<double> v){
+    string s = to_string(v[0]);
+    for(int i=1; i<v.size(); i++){
+        s += " " + to_string(v[i]);
+    }
+    return s;
+}
+
 string print_serie(vector<int> v){
     string s = to_string(v[0]);
     for(int i=1; i<v.size(); i++){
@@ -92,11 +100,11 @@ double ZETA(vector<int> X, vector<double> Y){
     double CORT = numeradorCORT / denominadorCORT;
     double PHI = 2 / (1 + exp(2*CORT));
     double ZETA = PHI * (accVolX - accVolY);
-//    if(denCORTFactorX * denCORTFactorY == 0){
-//        cout << "Denominador en 0: " << auxDiffX << " " << auxDiffY << endl;
-//        cout << print_serie(X) << endl;
-//        cout << print_serie(Y) << endl;
-//    }
+    if(denCORTFactorX * denCORTFactorY == 0){
+        cout << "Denominador en 0: " << auxDiffX << " " << auxDiffY << endl;
+        cout << print_serie(X) << endl;
+        cout << print_serie(Y) << endl;
+    }
     return ZETA;
 }
 
@@ -246,7 +254,7 @@ int main(int argc, char const *argv[]){
     //{20,19,18,17,16,15,14,13,12,11};  // st_14
     //{20,18,16,14,12,10,8,6,4,2};      // st_15
     vector<int> serieA = {11,12,13,14,15,16,17,18,19,20};
-    vector<int> serieB = {1,2,3,4,5,6,7,8,9,10};
+    vector<int> serieB = {10,9,8,7,6,5,4,3,3,3};
 
     cout << "Serie A: " << print_serie(serieA) << endl;
     cout << "Serie B: " << print_serie(serieB) << endl;

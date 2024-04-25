@@ -1,0 +1,41 @@
+Serie A: 11 12 13 14 15 16 17 18 19 20
+Serie B: 10 9 8 7 6 5 4 3 2 1
+ +++++++++++++++++++++++++ 
+Tablero en forma tradicional
+A B A B A B A B 
+B A B A B A B A 
+A B A B A B A B 
+B A B A B A B A 
+A B A B A B A B 
+B A B A B A B A 
+A B A B A B A B 
+B A B A B A B A 
+Moran's I por diferencias acumuladas:-0.0666667
+IAET	totalCeldas	celdasFijas	totalW
+-nan	64	0	420
+ +++++++++++++++++++++++++ 
+Tablero en mitades
+A A A A A A A A 
+A A A A A A A A 
+A A A A A A A A 
+A A A A A A A A 
+B B B B B B B B 
+B B B B B B B B 
+B B B B B B B B 
+B B B B B B B B 
+Moran's I por diferencias acumuladas:0.790476
+IAET	totalCeldas	celdasFijas	totalW
+-nan	64	0	420
+ +++++++++++++++++++++++++ 
+Tablero en cuartos
+A A A A B B B B 
+A A A A B B B B 
+A A A A B B B B 
+A A A A B B B B 
+B B B B A A A A 
+B B B B A A A A 
+B B B B A A A A 
+B B B B A A A A 
+Moran's I por diferencias acumuladas:0.619048
+IAET	totalCeldas	celdasFijas	totalW
+-nan	64	0	420
