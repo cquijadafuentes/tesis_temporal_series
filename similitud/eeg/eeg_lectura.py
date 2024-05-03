@@ -107,10 +107,13 @@ print("--------------------------------------")
 
 print(mat['EEG'][0]['data'][0].shape)
 print("data dtype:", mat['EEG'][0]['data'][0].dtype)
-print("data[0]: ")
+print("data[0]:")
 for i in range(100):
-  print(mat['EEG'][0]['data'][0][0][i])
-
+  print("\t",mat['EEG'][0]['data'][0][0][i])
+print("chanlocs shape:",mat['EEG'][0]['chanlocs'][0][0].shape)
+print("chanlocs[0] shape:",mat['EEG'][0]['chanlocs'][0][0][0].shape)
+for i in range(66):
+  print("\t",i,"chanloc tag:",mat['EEG'][0]['chanlocs'][0][0][i][0])
 # Print the type of the value corresponding to the key 'EEG'
 print(type(mat['EEG']))
 
