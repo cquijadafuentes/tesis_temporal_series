@@ -10,5 +10,5 @@ filename=${1}
 
 while read p; do
   echo "${p}"
-  python3 eeg_data_to_float ${p}.mat > ${p}_float.txt
+  python3 eeg_data_to_float.py ${p}.mat > ${p}_float.txt
 done < "${filename}"
