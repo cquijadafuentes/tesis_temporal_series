@@ -14,3 +14,4 @@ c_test_moran_i
 c_test_printFirstRow_t0
 c_test_sim_temporal_euc
 c_test_sim_temporal_euc_random
+eeg/eeg_spatio_temporal_autocorrelation
