@@ -44,7 +44,7 @@ double promedioST(vector<int> x){
     return acum;
 }
 
-double ZETA(vector<int> X, vector<double> Y){
+double ZETA(vector<double> X, vector<double> Y){
     /*
         - First CORT is calculated: 
             Adaptative temporal dissimilarity:
@@ -94,51 +94,60 @@ int main(int argc, char const *argv[]){
         return 0;
     }
     cout << "DATASET: " << argv[1] << endl;
-    ifstream eegInput(argv[1], ifstream::in);
+    ifstream eegDataIn(argv[1], ifstream::in);
+    if(eegDataIn.fail()){
+        cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
+        return -1;
+    }
     int electrodos, muestras;
-    eegInput >> electrodos >> muestras;
+    eegDataIn >> electrodos >> muestras;
+    cout << electrodos << " - " << muestras << endl;
     vector<vector<double>> eeg(electrodos, vector<double>(muestras));
     for(int i=0; i<electrodos; i++){
         for(int j=0; j<muestras; j++){
-            eegInput >> eeg[i][j];
+            eegDataIn >> eeg[i][j];
         }
     }
-    eegInput.close();
-    cout << eeg[0][0] << endl;
+    eegDataIn.close();
 
-    return 0;
-
-    /*
+    cout << "Matrix W: " << argv[2] << endl;
+    ifstream eegMatrixIn(argv[2], ifstream::in);
+    if(eegMatrixIn.fail()){
+        cout << "Error! Lectura de " << argv[2] << " fallida." << endl;
+        return -1;
+    }
+    int matrixIds;
+    eegMatrixIn >> matrixIds;
+    cout << matrixIds << endl;
+    vector<vector<short>> matrixW(matrixIds, vector<short>(matrixIds));
+    for(int i=0; i<matrixIds; i++){
+        for(int j=0; j<matrixIds; j++){
+            eegMatrixIn >> matrixW[i][j];
+        }
+    }
+    eegMatrixIn.close();
 
     //  Calculando serie temporal promedio
-    vector<double> stPromedio(lenTempSerie);
-    for(int i=0; i<lenTempSerie; i++){
+    vector<double> stPromedio(muestras);
+    for(int m=0; m<muestras; m++){
         double acum = 0.0;
-        for(int f=0; f<rows; f++){
-            for(int c=0; c<cols; c++){
-                acum += temporalSeries[f][c][i];
-            }
+        for(int e=0; e<electrodos; e++){
+            acum += eeg[e][m];
         }
-        stPromedio[i] = (acum / (rows*cols));
+        stPromedio[m] = (acum / electrodos);
     }
-    
+
     //  Marcando series temporales fijas: todos sus elementos iguales
-    vector<vector<bool>> serieFija(rows, vector<bool>(cols, true));
-    for(int f=0; f<rows; f++){
-        for(int c=0; c<cols; c++){
-            for(int i=1; i<lenTempSerie; i++){
-                serieFija[f][c] = serieFija[f][c] && (temporalSeries[f][c][i] == temporalSeries[f][c][i-1]);
-            }
+    vector<bool> serieFija(electrodos, true);
+    for(int e=0; e<electrodos; e++){
+        for(int m=1; m<muestras; m++){
+            serieFija[e] = serieFija[e] && (eeg[e][m] == eeg[e][m-1]);
         }
     }
     
-    vector<vector<double>> matrizZetha(rows, vector<double>(cols));
-    for(int i=0; i<rows; i++){
-        for(int j=0; j<cols; j++){
-            matrizZetha[i][j] = ZETA(temporalSeries[i][j], stPromedio);
-//            cout << matrizZetha[i][j] << "\t";
-        }
-//        cout << endl;
+    vector<double> zethaValues(electrodos);
+    for(int e=0; e<electrodos; e++){
+        zethaValues[e] = ZETA(eeg[e], stPromedio);
     }
 
     // Cálculo de Medida de utocorrelación espacio-temporal
@@ -146,29 +155,21 @@ int main(int argc, char const *argv[]){
     int cantFijas = 0;
     double numerador = 0.0;
     double denominador = 0.0;
-    for(int f1 = 0; f1 < rows; f1++){
-        for(int c1 = 0; c1 < cols; c1++) {
-            if(!serieFija[f1][c1]){
-                for(int f2=(f1-1); f2<rows && f2<=(f1+1); f2++){
-                    for (int c2=(c1-1); c2<cols && c2<=(c1+1); c2++){
-                        double w = 0;
-                        double factor;
-                        if((f1 != f2 || c1 != c2) && f2 >= 0 && c2 >= 0 && !serieFija[f2][c2]){
-    //                        cout << "\tRevisando celda: " << print_celda(f2, c2, stPromedio[f2][c2]);
-                            // Para la contigüidad tipo reina las celdas vecinas que tocan
-                            // toman un valor de 1
-                            w = 1;
-                            sumaW += w;
-                            factor = w * matrizZetha[f1][c1] * matrizZetha[f2][c2];
-    //                        cout << " con w=" << w << " xi=" << diff_i_promedio << " y xj " << xxx << " y resultado " << aux <<endl;
-                            numerador += factor;
-                        }
-                    }
+    for(int e=0; e<electrodos; e++){
+        if(!serieFija[e]){
+            for(int j=0; j<electrodos; j++){
+                double w = 0;
+                double factor;
+                if(matrixW[e][j] == 1 && !serieFija[j]){
+                    w = 1;
+                    sumaW += w;
+                    factor = w * zethaValues[e] * zethaValues[j];
+                    numerador += factor;
                 }
-                denominador += (matrizZetha[f1][c1] * matrizZetha[f1][c1]);
-            }else{
-                cantFijas++;
             }
+            denominador += (zethaValues[e] * zethaValues[e]);
+        }else{
+            cantFijas++;
         }
     }
 //    cout << "totalCeldas: " << (rows*cols) << endl;
@@ -176,12 +177,10 @@ int main(int argc, char const *argv[]){
 //    cout << "sumaW: " << sumaW << endl;
 //    cout << "numerador: " << numerador << endl;
 //    cout << "denominador: " << denominador << endl;
-    double N = rows*cols + 0.0 - cantFijas;
+    double N = electrodos + 0.0 - cantFijas;
     double IAET = (N / sumaW) * (numerador / denominador);
 //    cout << argv[1] << " STA = " << IAET << endl;
     cout << "dataset\tIAET\ttotalCeldas\tceldasFijas\ttotalW" << endl;
-    cout << argv[1] << "\t" << IAET << "\t" << (rows*cols) << "\t" << cantFijas << "\t" << sumaW << endl;
+    cout << argv[1] << "\t" << IAET << "\t" << (electrodos) << "\t" << cantFijas << "\t" << sumaW << endl;
     return 0;
-
-    */
 }
