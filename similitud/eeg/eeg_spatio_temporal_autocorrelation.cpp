@@ -177,7 +177,9 @@ int main(int argc, char const *argv[]){
 //    cout << "sumaW: " << sumaW << endl;
 //    cout << "numerador: " << numerador << endl;
 //    cout << "denominador: " << denominador << endl;
-    double N = electrodos + 0.0 - cantFijas;
+
+    // El valor N depende en este caso de los sensores considerados en la matriz de pesos
+    double N = 58.0 - cantFijas;    
     double IAET = (N / sumaW) * (numerador / denominador);
 //    cout << argv[1] << " STA = " << IAET << endl;
     cout << "dataset\tIAET\ttotalCeldas\tceldasFijas\ttotalW" << endl;
