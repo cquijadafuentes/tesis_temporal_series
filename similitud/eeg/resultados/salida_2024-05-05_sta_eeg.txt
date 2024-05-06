@@ -1,0 +1,710 @@
+Iniciado en: 2024/05/05 12:46:17
+DATASET: 507_Depression_REST_float.txt
+66 - 250734
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+507_Depression_REST_float.txt	0.0216904	66	0	371
+DATASET: 508_Depression_REST_float.txt
+66 - 244934
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+508_Depression_REST_float.txt	0.254606	66	0	371
+DATASET: 509_Depression_REST_float.txt
+66 - 253454
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+509_Depression_REST_float.txt	0.17917	66	0	371
+DATASET: 510_Depression_REST_float.txt
+66 - 263834
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+510_Depression_REST_float.txt	0.129274	66	0	371
+DATASET: 511_Depression_REST_float.txt
+67 - 245274
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+511_Depression_REST_float.txt	0.154194	67	0	371
+DATASET: 512_Depression_REST_float.txt
+67 - 262994
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+512_Depression_REST_float.txt	0.146355	67	0	371
+DATASET: 513_Depression_REST_float.txt
+66 - 249234
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+513_Depression_REST_float.txt	0.167048	66	0	371
+DATASET: 514_Depression_REST_float.txt
+67 - 247574
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+514_Depression_REST_float.txt	0.133806	67	0	371
+DATASET: 515_Depression_REST_float.txt
+66 - 249934
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+515_Depression_REST_float.txt	0.130336	66	0	371
+DATASET: 516_Depression_REST_float.txt
+66 - 249874
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+516_Depression_REST_float.txt	0.152229	66	0	371
+DATASET: 517_Depression_REST_float.txt
+67 - 262934
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+517_Depression_REST_float.txt	0.0525533	67	0	371
+DATASET: 518_Depression_REST_float.txt
+67 - 262810
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+518_Depression_REST_float.txt	0.0784142	67	0	371
+DATASET: 519_Depression_REST_float.txt
+67 - 268274
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+519_Depression_REST_float.txt	0.130484	67	0	371
+DATASET: 520_Depression_REST_float.txt
+67 - 251934
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+520_Depression_REST_float.txt	0.0741237	67	0	371
+DATASET: 521_Depression_REST_float.txt
+66 - 255390
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+521_Depression_REST_float.txt	0.202051	66	0	371
+DATASET: 522_Depression_REST_float.txt
+67 - 215744
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+522_Depression_REST_float.txt	0.0817147	67	0	371
+DATASET: 523_Depression_REST_float.txt
+67 - 251194
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+523_Depression_REST_float.txt	0.184275	67	0	371
+DATASET: 524_Depression_REST_float.txt
+67 - 252014
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+524_Depression_REST_float.txt	0.259605	67	0	371
+DATASET: 525_Depression_REST_float.txt
+66 - 246934
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+525_Depression_REST_float.txt	0.155822	66	0	371
+DATASET: 526_Depression_REST_float.txt
+66 - 251274
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+526_Depression_REST_float.txt	0.0775407	66	0	371
+DATASET: 527_Depression_REST_float.txt
+66 - 245144
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+527_Depression_REST_float.txt	0.177068	66	0	371
+DATASET: 528_Depression_REST_float.txt
+66 - 246874
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+528_Depression_REST_float.txt	0.303279	66	0	371
+DATASET: 529_Depression_REST_float.txt
+67 - 256814
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+529_Depression_REST_float.txt	0.0691532	67	0	371
+DATASET: 530_Depression_REST_float.txt
+67 - 232420
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+530_Depression_REST_float.txt	0.0519694	67	0	371
+DATASET: 531_Depression_REST_float.txt
+66 - 256320
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+531_Depression_REST_float.txt	0.00611712	66	0	371
+DATASET: 532_Depression_REST_float.txt
+67 - 248154
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+532_Depression_REST_float.txt	0.0791491	67	0	371
+DATASET: 533_Depression_REST_float.txt
+66 - 245854
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+533_Depression_REST_float.txt	0.087932	66	0	371
+DATASET: 534_Depression_REST_float.txt
+66 - 246634
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+534_Depression_REST_float.txt	0.0445009	66	0	371
+DATASET: 535_Depression_REST_float.txt
+67 - 248706
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+535_Depression_REST_float.txt	0.196836	67	0	371
+DATASET: 536_Depression_REST_float.txt
+67 - 226750
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+536_Depression_REST_float.txt	0.198156	67	0	371
+DATASET: 537_Depression_REST_float.txt
+67 - 248014
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+537_Depression_REST_float.txt	0.199539	67	0	371
+DATASET: 538_Depression_REST_float.txt
+66 - 252597
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+538_Depression_REST_float.txt	0.00753464	66	0	371
+DATASET: 539_Depression_REST_float.txt
+66 - 169001
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+539_Depression_REST_float.txt	0.0156197	66	0	371
+DATASET: 540_Depression_REST_float.txt
+66 - 228941
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+540_Depression_REST_float.txt	0.0109389	66	0	371
+DATASET: 541_Depression_REST_float.txt
+66 - 250634
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+541_Depression_REST_float.txt	0.097961	66	0	371
+DATASET: 542_Depression_REST_float.txt
+66 - 251734
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+542_Depression_REST_float.txt	0.31341	66	0	371
+DATASET: 543_Depression_REST_float.txt
+66 - 247260
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+543_Depression_REST_float.txt	0.0424056	66	0	371
+DATASET: 545_Depression_REST_float.txt
+66 - 248414
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+545_Depression_REST_float.txt	0.257441	66	0	371
+DATASET: 546_Depression_REST_float.txt
+66 - 243214
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+546_Depression_REST_float.txt	0.141589	66	0	371
+DATASET: 547_Depression_REST_float.txt
+66 - 248631
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+547_Depression_REST_float.txt	0.0162686	66	0	371
+DATASET: 548_Depression_REST_float.txt
+66 - 253414
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+548_Depression_REST_float.txt	0.189212	66	0	371
+DATASET: 549_Depression_REST_float.txt
+66 - 244014
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+549_Depression_REST_float.txt	0.36086	66	0	371
+DATASET: 550_Depression_REST_float.txt
+66 - 229092
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+550_Depression_REST_float.txt	0.180163	66	0	371
+DATASET: 551_Depression_REST_float.txt
+66 - 244434
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+551_Depression_REST_float.txt	0.0833064	66	0	371
+DATASET: 552_Depression_REST_float.txt
+66 - 259974
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+552_Depression_REST_float.txt	0.0843526	66	0	371
+DATASET: 553_Depression_REST_float.txt
+66 - 262354
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+553_Depression_REST_float.txt	0.171102	66	0	371
+DATASET: 554_Depression_REST_float.txt
+67 - 267360
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+554_Depression_REST_float.txt	-0.00162603	67	0	371
+DATASET: 555_Depression_REST_float.txt
+66 - 252795
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+555_Depression_REST_float.txt	0.0963791	66	0	371
+DATASET: 556_Depression_REST_float.txt
+66 - 242820
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+556_Depression_REST_float.txt	0.0173097	66	0	371
+DATASET: 557_Depression_REST_float.txt
+67 - 241720
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+557_Depression_REST_float.txt	0.044078	67	0	371
+DATASET: 558_Depression_REST_float.txt
+66 - 225470
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+558_Depression_REST_float.txt	0.0850729	66	0	371
+DATASET: 559_Depression_REST_float.txt
+67 - 246315
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+559_Depression_REST_float.txt	0.0526382	67	0	371
+DATASET: 560_Depression_REST_float.txt
+67 - 241898
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+560_Depression_REST_float.txt	0.113073	67	0	371
+DATASET: 561_Depression_REST_float.txt
+67 - 250391
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+561_Depression_REST_float.txt	0.153785	67	0	371
+DATASET: 562_Depression_REST_float.txt
+67 - 240972
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+562_Depression_REST_float.txt	0.039702	67	0	371
+DATASET: 563_Depression_REST_float.txt
+67 - 239545
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+563_Depression_REST_float.txt	0.177294	67	0	371
+DATASET: 564_Depression_REST_float.txt
+67 - 250415
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+564_Depression_REST_float.txt	0.246192	67	0	371
+DATASET: 565_Depression_REST_float.txt
+67 - 249375
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+565_Depression_REST_float.txt	0.0613547	67	0	371
+DATASET: 566_Depression_REST_float.txt
+67 - 250730
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+566_Depression_REST_float.txt	0.0175899	67	0	371
+DATASET: 567_Depression_REST_float.txt
+67 - 243175
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+567_Depression_REST_float.txt	0.0219247	67	0	371
+DATASET: 568_Depression_REST_float.txt
+67 - 242780
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+568_Depression_REST_float.txt	0.0453838	67	0	371
+DATASET: 569_Depression_REST_float.txt
+67 - 250611
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+569_Depression_REST_float.txt	0.0263189	67	0	371
+DATASET: 570_Depression_REST_float.txt
+66 - 249806
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+570_Depression_REST_float.txt	0.0270054	66	0	371
+DATASET: 573_Depression_REST_float.txt
+66 - 239226
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+573_Depression_REST_float.txt	0.156607	66	0	371
+DATASET: 574_Depression_REST_float.txt
+66 - 250806
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+574_Depression_REST_float.txt	0.0392901	66	0	371
+DATASET: 575_Depression_REST_float.txt
+67 - 248695
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+575_Depression_REST_float.txt	0.0525403	67	0	371
+DATASET: 576_Depression_REST_float.txt
+67 - 251300
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+576_Depression_REST_float.txt	0.0294178	67	0	371
+DATASET: 577_Depression_REST_float.txt
+66 - 268702
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+577_Depression_REST_float.txt	0.0414592	66	0	371
+DATASET: 578_Depression_REST_float.txt
+67 - 250911
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+578_Depression_REST_float.txt	0.124067	67	0	371
+DATASET: 579_Depression_REST_float.txt
+67 - 246960
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+579_Depression_REST_float.txt	0.0214374	67	0	371
+DATASET: 580_Depression_REST_float.txt
+67 - 275180
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+580_Depression_REST_float.txt	0.0702189	67	0	371
+DATASET: 581_Depression_REST_float.txt
+66 - 266750
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+581_Depression_REST_float.txt	0.049074	66	0	371
+DATASET: 582_Depression_REST_float.txt
+67 - 260340
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+582_Depression_REST_float.txt	0.0338094	67	0	371
+DATASET: 583_Depression_REST_float.txt
+67 - 254080
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+583_Depression_REST_float.txt	0.0735572	67	0	371
+DATASET: 584_Depression_REST_float.txt
+67 - 246735
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+584_Depression_REST_float.txt	0.0264798	67	0	371
+DATASET: 585_Depression_REST_float.txt
+67 - 245060
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+585_Depression_REST_float.txt	-0.0287971	67	0	371
+DATASET: 586_Depression_REST_float.txt
+67 - 232147
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+586_Depression_REST_float.txt	0.0245846	67	0	371
+DATASET: 587_Depression_REST_float.txt
+67 - 247055
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+587_Depression_REST_float.txt	0.0670128	67	0	371
+DATASET: 588_Depression_REST_float.txt
+67 - 289886
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+588_Depression_REST_float.txt	0.174866	67	0	371
+DATASET: 589_Depression_REST_float.txt
+66 - 246975
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+589_Depression_REST_float.txt	0.0900424	66	0	371
+DATASET: 590_Depression_REST_float.txt
+67 - 248920
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+590_Depression_REST_float.txt	0.00594649	67	0	371
+DATASET: 591_Depression_REST_float.txt
+66 - 250735
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+591_Depression_REST_float.txt	0.257171	66	0	371
+DATASET: 592_Depression_REST_float.txt
+67 - 251040
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+592_Depression_REST_float.txt	0.0157292	67	0	371
+DATASET: 593_Depression_REST_float.txt
+67 - 247520
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+593_Depression_REST_float.txt	0.0078692	67	0	371
+DATASET: 594_Depression_REST_float.txt
+67 - 247855
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+594_Depression_REST_float.txt	0.0695191	67	0	371
+DATASET: 595_Depression_REST_float.txt
+67 - 247555
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+595_Depression_REST_float.txt	0.085341	67	0	371
+DATASET: 596_Depression_REST_float.txt
+66 - 246635
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+596_Depression_REST_float.txt	0.375301	66	0	371
+DATASET: 597_Depression_REST_float.txt
+67 - 283820
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+597_Depression_REST_float.txt	0.0639572	67	0	371
+DATASET: 598_Depression_REST_float.txt
+66 - 227180
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+598_Depression_REST_float.txt	0.142226	66	0	371
+DATASET: 599_Depression_REST_float.txt
+67 - 253235
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+599_Depression_REST_float.txt	0.0280445	67	0	371
+DATASET: 600_Depression_REST_float.txt
+67 - 255446
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+600_Depression_REST_float.txt	0.0616173	67	0	371
+DATASET: 601_Depression_REST_float.txt
+67 - 246940
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+601_Depression_REST_float.txt	0.0100486	67	0	371
+DATASET: 602_Depression_REST_float.txt
+67 - 245995
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+602_Depression_REST_float.txt	0.0149532	67	0	371
+DATASET: 603_Depression_REST_float.txt
+66 - 253520
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+603_Depression_REST_float.txt	0.0132856	66	0	371
+DATASET: 604_Depression_REST_float.txt
+66 - 248755
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+604_Depression_REST_float.txt	0.23417	66	0	371
+DATASET: 605_Depression_REST_float.txt
+67 - 251360
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+605_Depression_REST_float.txt	0.0082664	67	0	371
+DATASET: 606_Depression_REST_float.txt
+66 - 247710
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+606_Depression_REST_float.txt	0.154044	66	0	371
+DATASET: 607_Depression_REST_float.txt
+67 - 244780
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+607_Depression_REST_float.txt	0.101097	67	0	371
+DATASET: 608_Depression_REST_float.txt
+67 - 248480
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+608_Depression_REST_float.txt	0.00812488	67	0	371
+DATASET: 609_Depression_REST_float.txt
+66 - 252860
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+609_Depression_REST_float.txt	0.113423	66	0	371
+DATASET: 610_Depression_REST_float.txt
+66 - 245920
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+610_Depression_REST_float.txt	0.116144	66	0	371
+DATASET: 611_Depression_REST_float.txt
+66 - 247980
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+611_Depression_REST_float.txt	0.109686	66	0	371
+DATASET: 612_Depression_REST_float.txt
+67 - 277160
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+612_Depression_REST_float.txt	0.0716065	67	0	371
+DATASET: 613_Depression_REST_float.txt
+66 - 116692
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+613_Depression_REST_float.txt	0.195891	66	0	371
+DATASET: 614_Depression_REST_float.txt
+67 - 250895
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+614_Depression_REST_float.txt	0.131791	67	0	371
+DATASET: 615_Depression_REST_float.txt
+66 - 241660
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+615_Depression_REST_float.txt	0.171138	66	0	371
+DATASET: 616_Depression_REST_float.txt
+66 - 274160
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+616_Depression_REST_float.txt	0.0535141	66	0	371
+DATASET: 617_Depression_REST_float.txt
+67 - 228060
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+617_Depression_REST_float.txt	0.290283	67	0	371
+DATASET: 618_Depression_REST_float.txt
+67 - 247540
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+618_Depression_REST_float.txt	0.0169144	67	0	371
+DATASET: 619_Depression_REST_float.txt
+67 - 254895
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+619_Depression_REST_float.txt	0.0426898	67	0	371
+DATASET: 620_Depression_REST_float.txt
+67 - 246460
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+620_Depression_REST_float.txt	0.0342701	67	0	371
+DATASET: 621_Depression_REST_float.txt
+66 - 251320
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+621_Depression_REST_float.txt	0.0374749	66	0	371
+DATASET: 622_Depression_REST_float.txt
+66 - 249760
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+622_Depression_REST_float.txt	0.111538	66	0	371
+DATASET: 623_Depression_REST_float.txt
+66 - 269035
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+623_Depression_REST_float.txt	0.060686	66	0	371
+DATASET: 624_Depression_REST_float.txt
+67 - 237980
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+624_Depression_REST_float.txt	0.0511046	67	0	371
+DATASET: 625_Depression_REST_float.txt
+66 - 251900
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+625_Depression_REST_float.txt	0.602634	66	0	371
+DATASET: 626_Depression_REST_float.txt
+67 - 250160
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+626_Depression_REST_float.txt	0.164094	67	0	371
+DATASET: 627_Depression_REST_float.txt
+66 - 257760
+Matrix W: matriz_pesos_eeg.txt
+67
+dataset	IAET	totalCeldas	celdasFijas	totalW
+627_Depression_REST_float.txt	0.0225117	66	0	371
+Finalizado en: 2024/05/05 12:54:16
