@@ -12,3 +12,12 @@ set output 'autocorrelacion_eeg.png'
 set title 'Autocorrelación Espacio-Temporal EEG'
 
 plot 'data_AST' using 3:xtic(1) title 'IAST' with linespoints lt 2 pt 3 lc rgb red
+
+
+
+set output 'autocorrelacion_eeg2.png'
+set title 'Autocorrelación Espacio-Temporal EEG'
+
+plot 'data_AST' using 3:xtic(6) title 'IAST' with linespoints lt 2 pt 3 lc rgb blue
+
+
