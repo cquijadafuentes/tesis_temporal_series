@@ -19,3 +19,14 @@ for id in df['id']:
 		prev = id
 
 print(contador)
+
+c = {}
+for id in df['id']:
+	if id not in c:
+		c[id] = 1
+	else:
+		c[id] += 1
+
+vmin = min(c.values())
+vmax = max(c.values())
+print("min: {} - max: {}".format(vmin, vmax))
