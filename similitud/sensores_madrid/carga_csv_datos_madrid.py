@@ -20,13 +20,31 @@ for id in df['id']:
 
 print(contador)
 
+promedioMuestras = 0.0
 c = {}
 for id in df['id']:
+	promedioMuestras += 1
 	if id not in c:
 		c[id] = 1
 	else:
 		c[id] += 1
 
+print("Histograma de muestras por sensor")
+print("id", "muestras")
+for k in c:
+	print(k, c[k])
+
+print()
+promedioMuestras /= len(c)
+print("Promedio de muestras por sensor: ", promedioMuestras)
+print("Cantidad de sensores: ", len(c))
+
 vmin = min(c.values())
 vmax = max(c.values())
 print("min: {} - max: {}".format(vmin, vmax))
+
+print("Sensores con menos muestras:")
+print("id", "muestras")
+for k in c:
+	if(c[k] < promedioMuestras):
+		print(k, c[k])
