@@ -5458,3 +5458,22 @@ id muestras
 11281 930
 11282 316
 11283 292
+
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 12774666 entries, 0 to 12774665
+Data columns (total 9 columns):
+ #   Column               Dtype  
+---  ------               -----  
+ 0   id                   int64  
+ 1   fecha                object 
+ 2   tipo_elem            object 
+ 3   intensidad           int64  
+ 4   ocupacion            float64
+ 5   carga                int64  
+ 6   vmed                 float64
+ 7   error                object 
+ 8   periodo_integracion  int64  
+dtypes: float64(2), int64(4), object(3)
+memory usage: 877.2+ MB
+None
