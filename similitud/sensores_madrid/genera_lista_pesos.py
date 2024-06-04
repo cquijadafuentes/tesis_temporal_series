@@ -8,8 +8,8 @@ from geopy import distance
 	de tráfico de la red de transporte de madrid y junto con un
 	valor de distancia se genera la matriz de pesos
 	Se imprimen primero la cantidad de sensores, seguido por los
-	identificadores de cada senor y finalmente una matriz de 0s 
-	y 1s correspondiente a la matriz de pesos.
+	identificadores de cada senor y finalmente lista donde por cada
+	sensor se muestran la cantidad de sensores vecinos.
 '''
 
 if len(sys.argv) != 3:

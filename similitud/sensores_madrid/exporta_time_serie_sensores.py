@@ -34,10 +34,11 @@ while indice < filas:
 			cumplen.append(df['id'][indice-1])
 		contador = 1
 	indice +=1
+# Inserta último id de la lista si cumple condición.
 if(contador >= cant_muestras):
 	cumplen.append(df['id'][indice-1])
 
-print("Cumplen {} sensores con más muestras de {}".format(len(cumplen), cant_muestras))
+print("Se encontraron {} sensores con al menos {} muestras.".format(len(cumplen), cant_muestras))
 
 with open(salida, 'w') as archivo:
 	archivo.write("{}\t{}\n".format(len(cumplen), cant_muestras))

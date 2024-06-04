@@ -15,6 +15,8 @@ def print_menu():
 	print("8 - Cantidad ids distintas")
 	print("9 - Mostrar las ids")
 	print("10 - Mostrar las ids y cantidades")
+	print("11 - Contar nans de datos")
+	print("12 - Mostrar datos de un sensor")
 
 	print("0 - Salir")
 	print("****************************")
@@ -116,6 +118,57 @@ def muestra_errores(df, errores, enc):
 		print()
 	print()
 
+# --------------------- FUNCIONES ---------------------
+
+def contar_nans(df, df_encabezados):
+	print("Contando NANs de sensores")
+	nansIntensidad = 0
+	nansOcupacion = 0
+	nansCarga = 0
+	nansVmed = 0
+	nansSegsIntensidad = 0
+	nansSegsOcupacion = 0
+	nansSegsCarga = 0
+	nansSegsVmed = 0
+	filas = df.shape[0]
+	for x in range(filas):
+		if(not df["intensidad"][x] >= 0):
+			nansIntensidad += 1
+			if( x != 1 and df['id'][x] == df['id'][x-1] and df["intensidad"][x] == df["intensidad"][x-1]):
+				nansSegsIntensidad += 1
+		if(not df["ocupacion"][x] >= 0):
+			nansOcupacion += 1
+			if( x != 1 and df['id'][x] == df['id'][x-1] and df["ocupacion"][x] == df["ocupacion"][x-1]):
+				nansSegsOcupacion += 1
+		if(not df["carga"][x] >= 0):
+			nansCarga += 1
+			if( x != 1 and df['id'][x] == df['id'][x-1] and df["carga"][x] == df["carga"][x-1]):
+				nansSegsCarga += 1
+		if(not df["vmed"][x] >= 0):
+			nansVmed += 1
+			if( x != 1 and df['id'][x] == df['id'][x-1] and df["vmed"][x] == df["vmed"][x-1]):
+				nansSegsVmed += 1
+	print("Intensidad\n\t{} nans en total. {} nans seguidos.".format(nansIntensidad, nansSegsIntensidad))
+	print("Ocupacion\n\t{} nans en total. {} nans seguidos.".format(nansOcupacion, nansSegsOcupacion))
+	print("Carga\n\t{} nans en total. {} nans seguidos.".format(nansCarga, nansSegsCarga))
+	print("Vmed\n\t{} nans en total. {} nans seguidos.".format(nansVmed, nansSegsVmed))
+
+
+# --------------------- FUNCIONES ---------------------
+
+def mostrar_datos_sensor(df, dic_ids, df_encabezados):
+	print("Ingrese id del sensor")
+	sens = int(input())
+	if sens not in dic_ids:
+		print("Error! el id ingresado no corresponde.")
+		return
+	filtrado = df[df['id'] == sens]
+	for y, x in filtrado.iterrows():
+		for z in df_encabezados:
+			print(x[z], end='\t')
+		print("")
+	print("{} filas en total.".format(filas))
+
 # ------------------------ MAIN ------------------------
 
 if len(sys.argv) != 2:
@@ -126,6 +179,7 @@ if len(sys.argv) != 2:
 df_encabezados = ["id", "fecha", "tipo_elem", "intensidad", "ocupacion", "carga", "vmed", "error", "periodo_integracion"]
 df = pd.read_csv(sys.argv[1], sep=';', quotechar='"')
 # df = pd.read_csv('/home/carlos/ubuntu_transfer/temporal_series/sensores_madrid/11-2023.csv', sep=';', quotechar='"')
+# df = pd.read_csv('/home/carlos/ubuntu_transfer/temporal_series/sensores_madrid/data_magist/07-2023.csv', sep=';', quotechar='"')
 
 print("Archivo: ", sys.argv[1])
 df_count = str(df.count())
@@ -165,13 +219,18 @@ while(opc != 0):
 	elif(opc == 8):
 		print("Cantidad de ids diferentes:", len(dic_ids))
 	elif(opc == 9):
-		print("Hay de ids diferentes:", len(dic_ids))
+		print("Hay {} ids diferentes".format(len(dic_ids)))
 		print(sorted(dic_ids))
 	elif(opc == 10):
-		print("Hay de ids diferentes:", len(dic_ids))
+		print("Hay {} ids diferentes".format(len(dic_ids)))
 		for x in sorted(dic_ids):
 			print("{} - {}".format(x, dic_ids[x]), end="\t")
 		print(" ")
+	elif(opc == 11):
+		contar_nans(df, df_encabezados)
+	elif(opc == 12):
+		print("Cantidad de ids diferentes:", len(dic_ids))
+		mostrar_datos_sensor(df, dic_ids, df_encabezados)
 
 
 	else:
