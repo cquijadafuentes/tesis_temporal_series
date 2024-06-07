@@ -1,6 +1,25 @@
 import sys
 import pandas as pd
 
+def imprimir_salida(vecindad, outfile):
+	sens_convecinos = sorted(vecindad)
+	print("Generando archivo {} con la salida".format(outfile))
+	salida = open(outfile, "w")
+	salida.write(str(len(sens_convecinos))+"\n")
+	# Imprimiendo el ID de cada sensor en la lista
+	outline = ""
+	for s in sens_convecinos:
+		outline += str(s) + " "
+	salida.write(outline+"\n")
+	# Por cada sensor, se imprime en una línea su ID, cantidad de vecinos, e ID de los vecinos.
+	for sensor in sens_convecinos:
+		lv = vecindad[sensor]
+		outline = str(sensor) + " " + str(len(lv))
+		for v in lv:
+			outline += " " + str(v)
+		salida.write(outline+"\n")
+	salida.close()
+
 # ------------------------ MAIN ------------------------
 '''
 	Este código lee los archivos con el mape entre sensores y edges, 
@@ -17,14 +36,16 @@ if len(sys.argv) != 5:
   print("\t<opcion> = 1 - Sensores en el mismo edge")
   print("\t<opcion> = 2 - Sensores a 1 edge de distancia")
   print("\t<opcion> = 3 - Sensores en el mismo edge y a 1 edge de distancia")
+  print("\t<opcion> = 4 - Sensores en el edge siguiente sin los del mismo edge")
   sys.exit()
 
 opcion = int(sys.argv[3])
-if(opcion < 1 or opcion > 3):
+if(opcion < 1 or opcion > 4):
 	print("Error! la opción ingresada no es válida")
 	print("\t<opcion> = 1 - Sensores en el mismo edge")
 	print("\t<opcion> = 2 - Sensores a 1 edge de distancia")
 	print("\t<opcion> = 3 - Sensores en el mismo edge y a 1 edge de distancia")
+	print("\t<opcion> = 4 - Sensores en el edge siguiente sin los del mismo edge")
 	sys.exit()
 
 # Datos Edge Sensor
@@ -59,37 +80,26 @@ for x in range(paresEdgeSensor):
 		sensores.append(sensorid)
 
 print("Cantidad de sensores:", len(mapa_SE))
-print("Cantidad de edges:", len(mapa_ES))
+print("Cantidad de edges con sensor:", len(mapa_ES))
+sensores.sort()
 
 if(opcion == 1):
 	# Buscando vecinos = sensores en el mismo edge
-	sensores.sort()
+	print("Buscando vecinos = sensores en el mismo edge...")
 	vecindad = {}
-	for sensor in sensores:
+	for sensor in mapa_SE:
 		vecinos = []
-		if sensor in mapa_SE:
-			for edge in mapa_SE[sensor]:
-				if edge in mapa_ES:
-					for s in mapa_ES[edge]:
-						if s != sensor and s not in vecinos:
-							vecinos.append(s)
+		for edge in mapa_SE[sensor]:
+			if edge in mapa_ES:
+				for s in mapa_ES[edge]:
+					if s != sensor and s not in vecinos:
+						vecinos.append(s)
 		if len(vecinos) > 0:
 			vecinos.sort()
 			vecindad[sensor] = vecinos
-	sens_convecinos = sorted(vecindad)
+	print("{} sensores con vecinos en el mismo edge".format(len(vecindad)))
 	# Imprimiendo cantidad de sensores en la lista
-	print(len(sens_convecinos))
-	# Imprimiendo el ID de cada sensor en la lista
-	for s in sens_convecinos:
-		print(s, end=" ")
-	print()
-	# Por cada sensor, se imprime en una línea su ID, cantidad de vecinos, e ID de los vecinos.
-	for sensor in sens_convecinos:
-		lv = vecindad[sensor]
-		print(sensor, len(lv), end=" ")
-		for v in lv:
-			print(v, end=" ")
-		print()
+	imprimir_salida(vecindad, sys.argv[4])
 	sys.exit()
 
 # Mapas entre edges y nodos
@@ -102,21 +112,81 @@ for x in range(filasEdgeNode):
 	nodeSid = data_EN['start_node'][x]
 	nodeEid = data_EN['end_node'][x]
 	# Inserta el end_node de cada edge
-	if edgeid not in mapa_EendN:
-		mapa_EendN[edgeid] = [nodeEid]
-	else:
-		mapa_EendN[edgeid].append(nodeEid)
+	mapa_EendN[edgeid] = nodeEid
 	# Agrega el edge de salida del start_node
 	if(nodeSid not in mapa_NoutE):
 		mapa_NoutE[nodeSid] = [edgeid]
 	else:
 		mapa_NoutE[nodeSid].append(edgeid)
 
+print("Cantidad de edges:", len(mapa_EendN))
 
+# Buscando vecinos a distancia 1 edge
+vecinosEdgeSig = {}
+for sensor in sensores:
+	vecinos = []
+	listaEdges = mapa_SE[sensor]
+	for edgeId in listaEdges:
+		endNodeId = mapa_EendN[edgeId]
+		listOutterEdges = mapa_NoutE[endNodeId]
+		for outterEdge in listOutterEdges:
+			if outterEdge in mapa_ES:
+				listaSensoresEdge = mapa_ES[outterEdge]
+				for sensorVecino in listaSensoresEdge:
+					if sensorVecino not in vecinos:
+						vecinos.append(sensorVecino)
+	if len(vecinos) > 0:
+		vecinos.sort()
+		vecinosEdgeSig[sensor] = vecinos
+print("{} sensores con vecinos encontrados en edge siguiente".format(len(vecinosEdgeSig)))
 
-# Buscando vecinos
-sensores.sort()
-vecindad = {}
+if(opcion == 2):
+	imprimir_salida(vecinosEdgeSig, sys.argv[4])
+	sys.exit()
+
+# Vecinos en el mismo edge para aplicar en opciones 3 y 4
+vecinosMismoEdge = {}
 for sensor in mapa_SE:
-	print(sensor)
+	vecinos = []
+	for edge in mapa_SE[sensor]:
+		if edge in mapa_ES:
+			for s in mapa_ES[edge]:
+				if s != sensor and s not in vecinos:
+					vecinos.append(s)
+	if len(vecinos) > 0:
+		vecinos.sort()
+		vecinosMismoEdge[sensor] = vecinos
+print("{} sensores con vecinos en el mismo edge".format(len(vecinosMismoEdge)))
 
+# Opción = 3: se deben combinar los resultados antes de imprimirlos
+if(opcion == 3):
+	vecinosUnidos = vecinosEdgeSig
+	idsVecinosMismoEdge = sorted(vecinosMismoEdge)
+	for sensor in idsVecinosMismoEdge:
+		if sensor not in vecinosUnidos:
+			vecinosUnidos[sensor] = vecinosMismoEdge[sensor]
+		else:
+			listaVME = vecinosMismoEdge[sensor]
+			for v in listaVME:
+				if v not in vecinosUnidos[sensor]:
+					vecinosUnidos[sensor].append(v)
+			vecinosUnidos[sensor].sort()
+	print("{} sensores con vecinos en mismo edge + edge siguiente".format(len(vecinosUnidos)))
+	imprimir_salida(vecinosUnidos, sys.argv[4])
+	sys.exit()
+
+# Opción = 4: se deben quitar los vecinos con el mismo edge desde la lista con vecinos de 1 edge de distancia
+if(opcion == 4):
+	vecinosDesunidos = vecinosEdgeSig
+	idsVecinosMismoEdge = sorted(vecinosMismoEdge)
+	for sensor in idsVecinosMismoEdge:
+		if sensor in vecinosDesunidos:
+			listaVME = vecinosMismoEdge[sensor]
+			for v in listaVME:
+				if v in vecinosDesunidos[sensor]:
+					vecinosDesunidos[sensor].remove(v)
+					if(len(vecinosDesunidos[sensor]) == 0):
+						del vecinosDesunidos[sensor]
+	print("{} sensores con vecinos en edge siguiente - vecinos en mismo edge".format(len(vecinosDesunidos)))
+	imprimir_salida(vecinosDesunidos, sys.argv[4])
+	sys.exit()

@@ -14,9 +14,9 @@ def mostrar_grafica(datos, titulo, labelx, labely):
 	plt.show()
 	plt.close()
 
-if len(sys.argv) != 2:
+if len(sys.argv) != 3:
 	print("Error! en la cantidad de argumentos.")
-	print(sys.argv[0], "<edge_sensor_map.csv>")
+	print(sys.argv[0], "<edge_sensor_map.csv> <edges.csv>")
 
 data_ES = pd.read_csv(sys.argv[1], sep=',', quotechar='"')
 paresEdgeSensor = data_ES.shape[0]
@@ -66,31 +66,126 @@ mostrar_grafica(sensores_por_edge, "Histograma: sensores por edge", str(len(mapa
 print("sensores:", len(sensores))
 print("sensores con edges:", len(mapa_SE))
 print("edges con sensores:", len(mapa_ES))
-
-# Buscando vecinos = sensores en el mismo edge
+################################################################################
+################# Buscando vecinos = sensores en el mismo edge #################
+################################################################################
 sensores.sort()
-vecindad = {}
+vecindad0 = {}
 vecinos_enmismoedge = []
 cant_vecinos_enmismoedge = []
-for sensor in sensores:
+for sensor in mapa_SE:
 	vecinos = []
-	if sensor in mapa_SE:
-		for edge in mapa_SE[sensor]:
-			if edge in mapa_ES:
-				for s in mapa_ES[edge]:
-					if s != sensor and s not in vecinos:
-						vecinos.append(s)
+	for edge in mapa_SE[sensor]:
+		if edge in mapa_ES:
+			for s in mapa_ES[edge]:
+				if s != sensor and s not in vecinos:
+					vecinos.append(s)
 	if len(vecinos) > 0:
 		vecinos_enmismoedge.append([sensor, len(vecinos)])
 		cant_vecinos_enmismoedge.append(len(vecinos))
+		vecindad0[sensor] = vecinos
 
 cant_vecinos_enmismoedge.sort()
 mostrar_grafica(cant_vecinos_enmismoedge, "Histograma: vecinos en el mismo edge", str(len(vecinos_enmismoedge)) + " sensores con vecinos.", "Cantidad de vecinos")
 
 print("sensores con vecinos en el mismo edge:", len(cant_vecinos_enmismoedge))
 
-# Buscando vecinos = sensores en un edge siguiente
+################################################################################
+############### Buscando vecinos = sensores en un edge siguiente ###############
+################################################################################
 
+data_EN = pd.read_csv(sys.argv[2], sep=',', quotechar='"')
+
+# Mapas entre edges y nodos
+mapa_EendN = {}		# por cada edge se indica el end-node	(1-1)
+mapa_NoutE = {}		# por cada node se indican los outter edges 	(1-n)
+filasEdgeNode = data_EN.shape[0]
+for x in range(filasEdgeNode):
+	# Los encabezados son 'id' (edge), 'start_node' y 'end_node'
+	edgeid = data_EN['id'][x]
+	nodeSid = data_EN['start_node'][x]
+	nodeEid = data_EN['end_node'][x]
+	# Inserta el end_node de cada edge
+	mapa_EendN[edgeid] = nodeEid
+	# Agrega el edge de salida del start_node
+	if(nodeSid not in mapa_NoutE):
+		mapa_NoutE[nodeSid] = [edgeid]
+	else:
+		mapa_NoutE[nodeSid].append(edgeid)
+
+cantidad_outteredges = []
+for x in mapa_NoutE:
+	cantidad_outteredges.append(len(mapa_NoutE[x]))
+
+cantidad_outteredges.sort()
+mostrar_grafica(cantidad_outteredges, "Histograma: edges de salida de los nodos", str(len(mapa_NoutE))+" nodos totales", "Cantidad de edges de salida")
+
+cant_vecinos_ensiguienteedge = []
+# Buscando vecinos a distancia 1 edge
+vecindad1 = {}
+for sensor in sensores:
+	vecinos = []
+	listaEdges = mapa_SE[sensor]
+	for edgeId in listaEdges:
+		endNodeId = mapa_EendN[edgeId]
+		listOutterEdges = mapa_NoutE[endNodeId]
+		for outterEdge in listOutterEdges:
+			if outterEdge in mapa_ES:
+				listaSensoresEdge = mapa_ES[outterEdge]
+				for sensorVecino in listaSensoresEdge:
+					if sensorVecino not in vecinos:
+						vecinos.append(sensorVecino)
+	if len(vecinos) > 0:
+		vecinos.sort()
+		vecindad1[sensor] = vecinos
+		cant_vecinos_ensiguienteedge.append(len(vecinos))
+
+print("sensores con vecinos en el edge siguiente:", len(cant_vecinos_ensiguienteedge), len(vecindad1))
+
+cant_vecinos_ensiguienteedge.sort()
+mostrar_grafica(cant_vecinos_ensiguienteedge, "Histograma: vecinos en edge siguiente", str(len(cant_vecinos_ensiguienteedge)) + " sensores con vecinos.", "Cantidad de vecinos")
+
+################################################################################
+########################### Buscando vecinos unidos ###########################
+################################################################################
+
+
+idsVME = sorted(vecindad0)
+for sensor in idsVME:
+	if sensor not in vecindad1:
+		vecindad1[sensor] = vecindad0[sensor]
+	else:
+		for v in vecindad0[sensor]:
+			if v not in vecindad1[sensor]:
+				vecindad1[sensor].append(v)
+
+cant_vecindad1 = []
+for x in vecindad1:
+	cant_vecindad1.append(len(vecindad1[x]))
+
+print("sensores con vecinos en mismo edge + edge siguiente", len(cant_vecindad1))
+cant_vecindad1.sort()
+mostrar_grafica(cant_vecindad1, "Histograma: vecinos unidos", str(len(cant_vecindad1)) + " sensores con vecinos.", "Cantidad de vecinos")
+
+
+################################################################################
+########################## Buscando vecinos desunidos ##########################
+################################################################################
+
+for sensor in idsVME:
+	for v in vecindad0[sensor]:
+		if v in vecindad1[sensor]:
+			vecindad1[sensor].remove(v)
+			if(len(vecindad1[sensor]) == 0):
+				del vecindad1[sensor]
+
+cant_vecindad1 = []
+for x in vecindad1:
+	cant_vecindad1.append(len(vecindad1[x]))
+print("sensores con vecinos en edge siguiente sin los vecinos del mismo edge", len(cant_vecindad1))
+
+cant_vecindad1.sort()
+mostrar_grafica(cant_vecindad1, "Histograma: vecinos desunidos", str(len(cant_vecindad1)) + " sensores con vecinos.", "Cantidad de vecinos")
 
 ################################################################################
 ####################	Listas con detalle de información	####################

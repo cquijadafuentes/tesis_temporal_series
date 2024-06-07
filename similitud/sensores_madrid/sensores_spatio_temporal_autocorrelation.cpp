@@ -114,7 +114,8 @@ double ZETA(vector<int> X, vector<float> Y){
     return ZETA;
 }
 
-void calculaIAET(vector<int> ids, vector<vector<float>> datos, map<int, int> mapDatos, vector<vector<int>> pesos, map<int, int> mapPesos, string name){
+template <typename TipoNumero>
+void calculaIAET(vector<int> ids, const vector<vector<TipoNumero>>& datos, map<int, int> mapDatos, vector<vector<int>> pesos, map<int, int> mapPesos, string name){
     int sensores = datos.size();
     int muestras = datos[0].size();
     //  Calculando serie temporal promedio
@@ -143,72 +144,13 @@ void calculaIAET(vector<int> ids, vector<vector<float>> datos, map<int, int> map
     // Cálculo de Medida de utocorrelación espacio-temporal
     int sumaW = 0;
     int cantFijas = 0;
+    int cantSinPeso = 0;
+    int cantSinVecinos = 0;
+    int valorN = 0;
     double numerador = 0.0;
     double denominador = 0.0;
     for(int e=0; e<sensores; e++){
-        if(!serieFija[e]){
-            vector<int> idsVecinos = pesos[mapPesos[ids[e]]];
-            for(int j=0; j<idsVecinos.size(); j++){
-                map<int,int>::iterator it = mapDatos.find(idsVecinos[j]);
-                if(it != mapDatos.end()){
-                    int celdaDatosVecino = mapDatos[idsVecinos[j]];
-                    double w = 0;
-                    double factor;
-                    if(!serieFija[celdaDatosVecino]){
-                        w = 1;
-                        sumaW += w;
-                        factor = w * zethaValues[e] * zethaValues[celdaDatosVecino];
-                        numerador += factor;
-                    }
-                }
-            }
-            denominador += (zethaValues[e] * zethaValues[e]);
-        }else{
-            cantFijas++;
-        }
-    }
-
-    // El valor N depende en este caso de los sensores considerados en la matriz de pesos
-    double N = 58.0 - cantFijas;    
-    double IAET = (N / sumaW) * (numerador / denominador);
-
-    cout << "dataset\tIAET\ttotalCeldas\tceldasFijas\ttotalW" << endl;
-    cout << name << "\t" << IAET << "\t" << (sensores) << "\t" << cantFijas << "\t" << sumaW << endl;
-}
-
-void calculaIAET(vector<int> ids, vector<vector<int>> datos, map<int, int> mapDatos, vector<vector<int>> pesos, map<int, int> mapPesos, string name){
-    int sensores = datos.size();
-    int muestras = datos[0].size();
-    //  Calculando serie temporal promedio
-    vector<float> stPromedio(muestras);
-    for(int m=0; m<muestras; m++){
-        double acum = 0.0;
-        for(int e=0; e<sensores; e++){
-            acum += datos[e][m];
-        }
-        stPromedio[m] = (acum / sensores);
-    }
-
-    //  Marcando series temporales fijas: todos sus elementos iguales
-    vector<bool> serieFija(sensores, true);
-    for(int e=0; e<sensores; e++){
-        for(int m=1; m<muestras; m++){
-            serieFija[e] = serieFija[e] && (datos[e][m] == datos[e][m-1]);
-        }
-    }
-    
-    vector<double> zethaValues(sensores);
-    for(int e=0; e<sensores; e++){
-        zethaValues[e] = ZETA(datos[e], stPromedio);
-    }
-
-    // Cálculo de Medida de utocorrelación espacio-temporal
-    int sumaW = 0;
-    int cantFijas = 0;
-    double numerador = 0.0;
-    double denominador = 0.0;
-    for(int e=0; e<sensores; e++){
-        if(!serieFija[e]){
+        if(!serieFija[e] && (mapPesos.find(ids[e]) != mapPesos.end())){
             vector<int> idsVecinos = pesos[mapPesos[ids[e]]];
             int vecinosValidos = 0;
             for(int j=0; j<idsVecinos.size(); j++){
@@ -226,20 +168,23 @@ void calculaIAET(vector<int> ids, vector<vector<int>> datos, map<int, int> mapDa
             }
             if(vecinosValidos>0){
                 denominador += (zethaValues[e] * zethaValues[e]);
+                valorN++;
             }else{
-                cantFijas++;
+                cantSinVecinos++;
             }
-        }else{
+        }else if(serieFija[e]){
             cantFijas++;
+        }else{
+            cantSinPeso++;
         }
     }
 
     // El valor N depende en este caso de los sensores considerados en la matriz de pesos
-    double N = sensores - cantFijas;    
+    double N = sensores - cantFijas - cantSinPeso - cantSinVecinos;
     double IAET = (N / sumaW) * (numerador / denominador);
-
-    cout << "dataset\tIAET\ttotalCeldas\tceldasFijas\ttotalW" << endl;
-    cout << name << "\t" << IAET << "\t" << (sensores) << "\t" << cantFijas << "\t" << sumaW << endl;
+    cout << "N: " << N << " - valorN: " << valorN << endl;
+    cout << "dataset\tIAET\tN\ttotalCeldas\tceldasPesos\tceldasFijas\tceldasSinPeso\ttotalW" << endl;
+    cout << name << "\t" << IAET << "\t" << N << "\t" << sensores << "\t" << pesos.size() << "\t" << cantFijas << "\t" << cantSinPeso << "\t" << sumaW << endl;
 }
 
 int main(int argc, char const *argv[]){
@@ -286,7 +231,7 @@ int main(int argc, char const *argv[]){
     map<int, int> mapIdsDatos;
     int auxInt;
     for(int i=0; i<sensores; i++){
-        // Lectura de los identificadores de sensore
+        // Lectura de los identificadores de sensores
         dataSensores >> auxInt;
         mapIdsDatos[auxInt] = i;
         ids[i] = auxInt;
@@ -302,12 +247,14 @@ int main(int argc, char const *argv[]){
     int auxCarga;
     float auxVelMed;
     string auxString;
+    vector<int> nans(4,0);
     for(int i=0; i<sensores; i++){
         // Intensidad
         for(int k=0; k<muestras; k++){
             dataSensores >> auxString;
             if(auxString == "nan"){
                 dataInten[i][k] = auxInten;
+                nans[0]++;
             }else{
                 dataInten[i][k] = stof(auxString);
                 auxInten = dataInten[i][k];
@@ -318,6 +265,7 @@ int main(int argc, char const *argv[]){
             dataSensores >> auxString;
             if(auxString == "nan"){
                 dataOcupa[i][k] = auxOcupa;
+                nans[1]++;
             }else{
                 dataOcupa[i][k] = stoi(auxString);
                 auxOcupa = dataOcupa[i][k];
@@ -328,6 +276,7 @@ int main(int argc, char const *argv[]){
             dataSensores >> auxString;
             if(auxString == "nan"){
                 dataCarga[i][k] = auxCarga;
+                nans[2]++;
             }else{
                 dataCarga[i][k] = stof(auxString);
                 auxCarga = dataCarga[i][k];
@@ -338,6 +287,7 @@ int main(int argc, char const *argv[]){
             dataSensores >> auxString;
             if(auxString == "nan"){
                 dataVelMed[i][k] = auxVelMed;
+                nans[3]++;
             }else{
                 dataVelMed[i][k] = stof(auxString);
                 auxVelMed = dataVelMed[i][k];
@@ -370,6 +320,10 @@ int main(int argc, char const *argv[]){
         }
     }
     entradaListaPesos.close();
+
+    cout << "Cantidad sensores: " << dataInten.size() << endl;
+    cout << "Cantidad sensores con vecinos: " << listaPesos.size() << endl;
+    cout << "Cantidad de nans: " << nans[0] << "\t" << nans[1] << "\t" << nans[2] << "\t" << nans[3] << endl;
 
     calculaIAET(ids, dataInten, mapIdsDatos, listaPesos, mapIdsLista, titulos[0]);
     calculaIAET(ids, dataOcupa, mapIdsDatos, listaPesos, mapIdsLista, titulos[1]);
