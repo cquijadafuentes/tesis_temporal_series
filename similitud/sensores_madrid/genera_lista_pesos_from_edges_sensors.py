@@ -22,7 +22,7 @@ def imprimir_salida(vecindad, outfile):
 
 # ------------------------ MAIN ------------------------
 '''
-	Este código lee los archivos con el mape entre sensores y edges, 
+	Este código lee los archivos con el mapeo entre sensores y edges, 
 	y el mapeo entre edges y nodes generados en magist.
 
 	Se imprimen primero la cantidad de sensores, seguido por los

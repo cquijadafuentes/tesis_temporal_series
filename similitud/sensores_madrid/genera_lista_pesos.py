@@ -42,6 +42,7 @@ for i in range(filas):
 			if(dKm <= umbral):
 				lista.append(datos['id'][j])
 	print(len(lista), end="\t")
+	lista.sort()
 	for l in lista:
 		print(l, end="\t")
 	print("")
