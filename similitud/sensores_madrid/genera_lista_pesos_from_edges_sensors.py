@@ -133,7 +133,7 @@ for sensor in sensores:
 			if outterEdge in mapa_ES:
 				listaSensoresEdge = mapa_ES[outterEdge]
 				for sensorVecino in listaSensoresEdge:
-					if sensorVecino not in vecinos:
+					if sensorVecino not in vecinos and sensorVecino != sensor:
 						vecinos.append(sensorVecino)
 	if len(vecinos) > 0:
 		vecinos.sort()
@@ -181,12 +181,14 @@ if(opcion == 4):
 	idsVecinosMismoEdge = sorted(vecinosMismoEdge)
 	for sensor in idsVecinosMismoEdge:
 		if sensor in vecinosDesunidos:
+			# sensor está en la intersección
 			listaVME = vecinosMismoEdge[sensor]
 			for v in listaVME:
-				if v in vecinosDesunidos[sensor]:
-					vecinosDesunidos[sensor].remove(v)
-					if(len(vecinosDesunidos[sensor]) == 0):
-						del vecinosDesunidos[sensor]
+				if sensor in vecinosDesunidos:
+					if v in vecinosDesunidos[sensor]:
+						vecinosDesunidos[sensor].remove(v)
+						if len(vecinosDesunidos[sensor]) == 0 :
+							del vecinosDesunidos[sensor]
 	print("{} sensores con vecinos en edge siguiente - vecinos en mismo edge".format(len(vecinosDesunidos)))
 	imprimir_salida(vecinosDesunidos, sys.argv[4])
 	sys.exit()

@@ -16,12 +16,13 @@ import matplotlib.pyplot as plt
 
 def mostrar_menu():
 	opc = -1
-	cantopciones = 3
+	cantopciones = 4
 	while(opc < 0 or opc > cantopciones):
 		print("***************** MENU *****************")
 		print("1 - Mostrar ids de los sensores")
 		print("2 - Imprimir datos de una serie de tiempo")
 		print("3 - Imprimir comparación de dos series de tiempo")
+		print("4 - Imprimir comparación de N series de tiempo")
 		print("0 - Salir")
 		print("****************************************")
 		print("Ingrese una opcion...", end=" ")
@@ -39,6 +40,7 @@ titulos = ["intensidad", "ocupacion", "carga", "vmed"]
 filename = sys.argv[1]
 print("Archivo:", filename)
 file = open(filename, "r")
+# file = open('/home/carlos/ubuntu_transfer/temporal_series/sensores_madrid/data_magist/07-2023_porhora.744muestras.txt', "r")
 print("Cargando datos...")
 # Primera línea con cantidad de sensores y largo de las muestras
 linea1 = file.readline().strip().split()
@@ -121,4 +123,37 @@ while(opcion != 0):
 				print("El identificador del 2o sensor no existe.")
 		else:
 			print("El identificador del 1er sensor no existe.")
+	elif opcion == 4:
+		# Graficar las series de tiempo de N sensores:
+		print("Ingrese los identificadores de los sensores en una línea, separados por espacio")
+		stsIn = input().strip().split()
+		sts = []
+		for sin in stsIn:
+			if sin in series:
+				sts.append(sin)
+		if len(sts) > 0:
+			print(len(sts),"identificadores válidos encontrados")
+			fig, axs = plt.subplots(4, figsize=(10, 8))
+			fig.suptitle("Comparación de dos series de tiempo", fontsize=16)
+			for i in range(4):
+				min_value = series[sts[0]][i][0]
+				max_value = min_value
+				for j in sts:
+					min_value = min(min_value, min(series[j][i]))
+					max_value = max(max_value, max(series[j][i]))
+					axs[i].plot(series[j][i], label=j)
+				#axs[i].set_title(titulos[i])
+				axs[i].set_xlabel("Horas del mes")
+				axs[i].set_ylabel(titulos[i])
+				axs[i].set_yticks([min_value, max_value])
+			# Generar una leyenda general para la figura
+			handles, labels = axs[0].get_legend_handles_labels()
+			fig.legend(handles, labels, loc='lower right')
+			# Ajustar el layout para que no se solapen las subfiguras
+			plt.tight_layout()
+			# Mostrar la figura
+			plt.show()
+			plt.close()
+		else:
+			print("No se encontraron identificadores válidos.")
 print("FIN")

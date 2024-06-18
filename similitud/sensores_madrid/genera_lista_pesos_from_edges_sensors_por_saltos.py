@@ -115,14 +115,14 @@ for sensor in sensores:
 			node = mapa_EendN[edges_del_sensor[indice]]
 			if node in mapa_NoutE:
 				listaOutterEdges = mapa_NoutE[node]
-				for x in listaOutterEdges:
-					if x not in edges_del_sensor:
-						edges_del_sensor.append(x)
+				for oe in listaOutterEdges:
+					if oe not in edges_del_sensor:
+						edges_del_sensor.append(oe)
 			indice += 1
 	vecinos_sensor = []
-	for x in edges_del_sensor:
-		if x in mapa_ES:
-			sensores_edge = mapa_ES[x]
+	for e in edges_del_sensor:
+		if e in mapa_ES:
+			sensores_edge = mapa_ES[e]
 			for s in sensores_edge:
 				if ((s != sensor) and (s not in vecinos_sensor)):
 					vecinos_sensor.append(s)
