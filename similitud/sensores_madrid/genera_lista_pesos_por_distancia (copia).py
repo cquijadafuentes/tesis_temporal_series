@@ -41,10 +41,11 @@ for i in range(filas):
 			dKm = distance.distance(cooI, cooJ).km
 			if(dKm <= umbral):
 				lista.append(datos['id'][j])
-	print(len(lista), end="\t")
-	lista.sort()
-	for l in lista:
-		print(l, end="\t")
-	print("")
+	if len(lista) > 0	
+		print(len(lista), end="\t")
+		lista.sort()
+		for l in lista:
+			print(l, end="\t")
+		print("")
 print("")
 
