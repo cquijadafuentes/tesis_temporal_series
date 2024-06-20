@@ -4,6 +4,7 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <iomanip>  // Fijar largo de decimales.
 
 /*
     Implementación de cálculo de correlación espacio temporal propuesto en:
@@ -180,10 +181,11 @@ void calculaIAET(vector<int> ids, const vector<vector<TipoNumero>>& datos, map<i
     }
 
     // El valor N depende en este caso de los sensores considerados en la matriz de pesos
-    double N = sensores - cantFijas - cantSinPeso - cantSinVecinos;
-    double IAET = (N / sumaW) * (numerador / denominador);
+    int N = sensores - cantFijas - cantSinPeso - cantSinVecinos;
+    double IAET = ((0.0+N) / sumaW) * (numerador / denominador);
     cout << "N: " << N << " - valorN: " << valorN << endl;
-    cout << "dataset\tIAET\tN\ttotalCeldas\tceldasPesos\tceldasFijas\tceldasSinPeso\ttotalW" << endl;
+    cout << setprecision(4) << fixed;
+    cout << "dataset\t\tIAET\tN\ttotST\tlVecs\tstFijas\tsinVec\ttotalW" << endl;
     cout << name << "\t" << IAET << "\t" << N << "\t" << sensores << "\t" << pesos.size() << "\t" << cantFijas << "\t" << cantSinPeso << "\t" << sumaW << endl;
 }
 
@@ -223,10 +225,9 @@ int main(int argc, char const *argv[]){
         cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
         return -1;
     }
-    vector<string> titulos = {"intensidad", "ocupacion", "carga", "vmed"};
+    vector<string> titulos = {"intensidad", "ocupacion", "carga\t", "vmed\t"};
     int sensores, muestras;
     dataSensores >> sensores >> muestras;
-    cout << sensores << " - " << muestras << endl;
     vector<int> ids(sensores);
     map<int, int> mapIdsDatos;
     int auxInt;
@@ -323,7 +324,10 @@ int main(int argc, char const *argv[]){
 
     cout << "Cantidad sensores: " << dataInten.size() << endl;
     cout << "Cantidad sensores con vecinos: " << listaPesos.size() << endl;
-    cout << "Cantidad de nans: " << nans[0] << "\t" << nans[1] << "\t" << nans[2] << "\t" << nans[3] << endl;
+    cout << "Cantidad de nans: " << endl;
+    for(int i=0; i<4; i++){
+        cout << "\t" << titulos[i] << ":\t" << nans[i] << endl;
+    }
 
     calculaIAET(ids, dataInten, mapIdsDatos, listaPesos, mapIdsLista, titulos[0]);
     calculaIAET(ids, dataOcupa, mapIdsDatos, listaPesos, mapIdsLista, titulos[1]);
