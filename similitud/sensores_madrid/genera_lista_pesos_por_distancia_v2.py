@@ -50,8 +50,9 @@ for id in listaIds:
 		print(id, end="\t")
 		vecinos = listaVecinos[id]
 		print(len(vecinos), end="\t")
-		for v in listaVecinos:
-			print(vecinos, end="\t")
+		for v in vecinos:
+			if v in listaVecinos:
+				print(v, end="\t")
 		print("")
 
 

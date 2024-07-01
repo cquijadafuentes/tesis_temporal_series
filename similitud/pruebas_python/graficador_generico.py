@@ -18,17 +18,20 @@ for i in range(valores):
 
 # Preparando entorno para gráficas:
 fig, ax = plt.subplots()
+minmax = []
 for l in range(lineas):
 	print("Ingrese los valores de la línea {} (separados por linea):".format(l+1))
 	datos = []
 	for v in range(valores):
 		aux = float(input().strip())
 		datos.append(aux)
+	minmax.append(min(datos))
+	minmax.append(max(datos))
 	print("Ingrese la leyenda para esta linea:")
 	etiqDatos = input().strip()
 	plt.plot(etiquetas, datos, label=etiqDatos)
 
-ax.set_yticks([-1, -0.5, 0, 0.5, 1])
+ax.set_yticks([min(minmax), max(minmax)])
 plt.title(titulo)
 ax.set_xlabel(etiqX)
 ax.set_ylabel(etiqY)
