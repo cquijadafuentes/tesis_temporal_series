@@ -54,8 +54,6 @@ int main(int argc, char const *argv[]){
     	}        
     }
 
-
-
     cout << "Rows: " << rows << endl;
     cout << "Cols: " << cols << endl;
     cout << "Largo de series de tiempo: " << lenTempSerie << endl;
@@ -68,6 +66,6 @@ int main(int argc, char const *argv[]){
     for(int i=0; i<lenTempSerie; i++){
         cout << "\t" << temporalSeries[rows-1][cols-1][i];
     }
-    cout << "end" << endl;
+    cout << endl << "end" << endl;
 
 }
