@@ -13,6 +13,10 @@ int main(int argc, char const *argv[]){
 	}
     // Leyendo datos desde el archivo de entrada
     ifstream infile(argv[1], ofstream::binary);
+    if(infile.fail()){
+        cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
+        return -1;
+    }
     int rows, cols, lenTempSerie;
     // Guardando valores enteros
     infile.read((char *)&rows, sizeof(int));

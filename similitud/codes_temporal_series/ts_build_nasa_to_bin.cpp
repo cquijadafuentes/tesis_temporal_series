@@ -15,6 +15,10 @@ int main(int argc, char const *argv[]){
 	int rows, cols, a1, a2, a3, a4;
     // Leyendo datos desde el archivo de entrada
     ifstream txtInput(argv[1], ifstream::in);
+    if(txtInput.fail()){
+        cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
+        return -1;
+    }
     txtInput >> rows >> cols >> a1 >> a2 >> a3 >> a4;
     string fileName;
     vector<vector<vector<int>>> temporalSeries(rows, vector<vector<int>>(cols));
