@@ -21,15 +21,21 @@ int main(int argc, char const *argv[]){
     eegDataIn >> electrodos >> muestras;
     ofstream outfile(argv[2], ofstream::binary);
     // Guardando valores enteros
-    outfile.write((char const*)&electrodos, sizeof(int));
-    outfile.write((char const*)&muestras, sizeof(int));
-    double aux;
+    outfile.write((const char*)&electrodos, sizeof(int));
+    outfile.write((const char*)&muestras, sizeof(int));
+    double auxD, maxi = 0;
+    float auxF;
     for(int i=0; i<electrodos; i++){
         for(int j=0; j<muestras; j++){
-            eegDataIn >> aux;
-            outfile.write((char const*)&aux, sizeof(int));
+            eegDataIn >> auxD;
+            if(auxD > maxi){
+                maxi = auxD;
+            }
+            auxF = (float) auxD;
+            outfile.write((const char*)&auxF, sizeof(float));
         }
     }
     eegDataIn.close();
+    cout << "maximo valor: " << maxi << endl;
     outfile.close();
 }

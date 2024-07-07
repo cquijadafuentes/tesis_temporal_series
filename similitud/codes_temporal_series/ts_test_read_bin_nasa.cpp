@@ -18,7 +18,7 @@ int main(int argc, char const *argv[]){
         return -1;
     }
     int rows, cols, lenTempSerie;
-    // Guardando valores enteros
+    // Cargando datos
     infile.read((char *)&rows, sizeof(int));
     infile.read((char *)&cols, sizeof(int));
     infile.read((char *)&lenTempSerie, sizeof(int));

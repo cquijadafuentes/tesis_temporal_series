@@ -18,7 +18,7 @@ int main(int argc, char const *argv[]){
         return -1;
     }
     int sensores, muestras;
-    // Leyendo datos
+    // Cargando datos
     infile.read((char *)&sensores, sizeof(int));
     infile.read((char *)&muestras, sizeof(int));
     cout << "Sensores: " << sensores << endl;
