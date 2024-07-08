@@ -1,0 +1,590 @@
+
+Directo	128	51	89	65
+refSer1	128	54	90	68
+refSeFi	128	54	91	68
+refProm	128	54	88	68
+
+Directo	125	50	87	63
+refSer1	125	52	89	66
+refSeFi	125	52	88	66
+refProm	125	52	86	66
+
+Directo	129	51	90	66
+refSer1	129	54	89	69
+refSeFi	129	54	91	69
+refProm	129	54	88	69
+
+Directo	134	54	93	68
+refSer1	134	56	94	72
+refSeFi	134	56	94	72
+refProm	134	56	92	71
+
+Directo	127	50	88	65
+refSer1	127	53	88	67
+refSeFi	127	53	92	67
+refProm	127	53	87	67
+
+Directo	136	54	95	69
+refSer1	136	57	95	72
+refSeFi	136	57	98	72
+refProm	136	57	94	72
+
+Directo	127	51	89	65
+refSer1	127	53	89	68
+refSeFi	127	53	90	68
+refProm	127	53	88	68
+
+Directo	128	51	89	65
+refSer1	128	54	89	68
+refSeFi	128	54	92	68
+refProm	128	54	88	68
+
+Directo	127	51	88	65
+refSer1	127	53	90	68
+refSeFi	127	53	90	68
+refProm	127	53	87	68
+
+Directo	127	51	89	65
+refSer1	127	53	91	68
+refSeFi	127	53	90	68
+refProm	127	53	87	68
+
+Directo	136	54	94	69
+refSer1	136	57	94	72
+refSeFi	136	57	98	72
+refProm	136	57	93	72
+
+Directo	136	54	95	69
+refSer1	136	57	97	72
+refSeFi	136	57	99	72
+refProm	136	57	93	72
+
+Directo	139	55	96	71
+refSer1	139	58	96	74
+refSeFi	139	58	100	74
+refProm	139	58	95	74
+
+Directo	130	52	91	66
+refSer1	130	55	91	69
+refSeFi	130	55	96	69
+refProm	130	55	90	69
+
+Directo	130	52	91	66
+refSer1	130	55	92	69
+refSeFi	130	55	93	69
+refProm	130	55	90	69
+
+Directo	111	44	78	57
+refSer1	111	47	78	59
+refSeFi	111	47	78	59
+refProm	111	47	77	59
+
+Directo	130	52	91	66
+refSer1	130	54	91	69
+refSeFi	130	54	92	69
+refProm	130	54	90	69
+
+Directo	130	52	91	66
+refSer1	130	55	91	69
+refSeFi	130	55	89	69
+refProm	130	55	90	69
+
+Directo	126	50	88	64
+refSer1	126	53	89	67
+refSeFi	126	53	89	67
+refProm	126	53	87	67
+
+Directo	128	51	89	65
+refSer1	128	54	89	68
+refSeFi	128	54	90	68
+refProm	128	54	87	68
+
+Directo	125	50	88	64
+refSer1	125	52	88	66
+refSeFi	125	52	88	66
+refProm	125	52	86	66
+
+Directo	126	50	87	64
+refSer1	126	53	88	67
+refSeFi	126	53	89	67
+refProm	126	53	86	67
+
+Directo	133	53	92	68
+refSer1	133	56	93	71
+refSeFi	133	56	94	71
+refProm	133	56	91	71
+
+Directo	120	31	83	46
+refSer1	120	33	84	47
+refSeFi	120	33	83	48
+refProm	120	32	82	47
+
+Directo	131	34	90	50
+refSer1	131	34	91	51
+refSeFi	131	36	92	49
+refProm	131	34	89	51
+
+Directo	128	51	89	65
+refSer1	128	54	90	68
+refSeFi	128	54	90	68
+refProm	128	54	89	68
+
+Directo	125	50	87	64
+refSer1	125	52	88	67
+refSeFi	125	52	89	67
+refProm	125	52	85	67
+
+Directo	126	50	87	64
+refSer1	126	53	88	67
+refSeFi	126	53	89	67
+refProm	126	53	86	67
+
+Directo	129	127	94	84
+refSer1	129	129	95	127
+refSeFi	129	129	100	91
+refProm	129	129	92	80
+
+Directo	117	47	81	60
+refSer1	117	49	82	62
+refSeFi	117	49	83	62
+refProm	117	49	80	62
+
+Directo	128	51	89	65
+refSer1	128	54	89	68
+refSeFi	128	54	87	68
+refProm	128	54	88	68
+
+Directo	129	51	90	65
+refSer1	129	54	91	68
+refSeFi	129	54	92	68
+refProm	129	54	88	68
+
+Directo	86	34	60	44
+refSer1	86	36	60	46
+refSeFi	86	36	63	46
+refProm	86	36	59	46
+
+Directo	117	115	83	87
+refSer1	117	117	83	117
+refSeFi	117	117	85	117
+refProm	117	117	81	71
+
+Directo	128	51	89	65
+refSer1	128	53	89	68
+refSeFi	128	53	90	68
+refProm	128	54	87	68
+
+Directo	128	51	89	65
+refSer1	128	54	90	68
+refSeFi	128	54	92	68
+refProm	128	54	88	68
+
+Directo	126	33	88	49
+refSer1	126	35	88	49
+refSeFi	126	37	89	51
+refProm	126	33	86	49
+
+Directo	126	50	87	64
+refSer1	126	53	89	67
+refSeFi	126	53	89	67
+refProm	126	53	86	67
+
+Directo	124	49	86	63
+refSer1	124	52	87	66
+refSeFi	124	52	88	66
+refProm	124	52	85	66
+
+Directo	127	50	88	64
+refSer1	127	53	89	67
+refSeFi	127	53	91	67
+refProm	127	53	87	67
+
+Directo	129	51	90	66
+refSer1	129	54	93	69
+refSeFi	129	54	91	69
+refProm	129	54	88	69
+
+Directo	124	49	86	63
+refSer1	124	52	87	66
+refSeFi	124	52	88	66
+refProm	124	52	85	66
+
+Directo	117	46	81	59
+refSer1	117	49	82	62
+refSeFi	117	49	83	62
+refProm	117	49	80	62
+
+Directo	124	50	87	63
+refSer1	124	52	87	66
+refSeFi	124	52	88	66
+refProm	124	52	87	66
+
+Directo	132	53	91	67
+refSer1	132	56	92	70
+refSeFi	132	56	93	70
+refProm	132	56	90	70
+
+Directo	134	53	92	68
+refSer1	134	56	93	71
+refSeFi	134	56	94	71
+refProm	134	56	91	71
+
+Directo	138	36	96	53
+refSer1	138	37	97	54
+refSeFi	138	39	101	54
+refProm	138	37	95	54
+
+Directo	129	51	94	66
+refSer1	129	54	90	69
+refSeFi	129	54	93	68
+refProm	129	54	88	68
+
+Directo	124	32	86	48
+refSer1	124	34	88	50
+refSeFi	124	35	86	49
+refProm	124	33	85	48
+
+Directo	125	33	86	48
+refSer1	125	33	87	49
+refSeFi	125	35	87	50
+refProm	125	33	85	49
+
+Directo	115	46	80	58
+refSer1	115	48	81	61
+refSeFi	115	48	81	61
+refProm	115	48	79	61
+
+Directo	127	51	88	65
+refSer1	127	53	88	68
+refSeFi	127	53	89	68
+refProm	127	53	86	68
+
+Directo	125	50	88	64
+refSer1	125	52	87	66
+refSeFi	125	52	88	66
+refProm	125	52	86	66
+
+Directo	129	52	90	66
+refSer1	129	54	91	69
+refSeFi	129	54	89	69
+refProm	129	54	89	69
+
+Directo	125	50	87	63
+refSer1	125	52	89	66
+refSeFi	125	52	87	66
+refProm	125	52	86	66
+
+Directo	124	49	86	63
+refSer1	124	52	87	66
+refSeFi	124	52	84	66
+refProm	124	52	85	66
+
+Directo	129	52	89	66
+refSer1	129	54	91	69
+refSeFi	129	54	90	69
+refProm	129	54	88	69
+
+Directo	129	51	90	66
+refSer1	129	54	91	69
+refSeFi	129	54	92	69
+refProm	129	54	89	69
+
+Directo	130	52	90	66
+refSer1	130	54	92	69
+refSeFi	130	54	92	69
+refProm	130	54	89	69
+
+Directo	126	50	87	64
+refSer1	126	53	90	67
+refSeFi	126	53	87	67
+refProm	126	53	86	67
+
+Directo	125	33	87	48
+refSer1	125	35	88	51
+refSeFi	125	33	87	49
+refProm	125	33	86	49
+
+Directo	130	52	91	66
+refSer1	130	54	91	69
+refSeFi	130	54	92	69
+refProm	130	54	89	69
+
+Directo	127	51	89	65
+refSer1	127	53	90	68
+refSeFi	127	53	92	68
+refProm	127	53	87	68
+
+Directo	122	48	85	62
+refSer1	122	51	86	65
+refSeFi	122	51	86	65
+refProm	122	51	83	65
+
+Directo	128	51	89	65
+refSer1	128	54	91	68
+refSeFi	128	54	93	68
+refProm	128	53	88	68
+
+Directo	129	51	89	65
+refSer1	129	54	89	68
+refSeFi	129	54	88	68
+refProm	129	54	88	68
+
+Directo	130	34	90	50
+refSer1	130	36	90	53
+refSeFi	130	36	91	53
+refProm	130	35	90	51
+
+Directo	137	54	95	70
+refSer1	137	57	95	73
+refSeFi	137	57	95	73
+refProm	137	57	93	73
+
+Directo	130	52	91	66
+refSer1	130	54	91	69
+refSeFi	130	54	93	69
+refProm	130	54	89	69
+
+Directo	128	34	89	49
+refSer1	128	36	90	51
+refSeFi	128	35	89	50
+refProm	128	35	88	50
+
+Directo	142	37	98	55
+refSer1	142	40	99	58
+refSeFi	142	42	100	58
+refProm	142	38	96	55
+
+Directo	136	54	94	69
+refSer1	136	57	94	72
+refSeFi	136	57	111	72
+refProm	136	57	93	72
+
+Directo	135	36	93	52
+refSer1	135	37	94	55
+refSeFi	135	40	93	55
+refProm	135	36	91	52
+
+Directo	131	34	91	51
+refSer1	131	37	91	53
+refSeFi	131	39	95	53
+refProm	131	35	90	51
+
+Directo	128	51	88	65
+refSer1	128	53	89	68
+refSeFi	128	53	92	68
+refProm	128	53	87	68
+
+Directo	127	33	88	49
+refSer1	127	35	90	51
+refSeFi	127	37	88	52
+refProm	127	34	87	49
+
+Directo	120	48	84	61
+refSer1	120	50	84	64
+refSeFi	120	50	87	64
+refProm	120	50	82	64
+
+Directo	128	51	89	65
+refSer1	128	54	90	68
+refSeFi	128	54	91	68
+refProm	128	54	88	68
+
+Directo	150	60	104	76
+refSer1	150	63	106	80
+refSeFi	150	63	106	80
+refProm	150	63	103	80
+
+Directo	126	50	87	64
+refSer1	126	53	88	67
+refSeFi	126	53	88	67
+refProm	126	53	85	67
+
+Directo	129	34	89	50
+refSer1	129	36	91	50
+refSeFi	129	38	92	52
+refProm	129	34	88	50
+
+Directo	128	51	90	65
+refSer1	128	54	90	68
+refSeFi	128	54	91	68
+refProm	128	54	88	68
+
+Directo	130	34	89	50
+refSer1	130	36	93	51
+refSeFi	130	36	94	53
+refProm	130	34	88	51
+
+Directo	128	33	87	49
+refSer1	128	34	89	50
+refSeFi	128	36	89	49
+refProm	128	33	87	50
+
+Directo	128	51	89	65
+refSer1	128	54	90	68
+refSeFi	128	54	88	68
+refProm	128	54	88	68
+
+Directo	128	51	89	65
+refSer1	128	54	88	68
+refSeFi	128	54	89	68
+refProm	128	54	87	68
+
+Directo	126	50	87	64
+refSer1	126	53	88	67
+refSeFi	126	53	89	67
+refProm	126	53	86	67
+
+Directo	147	39	103	57
+refSer1	147	41	103	60
+refSeFi	147	43	106	60
+refProm	147	39	102	57
+
+Directo	116	30	80	45
+refSer1	116	30	81	45
+refSeFi	116	32	81	45
+refProm	116	30	79	45
+
+Directo	131	52	92	67
+refSer1	131	55	92	70
+refSeFi	131	55	92	70
+refProm	131	55	90	70
+
+Directo	132	53	92	67
+refSer1	132	55	92	70
+refSeFi	132	55	98	70
+refProm	132	55	90	70
+
+Directo	128	33	88	49
+refSer1	128	35	90	50
+refSeFi	128	36	87	50
+refProm	128	34	87	50
+
+Directo	127	51	88	65
+refSer1	127	53	88	68
+refSeFi	127	53	93	68
+refProm	127	51	87	66
+
+Directo	129	32	90	48
+refSer1	129	34	90	50
+refSeFi	129	34	92	49
+refProm	129	32	88	48
+
+Directo	127	50	88	64
+refSer1	127	53	89	67
+refSeFi	127	53	90	67
+refProm	127	53	86	67
+
+Directo	130	34	90	50
+refSer1	130	34	92	50
+refSeFi	130	35	91	51
+refProm	130	34	89	51
+
+Directo	126	50	87	64
+refSer1	126	53	88	67
+refSeFi	126	53	89	67
+refProm	126	53	86	67
+
+Directo	126	33	88	49
+refSer1	126	35	89	49
+refSeFi	126	37	91	51
+refProm	126	34	87	49
+
+Directo	128	34	89	50
+refSer1	128	36	89	52
+refSeFi	128	36	91	51
+refProm	128	34	87	50
+
+Directo	129	34	90	50
+refSer1	129	36	89	51
+refSeFi	129	36	91	52
+refProm	129	34	88	50
+
+Directo	125	32	87	48
+refSer1	125	33	88	47
+refSeFi	125	33	88	49
+refProm	125	33	87	49
+
+Directo	126	33	87	49
+refSer1	126	35	87	51
+refSeFi	126	35	88	50
+refProm	126	33	86	49
+
+Directo	143	38	99	55
+refSer1	143	40	100	58
+refSeFi	143	42	104	58
+refProm	143	39	98	56
+
+Directo	59	23	42	30
+refSer1	59	25	41	31
+refSeFi	59	25	42	31
+refProm	59	25	41	31
+
+Directo	130	52	92	66
+refSer1	130	54	90	69
+refSeFi	130	54	95	69
+refProm	130	52	89	69
+
+Directo	123	31	85	46
+refSer1	123	32	85	47
+refSeFi	123	34	87	50
+refProm	123	31	84	46
+
+Directo	140	37	97	54
+refSer1	140	39	99	57
+refSeFi	140	39	99	56
+refProm	140	38	97	54
+
+Directo	118	30	82	44
+refSer1	118	31	83	46
+refSeFi	118	33	80	47
+refProm	118	30	80	44
+
+Directo	128	33	89	49
+refSer1	128	34	89	50
+refSeFi	128	36	93	50
+refProm	128	34	87	50
+
+Directo	132	52	91	67
+refSer1	132	55	92	70
+refSeFi	132	55	95	70
+refProm	132	55	89	70
+
+Directo	127	33	88	49
+refSer1	127	35	88	51
+refSeFi	127	37	89	52
+refProm	127	34	87	50
+
+Directo	128	34	89	49
+refSer1	128	36	90	52
+refSeFi	128	38	89	51
+refProm	128	34	87	50
+
+Directo	127	33	87	49
+refSer1	127	35	84	51
+refSeFi	127	35	89	52
+refProm	127	34	86	50
+
+Directo	137	55	95	70
+refSer1	137	57	95	73
+refSeFi	137	57	96	73
+refProm	137	57	94	73
+
+Directo	123	32	85	47
+refSer1	123	33	87	48
+refSeFi	123	36	87	50
+refProm	123	33	85	48
+
+Directo	128	33	89	49
+refSer1	128	36	90	50
+refSeFi	128	36	90	50
+refProm	128	34	87	50
+
+Directo	129	33	89	49
+refSer1	129	34	89	50
+refSeFi	129	34	91	50
+refProm	129	34	88	50
+
+Directo	131	34	91	51
+refSer1	131	36	91	52
+refSeFi	131	37	93	53
+refProm	131	35	89	51

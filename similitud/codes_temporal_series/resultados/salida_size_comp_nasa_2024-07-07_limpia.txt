@@ -1,0 +1,66 @@
+
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2114	245	2415	135
+refSer1	2114	245	2415	135
+refSeFi	2114	311	2209	462
+refProm	2114	276	1952	294
+
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	400	2361	187
+refSer1	2113	400	2361	187
+refSeFi	2113	512	2203	667
+refProm	2113	524	1398	692
+
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	175	2513	121
+refSer1	2113	175	2513	121
+refSeFi	2113	240	2505	338
+refProm	2113	193	2340	218
+
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	393	2091	534
+refSer1	2113	393	2091	534
+refSeFi	2113	521	1903	697
+refProm	2113	486	1932	672
+
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	442	2165	325
+refSer1	2113	442	2165	325
+refSeFi	2113	587	2020	831
+refProm	2113	554	1893	800
+
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2114	205	2318	300
+refSer1	2114	205	2318	300
+refSeFi	2114	237	2260	360
+refProm	2114	245	2197	372
+
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	567	1779	777
+refSer1	2113	567	1779	777
+refSeFi	2113	720	1603	968
+refProm	2113	694	1555	954
+
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	42	2531	116
+refSer1	2113	42	2531	116
+refSeFi	2113	42	2531	116
+refProm	2113	42	2531	116
+
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2114	340	1800	484
+refSer1	2114	340	1800	484
+refSeFi	2114	433	1438	615
+refProm	2114	415	1367	610
+
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	315	1689	468
+refSer1	2113	315	1689	468
+refSeFi	2113	415	1412	591
+refProm	2113	375	1440	562
+
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	315	1622	461
+refSer1	2113	315	1622	461
+refSeFi	2113	402	1410	584
+refProm	2113	375	1366	567
