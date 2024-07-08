@@ -16,30 +16,33 @@ int main(int argc, char const *argv[]){
 		cout << argv[0] << " <inputFile>" << endl;
 		return 0;
 	}
-	// Leyendo datos desde el archivo de entrada
-	ifstream infile(argv[1], ofstream::binary);
-	if(infile.fail()){
-		cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
-		return -1;
-	}
-	int electrodos, muestras;
-	// Cargando datos
-	infile.read((char *)&electrodos, sizeof(int));
-	infile.read((char *)&muestras, sizeof(int));
+    // Leyendo datos desde el archivo de entrada
+    ifstream infile(argv[1], ofstream::binary);
+    if(infile.fail()){
+        cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
+        return -1;
+    }
+    int sensores, muestras;
+    // Cargando datos
+    infile.read((char *)&sensores, sizeof(int));
+    infile.read((char *)&muestras, sizeof(int));
+    cout << "Sensores: " << sensores << endl;
+    cout << "Muestras: " << muestras << endl;
 
-	cout << "Electrodos: " << electrodos << endl;
-	cout << "Muestras: " << muestras << endl;
+    vector<int> idsensores(sensores);
+    for(int i=0; i<sensores; i++){
+        infile.read((char *)&idsensores[i], sizeof(int));
+    }
 
-	vector<vector<int>> temporalSeries(electrodos, vector<int>(muestras));
+    vector<vector<int>> temporalSeries(sensores, vector<int>(muestras));
 	vector<long long> serieAcumulada(muestras, 0);
-	float auxFloat;
-	for(int i=0; i<electrodos; i++){
-		for(int j=0; j<muestras; j++){
-			infile.read((char *)&auxFloat, sizeof(float));
-			temporalSeries[i][j] = (int)(100*auxFloat);
+    for(int i=0; i<sensores; i++){
+    	for(int j=0; j<muestras; j++){
+            infile.read((char *)&temporalSeries[i][j], sizeof(int));
 			serieAcumulada[j] += temporalSeries[i][j];
-		}
-	}
+    	}        
+    }
+
 	// Referencia en 0
 	vector<int> referencia(muestras, 0);
 	codificaPorReferencia(temporalSeries, referencia, "Directo");
@@ -49,12 +52,12 @@ int main(int argc, char const *argv[]){
 	codificaPorReferencia(temporalSeries, referencia, "refSer1");
 
 	// Referencia con la ultima serie de tiempo
-	referencia = temporalSeries[electrodos-1];
+	referencia = temporalSeries[sensores-1];
 	codificaPorReferencia(temporalSeries, referencia, "refSer1");
 
 	// Referencia con la serie de tiempo promedio
 	for(int i=0; i<muestras; i++){
-		referencia[i] = serieAcumulada[i] / electrodos;
+		referencia[i] = serieAcumulada[i] / sensores;
 	}
 	codificaPorReferencia(temporalSeries, referencia, "refProm");
 }
