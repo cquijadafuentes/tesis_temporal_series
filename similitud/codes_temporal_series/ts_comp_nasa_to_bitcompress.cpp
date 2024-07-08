@@ -28,9 +28,8 @@ int main(int argc, char const *argv[]){
     infile.read((char *)&cols, sizeof(int));
     infile.read((char *)&lenTempSerie, sizeof(int));
 
-    cout << "Rows: " << rows << endl;
-    cout << "Cols: " << cols << endl;
-    cout << "Largo de series de tiempo: " << lenTempSerie << endl;
+    cout << "File: " << argv[1] << endl;
+    cout << "Filas: " << rows << " - Cols: " << cols << " - Muestras: " << lenTempSerie << endl;
 
     vector<vector<vector<int>>> temporalSeries(rows, vector<vector<int>>(cols, vector<int>(lenTempSerie)));
 	vector<long long> serieAcumulada(lenTempSerie, 0);
@@ -53,7 +52,7 @@ int main(int argc, char const *argv[]){
 
 	// Referencia con la ultima serie de tiempo
 	referencia = temporalSeries[rows-1][cols-1];
-	codificaPorReferencia(temporalSeries, referencia, "refSer1");
+	codificaPorReferencia(temporalSeries, referencia, "refSerF");
 
 	// Referencia con la serie de tiempo promedio
 	for(int i=0; i<lenTempSerie; i++){
@@ -88,8 +87,7 @@ void codificaPorReferencia(vector<vector<vector<int>>> series, vector<int> refer
 			}
 		}
 	}
-	cout << "Valor codificado más grande: " << maximo << endl;
-	cout << "Valor codificado más pequeño: " << minimo << endl;
+	cout << "Rango de valores: [" << minimo << " , " << maximo << "]" << endl;
 
 	cout << "Procesando referencia..." << endl;
 	int refMin = referencia[0];

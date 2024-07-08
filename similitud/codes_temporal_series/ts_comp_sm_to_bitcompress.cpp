@@ -26,8 +26,9 @@ int main(int argc, char const *argv[]){
     // Cargando datos
     infile.read((char *)&sensores, sizeof(int));
     infile.read((char *)&muestras, sizeof(int));
-    cout << "Sensores: " << sensores << endl;
-    cout << "Muestras: " << muestras << endl;
+
+    cout << "File: " << argv[1] << endl;
+    cout << "Sensores: " << sensores << " - Muestras: " << muestras << endl;
 
     vector<int> idsensores(sensores);
     for(int i=0; i<sensores; i++){
@@ -53,7 +54,7 @@ int main(int argc, char const *argv[]){
 
 	// Referencia con la ultima serie de tiempo
 	referencia = temporalSeries[sensores-1];
-	codificaPorReferencia(temporalSeries, referencia, "refSer1");
+	codificaPorReferencia(temporalSeries, referencia, "refSerF");
 
 	// Referencia con la serie de tiempo promedio
 	for(int i=0; i<muestras; i++){
@@ -85,8 +86,7 @@ void codificaPorReferencia(vector<vector<int>> series, vector<int> referencia, s
 			}
 		}
 	}
-	cout << "Valor codificado más grande: " << maximo << endl;
-	cout << "Valor codificado más pequeño: " << minimo << endl;
+	cout << "Rango de valores: [" << minimo << " , " << maximo << "]" << endl;
 
 	cout << "Procesando referencia..." << endl;
 	int refMin = referencia[0];

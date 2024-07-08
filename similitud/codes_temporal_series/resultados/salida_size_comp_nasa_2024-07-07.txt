@@ -1,0 +1,299 @@
+Fecha INICIO SIZE COMPRESS: 2024/07/07 23:16:07
+Rows: 464
+Cols: 224
+Largo de series de tiempo: 2665
+Valor codificado más grande: 10258
+Valor codificado más pequeño: -1
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2114	245	2415	135
+Valor codificado más grande: 10259
+Valor codificado más pequeño: 0
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2114	245	2415	135
+Valor codificado más grande: 10249
+Valor codificado más pequeño: -148
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2114	311	2209	462
+Valor codificado más grande: 10253
+Valor codificado más pequeño: -20
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refProm	2114	276	1952	294
+Rows: 464
+Cols: 224
+Largo de series de tiempo: 2664
+Valor codificado más grande: 410867
+Valor codificado más pequeño: -1
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	400	2361	187
+Valor codificado más grande: 410868
+Valor codificado más pequeño: 0
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	400	2361	187
+Valor codificado más grande: 410669
+Valor codificado más pequeño: -9124
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	512	2203	667
+Valor codificado más grande: 401343
+Valor codificado más pequeño: -17694
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refProm	2113	524	1398	692
+Rows: 464
+Cols: 224
+Largo de series de tiempo: 2664
+Valor codificado más grande: 100
+Valor codificado más pequeño: -1
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	175	2513	121
+Valor codificado más grande: 101
+Valor codificado más pequeño: 0
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	175	2513	121
+Valor codificado más grande: 100
+Valor codificado más pequeño: -41
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	240	2505	338
+Valor codificado más grande: 100
+Valor codificado más pequeño: -7
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refProm	2113	193	2340	218
+Rows: 464
+Cols: 224
+Largo de series de tiempo: 2664
+Valor codificado más grande: 47911
+Valor codificado más pequeño: 9919
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	393	2091	534
+Valor codificado más grande: 37992
+Valor codificado más pequeño: 0
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	393	2091	534
+Valor codificado más grande: 32211
+Valor codificado más pequeño: -20576
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	521	1903	697
+Valor codificado más grande: 25263
+Valor codificado más pequeño: -15784
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refProm	2113	486	1932	672
+Rows: 464
+Cols: 224
+Largo de series de tiempo: 2664
+Valor codificado más grande: 128095
+Valor codificado más pequeño: -1
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	442	2165	325
+Valor codificado más grande: 128096
+Valor codificado más pequeño: 0
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	442	2165	325
+Valor codificado más grande: 104934
+Valor codificado más pequeño: -94474
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	587	2020	831
+Valor codificado más grande: 79682
+Valor codificado más pequeño: -58809
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refProm	2113	554	1893	800
+Rows: 464
+Cols: 224
+Largo de series de tiempo: 2665
+Valor codificado más grande: 185
+Valor codificado más pequeño: -79
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2114	205	2318	300
+Valor codificado más grande: 264
+Valor codificado más pequeño: 0
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2114	205	2318	300
+Valor codificado más grande: 185
+Valor codificado más pequeño: -98
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2114	237	2260	360
+Valor codificado más grande: 199
+Valor codificado más pequeño: -100
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refProm	2114	245	2197	372
+Rows: 464
+Cols: 224
+Largo de series de tiempo: 2664
+Valor codificado más grande: 10502674
+Valor codificado más pequeño: 6301609
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	567	1779	777
+Valor codificado más grande: 4201065
+Valor codificado más pequeño: 0
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	567	1779	777
+Valor codificado más grande: 1261441
+Valor codificado más pequeño: -3328744
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	720	1603	968
+Valor codificado más grande: 1760414
+Valor codificado más pequeño: -2465863
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refProm	2113	694	1555	954
+Rows: 464
+Cols: 224
+Largo de series de tiempo: 2664
+Valor codificado más grande: 2
+Valor codificado más pequeño: -1
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	42	2531	116
+Valor codificado más grande: 3
+Valor codificado más pequeño: 0
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	42	2531	116
+Valor codificado más grande: 2
+Valor codificado más pequeño: -1
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	42	2531	116
+Valor codificado más grande: 2
+Valor codificado más pequeño: -1
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refProm	2113	42	2531	116
+Rows: 464
+Cols: 224
+Largo de series de tiempo: 2665
+Valor codificado más grande: 31223
+Valor codificado más pequeño: 23421
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2114	340	1800	484
+Valor codificado más grande: 7802
+Valor codificado más pequeño: 0
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2114	340	1800	484
+Valor codificado más grande: 6045
+Valor codificado más pequeño: -3943
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2114	433	1438	615
+Valor codificado más grande: 4481
+Valor codificado más pequeño: -4129
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refProm	2114	415	1367	610
+Rows: 464
+Cols: 224
+Largo de series de tiempo: 2664
+Valor codificado más grande: 2147
+Valor codificado más pequeño: -2163
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	315	1689	468
+Valor codificado más grande: 4310
+Valor codificado más pequeño: 0
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	315	1689	468
+Valor codificado más grande: 2726
+Valor codificado más pequeño: -3353
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	415	1412	591
+Valor codificado más grande: 2585
+Valor codificado más pequeño: -1918
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refProm	2113	375	1440	562
+Rows: 464
+Cols: 224
+Largo de series de tiempo: 2664
+Valor codificado más grande: 2182
+Valor codificado más pequeño: -2004
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	2113	315	1622	461
+Valor codificado más grande: 4186
+Valor codificado más pequeño: 0
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	315	1622	461
+Valor codificado más grande: 2411
+Valor codificado más pequeño: -2669
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refSer1	2113	402	1410	584
+Valor codificado más grande: 2637
+Valor codificado más pequeño: -1823
+Procesando referencia...
+Comprimiendo series...
+Name	32bits	bitComp	EncodV	VLCV [KB]
+refProm	2113	375	1366	567
+Fecha FIN SIZE COMPRESS: 2024/07/08 00:16:12
