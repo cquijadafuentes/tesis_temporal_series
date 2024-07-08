@@ -1,0 +1,30 @@
+Compresión EEG
+4
+4
+Método
+Tamaño [KB]
+Directo
+refSer1
+refSeFi
+refProm
+86
+86
+86
+86
+32 bits
+34
+36
+36
+36
+bitCompressed
+60
+60
+63
+59
+Encoded Vector
+44
+46
+46
+46
+VLC Vector
+
