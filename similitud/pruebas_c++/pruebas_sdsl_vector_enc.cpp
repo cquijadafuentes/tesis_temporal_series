@@ -59,12 +59,12 @@ int main(int argc, char const *argv[]){
 
 	cout << "-----+-----+-----+-----+-----+-----+-----+-----+-----+-----" << endl;
 
-	cout << "compression\tv mem[B]\tw mem[B]\tx mem[B]\ty mem[B]" << endl;
+	cout << "compression\tv mem[KB]\tw mem[KB]\tx mem[KB]\ty mem[KB]" << endl;
 	cout << "no compress";
-	cout << "\t" << size_in_bytes(v);
-	cout << "\t" << size_in_bytes(w);
-	cout << "\t" << size_in_bytes(x);
-	cout << "\t" << size_in_bytes(y);
+	cout << "\t" << (int)(size_in_bytes(v)/1024);
+	cout << "\t" << (int)(size_in_bytes(w)/1024);
+	cout << "\t" << (int)(size_in_bytes(x)/1024);
+	cout << "\t" << (int)(size_in_bytes(y)/1024);
 	cout << endl;
 	
 	util::bit_compress(v);
@@ -72,10 +72,10 @@ int main(int argc, char const *argv[]){
 	util::bit_compress(x);
 	util::bit_compress(x);
 	cout << "bitcompress";
-	cout << "\t" << size_in_bytes(v);
-	cout << "\t" << size_in_bytes(w);
-	cout << "\t" << size_in_bytes(x);
-	cout << "\t" << size_in_bytes(y);
+	cout << "\t" << (int)(size_in_bytes(v)/1024);
+	cout << "\t" << (int)(size_in_bytes(w)/1024);
+	cout << "\t" << (int)(size_in_bytes(x)/1024);
+	cout << "\t" << (int)(size_in_bytes(y)/1024);
 	cout << endl;
 	
 	enc_vector<> evv(v);
@@ -83,10 +83,10 @@ int main(int argc, char const *argv[]){
 	enc_vector<> evx(x);
 	enc_vector<> evy(y);
 	cout << "enc_v (def)";
-	cout << "\t" << size_in_bytes(evv);
-	cout << "\t" << size_in_bytes(evw);
-	cout << "\t" << size_in_bytes(evx);
-	cout << "\t" << size_in_bytes(evy);
+	cout << "\t" << (int)(size_in_bytes(evv)/1024);
+	cout << "\t" << (int)(size_in_bytes(evw)/1024);
+	cout << "\t" << (int)(size_in_bytes(evx)/1024);
+	cout << "\t" << (int)(size_in_bytes(evy)/1024);
 	cout << endl;
 	
 	enc_vector<coder::elias_delta> evDv(v);
@@ -94,10 +94,10 @@ int main(int argc, char const *argv[]){
 	enc_vector<coder::elias_delta> evDx(x);
 	enc_vector<coder::elias_delta> evDy(y);
 	cout << "enc_v eliasD";
-	cout << "\t" << size_in_bytes(evDv);
-	cout << "\t" << size_in_bytes(evDw);
-	cout << "\t" << size_in_bytes(evDx);
-	cout << "\t" << size_in_bytes(evDy);
+	cout << "\t" << (int)(size_in_bytes(evDv)/1024);
+	cout << "\t" << (int)(size_in_bytes(evDw)/1024);
+	cout << "\t" << (int)(size_in_bytes(evDx)/1024);
+	cout << "\t" << (int)(size_in_bytes(evDy)/1024);
 	cout << endl;
 	
 	enc_vector<coder::elias_gamma> evGv(v);
@@ -105,10 +105,10 @@ int main(int argc, char const *argv[]){
 	enc_vector<coder::elias_gamma> evGx(x);
 	enc_vector<coder::elias_gamma> evGy(y);
 	cout << "enc_v eliasG";
-	cout << "\t" << size_in_bytes(evGv);
-	cout << "\t" << size_in_bytes(evGw);
-	cout << "\t" << size_in_bytes(evGx);
-	cout << "\t" << size_in_bytes(evGy);
+	cout << "\t" << (int)(size_in_bytes(evGv)/1024);
+	cout << "\t" << (int)(size_in_bytes(evGw)/1024);
+	cout << "\t" << (int)(size_in_bytes(evGx)/1024);
+	cout << "\t" << (int)(size_in_bytes(evGy)/1024);
 	cout << endl;
 	
 	enc_vector<coder::fibonacci> evFv(v);
@@ -116,46 +116,46 @@ int main(int argc, char const *argv[]){
 	enc_vector<coder::fibonacci> evFx(x);
 	enc_vector<coder::fibonacci> evFy(y);
 	cout << "enc_v Fibo";
-	cout << "\t" << size_in_bytes(evFv);
-	cout << "\t" << size_in_bytes(evFw);
-	cout << "\t" << size_in_bytes(evFx);
-	cout << "\t" << size_in_bytes(evFy);
+	cout << "\t" << (int)(size_in_bytes(evFv)/1024);
+	cout << "\t" << (int)(size_in_bytes(evFw)/1024);
+	cout << "\t" << (int)(size_in_bytes(evFx)/1024);
+	cout << "\t" << (int)(size_in_bytes(evFy)/1024);
 	cout << endl;
 	
 	vlc_vector<> vlcv(v);
 	vlc_vector<> vlcw(w);
 	vlc_vector<> vlcx(x);
 	cout << "vlc_v (def)";
-	cout << "\t" << size_in_bytes(vlcv);
-	cout << "\t" << size_in_bytes(vlcw);
-	cout << "\t" << size_in_bytes(vlcx);
+	cout << "\t" << (int)(size_in_bytes(vlcv)/1024);
+	cout << "\t" << (int)(size_in_bytes(vlcw)/1024);
+	cout << "\t" << (int)(size_in_bytes(vlcx)/1024);
 	cout << endl;
 	
 	vlc_vector<coder::elias_delta> vlcDv(v);
 	vlc_vector<coder::elias_delta> vlcDw(w);
 	vlc_vector<coder::elias_delta> vlcDx(x);
 	cout << "vlc_v eliasD";
-	cout << "\t" << size_in_bytes(vlcDv);
-	cout << "\t" << size_in_bytes(vlcDw);
-	cout << "\t" << size_in_bytes(vlcDx);
+	cout << "\t" << (int)(size_in_bytes(vlcDv)/1024);
+	cout << "\t" << (int)(size_in_bytes(vlcDw)/1024);
+	cout << "\t" << (int)(size_in_bytes(vlcDx)/1024);
 	cout << endl;
 	
 	vlc_vector<coder::elias_gamma> vlcGv(v);
 	vlc_vector<coder::elias_gamma> vlcGw(w);
 	vlc_vector<coder::elias_gamma> vlcGx(x);
 	cout << "vlc_v eliasG";
-	cout << "\t" << size_in_bytes(vlcGv);
-	cout << "\t" << size_in_bytes(vlcGw);
-	cout << "\t" << size_in_bytes(vlcGx);
+	cout << "\t" << (int)(size_in_bytes(vlcGv)/1024);
+	cout << "\t" << (int)(size_in_bytes(vlcGw)/1024);
+	cout << "\t" << (int)(size_in_bytes(vlcGx)/1024);
 	cout << endl;
 	
 	vlc_vector<coder::fibonacci> vlcFv(v);
 	vlc_vector<coder::fibonacci> vlcFw(w);
 	vlc_vector<coder::fibonacci> vlcFx(x);
 	cout << "vlc_v Fibo";
-	cout << "\t" << size_in_bytes(vlcFv);
-	cout << "\t" << size_in_bytes(vlcFw);
-	cout << "\t" << size_in_bytes(vlcFx);
+	cout << "\t" << (int)(size_in_bytes(vlcFv)/1024);
+	cout << "\t" << (int)(size_in_bytes(vlcFw)/1024);
+	cout << "\t" << (int)(size_in_bytes(vlcFx)/1024);
 	cout << endl;
 	
 	cout << "-----+-----+-----+-----+-----+-----+-----+-----+-----+-----" << endl;

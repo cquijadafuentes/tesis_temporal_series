@@ -1,0 +1,59 @@
+Memoria usada por Compresión [10 Mill]
+4
+10
+Método/Encoder
+Memoria [KB]
+no compress
+bitcompress
+enc_v (def)
+enc_v eliasD
+enc_v eliasG
+enc_v Fibo
+vlc_v (def)
+vlc_v eliasD
+vlc_v eliasG
+vlc_v Fibo
+80000
+38750
+70888
+70888
+115126
+84763
+47783
+47783
+74043
+54985
+Vector V
+80000
+5000
+54800
+54800
+89509
+66136
+6879
+6879
+6254
+6004
+Vector W
+80000
+25000
+1709
+1709
+1709
+2968
+33890
+33890
+46411
+35060
+Vector X
+80000
+80000
+55484
+55484
+90173
+66820
+NAN
+NAN
+NAN
+NAN
+Vector Y
