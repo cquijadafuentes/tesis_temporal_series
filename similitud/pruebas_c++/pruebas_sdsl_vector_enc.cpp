@@ -167,3 +167,4 @@ int main(int argc, char const *argv[]){
 /*
 g++ -I ~/include -L ~/lib -o pruebas_sdsl_vector_enc pruebas_sdsl_vector_enc.cpp -lsdsl -ldivsufsort -ldivsufsort64
 */
+
