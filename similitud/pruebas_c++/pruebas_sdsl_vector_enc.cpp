@@ -31,6 +31,7 @@ int main(int argc, char const *argv[]){
 	for(int i=0; i<10; i++){
 		cout << "\t" << w[i] ;
 	}
+	cout << "\t..." << endl;
 //	-------------------------------------------------
 	int deci = v.size() / 10;
 	int_vector<> x(v.size());
@@ -51,6 +52,7 @@ int main(int argc, char const *argv[]){
 	for(int i=0; i<10; i++){
 		cout << "\t" << y[i] ;
 	}
+	cout << "\t..." << endl;
 //	-------------------------------------------------
 	cout << "\tv.size(): " << v.size() << endl;
 	cout << "\tw.size(): " << w.size() << endl;
