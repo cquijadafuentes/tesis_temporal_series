@@ -68,7 +68,7 @@ int main(int argc, char const *argv[]){
 	cout << "\tw.size(): " << w.size() << endl;
 	cout << "\tx.size(): " << x.size() << endl;
 	cout << "\ty.size(): " << y.size() << endl;
-	cout << "\ty.size(): " << z.size() << endl;
+	cout << "\tz.size(): " << z.size() << endl;
 
 	cout << "-----+-----+-----+-----+-----+-----+-----+-----+-----+-----" << endl;
 

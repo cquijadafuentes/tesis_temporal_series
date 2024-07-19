@@ -1,0 +1,59 @@
+Memoria usada para arreglo con valores entre [0,3000]
+4
+10
+Método/Encoder
+Memoria [KB]
+no compress
+bitcompress
+enc_v (def)
+enc_v eliasD
+enc_v eliasG
+enc_v Fibo
+vlc_v (def)
+vlc_v eliasD
+vlc_v eliasG
+vlc_v Fibo
+78
+14
+56
+56
+89
+65
+20
+20
+24
+19
+10 mil datos
+781
+146
+560
+560
+887
+656
+204
+204
+249
+194
+100 mil datos
+7812
+1464
+5606
+5606
+8884
+6574
+2043
+2043
+2499
+1945
+1 millón datos
+78125
+14648
+56104
+56104
+88875
+65782
+20467
+20467
+25019
+19493
+10 millón datos

@@ -1,5 +1,5 @@
-Memoria usada por Compresión [10 Mill]
-4
+Memoria usada por Compresión [10 mill]
+5
 10
 Método/Encoder
 Memoria [KB]
@@ -57,3 +57,14 @@ NAN
 NAN
 NAN
 Vector Y
+78125
+14648
+56104
+56104
+88875
+65782
+20467
+20467
+25019
+19493
+Vector Z

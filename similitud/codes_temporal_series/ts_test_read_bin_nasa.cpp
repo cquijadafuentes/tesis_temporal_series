@@ -61,5 +61,6 @@ int main(int argc, char const *argv[]){
 	}
 	cout << "min: " << min << endl;
 	cout << "max: " << max << endl;
+	cout << "rango: " << max-min << endl;
 	cout << "end" << endl;
 }
