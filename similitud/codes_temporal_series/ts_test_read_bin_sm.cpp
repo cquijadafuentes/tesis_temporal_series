@@ -45,7 +45,7 @@ int main(int argc, char const *argv[]){
 		cout << "\t" << temporalSeries[sensores-1][i];
 	}
 	cout << endl;
-	int min = temporalSeries[0][0][0];
+	int min = temporalSeries[0][0];
 	int max = min;
 	for(int i=0; i<sensores; i++){
 		for(int j=0; j<muestras; j++){
