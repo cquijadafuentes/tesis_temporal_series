@@ -56,7 +56,7 @@ int main(int argc, char const *argv[]){
 //	-------------------------------------------------
 	int_vector<> z(v.size());
 	for(int i=0; i<y.size(); i++){
-		z[i] = v[i] % 3000;
+		z[i] = v[i] % (10259*2);
 	}
 	cout << "z:";
 	for(int i=0; i<10; i++){
