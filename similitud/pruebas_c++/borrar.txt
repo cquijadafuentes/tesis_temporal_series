@@ -1,59 +1,52 @@
-Memoria usada por encoders sdsl según rangos
-4
-10
-Método/Encoder
-Memoria [KB]
-no compress
-bitcompress
-enc_v (def)
-enc_v eliasD
-enc_v eliasG
-enc_v Fibo
-vlc_v (def)
-vlc_v eliasD
-vlc_v eliasG
-vlc_v Fibo
-78
-9
-52
-52
-84
-62
-14
-14
-15
-12
-[101 x 2]
-78
-18
-57
-57
-92
-68
-23
-23
-31
-24
-[10259 x 2]
-78
-21
-60
-60
-96
-71
-30
-30
-40
-30
-[128096 x 2]
-78
-29
-64
-64
-102
-75
-36
-36
-52
-39
-[4201065 x 2]
+Memoria usada por bit_compress para NASA
+3
+11
+Dataset
+Memoria [MB]
+APCP
+CAPE
+CONVfrac
+DLWRF
+DSWRF
+PEVAP
+PRES
+SPFH
+TMP
+UGRD
+VGRD
+147.98
+311.53
+51.94
+483.61
+291.15
+68.86
+717.81
+16.44
+409.87
+379.97
+380.28
+tk2-raster
+262.90
+376.26
+199.26
+376.09
+429.29
+178.24
+418.53
+42.42
+257.75
+247.55
+249.08
+Todas
+255.14
+368.53
+190.55
+368.36
+421.55
+170.5
+410.8
+16.64
+250.02
+239.82
+241.34
+No fijas

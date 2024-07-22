@@ -21,6 +21,22 @@ int main(){
     util::bit_compress(w);
     cout << " ok." << endl;
     cout << "Size in bytes of w: " << size_in_bytes(w) << endl;
+
+    int_vector<> z(15);
+    for(int i=0; i<15; i++){
+        cout << z[i] << "\t";
+    }
+    cout << endl;
+    cout << "Size in bytes of z: " << size_in_bytes(z) << endl;
+    util::bit_compress(z);
+    cout << "Size in bytes of z bitcompressed: " << size_in_bytes(z) << endl;
+    vlc_vector<> vlcz(z);
+    cout << "Size in bytes of vlc de z: " << size_in_bytes(vlcz) << endl;
+
+    vlc_vector<> x;
+    cout << "Size in bytes of int_vector x: " << size_in_bytes(x) << endl;
+    x = vlc_vector<>(z);
+    cout << "Size in bytes of int_vector x: " << size_in_bytes(x) << endl;
 }
 
 /*

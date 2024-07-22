@@ -1,0 +1,56 @@
+File: APCP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+Rango de valores: [-1 , 10258]
+APCP_NLDAS_FORA0125_H.bin	275674505	267530090	23607
+
+File: CAPE_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+Rango de valores: [-1 , 410867]
+CAPE_NLDAS_FORA0125_H.bin	394538697	386432232	23497
+
+File: CONVfrac_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+Rango de valores: [-1 , 100]
+CONVfrac_NLDAS_FORA0125_H.bin	208938913	199808488	26465
+
+File: DLWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+Rango de valores: [9919 , 47911]
+DLWRF_NLDAS_FORA0125_H.bin	394361617	386255152	23497
+
+File: DSWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+Rango de valores: [-1 , 128095]
+DSWRF_NLDAS_FORA0125_H.bin	450138537	442032072	23497
+
+File: PEVAP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+Rango de valores: [-79 , 185]
+PEVAP_NLDAS_FORA0125_H.bin	186893265	178786800	23497
+
+File: PRES_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+Rango de valores: [6301609 , 10502674]
+PRES_NLDAS_FORA0125_H.bin	438864417	430757952	23497
+
+File: SPFH_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+Rango de valores: [-1 , 2]
+SPFH_NLDAS_FORA0125_H.bin	44479801	17448016	78353
+
+File: TMP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+Rango de valores: [23421 , 31223]
+TMP_NLDAS_FORA0125_H.bin	270269385	262162920	23497
+
+File: UGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+Rango de valores: [-2163 , 2147]
+UGRD_NLDAS_FORA0125_H.bin	259572497	251466032	23497
+
+File: VGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+Rango de valores: [-2004 , 2182]
+VGRD_NLDAS_FORA0125_H.bin	261174713	253068248	23497
+
+
