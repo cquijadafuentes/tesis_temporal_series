@@ -21,9 +21,9 @@ int zigzag_decode(int i){
 }
 
 int main(int argc, char const *argv[]){
-	if(argc < 2){
+	if(argc < 3){
 		cout << "Error! Faltan argumentos." << endl;
-		cout << argv[0] << " <inputFile>" << endl;
+		cout << argv[0] << " <inputFile> <d_cuadrante>" << endl;
 		return 0;
 	}
     // Leyendo datos desde el archivo de entrada
@@ -32,6 +32,7 @@ int main(int argc, char const *argv[]){
         cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
         return -1;
     }
+    int dcuad = stoi(argv[2]);
     int rows, cols, lenTempSerie;
     // Cargando datos
     infile.read((char *)&rows, sizeof(int));
@@ -49,51 +50,54 @@ int main(int argc, char const *argv[]){
             }
     	}        
     }
+	
+	// Cantidad de filas y columnas de cuadrantes según las dimensiones dcuad.
+	int cuadRows = rows / dcuad;
+	if(cuadRows*dcuad < rows){
+		cuadRows++;
+	}
+	int cuadCols = cols / dcuad;
+	if(cuadCols*dcuad < cols){
+		cuadCols++;
+	}
+	
 
-	int_vector<> firstValue(rows * cols);
+	int_vector<> firstValue(cuadRows * cuadCols);
 	int iFV = 0;
-	int cantFijas = 0;
-	int maximo = temporalSeries[0][0][0];
-	int minimo = temporalSeries[0][0][0];
 	long long int bytesTodas = 0;
-	long long int bytesNoFijas = 0;
-	for(int f=0; f<rows; f++){
-		for(int c=0; c<cols; c++){
-			int val = temporalSeries[f][c][0];
-			if(val > maximo){
-				maximo = val;
-			}
-			if(val < minimo){
-				minimo = val;
-			}
+	for(int fc=0; fc<cuadRows; fc++){		// fc = fila-cuadrante
+		for(int cc=0; cc<cuadCols; cc++){	// cc = columna-cuadrante
+			// Procesando primera series del cuadrante
+			int fref = fc*dcuad;
+			int cref = cc*dcuad;
+			int val = temporalSeries[fref][cref][0];
 			firstValue[iFV++] = zigzag_encode(val);
 			int_vector<> ivaux(lenTempSerie-1);
-			bool fija = true;
-			for(int j=1; j<lenTempSerie; j++){
-				if(temporalSeries[f][c][j] > maximo){
-					maximo = temporalSeries[f][c][j];
-				}
-				if(temporalSeries[f][c][j] < minimo){
-					minimo = temporalSeries[f][c][j];
-				}
-				val = temporalSeries[f][c][j] - temporalSeries[f][c][j-1];
-				ivaux[j-1] = zigzag_encode(val);
-				fija = fija && (val == 0);
+			for(int k=1; k<lenTempSerie; k++){
+				val = temporalSeries[fref][cref][k] - temporalSeries[fref][cref][k-1];
+				ivaux[k-1] = zigzag_encode(val);
 			}
 			util::bit_compress(ivaux);
 			bytesTodas += size_in_bytes(ivaux);
-			if(!fija){
-				bytesNoFijas += size_in_bytes(ivaux);
-			}else{
-				cantFijas++;
+			// Procesando el resto de las series del cuadrante
+			for(int i=0; i<dcuad && fref+i < rows; i++){
+				int_vector<> ivaux2(lenTempSerie);
+				for(int j=0; j<dcuad && cref+j < cols; j++){
+					if(i!=0 || j!=0){
+						// NO es la primera celda (que ya esta considerada)
+						for(int k=0; k<lenTempSerie; k++){
+							val = temporalSeries[fref][cref][k] - temporalSeries[fref+i][cref+j][k];
+							ivaux2[k] = zigzag_encode(val);
+						}
+						util::bit_compress(ivaux2);
+						bytesTodas += size_in_bytes(ivaux2);
+					}
+				}
 			}
 		}
 	}
 	util::bit_compress(firstValue);
 	bytesTodas += size_in_bytes(firstValue);
-	bytesNoFijas += size_in_bytes(firstValue);
 
-
-	cout << "Rango de valores: [" << minimo << " , " << maximo << "]" << endl;
-	cout << argv[1] << "\t" << bytesTodas << "\t" << bytesNoFijas << "\t" << cantFijas << endl;
+	cout << argv[1] << "\t" << bytesTodas << "\t" << dcuad << "\t" << cuadRows << "\t" << cuadCols << endl;
 }
