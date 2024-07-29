@@ -10,6 +10,7 @@ BINS=ts_build_eeg_to_bin ts_build_nasa_to_bin \
 		ts_comp_nasa_to_bitcompress \
 		ts_comp_nasa_to_encoder_segunanteriorvalor \
 		ts_comp_nasa_to_k2tseries \
+		ts_comp_nasa_to_k2tseries_sinfijas \
 		ts_comp_sm_to_bitcompress \
 		ts_test_read_bin_eeg \
 		ts_test_read_bin_nasa ts_test_read_bin_sm
@@ -42,6 +43,9 @@ ts_comp_nasa_to_encoder_segunanteriorvalor:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(POSFLAGS)
 
 ts_comp_nasa_to_k2tseries:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(POSFLAGS)
+
+ts_comp_nasa_to_k2tseries_sinfijas:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(POSFLAGS)
 
 ts_comp_sm_to_bitcompress:
