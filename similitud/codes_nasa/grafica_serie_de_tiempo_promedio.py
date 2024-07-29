@@ -125,7 +125,7 @@ for x in range(minmin, maxmax+1):
 cantB = maxmax - minmin + 1
 fig, ax = plt.subplots()
 plt.plot(valor, cantidad)
-plt.title("Histograma valores en " + sys.argv[1][:5])
+plt.title("Histograma de valores en " + sys.argv[1][:5])
 ax.set_xlabel("t")
 ax.set_ylabel("Valor")
 fig.set_size_inches(12, 4)
