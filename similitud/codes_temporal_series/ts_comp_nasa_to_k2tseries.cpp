@@ -81,10 +81,10 @@ int main(int argc, char const *argv[]){
 			bytesTodas += size_in_bytes(ivaux);
 			// Procesando el resto de las series del cuadrante
 			for(int i=0; i<dcuad && fref+i < rows; i++){
-				int_vector<> ivaux2(lenTempSerie);
 				for(int j=0; j<dcuad && cref+j < cols; j++){
 					if(i!=0 || j!=0){
 						// NO es la primera celda (que ya esta considerada)
+						int_vector<> ivaux2(lenTempSerie);
 						for(int k=0; k<lenTempSerie; k++){
 							val = temporalSeries[fref][cref][k] - temporalSeries[fref+i][cref+j][k];
 							ivaux2[k] = zigzag_encode(val);
@@ -98,6 +98,7 @@ int main(int argc, char const *argv[]){
 	}
 	util::bit_compress(firstValue);
 	bytesTodas += size_in_bytes(firstValue);
+	int megaBytes = ((bytesTodas + 0.0) / 1024) / 1024;
 
-	cout << argv[1] << "\t" << bytesTodas << "\t" << dcuad << "\t" << cuadRows << "\t" << cuadCols << endl;
+	cout << argv[1] << "\t" << megaBytes << "\t" << dcuad << "\t" << cuadRows << "\t" << cuadCols << endl;
 }
