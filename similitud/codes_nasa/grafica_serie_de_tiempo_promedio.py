@@ -44,7 +44,7 @@ for i in lineas:
 			index += 1
 	iFile += 1
 
-print("Calculando histograma de serie promedio de todo le mapa...")
+print("Calculando serie promedio de todo el mapa...")
 sPromedio = []
 celdas = rows*cols
 for t in range(numFiles):
@@ -64,6 +64,7 @@ for t in range(1, numFiles):
 vDmin = min(sDiferencia)
 vDmax = max(sDiferencia)
 
+
 # Preparando entorno para gráficas:
 fig, ax = plt.subplots()
 plt.plot(sPromedio, label="Serie Promedio")
@@ -77,4 +78,59 @@ ax.grid(True)
 fig.set_size_inches(12, 4)
 plt.tight_layout()
 plt.savefig(sys.argv[1] + '.serie_promedio.png', bbox_inches='tight')
+plt.close()
+
+
+print("Calculando histograma de todo el mapa")
+print("\tCalculando minimo y máximo del mapa")
+minmin = min(tSeries[0][0])
+maxmax = max(tSeries[0][0])
+fijas = []
+for f in range(rows):
+	for c in range(cols):
+		smin = min(tSeries[f][c])
+		smax = max(tSeries[f][c])
+		if smin < minmin:
+			minmin = smin
+		if smax > maxmax:
+			maxmax = smax
+		if smin == smax:
+			# Es una serie fija
+			fijas.append(f*rows + c)
+
+minmin = int(minmin)
+maxmax = int(maxmax)
+
+print("\tCalculando frecuencia de valores")
+histo = {}
+for f in range(rows):
+	for c in range(cols):
+		if (f*rows + c) not in fijas:
+			for v in range(numFiles):
+				p = tSeries[f][c][v] - minmin
+				if p in histo:
+					histo[p] += 1
+				else:
+					histo[p] = 1
+
+valor = []
+cantidad = []
+for x in range(minmin, maxmax+1):
+	valor.append(x)
+	vh = int(x-minmin)
+	if vh in histo:
+		cantidad.append(histo[vh])
+	else:
+		cantidad.append(0)
+cantB = maxmax - minmin + 1
+fig, ax = plt.subplots()
+plt.plot(valor, cantidad)
+plt.title("Histograma valores en " + sys.argv[1][:5])
+ax.set_xlabel("t")
+ax.set_ylabel("Valor")
+fig.set_size_inches(12, 4)
+texto = "Valor mínimo: " + str(minmin) + "\nValor máximo: " + str(maxmax) + "\nSeries fijas: " + str(len(fijas))
+plt.text(0.8, 0.8, texto, transform = ax.transAxes)
+plt.show()
+#plt.savefig(sys.argv[1] + '.serie_promedio.png', bbox_inches='tight')
 plt.close()
