@@ -120,8 +120,8 @@ for x in range(minmin, maxmax+1):
 		cantidad.append(0)
 cantB = maxmax - minmin + 1
 ax[1].plot(valor, cantidad)
-ax[1].set_xlabel("t")
-ax[1].set_ylabel("Valor")
+ax.set_xlabel("Valor")
+ax.set_ylabel("Cantidad")
 ax[1].set_title("Histograma " + sys.argv[1][:5])
 texto = "Valor mínimo: " + str(minmin) + "\nValor máximo: " + str(maxmax) + "\nSeries fijas: " + str(len(fijas))
 plt.text(0.8, 0.8, texto)

@@ -1,0 +1,266 @@
+Fecha INICIO SIZE COMPRESS: 2024/08/01 08:03:13
+File: APCP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 116 - cuadCols: 56
+APCP_NLDAS_FORA0125_H.bin	240	4	116	56
+File: CAPE_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 116 - cuadCols: 56
+CAPE_NLDAS_FORA0125_H.bin	366	4	116	56
+File: CONVfrac_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 116 - cuadCols: 56
+CONVfrac_NLDAS_FORA0125_H.bin	184	4	116	56
+File: DLWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 116 - cuadCols: 56
+DLWRF_NLDAS_FORA0125_H.bin	345	4	116	56
+File: DSWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 116 - cuadCols: 56
+DSWRF_NLDAS_FORA0125_H.bin	391	4	116	56
+File: PEVAP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 116 - cuadCols: 56
+PEVAP_NLDAS_FORA0125_H.bin	132	4	116	56
+File: PRES_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 116 - cuadCols: 56
+PRES_NLDAS_FORA0125_H.bin	448	4	116	56
+File: SPFH_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 116 - cuadCols: 56
+SPFH_NLDAS_FORA0125_H.bin	16	4	116	56
+File: TMP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 116 - cuadCols: 56
+TMP_NLDAS_FORA0125_H.bin	251	4	116	56
+File: UGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 116 - cuadCols: 56
+UGRD_NLDAS_FORA0125_H.bin	241	4	116	56
+File: VGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 116 - cuadCols: 56
+VGRD_NLDAS_FORA0125_H.bin	241	4	116	56
+File: APCP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 58 - cuadCols: 28
+APCP_NLDAS_FORA0125_H.bin	254	8	58	28
+File: CAPE_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 58 - cuadCols: 28
+CAPE_NLDAS_FORA0125_H.bin	390	8	58	28
+File: CONVfrac_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 58 - cuadCols: 28
+CONVfrac_NLDAS_FORA0125_H.bin	188	8	58	28
+File: DLWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 58 - cuadCols: 28
+DLWRF_NLDAS_FORA0125_H.bin	361	8	58	28
+File: DSWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 58 - cuadCols: 28
+DSWRF_NLDAS_FORA0125_H.bin	408	8	58	28
+File: PEVAP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 58 - cuadCols: 28
+PEVAP_NLDAS_FORA0125_H.bin	148	8	58	28
+File: PRES_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 58 - cuadCols: 28
+PRES_NLDAS_FORA0125_H.bin	467	8	58	28
+File: SPFH_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 58 - cuadCols: 28
+SPFH_NLDAS_FORA0125_H.bin	16	8	58	28
+File: TMP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 58 - cuadCols: 28
+TMP_NLDAS_FORA0125_H.bin	271	8	58	28
+File: UGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 58 - cuadCols: 28
+UGRD_NLDAS_FORA0125_H.bin	262	8	58	28
+File: VGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 58 - cuadCols: 28
+VGRD_NLDAS_FORA0125_H.bin	259	8	58	28
+File: APCP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 39 - cuadCols: 19
+APCP_NLDAS_FORA0125_H.bin	261	12	39	19
+File: CAPE_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 39 - cuadCols: 19
+CAPE_NLDAS_FORA0125_H.bin	401	12	39	19
+File: CONVfrac_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 39 - cuadCols: 19
+CONVfrac_NLDAS_FORA0125_H.bin	191	12	39	19
+File: DLWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 39 - cuadCols: 19
+DLWRF_NLDAS_FORA0125_H.bin	370	12	39	19
+File: DSWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 39 - cuadCols: 19
+DSWRF_NLDAS_FORA0125_H.bin	418	12	39	19
+File: PEVAP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 39 - cuadCols: 19
+PEVAP_NLDAS_FORA0125_H.bin	158	12	39	19
+File: PRES_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 39 - cuadCols: 19
+PRES_NLDAS_FORA0125_H.bin	478	12	39	19
+File: SPFH_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 39 - cuadCols: 19
+SPFH_NLDAS_FORA0125_H.bin	16	12	39	19
+File: TMP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 39 - cuadCols: 19
+TMP_NLDAS_FORA0125_H.bin	282	12	39	19
+File: UGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 39 - cuadCols: 19
+UGRD_NLDAS_FORA0125_H.bin	273	12	39	19
+File: VGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 39 - cuadCols: 19
+VGRD_NLDAS_FORA0125_H.bin	269	12	39	19
+File: APCP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 19 - cuadCols: 9
+APCP_NLDAS_FORA0125_H.bin	269	25	19	9
+File: CAPE_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 19 - cuadCols: 9
+CAPE_NLDAS_FORA0125_H.bin	417	25	19	9
+File: CONVfrac_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 19 - cuadCols: 9
+CONVfrac_NLDAS_FORA0125_H.bin	193	25	19	9
+File: DLWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 19 - cuadCols: 9
+DLWRF_NLDAS_FORA0125_H.bin	380	25	19	9
+File: DSWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 19 - cuadCols: 9
+DSWRF_NLDAS_FORA0125_H.bin	430	25	19	9
+File: PEVAP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 19 - cuadCols: 9
+PEVAP_NLDAS_FORA0125_H.bin	170	25	19	9
+File: PRES_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 19 - cuadCols: 9
+PRES_NLDAS_FORA0125_H.bin	497	25	19	9
+File: SPFH_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 19 - cuadCols: 9
+SPFH_NLDAS_FORA0125_H.bin	16	25	19	9
+File: TMP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 19 - cuadCols: 9
+TMP_NLDAS_FORA0125_H.bin	298	25	19	9
+File: UGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 19 - cuadCols: 9
+UGRD_NLDAS_FORA0125_H.bin	290	25	19	9
+File: VGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 19 - cuadCols: 9
+VGRD_NLDAS_FORA0125_H.bin	286	25	19	9
+File: APCP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 10 - cuadCols: 5
+APCP_NLDAS_FORA0125_H.bin	274	50	10	5
+File: CAPE_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 10 - cuadCols: 5
+CAPE_NLDAS_FORA0125_H.bin	428	50	10	5
+File: CONVfrac_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 10 - cuadCols: 5
+CONVfrac_NLDAS_FORA0125_H.bin	194	50	10	5
+File: DLWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 10 - cuadCols: 5
+DLWRF_NLDAS_FORA0125_H.bin	386	50	10	5
+File: DSWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 10 - cuadCols: 5
+DSWRF_NLDAS_FORA0125_H.bin	436	50	10	5
+File: PEVAP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 10 - cuadCols: 5
+PEVAP_NLDAS_FORA0125_H.bin	180	50	10	5
+File: PRES_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 10 - cuadCols: 5
+PRES_NLDAS_FORA0125_H.bin	514	50	10	5
+File: SPFH_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 10 - cuadCols: 5
+SPFH_NLDAS_FORA0125_H.bin	16	50	10	5
+File: TMP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 10 - cuadCols: 5
+TMP_NLDAS_FORA0125_H.bin	310	50	10	5
+File: UGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 10 - cuadCols: 5
+UGRD_NLDAS_FORA0125_H.bin	300	50	10	5
+File: VGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 10 - cuadCols: 5
+VGRD_NLDAS_FORA0125_H.bin	297	50	10	5
+File: APCP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 5 - cuadCols: 3
+APCP_NLDAS_FORA0125_H.bin	274	100	5	3
+File: CAPE_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 5 - cuadCols: 3
+CAPE_NLDAS_FORA0125_H.bin	450	100	5	3
+File: CONVfrac_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 5 - cuadCols: 3
+CONVfrac_NLDAS_FORA0125_H.bin	196	100	5	3
+File: DLWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 5 - cuadCols: 3
+DLWRF_NLDAS_FORA0125_H.bin	394	100	5	3
+File: DSWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 5 - cuadCols: 3
+DSWRF_NLDAS_FORA0125_H.bin	442	100	5	3
+File: PEVAP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 5 - cuadCols: 3
+PEVAP_NLDAS_FORA0125_H.bin	190	100	5	3
+File: PRES_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 5 - cuadCols: 3
+PRES_NLDAS_FORA0125_H.bin	533	100	5	3
+File: SPFH_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 5 - cuadCols: 3
+SPFH_NLDAS_FORA0125_H.bin	16	100	5	3
+File: TMP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+cuadRows: 5 - cuadCols: 3
+TMP_NLDAS_FORA0125_H.bin	320	100	5	3
+File: UGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 5 - cuadCols: 3
+UGRD_NLDAS_FORA0125_H.bin	305	100	5	3
+File: VGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+cuadRows: 5 - cuadCols: 3
+VGRD_NLDAS_FORA0125_H.bin	304	100	5	3
+Fecha FIN SIZE COMPRESS: 2024/08/01 08:28:50
