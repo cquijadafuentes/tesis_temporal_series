@@ -36,13 +36,12 @@ int bytes_bit_vector(bit_vector b){
 }
 
 bool esFija(vector<int> serie){
-	bool fija = true;
-	int val;
 	for(int j=1; j<serie.size(); j++){
-		val = serie[j] - serie[j-1];
-		fija = fija && (val == 0);
+		if(serie[j] != serie[j-1]){
+			return false;
+		}
 	}
-	return fija;
+	return true;
 }
 
 int main(int argc, char const *argv[]){
