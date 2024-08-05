@@ -1,0 +1,57 @@
+Fecha INICIO SIZE COMPRESS: 2024/08/02 10:50:49
+File: APCP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+N: 80309 - valorN: 80309
+dataset		IAET	N	valorN	total	fijas	noFijas	nofijasSinVecino
+APCP_NLDAS_FORA0125_H.bin	0.9700	80309	80309	103936	23607	80329	20
+File: CAPE_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+N: 80422 - valorN: 80422
+dataset		IAET	N	valorN	total	fijas	noFijas	nofijasSinVecino
+CAPE_NLDAS_FORA0125_H.bin	0.9091	80422	80422	103936	23497	80439	17
+File: CONVfrac_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+N: 77429 - valorN: 77429
+dataset		IAET	N	valorN	total	fijas	noFijas	nofijasSinVecino
+CONVfrac_NLDAS_FORA0125_H.bin	0.9552	77429	77429	103936	26465	77471	42
+File: DLWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+N: 80422 - valorN: 80422
+dataset		IAET	N	valorN	total	fijas	noFijas	nofijasSinVecino
+DLWRF_NLDAS_FORA0125_H.bin	0.9379	80422	80422	103936	23497	80439	17
+File: DSWRF_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+N: 80422 - valorN: 80422
+dataset		IAET	N	valorN	total	fijas	noFijas	nofijasSinVecino
+DSWRF_NLDAS_FORA0125_H.bin	0.9703	80422	80422	103936	23497	80439	17
+File: PEVAP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+N: 80422 - valorN: 80422
+dataset		IAET	N	valorN	total	fijas	noFijas	nofijasSinVecino
+PEVAP_NLDAS_FORA0125_H.bin	0.9554	80422	80422	103936	23497	80439	17
+File: PRES_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+N: 80422 - valorN: 80422
+dataset		IAET	N	valorN	total	fijas	noFijas	nofijasSinVecino
+PRES_NLDAS_FORA0125_H.bin	0.9619	80422	80422	103936	23497	80439	17
+File: SPFH_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+N: 25484 - valorN: 25484
+dataset		IAET	N	valorN	total	fijas	noFijas	nofijasSinVecino
+SPFH_NLDAS_FORA0125_H.bin	0.9020	25484	25484	103936	78353	25583	99
+File: TMP_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2665
+N: 80422 - valorN: 80422
+dataset		IAET	N	valorN	total	fijas	noFijas	nofijasSinVecino
+TMP_NLDAS_FORA0125_H.bin	0.9470	80422	80422	103936	23497	80439	17
+File: UGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+N: 80422 - valorN: 80422
+dataset		IAET	N	valorN	total	fijas	noFijas	nofijasSinVecino
+UGRD_NLDAS_FORA0125_H.bin	0.9422	80422	80422	103936	23497	80439	17
+File: VGRD_NLDAS_FORA0125_H.bin
+Filas: 464 - Cols: 224 - Muestras: 2664
+N: 80422 - valorN: 80422
+dataset		IAET	N	valorN	total	fijas	noFijas	nofijasSinVecino
+VGRD_NLDAS_FORA0125_H.bin	0.9528	80422	80422	103936	23497	80439	17
+Fecha FIN SIZE COMPRESS: 2024/08/02 10:52:36

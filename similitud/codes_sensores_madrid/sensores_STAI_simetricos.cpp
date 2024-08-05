@@ -150,7 +150,7 @@ void calculaIAET(const vector<vector<TipoNumero>>& datos, vector<set<int>> pesos
 		zethaValues[e] = ZETA(datos[e], stPromedio);
 	}
 
-	// Cálculo de Medida de utocorrelación espacio-temporal
+	// Cálculo de Medida de autocorrelación espacio-temporal
 	int sumaW = 0;
 	int cantFijas = 0;
 	int cantSinVecinos = 0;

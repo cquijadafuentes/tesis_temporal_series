@@ -87,6 +87,7 @@ print("\tCalculando minimo y máximo del mapa")
 minmin = min(tSeries[0][0])
 maxmax = max(tSeries[0][0])
 fijas = []
+ind = 0
 for f in range(rows):
 	for c in range(cols):
 		smin = min(tSeries[f][c])
@@ -97,22 +98,28 @@ for f in range(rows):
 			maxmax = smax
 		if smin == smax:
 			# Es una serie fija
-			fijas.append(f*rows + c)
+			fijas.append(ind)
+		ind += 1
 
 minmin = int(minmin)
 maxmax = int(maxmax)
 
 print("\tCalculando frecuencia de valores")
 histo = {}
+ind = 0
+pos = 0
 for f in range(rows):
 	for c in range(cols):
-		if (f*rows + c) not in fijas:
+		if not(pos < len(fijas) and fijas[pos]==ind):
 			for v in range(numFiles):
 				p = tSeries[f][c][v] - minmin
 				if p in histo:
 					histo[p] += 1
 				else:
 					histo[p] = 1
+		else:
+			pos += 1
+		ind += 1
 
 valor = []
 cantidad = []
