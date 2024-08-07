@@ -74,10 +74,10 @@ print(promConFijas)
 print(promSinFijas)
 print(celdas, seriesNoFijas)
 
-rangoMinCF = min(limConFijas)
-rangoMaxCF = max(limConFijas)
-rangoMinSF = min(limSinFijas)
-rangoMaxSF = max(limSinFijas)
+rangoMinCF = int(min(limConFijas))
+rangoMaxCF = int(max(limConFijas))
+rangoMinSF = int(min(limSinFijas))
+rangoMaxSF = int(max(limSinFijas))
 
 for k in range(numFiles):
 	promConFijas[k] = int(promConFijas[k] / celdas)
@@ -112,6 +112,7 @@ axs[0].set_yticks((minDCF, maxDCF, minCF, maxCF))
 axs[0].set_title("Promedio CON series fijas")
 axs[0].set_xlabel("Instantes")
 axs[0].set_ylabel("Valor")
+axs[0].grid(True)
 # sub-figura sin series fijas
 axs[1].plot(promSinFijas, label="Promedio")
 axs[1].plot(diffSF, label="Diferencia")
@@ -119,6 +120,7 @@ axs[1].set_yticks((minDSF, maxDSF, minSF, maxSF))
 axs[1].set_title("Promedio SIN series fijas")
 axs[1].set_xlabel("Instantes")
 axs[1].set_ylabel("Valor")
+axs[1].grid(True)
 # Generar una leyenda general para la figura
 handles, labels = axs[0].get_legend_handles_labels()
 fig.legend(handles, labels, loc='upper right')
@@ -143,7 +145,7 @@ for f in range(rows):
 
 valor = []
 cantidad = []
-for x in range(minSF, maxSF+1):
+for x in range(rangoMinSF, rangoMaxSF+1):
 	valor.append(x)
 	vh = int(x-minSF)
 	if vh in histo:
@@ -157,10 +159,11 @@ plt.title("Histograma de valores en " + sys.argv[1][:5])
 ax.set_xlabel("Valor")
 ax.set_ylabel("Cantidad")
 fig.set_size_inches(12, 4)
-texto = "SIN series Fijas\nValor mínimo: " + str(rangoMinSF) + "\nValor máximo: " + str(rangoMaxSF)
-texto += "\nSeries No fijas: " + str(seriesNoFijas) + "\nSeries fijas: " + str(len(fijas))
-texto += "\nCON series Fijas: [" + str(rangoMinCF) + "," + str(rangoMaxCF) + "]"
-plt.text(0.8, 0.65, texto, transform = ax.transAxes)
+texto = "SIN series Fijas: " + str(seriesNoFijas)
+texto += "\n[" + str(rangoMinSF) + "," + str(rangoMaxSF) + "]\n"
+texto += "CON series Fijas: " + str(len(fijas))
+texto += "\n[" + str(rangoMinCF) + "," + str(rangoMaxCF) + "]"
+plt.text(0.8, 0.8, texto, transform = ax.transAxes)
 #plt.show()
 plt.savefig(sys.argv[1] + '.histograma_serie_v2.png', bbox_inches='tight')
 plt.close()
