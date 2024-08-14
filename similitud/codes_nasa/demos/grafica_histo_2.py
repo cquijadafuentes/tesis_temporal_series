@@ -67,7 +67,7 @@ for f in range(rows):
 			seriesNoFijas += 1
 		else:
 			fijas.append(f*cols + c)
-		promConFijas = promConFijas + tSeries[f][c]
+		promConFijas += tSeries[f][c]
 		limConFijas.append(min(tSeries[f][c]))
 		limConFijas.append(max(tSeries[f][c]))
 print(promConFijas)
@@ -84,10 +84,10 @@ for k in range(numFiles):
 	promSinFijas[k] = int(promSinFijas[k] / seriesNoFijas)
 print(promConFijas)
 print(promSinFijas)
-minCF = int(min(promConFijas))
-maxCF = int(max(promConFijas))
-minSF = int(min(promSinFijas))
-maxSF = int(max(promSinFijas))
+minPCF = int(min(promConFijas))
+maxPCF = int(max(promConFijas))
+minPSF = int(min(promSinFijas))
+maxPSF = int(max(promSinFijas))
 
 diffCF = []
 diffSF = []
@@ -108,7 +108,7 @@ fig.suptitle("Serie Promedio de " + sys.argv[1][:5], fontsize=16)
 # sub-figura con series fijas
 axs[0].plot(promConFijas, label="Promedio")
 axs[0].plot(diffCF, label="Diferencia")
-axs[0].set_yticks((minDCF, maxDCF, minCF, maxCF))
+axs[0].set_yticks((minDCF, maxDCF, minPCF, maxPCF))
 axs[0].set_title("Promedio CON series fijas")
 axs[0].set_xlabel("Instantes")
 axs[0].set_ylabel("Valor")
@@ -116,7 +116,7 @@ axs[0].grid(True)
 # sub-figura sin series fijas
 axs[1].plot(promSinFijas, label="Promedio")
 axs[1].plot(diffSF, label="Diferencia")
-axs[1].set_yticks((minDSF, maxDSF, minSF, maxSF))
+axs[1].set_yticks((minDSF, maxDSF, minPSF, maxPSF))
 axs[1].set_title("Promedio SIN series fijas")
 axs[1].set_xlabel("Instantes")
 axs[1].set_ylabel("Valor")
@@ -137,7 +137,7 @@ for f in range(rows):
 	for c in range(cols):
 		if (f*cols + c) not in fijas:
 			for v in range(numFiles):
-				p = int(tSeries[f][c][v] - minSF)
+				p = tSeries[f][c][v]
 				if p in histo:
 					histo[p] += 1
 				else:
@@ -147,12 +147,10 @@ valor = []
 cantidad = []
 for x in range(rangoMinSF, rangoMaxSF+1):
 	valor.append(x)
-	vh = int(x-minSF)
-	if vh in histo:
-		cantidad.append(histo[vh])
+	if x in histo:
+		cantidad.append(histo[x])
 	else:
 		cantidad.append(0)
-cantB = maxSF - minSF + 1
 fig, ax = plt.subplots()
 plt.plot(valor, cantidad)
 plt.title("Histograma de valores en " + sys.argv[1][:5])
@@ -161,7 +159,7 @@ ax.set_ylabel("Cantidad")
 fig.set_size_inches(12, 4)
 texto = "SIN series Fijas: " + str(seriesNoFijas)
 texto += "\n[" + str(rangoMinSF) + "," + str(rangoMaxSF) + "]\n"
-texto += "CON series Fijas: " + str(len(fijas))
+texto += "Series Fijas: " + str(len(fijas))
 texto += "\n[" + str(rangoMinCF) + "," + str(rangoMaxCF) + "]"
 plt.text(0.8, 0.8, texto, transform = ax.transAxes)
 #plt.show()
