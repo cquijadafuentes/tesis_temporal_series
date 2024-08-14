@@ -1,0 +1,77 @@
+
+
+~/k2-raster/build/bin/encode_tk2r CONVfrac_NLDAS_FORA0125_H.txt ./ ./tk2r_new/CONVfrac.100.tk2r -t 100 -f 6 -s 2
+k2-raster temporal build time: 11600.3 milliseconds.
+k2-raster space: 68.71 Mbs
+
+~/k2-raster/build/bin/encode_tk2r APCP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/APCP.100.tk2r -t 100 -f 6 -s 2
+k2-raster temporal build time: 15399.7 milliseconds.
+k2-raster space: 145.98 Mbs
+
+~/k2-raster/build/bin/encode_tk2r PEVAP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/PEVAP.100.tk2r -t 100 -f 6 -s 2
+k2-raster temporal build time: 19676.8 milliseconds.
+k2-raster space: 219.16 Mbs
+
+~/k2-raster/build/bin/encode_tk2r TMP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/TMP.100.tk2r -t 100 -f 6 -s 2
+k2-raster temporal build time: 24515.4 milliseconds.
+k2-raster space: 494.24 Mbs
+
+-----
+
+~/k2-raster/build/bin/encode_tk2r CONVfrac_NLDAS_FORA0125_H.txt ./ ./tk2r_new/CONVfrac.101.tk2r -t 101 -f 6 -s 2
+k2-raster temporal build time: 18585 milliseconds.
+k2-raster space: 82.11 Mbs
+~/k2-raster/build/bin/encode_tk2r APCP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/APCP.101.tk2r -t 101 -f 6 -s 2
+k2-raster temporal build time: 27872.8 milliseconds.
+k2-raster space: 188.62 Mbs
+~/k2-raster/build/bin/encode_tk2r PEVAP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/PEVAP.101.tk2r -t 101 -f 6 -s 2
+k2-raster temporal build time: 35724.3 milliseconds.
+k2-raster space: 205.60 Mbs
+~/k2-raster/build/bin/encode_tk2r TMP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/TMP.101.tk2r -t 101 -f 6 -s 2
+k2-raster temporal build time: 43329.8 milliseconds.
+k2-raster space: 411.17 Mbs
+
+-----
+
+~/k2-raster/build/bin/encode_tk2r CONVfrac_NLDAS_FORA0125_H.txt ./ ./tk2r_new/CONVfrac.110.tk2r -t 110 -f 6 -s 2
+k2-raster temporal build time: 15819.8 milliseconds.
+k2-raster space: 36.44 Mbs
+~/k2-raster/build/bin/encode_tk2r APCP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/APCP.110.tk2r -t 110 -f 6 -s 2
+k2-raster temporal build time: 23446.4 milliseconds.
+k2-raster space: 111.66 Mbs
+~/k2-raster/build/bin/encode_tk2r PEVAP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/PEVAP.110.tk2r -t 110 -f 6 -s 2
+k2-raster temporal build time: 33032.2 milliseconds.
+k2-raster space: 232.04 Mbs
+~/k2-raster/build/bin/encode_tk2r TMP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/TMP.110.tk2r -t 110 -f 6 -s 2
+k2-raster temporal build time: 39781.2 milliseconds.
+k2-raster space: 470.56 Mbs
+
+-----
+
+~/k2-raster/build/bin/encode_tk2r CONVfrac_NLDAS_FORA0125_H.txt ./ ./tk2r_new/CONVfrac.111.tk2r -t 111 -s 2
+k2-raster temporal build time: 38472.8 milliseconds.
+k2-raster space: 29.89 Mbs
+~/k2-raster/build/bin/encode_tk2r APCP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/APCP.111.tk2r -t 111 -s 2
+k2-raster temporal build time: 58386.1 milliseconds.
+k2-raster space: 91.70 Mbs
+~/k2-raster/build/bin/encode_tk2r PEVAP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/PEVAP.111.tk2r -t 111 -s 2
+k2-raster temporal build time: 92260.7 milliseconds.
+k2-raster space: 73.51 Mbs
+~/k2-raster/build/bin/encode_tk2r TMP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/TMP.111.tk2r -t 111 -s 2
+k2-raster temporal build time: 104136 milliseconds.
+k2-raster space: 448.50 Mbs
+
+-----
+
+~/k2-raster/build/bin/encode_tk2r CONVfrac_NLDAS_FORA0125_H.txt ./ ./tk2r_new/CONVfrac.112.tk2r -f 6 -s 2
+k2-raster temporal build time: 31045.3 milliseconds.
+k2-raster space: 51.94 Mbs
+~/k2-raster/build/bin/encode_tk2r APCP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/APCP.112.tk2r -f 6 -s 2
+k2-raster temporal build time: 57294.5 milliseconds.
+k2-raster space: 147.98 Mbs
+~/k2-raster/build/bin/encode_tk2r PEVAP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/PEVAP.112.tk2r -f 6 -s 2
+k2-raster temporal build time: 62292.4 milliseconds.
+k2-raster space: 68.86 Mbs
+~/k2-raster/build/bin/encode_tk2r TMP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/TMP.112.tk2r -f 6 -s 2
+k2-raster temporal build time: 93108.4 milliseconds.
+k2-raster space: 409.87 Mbs

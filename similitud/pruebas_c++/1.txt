@@ -1,0 +1,24 @@
+Iniciado en: 2024/08/14 15:44:29
+  +  Ejecutando: ~/k2-raster/build/bin/encode_tk2r APCP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/ APCP.tk2r -f 6 -s 2
+ 
+  +  Ejecutando: ~/k2-raster/build/bin/encode_tk2r CAPE_NLDAS_FORA0125_H.txt ./ ./tk2r_new/ CAPE.tk2r -f 6 -s 2
+ 
+  +  Ejecutando: ~/k2-raster/build/bin/encode_tk2r CONVfrac_NLDAS_FORA0125_H.txt ./ ./tk2r_new/ CONVfrac.tk2r -f 6 -s 2
+ 
+  +  Ejecutando: ~/k2-raster/build/bin/encode_tk2r DLWRF_NLDAS_FORA0125_H.txt ./ ./tk2r_new/ DLWRF.tk2r -f 6 -s 2
+ 
+  +  Ejecutando: ~/k2-raster/build/bin/encode_tk2r DSWRF_NLDAS_FORA0125_H.txt ./ ./tk2r_new/ DSWRF.tk2r -f 6 -s 2
+ 
+  +  Ejecutando: ~/k2-raster/build/bin/encode_tk2r PEVAP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/ PEVAP.tk2r -f 6 -s 2
+ 
+  +  Ejecutando: ~/k2-raster/build/bin/encode_tk2r PRES_NLDAS_FORA0125_H.txt ./ ./tk2r_new/ PRES.tk2r -f 6 -s 2
+ 
+  +  Ejecutando: ~/k2-raster/build/bin/encode_tk2r SPFH_NLDAS_FORA0125_H.txt ./ ./tk2r_new/ SPFH.tk2r -f 6 -s 2
+ 
+  +  Ejecutando: ~/k2-raster/build/bin/encode_tk2r TMP_NLDAS_FORA0125_H.txt ./ ./tk2r_new/ TMP.tk2r -f 6 -s 2
+ 
+  +  Ejecutando: ~/k2-raster/build/bin/encode_tk2r UGRD_NLDAS_FORA0125_H.txt ./ ./tk2r_new/ UGRD.tk2r -f 6 -s 2
+ 
+  +  Ejecutando: ~/k2-raster/build/bin/encode_tk2r VGRD_NLDAS_FORA0125_H.txt ./ ./tk2r_new/ VGRD.tk2r -f 6 -s 2
+ 
+Finalizado en: 2024/08/14 15:44:29
