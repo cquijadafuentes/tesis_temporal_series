@@ -17,7 +17,7 @@ int zigzag_encode(int i){
 }
 
 int zigzag_decode(int i){
-    return ((i >> 1) ^ -(i & 1));
+	return ((i >> 1) ^ -(i & 1));
 }
 
 int main(int argc, char const *argv[]){
@@ -26,30 +26,30 @@ int main(int argc, char const *argv[]){
 		cout << argv[0] << " <inputFile> <d_cuadrante>" << endl;
 		return 0;
 	}
-    // Leyendo datos desde el archivo de entrada
-    ifstream infile(argv[1], ofstream::binary);
-    if(infile.fail()){
-        cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
-        return -1;
-    }
-    int dcuad = stoi(argv[2]);
-    int rows, cols, lenTempSerie;
-    // Cargando datos
-    infile.read((char *)&rows, sizeof(int));
-    infile.read((char *)&cols, sizeof(int));
-    infile.read((char *)&lenTempSerie, sizeof(int));
+	// Leyendo datos desde el archivo de entrada
+	ifstream infile(argv[1], ofstream::binary);
+	if(infile.fail()){
+		cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
+		return -1;
+	}
+	int dcuad = stoi(argv[2]);
+	int rows, cols, lenTempSerie;
+	// Cargando datos
+	infile.read((char *)&rows, sizeof(int));
+	infile.read((char *)&cols, sizeof(int));
+	infile.read((char *)&lenTempSerie, sizeof(int));
 
-    cout << "File: " << argv[1] << endl;
-    cout << "Filas: " << rows << " - Cols: " << cols << " - Muestras: " << lenTempSerie << endl;
+	cout << "File: " << argv[1] << endl;
+	cout << "Filas: " << rows << " - Cols: " << cols << " - Muestras: " << lenTempSerie << endl;
 
-    vector<vector<vector<int>>> temporalSeries(rows, vector<vector<int>>(cols, vector<int>(lenTempSerie)));
-    for(int i=0; i<rows; i++){
-    	for(int j=0; j<cols; j++){
-    		for(int k=0; k<lenTempSerie; k++){
-                infile.read((char *)&temporalSeries[i][j][k], sizeof(int));
-            }
-    	}        
-    }
+	vector<vector<vector<int>>> temporalSeries(rows, vector<vector<int>>(cols, vector<int>(lenTempSerie)));
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			for(int k=0; k<lenTempSerie; k++){
+				infile.read((char *)&temporalSeries[i][j][k], sizeof(int));
+			}
+		}
+	}
 	
 	// Cantidad de filas y columnas de cuadrantes según las dimensiones dcuad.
 	int cuadRows = rows / dcuad;
