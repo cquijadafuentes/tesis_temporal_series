@@ -21,4 +21,4 @@ NQC_build_from_bin:
 clean:
 	rm -f $(BINS) $(OBJECTS)
 
-
+compile: clean all

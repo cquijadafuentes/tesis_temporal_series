@@ -5,13 +5,14 @@ using namespace std;
 using namespace sdsl;
 
 int main(int argc, char const *argv[]){
-	if(argc < 3){
+	if(argc < 4){
 		cout << "Error! Faltan argumentos." << endl;
-		cout << argv[0] << " <inputFile> <d_cuadrante>" << endl;
+		cout << argv[0] << " <inputFile> <d_cuadrante> <outputFile>" << endl;
 		return 0;
 	}
 	// Leyendo datos desde el archivo de entrada
-	ifstream infile(argv[1], ofstream::binary);
+	string ifilename(argv[1]);
+	ifstream infile(ifilename, ofstream::binary);
 	if(infile.fail()){
 		cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
 		return -1;
@@ -34,8 +35,12 @@ int main(int argc, char const *argv[]){
 			}
 		}
 	}
-
 	NASAQuadComp nqc(temporalSeries, dcuad);
+
+	string ofilename(argv[3]);
+	nqc.save(ofilename);
+
+	NASAQuadComp nqc2(ofilename);
 
 	return 0;
 }

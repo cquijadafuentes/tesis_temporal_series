@@ -15,12 +15,12 @@ using namespace sdsl;
 //  --------------------Inicio clase NASAQuadComp-------------------
 class NASAQuadComp{
 public:
-	int n_rows;		// Filas
-	int n_cols;		// Columnas
-	int n_inst;		// Instantes
-	int d_quad;		// Dimensión del cuadrante
-	int nQuadRows;	// Cantidad de cuadrantes en filas
-	int nQuadCols;	// Cantidad de cuadrantes en columnas
+	unsigned int n_rows;		// Filas
+	unsigned int n_cols;		// Columnas
+	unsigned int n_inst;		// Instantes
+	unsigned int d_quad;		// Dimensión del cuadrante
+	unsigned int nQuadRows;	// Cantidad de cuadrantes en filas
+	unsigned int nQuadCols;	// Cantidad de cuadrantes en columnas
 	int min_value;
 	int max_value;
 
@@ -33,6 +33,9 @@ public:
 	sd_vector<> bvSeriesFijas;		//	Series Fijas
 
 	NASAQuadComp(vector<vector<vector<int>>>&, int);
+	NASAQuadComp(string);
+
+	bool save(string);
 
 private:
 	unsigned int zigzag_encode(int);
