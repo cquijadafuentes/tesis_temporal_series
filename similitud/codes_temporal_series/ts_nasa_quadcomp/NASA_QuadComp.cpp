@@ -15,7 +15,23 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 	nQuadCols = n_cols / d_quad;
 	if(nQuadCols*d_quad < n_cols){
 		nQuadCols++;
-	}	
+	}
+
+	min_value = tseries[0][0][0];
+	max_value = tseries[0][0][0];
+	for(int i=0; i<n_rows; i++){
+		for(int j=0; j<n_cols; j++){
+			for(int t=0; t<n_inst; t++){
+				if(tseries[i][j][t] < min_value){
+					min_value = tseries[i][j][t];
+				}
+				if(tseries[i][j][t] > max_value){
+					max_value = tseries[i][j][t];
+				}
+			}
+		}
+	}
+	cout << "min_value: " << min_value << " - max_value: " << max_value << endl;
 
 	cout << "Construyendo ..." << endl;
 
@@ -47,8 +63,9 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 					int val;
 					if(esFija(tseries[posF][posC])){
 						// La serie de tiempo es fija y no se representa
-						bvSF[iCelda] = 1;
 						valoresSF.push_back(tseries[posF][posC][0]);
+						bvSF[iCelda] = 1;
+						bvSR[iCelda] = 0;
 					}else if(bvQSR[iQuad] == 0){
 						// NO hay serie de referencia
 						for(int t=0; t<n_inst; t++){
@@ -61,9 +78,10 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 							ivaux[k-1] = zigzag_encode(val);
 						}
 						util::bit_compress(ivaux);
+						refs.push_back(ivaux);
 						bvQSR[iQuad] = 1;
 						bvSR[iCelda] = 1;
-						refs.push_back(ivaux);
+						bvSF[iCelda] = 0;
 					}else{
 						// SI hay serie de referencia
 						int_vector<> ivaux2(n_inst);
@@ -73,6 +91,7 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 						}
 						util::bit_compress(ivaux2);
 						series.push_back(ivaux2);
+						bvSF[iCelda] = 0;
 					}
 				}
 			}
@@ -81,13 +100,13 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 
 	fixedValue = int_vector<>(valoresSF.size());
 	for(int i=0; i<valoresSF.size(); i++){
-		fixedValue[i] = valoresSF[i];
+		fixedValue[i] = valoresSF[i] - min_value;
 	}
 	util::bit_compress(fixedValue);
 
 	refFirstValue = int_vector<>(valoresPVSR.size());
 	for(int i=0; i<valoresPVSR.size(); i++){
-		refFirstValue[i] = valoresPVSR[i];
+		refFirstValue[i] = valoresPVSR[i] - min_value;
 	}
 	util::bit_compress(refFirstValue);
 
@@ -95,8 +114,9 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 	bvReferencias = sd_vector<>(bvSR);
 	bvSeriesFijas = sd_vector<>(bvSF);
 
-	cout << "Size in kBytes: " << size_kbytes() << endl;
+	buildRanksSelects();
 
+	cout << "Size in kBytes: " << size_kbytes() << endl;
 }
 
 NASAQuadComp::NASAQuadComp(string inputFilename){
@@ -141,8 +161,7 @@ NASAQuadComp::NASAQuadComp(string inputFilename){
 	// Cerrando archivo
 	infile.close();
 	// Construyendo rank y select de MFS
-	//gstMFSrank = sd_vector<>::rank_1_type(&gstMFSbv);
-	//gstMFSselect = sd_vector<>::select_1_type(&gstMFSbv);
+	buildRanksSelects();
 
 	cout << "Leído..." << endl;
 }
@@ -215,23 +234,54 @@ int NASAQuadComp::size_mbytes(){
 vector<int> NASAQuadComp::getSerie(int row, int col){
 	vector<int> r;
 	// 1 - Verificar que no corresponde a una serie fija
-
+	int posQLP = getQuadLinealPosition(row, col);
+	if(bvSeriesFijas[posQLP] == 1){
+		cout << "f ";
+		int p = rankSeriesFijas(posQLP);
+		int v = fixedValue[p] + min_value;
+		r = vector<int>(n_inst, v);
+		return r;
+	}
 	// 2 - Recuperar la serie de referencia del cuadrante
-
+	vector<int> ref = getReferenciaQuad(getQuad(row, col));
+	if(bvReferencias[posQLP] == 1){
+		return ref;
+	}
 	// 3 - Si no es la referencia, recuperar la serie
+	cout << "n ";
+	vector<int> ref = getReferenciaQuad(getQuad(row, col));
+	cout << "referencia: ";
+	for(int i=0; i<n_inst; i++){
+		cout << ref[i] << " ";
+	}
+	cout << endl;
+	int posSerie = getSeriePositionFromQLP(posQLP);
+	cout << "posQLP: " << posQLP << endl;
+	cout << "posSerie: " << posSerie << endl;
 
 	return r;
+}
+
+void NASAQuadComp::pruebas(){
+
 }
 
 /***********************************************************
 							PRIVATE
 ***********************************************************/
 
+void NASAQuadComp::buildRanksSelects(){
+	rankQuadNoFijos = sd_vector<>::rank_1_type(&bvQuadNoFijos);
+	rankReferencias = sd_vector<>::rank_1_type(&bvReferencias);
+	rankSeriesFijas = sd_vector<>::rank_1_type(&bvSeriesFijas);
+	selectReferencias = sd_vector<>::select_1_type(&bvReferencias);
+}
+
 unsigned int NASAQuadComp::zigzag_encode(int i){
 	return ((i >> 31) ^ (i << 1));
 }
 
-unsigned int NASAQuadComp::zigzag_decode(int i){
+int NASAQuadComp::zigzag_decode(int i){
 	 return ((i >> 1) ^ -(i & 1));
 }
 
@@ -258,4 +308,40 @@ unsigned int NASAQuadComp::getQuadLinealPosition(int r, int c){
 	unsigned int cxQuad = d_quad * d_quad;
 	unsigned int quadLinealPos = (iQuad * cxQuad) + (dr * d_quad) + dc;
 	return quadLinealPos;
+}
+
+unsigned int NASAQuadComp::getSeriePositionFromQLP(int qlp){
+	unsigned int iQuad = qlp / (d_quad * d_quad);
+	unsigned int cantQuadRowsPrevious = iQuad / nQuadRows;
+	unsigned int rowsToDismiss = cantQuadRowsPrevious * d_quad;
+	unsigned int dCeldas = n_rows % d_quad;
+	unsigned seriePos = qlp - (rowsToDismiss * dCeldas);
+	int rFijas = rankSeriesFijas(qlp);
+	int rRefs = rankReferencias(qlp);
+	seriePos = seriePos - rFijas - rRefs;
+	return seriePos;
+}
+
+unsigned int NASAQuadComp::getRefPositionFromQLP(int qlp){
+	unsigned int iQuad = qlp / (d_quad * d_quad);
+	unsigned int cantQuadRowsPrevious = iQuad / nQuadRows;
+	unsigned int rowsToDismiss = cantQuadRowsPrevious * d_quad;
+	unsigned int dCeldas = n_rows % d_quad;
+	unsigned seriePos = qlp - (rowsToDismiss * dCeldas);
+	return seriePos;
+}
+
+vector<int> NASAQuadComp::getReferenciaQuad(int iQuad){
+	int cantQCR = rankQuadNoFijos(iQuad);
+	int posQLP = selectReferencias(cantQCR+1);
+	cout << "posQLP" << endl;
+	vector<int> r(n_inst);
+	int rFijas = rankSeriesFijas(posQLP);
+	int rRefs = rankReferencias(posQLP);
+	r[0] = refFirstValue[rRefs] + min_value;
+	int p =  getRefPositionFromQLP(posQLP) - rFijas - rRefs;
+	for(int i=0; i<n_inst-1; i++){
+		r[i+1] = r[i] + zigzag_decode(refs[p][i]);
+	}
+	return r;
 }

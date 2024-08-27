@@ -4,7 +4,7 @@ PREFLAGS=-std=c++11 -g -O0 -DNDEBUG -I ~/include -L ~/lib
 
 POSFLAGS=-lsdsl -ldivsufsort -ldivsufsort64
 
-BINS=NQC_build_from_bin NQC_test_bin_nqc
+BINS=NQC_build_from_bin NQC_test_bin_nqc NQC_test_fromInput
 
 OBJECTS=NASA_QuadComp.o
 
@@ -19,6 +19,9 @@ NQC_build_from_bin:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 	
 NQC_test_bin_nqc:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
+
+NQC_test_fromInput:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
 clean:

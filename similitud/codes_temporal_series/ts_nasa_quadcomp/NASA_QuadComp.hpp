@@ -31,6 +31,10 @@ public:
 	sd_vector<> bvQuadNoFijos;		//	Cuadrantes no fijos
 	sd_vector<> bvReferencias;		//	Referencias de cuadrantes no fijos
 	sd_vector<> bvSeriesFijas;		//	Series Fijas
+	sd_vector<>::rank_1_type rankQuadNoFijos;
+	sd_vector<>::rank_1_type rankReferencias;
+	sd_vector<>::rank_1_type rankSeriesFijas;
+	sd_vector<>::select_1_type selectReferencias;
 
 	NASAQuadComp(vector<vector<vector<int>>>&, int);
 	NASAQuadComp(string);
@@ -42,12 +46,18 @@ public:
 
 	vector<int> getSerie(int, int);
 
+	void pruebas();
+
 private:
+	void buildRanksSelects();
 	unsigned int zigzag_encode(int);
-	unsigned int zigzag_decode(int);
+	int zigzag_decode(int);
 	bool esFija(vector<int>);
 	unsigned int getQuad(int, int);
 	unsigned int getQuadLinealPosition(int, int);
+	unsigned int getRefPositionFromQLP(int);
+	unsigned int getSeriePositionFromQLP(int);
+	vector<int> getReferenciaQuad(int);
 };
 
 #endif
