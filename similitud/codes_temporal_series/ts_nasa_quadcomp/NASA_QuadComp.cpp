@@ -2,21 +2,6 @@
 #include "NASA_QuadComp.hpp"
 
 
-long long int bytes_int_vector(vector<int> x){
-	int_vector<> iv_x(x.size());
-	for(int i=0; i<x.size(); i++){
-		iv_x[i] = x[i];
-	}
-	util::bit_compress(iv_x);
-	return size_in_bytes(iv_x);
-}
-
-int bytes_bit_vector(bit_vector b){
-	sd_vector<> sdb(b);
-	return size_in_bytes(b);
-}
-
-
 NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 	n_rows = tseries.size();			// filas
 	n_cols = tseries[0].size();		// columnas
@@ -30,8 +15,9 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 	nQuadCols = n_cols / d_quad;
 	if(nQuadCols*d_quad < n_cols){
 		nQuadCols++;
-	}
-	
+	}	
+
+	cout << "Construyendo ..." << endl;
 
 	bit_vector bvQSR = bit_vector(nQuadRows * nQuadCols);	// Marcar cuadrantes con Serie de referencia
 	int cantCeldasQuad = (d_quad * d_quad) * (nQuadRows * nQuadCols);
@@ -39,12 +25,12 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 	bit_vector bvSF = bit_vector(cantCeldasQuad);			// Marcar las series fijas
 
 	cout << "nQuadRows: " << nQuadRows << " - nQuadCols: " << nQuadCols << endl;
-	cout << "d_quad: " << d_quad << " - cantCeldasQuad: " << cantCeldasQuad << endl;
+	cout << "d_quad: " << d_quad << " - cantQuads: " << (nQuadRows*nQuadCols) << endl;
+	cout << "Total celdas en cuadrantes: " << cantCeldasQuad << endl;
 
 	vector<int> valoresPVSR;		// Guarda el primer valor de cada serie de referencia
 	vector<int> valoresSF;		// Guarda el valor de cada serie fija
 	int iFV = 0;
-	long long int bytesTodas = 0;
 	for(int fc=0; fc<nQuadRows; fc++){		// fc = fila-cuadrante
 		for(int cc=0; cc<nQuadCols; cc++){	// cc = columna-cuadrante
 			// Procesando primera series del cuadrante
@@ -62,20 +48,19 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 					if(esFija(tseries[posF][posC])){
 						// La serie de tiempo es fija y no se representa
 						bvSF[iCelda] = 1;
-						//valoresSF.push_back(tseries[posF][posC][0]);
+						valoresSF.push_back(tseries[posF][posC][0]);
 					}else if(bvQSR[iQuad] == 0){
 						// NO hay serie de referencia
 						for(int t=0; t<n_inst; t++){
 							serieReferencia[t] = tseries[posF][posC][t];
 						}
-						//valoresPVSR.push_back(tseries[posF][posC][0]);
+						valoresPVSR.push_back(tseries[posF][posC][0]);
 						int_vector<> ivaux(n_inst-1);
 						for(int k=1; k<n_inst; k++){
 							val = tseries[posF][posC][k] - tseries[posF][posC][k-1];
 							ivaux[k-1] = zigzag_encode(val);
 						}
 						util::bit_compress(ivaux);
-						bytesTodas += size_in_bytes(ivaux);
 						bvQSR[iQuad] = 1;
 						bvSR[iCelda] = 1;
 						refs.push_back(ivaux);
@@ -87,7 +72,6 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 							ivaux2[k] = zigzag_encode(val);
 						}
 						util::bit_compress(ivaux2);
-						bytesTodas += size_in_bytes(ivaux2);
 						series.push_back(ivaux2);
 					}
 				}
@@ -99,24 +83,19 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 	for(int i=0; i<valoresSF.size(); i++){
 		fixedValue[i] = valoresSF[i];
 	}
+	util::bit_compress(fixedValue);
+
 	refFirstValue = int_vector<>(valoresPVSR.size());
 	for(int i=0; i<valoresPVSR.size(); i++){
 		refFirstValue[i] = valoresPVSR[i];
 	}
+	util::bit_compress(refFirstValue);
 
 	bvQuadNoFijos = sd_vector<>(bvQSR);
 	bvReferencias = sd_vector<>(bvSR);
 	bvSeriesFijas = sd_vector<>(bvSF);
 
-	bytesTodas += bytes_int_vector(valoresPVSR);
-	bytesTodas += bytes_int_vector(valoresSF);
-	bytesTodas += bytes_bit_vector(bvQSR);
-	bytesTodas += bytes_bit_vector(bvSF);
-	bytesTodas += bytes_bit_vector(bvSR);
-
-	int megaBytes = ((bytesTodas + 0.0) / 1024) / 1024;
-
-	cout << megaBytes << "\t" << d_quad << "\t" << nQuadRows << "\t" << nQuadCols << endl;
+	cout << "Size in kBytes: " << size_kbytes() << endl;
 
 }
 
@@ -140,15 +119,20 @@ NASAQuadComp::NASAQuadComp(string inputFilename){
 	fixedValue.load(infile);
 	refFirstValue.load(infile);
 	// --------- Cargando vectores de int_vectors
+	int_vector<> tempIV;
 	infile.read((char *)&aux1,sizeof(int));
 	refs = vector<int_vector<>>(aux1);
 	for(int i=0; i<aux1; i++){
-		refs[i].load(infile);
+		tempIV.load(infile);
+		util::bit_compress(tempIV);
+		refs[i] = tempIV;
 	}
 	infile.read((char *)&aux1,sizeof(int));
 	series = vector<int_vector<>>(aux1);
 	for(int i=0; i<aux1; i++){
-		series[i].load(infile);
+		tempIV.load(infile);
+		util::bit_compress(tempIV);
+		series[i] = tempIV;
 	}
 	// --------- Cargando bitvectors
 	bvQuadNoFijos.load(infile);
@@ -196,6 +180,47 @@ bool NASAQuadComp::save(string outputFilename){
 	// Cerrando archivo
 	outfile.close();
 	return true;
+}
+
+int NASAQuadComp::size_bytes(){
+	int bytes = 0;
+	// Atributos enteros
+	bytes += (sizeof(int) * 8);
+	// int_vectors
+	bytes += size_in_bytes(fixedValue);
+	bytes += size_in_bytes(refFirstValue);
+	for(int i=0; i<refs.size(); i++){
+		bytes += size_in_bytes(refs[i]);
+	}
+	for(int i=0; i<series.size(); i++){
+		bytes += size_in_bytes(series[i]);
+	}
+	// bit_vectors
+	bytes += size_in_bytes(bvQuadNoFijos);
+	bytes += size_in_bytes(bvReferencias);
+	bytes += size_in_bytes(bvSeriesFijas);
+	return bytes;
+}
+
+int NASAQuadComp::size_kbytes(){
+	int kbytes = size_bytes() / 1024;
+	return kbytes;
+}
+
+int NASAQuadComp::size_mbytes(){
+	int mbytes = size_bytes() / 1024 / 1024;
+	return mbytes;
+}
+
+vector<int> NASAQuadComp::getSerie(int row, int col){
+	vector<int> r;
+	// 1 - Verificar que no corresponde a una serie fija
+
+	// 2 - Recuperar la serie de referencia del cuadrante
+
+	// 3 - Si no es la referencia, recuperar la serie
+
+	return r;
 }
 
 /***********************************************************

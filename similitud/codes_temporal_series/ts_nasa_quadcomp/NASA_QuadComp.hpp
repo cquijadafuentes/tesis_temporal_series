@@ -36,6 +36,11 @@ public:
 	NASAQuadComp(string);
 
 	bool save(string);
+	int size_bytes();
+	int size_kbytes();
+	int size_mbytes();
+
+	vector<int> getSerie(int, int);
 
 private:
 	unsigned int zigzag_encode(int);
