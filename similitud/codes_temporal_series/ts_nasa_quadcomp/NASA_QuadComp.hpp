@@ -19,6 +19,7 @@ public:
 	unsigned int n_cols;		// Columnas
 	unsigned int n_inst;		// Instantes
 	unsigned int d_quad;		// Dimensión del cuadrante
+	unsigned int cel_per_quad;	// Celdas por cuadrante
 	unsigned int nQuadRows;	// Cantidad de cuadrantes en filas
 	unsigned int nQuadCols;	// Cantidad de cuadrantes en columnas
 	int min_value;
@@ -55,9 +56,8 @@ private:
 	bool esFija(vector<int>);
 	unsigned int getQuad(int, int);
 	unsigned int getQuadLinealPosition(int, int);
-	unsigned int getRefPositionFromQLP(int);
-	unsigned int getSeriePositionFromQLP(int);
-	vector<int> getReferenciaQuad(int);
+	vector<int> getQuadReferenceSerie(int);
+	unsigned int getSeriePositionFromQLP(int, int, int);
 };
 
 #endif

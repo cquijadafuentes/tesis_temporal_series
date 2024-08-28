@@ -7,6 +7,7 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 	n_cols = tseries[0].size();		// columnas
 	n_inst = tseries[0][0].size();	// length of temporal series
 	d_quad = dims;
+	cel_per_quad = d_quad * d_quad;
 	// Cantidad de filas y columnas de cuadrantes según las dimensiones dims.
 	nQuadRows = n_rows / d_quad;
 	if(nQuadRows*d_quad < n_rows){
@@ -36,7 +37,7 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 	cout << "Construyendo ..." << endl;
 
 	bit_vector bvQSR = bit_vector(nQuadRows * nQuadCols);	// Marcar cuadrantes con Serie de referencia
-	int cantCeldasQuad = (d_quad * d_quad) * (nQuadRows * nQuadCols);
+	int cantCeldasQuad = (cel_per_quad) * (nQuadRows * nQuadCols);
 	bit_vector bvSR = bit_vector(cantCeldasQuad);			// Marcar la serie de referencia
 	bit_vector bvSF = bit_vector(cantCeldasQuad);			// Marcar las series fijas
 
@@ -131,6 +132,7 @@ NASAQuadComp::NASAQuadComp(string inputFilename){
 	infile.read((char *)&n_cols, sizeof(int));
 	infile.read((char *)&n_inst, sizeof(int));
 	infile.read((char *)&d_quad, sizeof(int));
+	infile.read((char *)&cel_per_quad, sizeof(int));	
 	infile.read((char *)&nQuadRows, sizeof(int));
 	infile.read((char *)&nQuadCols, sizeof(int));
 	infile.read((char *)&min_value, sizeof(int));
@@ -173,6 +175,7 @@ bool NASAQuadComp::save(string outputFilename){
 	outfile.write((char const*)&n_cols, sizeof(int));
 	outfile.write((char const*)&n_inst, sizeof(int));
 	outfile.write((char const*)&d_quad, sizeof(int));
+	outfile.write((char const*)&cel_per_quad, sizeof(int));
 	outfile.write((char const*)&nQuadRows, sizeof(int));
 	outfile.write((char const*)&nQuadCols, sizeof(int));
 	outfile.write((char const*)&min_value, sizeof(int));
@@ -236,29 +239,22 @@ vector<int> NASAQuadComp::getSerie(int row, int col){
 	// 1 - Verificar que no corresponde a una serie fija
 	int posQLP = getQuadLinealPosition(row, col);
 	if(bvSeriesFijas[posQLP] == 1){
-		cout << "f ";
 		int p = rankSeriesFijas(posQLP);
 		int v = fixedValue[p] + min_value;
 		r = vector<int>(n_inst, v);
 		return r;
 	}
 	// 2 - Recuperar la serie de referencia del cuadrante
-	vector<int> ref = getReferenciaQuad(getQuad(row, col));
+	vector<int> ref = getQuadReferenceSerie(getQuad(row, col));
 	if(bvReferencias[posQLP] == 1){
 		return ref;
 	}
 	// 3 - Si no es la referencia, recuperar la serie
-	cout << "n ";
-	vector<int> ref = getReferenciaQuad(getQuad(row, col));
-	cout << "referencia: ";
+	int posSerie = getSeriePositionFromQLP(posQLP, row, col);
+	r = vector<int>(n_inst);
 	for(int i=0; i<n_inst; i++){
-		cout << ref[i] << " ";
+		r[i] = ref[i] - zigzag_decode(series[posSerie][i]);
 	}
-	cout << endl;
-	int posSerie = getSeriePositionFromQLP(posQLP);
-	cout << "posQLP: " << posQLP << endl;
-	cout << "posSerie: " << posSerie << endl;
-
 	return r;
 }
 
@@ -305,43 +301,42 @@ unsigned int NASAQuadComp::getQuadLinealPosition(int r, int c){
 	unsigned int iQuad = getQuad(r,c);
 	unsigned int dr = r % d_quad;
 	unsigned int dc = c % d_quad;
-	unsigned int cxQuad = d_quad * d_quad;
+	unsigned int cxQuad = cel_per_quad;
 	unsigned int quadLinealPos = (iQuad * cxQuad) + (dr * d_quad) + dc;
 	return quadLinealPos;
 }
 
-unsigned int NASAQuadComp::getSeriePositionFromQLP(int qlp){
-	unsigned int iQuad = qlp / (d_quad * d_quad);
-	unsigned int cantQuadRowsPrevious = iQuad / nQuadRows;
-	unsigned int rowsToDismiss = cantQuadRowsPrevious * d_quad;
-	unsigned int dCeldas = n_rows % d_quad;
-	unsigned seriePos = qlp - (rowsToDismiss * dCeldas);
-	int rFijas = rankSeriesFijas(qlp);
-	int rRefs = rankReferencias(qlp);
-	seriePos = seriePos - rFijas - rRefs;
-	return seriePos;
-}
-
-unsigned int NASAQuadComp::getRefPositionFromQLP(int qlp){
-	unsigned int iQuad = qlp / (d_quad * d_quad);
-	unsigned int cantQuadRowsPrevious = iQuad / nQuadRows;
-	unsigned int rowsToDismiss = cantQuadRowsPrevious * d_quad;
-	unsigned int dCeldas = n_rows % d_quad;
-	unsigned seriePos = qlp - (rowsToDismiss * dCeldas);
-	return seriePos;
-}
-
-vector<int> NASAQuadComp::getReferenciaQuad(int iQuad){
-	int cantQCR = rankQuadNoFijos(iQuad);
-	int posQLP = selectReferencias(cantQCR+1);
-	cout << "posQLP" << endl;
-	vector<int> r(n_inst);
-	int rFijas = rankSeriesFijas(posQLP);
-	int rRefs = rankReferencias(posQLP);
+vector<int> NASAQuadComp::getQuadReferenceSerie(int iQuad){
+	vector<int> r;
+	if(bvQuadNoFijos[iQuad] == 0){
+		return r;
+	}
+	int pos = rankQuadNoFijos(iQuad);
+	r = vector<int>(n_inst);
+	int rRefs = rankReferencias(pos);
 	r[0] = refFirstValue[rRefs] + min_value;
-	int p =  getRefPositionFromQLP(posQLP) - rFijas - rRefs;
 	for(int i=0; i<n_inst-1; i++){
-		r[i+1] = r[i] + zigzag_decode(refs[p][i]);
+		r[i+1] = r[i] + zigzag_decode(refs[pos][i]);
 	}
 	return r;
+}
+
+unsigned int NASAQuadComp::getSeriePositionFromQLP(int qlp, int row, int col){
+	unsigned int blankCellPerRow = (d_quad * nQuadCols) - n_cols;
+	unsigned int prevRows = row;
+	if(((qlp / cel_per_quad) + 1) % nQuadCols != 0){
+		// Si el Quad NO esta en la última columna sólo se descuentan
+		// las filas de cuadrantes anterires
+		prevRows -= (row % d_quad);
+	}
+	unsigned int extraCells = (prevRows * blankCellPerRow);
+	if(row / d_quad == (nQuadRows - 1)){
+		unsigned int blankCellPerCol = (d_quad * nQuadRows) - n_rows;
+		unsigned int prevCols = col - (col % d_quad);
+		extraCells += (blankCellPerCol * prevCols);
+	}
+	unsigned int rFijas = rankSeriesFijas(qlp);
+	unsigned int rRefs = rankReferencias(qlp);
+	unsigned int pos = qlp - rFijas - rRefs - extraCells;
+	return pos;
 }
