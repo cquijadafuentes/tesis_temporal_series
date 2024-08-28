@@ -1,5 +1,5 @@
-#ifndef QuadCompNasa
-#define QuadCompNasa
+#ifndef TRQuadComp
+#define TRQuadComp
 
 #include <iostream>
 #include <fstream>
@@ -12,8 +12,8 @@ using namespace std;
 using namespace sdsl;
 
 // *********************** CLASE TOPORELGST ***********************
-//  --------------------Inicio clase NASAQuadComp-------------------
-class NASAQuadComp{
+//  --------------------Inicio clase TempRasterQuadComp-------------------
+class TempRasterQuadComp{
 public:
 	unsigned int n_rows;		// Filas
 	unsigned int n_cols;		// Columnas
@@ -37,8 +37,8 @@ public:
 	sd_vector<>::rank_1_type rankSeriesFijas;
 	sd_vector<>::select_1_type selectReferencias;
 
-	NASAQuadComp(vector<vector<vector<int>>>&, int);
-	NASAQuadComp(string);
+	TempRasterQuadComp(vector<vector<vector<int>>>&, int);
+	TempRasterQuadComp(string);
 
 	bool save(string);
 	int size_bytes();

@@ -1,5 +1,5 @@
 
-#include "NASA_QuadComp.hpp"
+#include "TempRaster_QuadComp.hpp"
 
 using namespace std;
 using namespace sdsl;
@@ -37,7 +37,7 @@ int main(int argc, char const *argv[]){
 	cout << "Filas: " << rows << " - Cols: " << cols << " - Muestras: " << lenTempSerie << endl;
 	cout << "Total celdas del raster: " << rows * cols << endl;
 
-	NASAQuadComp nqc(temporalSeries, dcuad);
+	TempRasterQuadComp nqc(temporalSeries, dcuad);
 
 	cout << "d_quad: " << nqc.d_quad;
 	cout << " - nQuadRows: " << nqc.nQuadRows;

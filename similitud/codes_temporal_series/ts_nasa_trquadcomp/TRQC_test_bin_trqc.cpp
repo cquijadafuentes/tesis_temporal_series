@@ -1,5 +1,5 @@
 
-#include "NASA_QuadComp.hpp"
+#include "TempRaster_QuadComp.hpp"
 
 using namespace std;
 using namespace sdsl;
@@ -52,7 +52,7 @@ int main(int argc, char const *argv[]){
 
 	cout << "Cargando NQC" << endl;	
 	string nqcFilename(argv[2]);
-	NASAQuadComp nqc(nqcFilename);
+	TempRasterQuadComp nqc(nqcFilename);
 
 	cout << "d_quad: " << nqc.d_quad;
 	cout << " - nQuadRows: " << nqc.nQuadRows;

@@ -1,5 +1,5 @@
 
-#include "NASA_QuadComp.hpp"
+#include "TempRaster_QuadComp.hpp"
 
 using namespace std;
 using namespace sdsl;
@@ -76,12 +76,12 @@ int main(int argc, char const *argv[]){
 			}
 		}
 	}
-	NASAQuadComp nqc(temporalSeries, dcuad);
+	TempRasterQuadComp nqc(temporalSeries, dcuad);
 
 	string ofilename(argv[3]);
 	nqc.save(ofilename);
 
-	NASAQuadComp nqc2(ofilename);
+	TempRasterQuadComp nqc2(ofilename);
 
 	cout << "Comparando..." << endl;
 	vector<int> difs;

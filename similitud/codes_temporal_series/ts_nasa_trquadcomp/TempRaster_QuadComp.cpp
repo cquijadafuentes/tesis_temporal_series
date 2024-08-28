@@ -1,8 +1,8 @@
 
-#include "NASA_QuadComp.hpp"
+#include "TempRaster_QuadComp.hpp"
 
 
-NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
+TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 	n_rows = tseries.size();			// filas
 	n_cols = tseries[0].size();		// columnas
 	n_inst = tseries[0][0].size();	// length of temporal series
@@ -120,7 +120,7 @@ NASAQuadComp::NASAQuadComp(vector<vector<vector<int>>> &tseries, int dims){
 	cout << "Size in kBytes: " << size_kbytes() << endl;
 }
 
-NASAQuadComp::NASAQuadComp(string inputFilename){
+TempRasterQuadComp::TempRasterQuadComp(string inputFilename){
 	ifstream infile(inputFilename, ofstream::binary);
 	if(!infile){
 		cout << "Error en la carga!" << endl;
@@ -168,7 +168,7 @@ NASAQuadComp::NASAQuadComp(string inputFilename){
 	cout << "Leído..." << endl;
 }
 
-bool NASAQuadComp::save(string outputFilename){
+bool TempRasterQuadComp::save(string outputFilename){
 	ofstream outfile(outputFilename, ofstream::binary);
 	// Guardando valores enteros
 	outfile.write((char const*)&n_rows, sizeof(int));
@@ -204,7 +204,7 @@ bool NASAQuadComp::save(string outputFilename){
 	return true;
 }
 
-int NASAQuadComp::size_bytes(){
+int TempRasterQuadComp::size_bytes(){
 	int bytes = 0;
 	// Atributos enteros
 	bytes += (sizeof(int) * 8);
@@ -224,17 +224,17 @@ int NASAQuadComp::size_bytes(){
 	return bytes;
 }
 
-int NASAQuadComp::size_kbytes(){
+int TempRasterQuadComp::size_kbytes(){
 	int kbytes = size_bytes() / 1024;
 	return kbytes;
 }
 
-int NASAQuadComp::size_mbytes(){
+int TempRasterQuadComp::size_mbytes(){
 	int mbytes = size_bytes() / 1024 / 1024;
 	return mbytes;
 }
 
-vector<int> NASAQuadComp::getSerie(int row, int col){
+vector<int> TempRasterQuadComp::getSerie(int row, int col){
 	vector<int> r;
 	// 1 - Verificar que no corresponde a una serie fija
 	int posQLP = getQuadLinealPosition(row, col);
@@ -258,7 +258,7 @@ vector<int> NASAQuadComp::getSerie(int row, int col){
 	return r;
 }
 
-void NASAQuadComp::pruebas(){
+void TempRasterQuadComp::pruebas(){
 
 }
 
@@ -266,22 +266,22 @@ void NASAQuadComp::pruebas(){
 							PRIVATE
 ***********************************************************/
 
-void NASAQuadComp::buildRanksSelects(){
+void TempRasterQuadComp::buildRanksSelects(){
 	rankQuadNoFijos = sd_vector<>::rank_1_type(&bvQuadNoFijos);
 	rankReferencias = sd_vector<>::rank_1_type(&bvReferencias);
 	rankSeriesFijas = sd_vector<>::rank_1_type(&bvSeriesFijas);
 	selectReferencias = sd_vector<>::select_1_type(&bvReferencias);
 }
 
-unsigned int NASAQuadComp::zigzag_encode(int i){
+unsigned int TempRasterQuadComp::zigzag_encode(int i){
 	return ((i >> 31) ^ (i << 1));
 }
 
-int NASAQuadComp::zigzag_decode(int i){
+int TempRasterQuadComp::zigzag_decode(int i){
 	 return ((i >> 1) ^ -(i & 1));
 }
 
-bool NASAQuadComp::esFija(vector<int> serie){
+bool TempRasterQuadComp::esFija(vector<int> serie){
 	for(int j=1; j<serie.size(); j++){
 		if(serie[j] != serie[j-1]){
 			return false;
@@ -290,14 +290,14 @@ bool NASAQuadComp::esFija(vector<int> serie){
 	return true;
 }
 
-unsigned int NASAQuadComp::getQuad(int r, int c){
+unsigned int TempRasterQuadComp::getQuad(int r, int c){
 	unsigned int rquad = r / d_quad;
 	unsigned int cquad = c / d_quad;
 	unsigned int iquad = (rquad * nQuadCols) + cquad;
 	return iquad;
 }
 
-unsigned int NASAQuadComp::getQuadLinealPosition(int r, int c){
+unsigned int TempRasterQuadComp::getQuadLinealPosition(int r, int c){
 	unsigned int iQuad = getQuad(r,c);
 	unsigned int dr = r % d_quad;
 	unsigned int dc = c % d_quad;
@@ -306,7 +306,7 @@ unsigned int NASAQuadComp::getQuadLinealPosition(int r, int c){
 	return quadLinealPos;
 }
 
-vector<int> NASAQuadComp::getQuadReferenceSerie(int iQuad){
+vector<int> TempRasterQuadComp::getQuadReferenceSerie(int iQuad){
 	vector<int> r;
 	if(bvQuadNoFijos[iQuad] == 0){
 		return r;
@@ -321,7 +321,7 @@ vector<int> NASAQuadComp::getQuadReferenceSerie(int iQuad){
 	return r;
 }
 
-unsigned int NASAQuadComp::getSeriePositionFromQLP(int qlp, int row, int col){
+unsigned int TempRasterQuadComp::getSeriePositionFromQLP(int qlp, int row, int col){
 	unsigned int blankCellPerRow = (d_quad * nQuadCols) - n_cols;
 	unsigned int prevRows = row;
 	if(((qlp / cel_per_quad) + 1) % nQuadCols != 0){
