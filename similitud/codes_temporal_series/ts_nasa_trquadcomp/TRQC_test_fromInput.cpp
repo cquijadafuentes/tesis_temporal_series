@@ -23,7 +23,7 @@ int main(int argc, char const *argv[]){
 	}
 	int dcuad = stoi(argv[1]);
 	int rows, cols, lenTempSerie;
-	// Cargando datos
+	cout << "Leyendo datos..." << endl;
 	cin >> rows >> cols >> lenTempSerie;
 	vector<vector<vector<int>>> temporalSeries(rows, vector<vector<int>>(cols, vector<int>(lenTempSerie)));
 	for(int k=0; k<lenTempSerie; k++){
