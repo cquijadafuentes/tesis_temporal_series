@@ -58,7 +58,7 @@ int main(int argc, char const *argv[]){
 	cout << " - nQuadRows: " << nqc.nQuadRows;
 	cout << " - nQuadCols: " << nqc.nQuadCols << endl;
 
-	nqc.pruebas();
+	nqc.print();
 
 	cout << "Comparando" << endl;
 	vector<int> temporalNQC;

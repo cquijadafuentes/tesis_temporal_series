@@ -258,7 +258,95 @@ vector<int> TempRasterQuadComp::getSerie(int row, int col){
 	return r;
 }
 
-void TempRasterQuadComp::pruebas(){
+void TempRasterQuadComp::print(){
+
+	cout << "Mostrando los datos: " << endl;
+
+	cout << "n_rows: " << n_rows << endl;
+	cout << "n_cols: " << n_cols << endl;
+	cout << "n_inst: " << n_inst << endl;
+	cout << "d_quad: " << d_quad << endl;
+	cout << "cel_per_quad: " << cel_per_quad << endl;
+	cout << "nQuadRows: " << nQuadRows << endl;
+	cout << "nQuadCols: " << nQuadCols << endl;
+	cout << "min_value: " << min_value << endl;
+	cout << "max_value: " << max_value << endl;
+
+	cout << "fixedValue: [" << fixedValue.size() << "]:" << endl;
+	for(int i=0; i<fixedValue.size(); i++){
+		cout << "\t" << fixedValue[i];
+	}
+	cout << endl;
+	for(int i=0; i<fixedValue.size(); i++){
+		cout << "\t" << i%10;
+	}
+	cout << endl;
+
+	cout << "refFirstValue: [" << refFirstValue.size() << "]:" << endl;
+	for(int i=0; i<refFirstValue.size(); i++){
+		cout << "\t" << refFirstValue[i];
+	}
+	cout << endl;
+	for(int i=0; i<refFirstValue.size(); i++){
+		cout << "\t" << i%10;
+	}
+	cout << endl;
+
+	cout << "refs: ["  << refs.size() << "]:" << endl;
+	for(int i=0; i<refs.size(); i++){
+		cout << "\t" << i << "[" << refs[i].size() << "]:";
+		for(int j=0; j<refs[i].size(); j++){
+			cout << "\t" << refs[i][j];
+		}
+		cout << endl;
+	}
+
+	cout << "series: ["  << series.size() << "]:" << endl;
+	for(int i=0; i<series.size(); i++){
+		cout << "\t" << i << "[" << series[i].size() << "]:";
+		for(int j=0; j<series[i].size(); j++){
+			cout << "\t" << series[i][j];
+		}
+		cout << endl;
+	}
+
+	
+	cout << "bvQuadNoFijos [" << bvQuadNoFijos.size() << "]:\n\t";
+	for(int i=0; i<bvQuadNoFijos.size(); i++){
+		cout << bvQuadNoFijos[i] << " ";
+	}
+	cout << "\n\t";
+	for(int i=0; i<bvQuadNoFijos.size(); i++){
+		cout << i%10 << " ";
+	}
+	cout << endl;
+
+	
+	cout << "bvReferencias [" << bvReferencias.size() << "]:\n\t";
+	for(int i=0; i<bvReferencias.size(); i++){
+		cout << bvReferencias[i] << " ";
+	}
+	cout << "\n\t";
+	for(int i=0; i<bvReferencias.size(); i++){
+		cout << i%10 << " ";
+	}
+	cout << endl;
+
+	
+	cout << "bvSeriesFijas [" << bvSeriesFijas.size() << "]:\n\t";
+	for(int i=0; i<bvSeriesFijas.size(); i++){
+		cout << bvSeriesFijas[i] << " ";
+	}
+	cout << "\n\t";
+	for(int i=0; i<bvSeriesFijas.size(); i++){
+		cout << i%10 << " ";
+	}
+	cout << endl;
+
+	sd_vector<>::rank_1_type rankQuadNoFijos;
+	sd_vector<>::rank_1_type rankReferencias;
+	sd_vector<>::rank_1_type rankSeriesFijas;
+	sd_vector<>::select_1_type selectReferencias;
 
 }
 

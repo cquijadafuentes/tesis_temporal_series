@@ -47,7 +47,7 @@ public:
 
 	vector<int> getSerie(int, int);
 
-	void pruebas();
+	void print();
 
 private:
 	void buildRanksSelects();

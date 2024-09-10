@@ -4,7 +4,8 @@ PREFLAGS=-std=c++11 -g -O0 -DNDEBUG -I ~/include -L ~/lib
 
 POSFLAGS=-lsdsl -ldivsufsort -ldivsufsort64
 
-BINS=TRQC_build_from_bin TRQC_test_bin_trqc TRQC_test_fromInput
+BINS=TRQC_build_from_bin TRQC_test_bin_trqc \
+	TRQC_test_fromInput TRQC_load_trqc
 
 OBJECTS=TempRaster_QuadComp.o
 
@@ -18,6 +19,9 @@ bin: $(OBJECTS) $(BINS)
 TRQC_build_from_bin:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 	
+TRQC_load_trqc:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
+
 TRQC_test_bin_trqc:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 

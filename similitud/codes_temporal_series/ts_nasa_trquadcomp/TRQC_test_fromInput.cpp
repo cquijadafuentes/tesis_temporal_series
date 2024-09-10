@@ -43,6 +43,17 @@ int main(int argc, char const *argv[]){
 	cout << " - nQuadRows: " << nqc.nQuadRows;
 	cout << " - nQuadCols: " << nqc.nQuadCols << endl;
 
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			cout << "[";
+			for(int k=0; k<lenTempSerie; k++){
+				cout << " " << temporalSeries[i][j][k];
+			}
+			cout << "] ";
+		}
+		cout << endl;
+	}
+
 	cout << "Fijas: " << endl << "\t";
 	for(int i=0; i<nqc.bvSeriesFijas.size(); i++){
 		cout << nqc.bvSeriesFijas[i];
@@ -110,6 +121,8 @@ int main(int argc, char const *argv[]){
 				cout << "Error! La serie recuperada no coincide en largo." << endl;
 				cout << "NQC: " << mostrarserie(temporalNQC) << endl;
 				cout << "BIN: " << mostrarserie(temporalSeries[i][j]) << endl;
+				cout << "********" << endl;
+				nqc.print();
 				return 0;
 			}
 			for(int k=0; k<lenTempSerie; k++){
@@ -117,10 +130,14 @@ int main(int argc, char const *argv[]){
 					cout << "Falla en celda [" << i << "," << j << "]" << endl;
 					cout << "BIN: " << mostrarserie(temporalSeries[i][j]) << endl;
 					cout << "NQC: " << mostrarserie(temporalNQC) << endl;
+					cout << "********" << endl;
+					nqc.print();
 					return 0;
 				}
 			}
 		}
 	}
+	cout << "********" << endl;
+	nqc.print();
 	return 0;
 }

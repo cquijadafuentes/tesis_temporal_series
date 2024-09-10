@@ -1,4 +1,5 @@
 *.o
 TRQC_build_from_bin
+TRQC_load_trqc
 TRQC_test_bin_trqc
 TRQC_test_fromInput
