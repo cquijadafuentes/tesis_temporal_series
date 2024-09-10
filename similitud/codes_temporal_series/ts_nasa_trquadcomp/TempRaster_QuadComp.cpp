@@ -401,8 +401,7 @@ vector<int> TempRasterQuadComp::getQuadReferenceSerie(int iQuad){
 	}
 	int pos = rankQuadNoFijos(iQuad);
 	r = vector<int>(n_inst);
-	int rRefs = rankReferencias(pos);
-	r[0] = refFirstValue[rRefs] + min_value;
+	r[0] = refFirstValue[pos] + min_value;
 	for(int i=0; i<n_inst-1; i++){
 		r[i+1] = r[i] + zigzag_decode(refs[pos][i]);
 	}

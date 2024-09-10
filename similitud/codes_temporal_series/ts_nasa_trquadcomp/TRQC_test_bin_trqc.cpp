@@ -58,8 +58,6 @@ int main(int argc, char const *argv[]){
 	cout << " - nQuadRows: " << nqc.nQuadRows;
 	cout << " - nQuadCols: " << nqc.nQuadCols << endl;
 
-	nqc.print();
-
 	cout << "Comparando" << endl;
 	vector<int> temporalNQC;
 	for(int i=0; i<rows; i++){
