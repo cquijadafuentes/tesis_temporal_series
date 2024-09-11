@@ -49,6 +49,9 @@ public:
 
 	void print();
 
+	int queryAccess(int, int, int);
+	vector<vector<vector<int>>> queryWindow(int, int, int, int, int, int);
+
 private:
 	void buildRanksSelects();
 	unsigned int zigzag_encode(int);

@@ -351,7 +351,100 @@ void TempRasterQuadComp::print(){
 }
 
 /***********************************************************
-							PRIVATE
+						QUERIES
+***********************************************************/
+
+int TempRasterQuadComp::queryAccess(int row, int col, int inst){
+	// 1 - Verificar que no corresponde a una serie fija
+	int posQLP = getQuadLinealPosition(row, col);
+	if(bvSeriesFijas[posQLP] == 1){
+		int p = rankSeriesFijas(posQLP);
+		int r = fixedValue[p] + min_value;
+		return r;
+	}
+	// 2 - Recuperar la serie de referencia del cuadrante
+	vector<int> ref = getQuadReferenceSerie(getQuad(row, col));
+	if(bvReferencias[posQLP] == 1){
+		return ref[inst];
+	}
+	// 3 - Si no es la referencia, recuperar la serie
+	int posSerie = getSeriePositionFromQLP(posQLP, row, col);
+	int r = ref[inst] - zigzag_decode(series[posSerie][inst]);
+	return r;
+}
+
+void swapValues(int &a, int &b){
+	int x = a;
+	a = b;
+	b = x;
+}
+
+vector<vector<vector<int>>> TempRasterQuadComp::queryWindow(int rowI, int rowF, int colI, int colF, int timeI, int timeF){
+	int aux;
+	if(rowI > rowF){
+		swapValues(rowI, rowF);
+	}
+	if(colI > colF){
+		swapValues(colI, colF);
+	}
+	if(timeI > timeF){
+		swapValues(timeI, timeF);
+	}
+
+	cout << rowI << " - " << rowF << " - " << colI << " - " << colF << " - " << timeI << " - " << timeF << endl;
+
+	int rRows = rowF - rowI + 1;
+	int rCols = colF - colI + 1;
+	int rTimes = timeF - timeI + 1;
+
+	vector<vector<vector<int>>> res(rRows, vector<vector<int>>(rCols, vector<int>(rTimes, 0)));
+	int pQLP, row, col;
+	map<int,vector<int>> refM;
+	for(int i=0; i<rRows; i++){
+		if((i+rowI) % d_quad == 0){
+			// Se puede limpiar el mapa porque se pasó a otra fila de cuadrantes
+			refM.clear();
+		}
+		for(int j=0; j<rCols; j++){
+			row = i+rowI;
+			col = j+colI;
+			pQLP = getQuadLinealPosition(row, col);
+			if(bvSeriesFijas[pQLP] == 1){
+				// ----------- Serie Fija
+				int p = rankSeriesFijas(pQLP);
+				int r = fixedValue[p] + min_value;
+				for(int k=0; k<rTimes; k++){
+					res[i][j][k] = r;
+				}
+			}else{
+				// ----------- Serie NO Fija
+				int idQuad = getQuad(row, col);
+				vector<int> ref;
+				if(refM.find(idQuad) == refM.end()){
+					ref = getQuadReferenceSerie(getQuad(row, col));
+				}
+				if(bvReferencias[pQLP] == 1){
+					// ----------- Serie de Referencia
+					for(int k=0; k<rTimes; k++){
+						res[i][j][k] = ref[k];
+					}
+				}else{					
+					// ----------- Serie Derivada
+					int posSerie = getSeriePositionFromQLP(pQLP, row, col);
+					for(int k=0; k<rTimes; k++){
+						res[i][j][k] = ref[k] - zigzag_decode(series[posSerie][k]);;
+					}
+				}
+			}
+		}
+	}
+
+
+	return res;
+}
+
+/***********************************************************
+						PRIVATE
 ***********************************************************/
 
 void TempRasterQuadComp::buildRanksSelects(){

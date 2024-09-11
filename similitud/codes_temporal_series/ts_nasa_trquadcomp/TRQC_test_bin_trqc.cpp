@@ -58,26 +58,61 @@ int main(int argc, char const *argv[]){
 	cout << " - nQuadRows: " << nqc.nQuadRows;
 	cout << " - nQuadCols: " << nqc.nQuadCols << endl;
 
-	cout << "Comparando" << endl;
+	cout << "Comparando getSerie" << endl;
 	vector<int> temporalNQC;
 	for(int i=0; i<rows; i++){
 		for(int j=0; j<cols; j++){
 			temporalNQC = nqc.getSerie(i,j);
 			if(temporalNQC.size() < lenTempSerie){
-				cout << "Error! La serie recuperada no coincide en largo." << endl;
-				cout << "NQC: " << mostrarserie(temporalNQC) << endl;
-				cout << "BIN: " << mostrarserie(temporalSeries[i][j]) << endl;
+				cout << "\tError! La serie recuperada no coincide en largo." << endl;
+				cout << "\tNQC: " << mostrarserie(temporalNQC) << endl;
+				cout << "\tBIN: " << mostrarserie(temporalSeries[i][j]) << endl;
 				return 0;
 			}
 			for(int k=0; k<lenTempSerie; k++){
 				if(temporalNQC[k] != temporalSeries[i][j][k]){
-					cout << "Falla en celda [" << i << "," << j << "]" << endl;
-					cout << "BIN: " << mostrarserie(temporalSeries[i][j]) << endl;
-					cout << "NQC: " << mostrarserie(temporalNQC) << endl;
+					cout << "\tFalla en celda [" << i << "," << j << "]" << endl;
+					cout << "\tBIN: " << mostrarserie(temporalSeries[i][j]) << endl;
+					cout << "\tNQC: " << mostrarserie(temporalNQC) << endl;
 					return 0;
 				}
 			}
 		}
 	}
+
+	cout << "Comparando queryAccess" << endl;
+	int aux;
+	for(int i=0; i<rows; i++){
+		for(int j=0; j<cols; j++){
+			for(int k=0; k<lenTempSerie; k++){
+				aux = nqc.queryAccess(i, j, k);
+				if(aux != temporalSeries[i][j][k]){
+					cout << "\tFalla en celda [" << i << "," << j << "]" << endl;
+					cout << "\tData: " << temporalSeries[i][j][k] << endl;
+					cout << "\tQuery: " << nqc.queryAccess(i, j, k) << endl;
+					return 0;
+				}
+			}
+		}
+	}
+
+	int f0 = 2;
+	int f1 = 3;
+	int c0 = 2;
+	int c1 = 5;
+	int t0 = 1;
+	int t1 = 6;
+
+	vector<vector<vector<int>>> wq = nqc.queryWindow(3, 2, 5, 2, 6, 1);
+	for(int i=0; i<wq.size(); i++){
+		for(int j=0; j<wq[0].size(); j++){
+			for(int k=0; k<wq[0][0].size(); k++){
+				cout << " " << wq[i][j][k];
+			}
+			cout << "\t+\t";
+		}
+		cout << endl;
+	}
+
 	return 0;
 }
