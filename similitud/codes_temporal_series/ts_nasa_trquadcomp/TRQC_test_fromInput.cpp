@@ -139,5 +139,6 @@ int main(int argc, char const *argv[]){
 	}
 	cout << "********" << endl;
 	nqc.print();
+
 	return 0;
 }

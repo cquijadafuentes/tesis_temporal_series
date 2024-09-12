@@ -380,7 +380,7 @@ void swapValues(int &a, int &b){
 }
 
 vector<vector<vector<int>>> TempRasterQuadComp::queryWindow(int rowI, int rowF, int colI, int colF, int timeI, int timeF){
-	int aux;
+	// Validación de valores inicial y final
 	if(rowI > rowF){
 		swapValues(rowI, rowF);
 	}
@@ -390,14 +390,32 @@ vector<vector<vector<int>>> TempRasterQuadComp::queryWindow(int rowI, int rowF, 
 	if(timeI > timeF){
 		swapValues(timeI, timeF);
 	}
-
-	cout << rowI << " - " << rowF << " - " << colI << " - " << colF << " - " << timeI << " - " << timeF << endl;
+	vector<vector<vector<int>>> res;
+	// Validación de rangos
+	if(rowF >= n_rows){
+		if(rowI >= n_rows){
+			return res;
+		}
+		rowF = n_rows-1;
+	}
+	if(colF >= n_cols){
+		if(colI >= n_cols){
+			return res;
+		}
+		colF = n_cols-1;
+	}
+	if(timeF >= n_inst){
+		if(timeI >= n_inst){
+			return res;
+		}
+		timeF = n_inst-1;
+	}
 
 	int rRows = rowF - rowI + 1;
 	int rCols = colF - colI + 1;
 	int rTimes = timeF - timeI + 1;
 
-	vector<vector<vector<int>>> res(rRows, vector<vector<int>>(rCols, vector<int>(rTimes, 0)));
+	res = vector<vector<vector<int>>>(rRows, vector<vector<int>>(rCols, vector<int>(rTimes, 0)));
 	int pQLP, row, col;
 	map<int,vector<int>> refM;
 	for(int i=0; i<rRows; i++){
@@ -419,26 +437,24 @@ vector<vector<vector<int>>> TempRasterQuadComp::queryWindow(int rowI, int rowF, 
 			}else{
 				// ----------- Serie NO Fija
 				int idQuad = getQuad(row, col);
-				vector<int> ref;
 				if(refM.find(idQuad) == refM.end()){
-					ref = getQuadReferenceSerie(getQuad(row, col));
+					refM[idQuad] = getQuadReferenceSerie(getQuad(row, col));
 				}
 				if(bvReferencias[pQLP] == 1){
 					// ----------- Serie de Referencia
 					for(int k=0; k<rTimes; k++){
-						res[i][j][k] = ref[k];
+						res[i][j][k] = refM[idQuad][timeI+k];
 					}
 				}else{					
 					// ----------- Serie Derivada
 					int posSerie = getSeriePositionFromQLP(pQLP, row, col);
 					for(int k=0; k<rTimes; k++){
-						res[i][j][k] = ref[k] - zigzag_decode(series[posSerie][k]);;
+						res[i][j][k] = refM[idQuad][timeI+k] - zigzag_decode(series[posSerie][timeI+k]);;
 					}
 				}
 			}
 		}
 	}
-
 
 	return res;
 }
