@@ -7,7 +7,8 @@ POSFLAGS=-lsdsl -ldivsufsort -ldivsufsort64
 BINS=TRQC_build_from_bin TRQC_load_trqc \
 	TRQC_test_bin_trqc TRQC_test_bin_trqc_windowQuery \
 	TRQC_test_fromInput \
-	TRQC_test_windowQ_fromInput 
+	TRQC_test_windowQ_fromInput \
+	TRQC_time_windowQ
 
 OBJECTS=TempRaster_QuadComp.o
 
@@ -34,6 +35,9 @@ TRQC_test_windowQ_fromInput:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
 TRQC_test_bin_trqc_windowQuery:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
+
+TRQC_time_windowQ:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
 clean:
