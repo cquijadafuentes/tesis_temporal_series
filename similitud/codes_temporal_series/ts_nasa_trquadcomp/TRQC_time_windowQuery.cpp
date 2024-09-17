@@ -18,30 +18,34 @@ string mostrarserie(vector<int> v){
 int main(int argc, char const *argv[]){
 	if(argc < 4){
 		cout << "Error! Faltan argumentos." << endl;
-		cout << argv[0] << " <NQC_file> <windows_queries_file> <repetitions>" << endl;
+		cout << argv[0] << " <NQC_file> <window_queries_file> <repetitions>" << endl;
 		return 0;
 	}
-	cout << "Cargando NQC" << endl;	
+	cout << "********** TRQC_time_windowQuery **********" << endl;
+	cout << "Cargando archivo NQC: " << argv[1] << endl;
 	string nqcFilename(argv[1]);
 	TempRasterQuadComp nqc(nqcFilename);
 
-	cout << "d_quad: " << nqc.d_quad;
+	cout << "\tfilas: " << nqc.n_rows;
+	cout << " - columnas: " << nqc.n_cols;
+	cout << " - instantes: " << nqc.n_inst << endl;
+
+	cout << "\td_quad: " << nqc.d_quad;
 	cout << " - nQuadRows: " << nqc.nQuadRows;
 	cout << " - nQuadCols: " << nqc.nQuadCols << endl;
 
-	cout << "Cargando consultas..." << endl;
+	cout << "Cargando archivo de consultas: " << argv[2] << endl;
 	ifstream qf(argv[2]);
 	int n_queries;
 	qf >> n_queries;
 	vector<vector<int>> queries(n_queries, vector<int>(6));
 	for(int q=0; q<n_queries; q++){
 		qf >> queries[q][0] >> queries[q][1] >> queries[q][2] >> queries[q][3] >> queries[q][4] >> queries[q][5];
-		// Pendiente: time
 	}
-	cout << n_queries << " consultas en el archivo " << argv[3] << endl;
+	cout << "\t" << n_queries << " consultas en el archivo." << endl;
 
 	int nreps = stoi(argv[3]);
-	cout << "Ejecutando con " << nreps << " repeticiones..." << endl;
+	cout << "Ejecutando consultas con " << nreps << " repeticiones..." << endl;
 	auto t1 = time::user::now(); // Start time
 	size_t total_num_cells = 0;
 	for(int r=0; r<nreps; r++){
@@ -54,10 +58,12 @@ int main(int argc, char const *argv[]){
 	auto t2 = time::user::now(); // End time
 	auto time = time::duration_cast<time::milliseconds>(t2-t1);
 
+	cout << "-------------------------------------------" << endl;
 	cout << "Time: " << time << " milliseconds. ";
 	cout << "Queries: " << nreps * queries.size() << " (" << nreps << "x" << queries.size() << ") ";
 	cout << "Nº cells = " << total_num_cells << ", us/query = " << (((double)time * 1000.0)/(double)(nreps*queries.size()));
 	cout << ", us/cell = " << (((double)time * 1000.0))/(double)total_num_cells << std::endl;
+	cout << "-------------------------------------------" << endl;
 
 	return 0;
 }

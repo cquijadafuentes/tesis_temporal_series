@@ -354,7 +354,10 @@ void TempRasterQuadComp::print(){
 						QUERIES
 ***********************************************************/
 
-int TempRasterQuadComp::queryAccess(int row, int col, int inst){
+int TempRasterQuadComp::queryAccess(int row, int col, int inst, bool mostrarQuery){
+	if(mostrarQuery){
+		cout << "Access Query: F " << row << " - C " << col << " - T " << inst << endl;
+	}
 	// 1 - Verificar que no corresponde a una serie fija
 	int posQLP = getQuadLinealPosition(row, col);
 	if(bvSeriesFijas[posQLP] == 1){
@@ -379,7 +382,7 @@ void swapValues(int &a, int &b){
 	b = x;
 }
 
-vector<vector<vector<int>>> TempRasterQuadComp::queryWindow(int rowI, int rowF, int colI, int colF, int timeI, int timeF){
+vector<vector<vector<int>>> TempRasterQuadComp::queryWindow(int rowI, int rowF, int colI, int colF, int timeI, int timeF, bool mostrarQuery){
 	// Validación de valores inicial y final
 	if(rowI > rowF){
 		swapValues(rowI, rowF);
@@ -389,6 +392,9 @@ vector<vector<vector<int>>> TempRasterQuadComp::queryWindow(int rowI, int rowF, 
 	}
 	if(timeI > timeF){
 		swapValues(timeI, timeF);
+	}
+	if(mostrarQuery){
+		cout << "Window Query: F [" << rowI << "," << rowF << "] - C [" << colI << "," << colF << "] - T [" << timeI << "," << timeF << "]:" << endl;
 	}
 	vector<vector<vector<int>>> res;
 	// Validación de rangos

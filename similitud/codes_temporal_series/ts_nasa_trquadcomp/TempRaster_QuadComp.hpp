@@ -49,8 +49,8 @@ public:
 
 	void print();
 
-	int queryAccess(int, int, int);
-	vector<vector<vector<int>>> queryWindow(int, int, int, int, int, int);
+	int queryAccess(int, int, int, bool=false);
+	vector<vector<vector<int>>> queryWindow(int, int, int, int, int, int, bool=false);
 
 private:
 	void buildRanksSelects();

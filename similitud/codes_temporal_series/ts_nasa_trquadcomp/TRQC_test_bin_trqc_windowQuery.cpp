@@ -65,7 +65,7 @@ int main(int argc, char const *argv[]){
 	int f0, f1, c0, c1, t0, t1;
 	
 	for(int q=0; q<n_queries; q++){
-		qf >> f0 >> f1 >> c0 >> c1 >> t0 >> t1;
+		qf >> f0 >> c0 >> t0 >> f1 >> c1 >> t1;
 		cout << "Window Query: F [" << f0 << "," << f1 << "] - C [" << c0 << "," << c1 << "] - T [" << t0 << "," << t1 << "]:" << endl;
 		vector<vector<vector<int>>> wq = nqc.queryWindow(f0, f1, c0, c1, t0, t1);
 		bool coinciden = true;
