@@ -1,0 +1,14 @@
+Fecha INICIO ejecución: 2024/09/23 16:32:17
+
+[ERROR] Cell (116, 225) at time 88 gets 141 and expected 0
+[ERROR] Cell (116, 225) at time 88 gets 2871 and expected 0
+[ERROR] Cell (116, 256) at time 88 gets 6 and expected 0
+[ERROR] Cell (116, 225) at time 88 gets 38230 and expected 0
+[ERROR] Cell (116, 225) at time 88 gets 2617 and expected 0
+[ERROR] Cell (116, 225) at time 88 gets 112 and expected 0
+[ERROR] Cell (116, 225) at time 88 gets 10294420 and expected 0
+[ERROR] Cell (116, 225) at time 88 gets 1 and expected 0
+[ERROR] Cell (116, 225) at time 88 gets 29426 and expected 0
+[ERROR] Cell (116, 225) at time 88 gets 1380 and expected 0
+[ERROR] Cell (116, 225) at time 88 gets 405 and expected 0
+Fecha FIN ejecución: 2024/09/23 16:32:31

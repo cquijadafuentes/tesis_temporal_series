@@ -18,11 +18,11 @@ string mostrarserie(vector<int> v){
 int main(int argc, char const *argv[]){
 	if(argc < 4){
 		cout << "Error! Faltan argumentos." << endl;
-		cout << argv[0] << " <NQC_file> <window_queries_file> <repetitions>" << endl;
-		cout << "NOTA: Se ejecutan las window queries con archivos generados por el temporal k2-raster para region queries." << endl;
+		cout << argv[0] << " <NQC_file> <getSerie_queries_file> <repetitions>" << endl;
+		cout << "NOTA: Se ejecutan las getSerie queries con archivos generados por el temporal k2-raster para region queries." << endl;
 		return 0;
 	}
-	cout << "********** TRQC_time_windowQuery **********" << endl;
+	cout << "********** TRQC_time_getSerieQuery **********" << endl;
 	cout << "Cargando archivo NQC: " << argv[1] << endl;
 	string nqcFilename(argv[1]);
 	TempRasterQuadComp nqc(nqcFilename);
@@ -39,10 +39,10 @@ int main(int argc, char const *argv[]){
 	ifstream qf(argv[2]);
 	int n_queries;
 	qf >> n_queries;
-	int b1, b2;
+	int b1;
 	vector<vector<int>> queries(n_queries, vector<int>(6));
 	for(int q=0; q<n_queries; q++){
-		qf >> queries[q][0] >> queries[q][1] >> queries[q][2] >> queries[q][3] >> queries[q][4] >> queries[q][5] >> b1 >> b2;
+		qf >> queries[q][0] >> b1 >> queries[q][1] >> b1 >> b1 >> b1 >> b1 >> b1;
 	}
 	cout << "\t" << n_queries << " consultas en el archivo." << endl;
 
@@ -53,7 +53,7 @@ int main(int argc, char const *argv[]){
 	for(int r=0; r<nreps; r++){
 		total_num_cells = 0;
 		for(int q=0; q<n_queries; q++){
-			size_t n_cells = nqc.queryWindow(queries[q][0], queries[q][1], queries[q][2], queries[q][3], queries[q][4], queries[q][5]).size();
+			size_t n_cells = nqc.getSerie(queries[q][0], queries[q][1]).size();
 			total_num_cells += n_cells;
 		}
 	}

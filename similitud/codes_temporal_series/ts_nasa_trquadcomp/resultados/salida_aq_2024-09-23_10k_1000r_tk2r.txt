@@ -1,0 +1,14 @@
+Fecha INICIO ejecución: 2024/09/23 16:25:46
+
+Time: 4871.59 milliseconds. Queries: 10000000 (1000x10000) Total value = 52645, us/query = 0.487159
+Time: 4919.18 milliseconds. Queries: 10000000 (1000x10000) Total value = 16035498, us/query = 0.491918
+Time: 3286.03 milliseconds. Queries: 10000000 (1000x10000) Total value = 10608, us/query = 0.328603
+Time: 6095.44 milliseconds. Queries: 10000000 (1000x10000) Total value = 221959863, us/query = 0.609544
+Time: 4204.08 milliseconds. Queries: 10000000 (1000x10000) Total value = 114769004, us/query = 0.420408
+Time: 5297.96 milliseconds. Queries: 10000000 (1000x10000) Total value = -99234, us/query = 0.529796
+Time: 6435.42 milliseconds. Queries: 10000000 (1000x10000) Total value = 86859865146, us/query = 0.643542
+Time: 1698.89 milliseconds. Queries: 10000000 (1000x10000) Total value = -1864, us/query = 0.169889
+Time: 6062.38 milliseconds. Queries: 10000000 (1000x10000) Total value = 265423933, us/query = 0.606238
+Time: 5888 milliseconds. Queries: 10000000 (1000x10000) Total value = -4134359, us/query = 0.5888
+Time: 5912.99 milliseconds. Queries: 10000000 (1000x10000) Total value = -4298301, us/query = 0.591299
+Fecha FIN ejecución: 2024/09/23 16:26:44

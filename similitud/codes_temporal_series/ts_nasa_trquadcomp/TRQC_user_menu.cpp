@@ -21,6 +21,7 @@ void informacion_datos(TempRasterQuadComp& nqc, string fn){
 	cout << "\tTotal celdas (FxC): " << (nqc.n_rows * nqc.n_cols) << endl;
 	cout << "\tInstantes: " << nqc.n_inst << endl;
 	cout << "\tTotal datos (FxCxI): " << (nqc.n_rows * nqc.n_cols * nqc.n_inst) << endl;
+	cout << "\tMin: " << nqc.min_value << " - Max: " << nqc.max_value << endl;
 	cout << "\tDimension cuadrantes: " << nqc.d_quad << endl;
 	cout << "\tFilas de cuadrantes: " << nqc.nQuadRows << endl;
 	cout << "\tColumnas de cuadrantes: " << nqc.nQuadCols << endl;

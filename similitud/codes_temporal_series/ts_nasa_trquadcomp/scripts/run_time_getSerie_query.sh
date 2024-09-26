@@ -9,7 +9,7 @@ REPETICIONES=$1
 OUTPUTFILE=$2
 EXEC="/home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/codes/TRQC_time_windowQuery"
 DATAFOLDER="/home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/"
-QUERYFILE="/home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt"
+QUERYFILE="/home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_getserie_fromregionquery_10000.txt"
 
 echo "Instrucción:" > ${OUTPUTFILE}
 echo "$0 $1 $2" >> ${OUTPUTFILE}
@@ -18,7 +18,7 @@ echo "Fecha INICIO ejecución: $(date +'%Y/%m/%d %H:%M:%S')" >> ${OUTPUTFILE}
 echo "Directorio de ejecución: " >> ${OUTPUTFILE}
 pwd >> ${OUTPUTFILE}
 echo "" >> ${OUTPUTFILE}
-echo "******************** WINDOW QUERY QUADCOMP ********************" >> ${OUTPUTFILE}
+echo "******************** GETSERIE QUERY QUADCOMP ********************" >> ${OUTPUTFILE}
 echo "" >> ${OUTPUTFILE}
 echo "Archivo de ejecución quadcomp: ${EXEC}" >> ${OUTPUTFILE}
 echo "Directorio de datos: ${DATAFOLDER}" >> ${OUTPUTFILE}
@@ -31,7 +31,7 @@ do
 done
 
 echo "" >> ${OUTPUTFILE}
-echo "******************** WINDOW QUERY TK2-RASTER ********************" >> ${OUTPUTFILE}
+echo "******************** GETSERIE QUERY TK2-RASTER ********************" >> ${OUTPUTFILE}
 echo "" >> ${OUTPUTFILE}
 
 EXEC="/home/cquijada/k2-raster/build/bin/get_values_window_tk2r"
