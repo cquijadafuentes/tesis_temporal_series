@@ -44,6 +44,7 @@ echo "" >> ${OUTPUTFILE}
 
 for filename in APCP CAPE CONVfrac DLWRF DSWRF PEVAP PRES SPFH TMP UGRD VGRD
 do
+	echo "${filename}_tk2r_110.tk2r" >> ${OUTPUTFILE}
 	${EXEC} ${DATAFOLDER}${filename}_tk2r_110.tk2r ${QUERYFILE} ${REPETICIONES} 01 >> ${OUTPUTFILE}
 done
 

@@ -13,35 +13,34 @@ int main(int argc, char const *argv[]){
 	ifstream iqf(argv[1]);
 	int queries;
 	iqf >> queries;
-	int xi, xf, yi, yf, ti, tf, b1, b2;
+	int xi, xf, yi, yf, ti, tf, vi, vf;
 	ofstream windowq(argv[2]);
 	ofstream getserieq(argv[3]);
 	windowq << queries << endl;
 	getserieq << queries << endl;
 	for(int i=0; i<queries; i++){
-		iqf >> xi >> xf >> yi >> yf >> ti >> tf >> b1 >> b2;
-		// Se establece b1 y b2 con los valores límites de todo el conjunto
-		// min: (UGRD) -2163  -  max: (PRES) 10502674 
-		b1 = -2164;
-		b2 = 10502675;
+		iqf >> xi >> xf >> yi >> yf >> ti >> tf >> vi >> vf;
+		// Se valida el tf <= 2663
+		if(ti > 2663) ti = 2663;
+		if(tf > 2663) tf = 2663;
 		windowq << xi << " " << xf;
 		windowq << " ";
 		windowq << yi << " " << yf;
 		windowq << " ";
 		windowq << ti << " " << tf;
 		windowq << " ";
-		windowq << b1 << " " << b2;
+		windowq << vi << " " << vf;
 		windowq << endl;
 		// Se establece como ti y tf los valores límite del dataset
 		ti = 0;
-		tf = 2664;
+		tf = 2663;
 		getserieq << xi << " " << xf;
 		getserieq << " ";
 		getserieq << yi << " " << yf;
 		getserieq << " ";
 		getserieq << ti << " " << tf;
 		getserieq << " ";
-		getserieq << b1 << " " << b2;
+		getserieq << vi << " " << vf;
 		getserieq << endl;
 	}
 	return 0;
