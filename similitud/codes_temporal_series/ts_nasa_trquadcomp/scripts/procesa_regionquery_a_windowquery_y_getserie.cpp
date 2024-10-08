@@ -34,9 +34,9 @@ int main(int argc, char const *argv[]){
 		// Se establece como ti y tf los valores límite del dataset
 		ti = 0;
 		tf = 2663;
-		getserieq << xi << " " << xf;
+		getserieq << xi << " " << xi;
 		getserieq << " ";
-		getserieq << yi << " " << yf;
+		getserieq << yi << " " << yi;
 		getserieq << " ";
 		getserieq << ti << " " << tf;
 		getserieq << " ";

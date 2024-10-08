@@ -53,7 +53,8 @@ int main(int argc, char const *argv[]){
 	for(int r=0; r<nreps; r++){
 		total_num_cells = 0;
 		for(int q=0; q<n_queries; q++){
-			size_t n_cells = nqc.queryWindow(queries[q][0], queries[q][1], queries[q][2], queries[q][3], queries[q][4], queries[q][5]).size();
+			vector<vector<vector<int>>> tr = nqc.queryWindow(queries[q][0], queries[q][1], queries[q][2], queries[q][3], queries[q][4], queries[q][5]);
+			size_t n_cells = tr.size() * tr[0].size();
 			total_num_cells += n_cells;
 		}
 	}

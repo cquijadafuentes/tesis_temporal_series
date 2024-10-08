@@ -7,7 +7,7 @@ fi
 
 REPETICIONES=$1
 OUTPUTFILE=$2
-EXEC="/home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/codes/TRQC_time_windowQuery"
+EXEC="/home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/codes/TRQC_time_getSerieQuery"
 DATAFOLDER="/home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/"
 QUERYFILE="/home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_getserie_fromregionquery_10000.txt"
 
@@ -44,7 +44,8 @@ echo "" >> ${OUTPUTFILE}
 
 for filename in APCP CAPE CONVfrac DLWRF DSWRF PEVAP PRES SPFH TMP UGRD VGRD
 do
-	${EXEC} ${DATAFOLDER}${filename}_tk2r_110.tk2r ${QUERYFILE} ${REPETICIONES} 01 >> ${OUTPUTFILE}
+	echo "${filename}_tk2r_110.tk2r" >> ${OUTPUTFILE}
+	${EXEC} ${DATAFOLDER}${filename}_tk2r_110.tk2r ${QUERYFILE} 0 ${REPETICIONES} >> ${OUTPUTFILE}
 done
 
 echo "" >> ${OUTPUTFILE}

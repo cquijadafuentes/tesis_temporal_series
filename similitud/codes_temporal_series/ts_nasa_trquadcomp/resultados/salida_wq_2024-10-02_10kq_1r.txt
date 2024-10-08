@@ -1,0 +1,214 @@
+Instrucción:
+./run_time_window_query.sh 1 salida_wq_2024-10-02_10kq_1r.txt
+----------------------------------------------------------------
+Fecha INICIO ejecución: 2024/10/02 16:38:05
+Directorio de ejecución: 
+/home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/results
+
+******************** WINDOW QUERY QUADCOMP ********************
+
+Archivo de ejecución quadcomp: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/codes/TRQC_time_windowQuery
+Directorio de datos: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/
+Archivo de queries: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+
+********** TRQC_time_windowQuery **********
+Cargando archivo NQC: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/APCP.qc04
+Leído...
+	filas: 464 - columnas: 224 - instantes: 2665
+	d_quad: 4 - nQuadRows: 116 - nQuadCols: 56
+Cargando archivo de consultas: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+	10000 consultas en el archivo.
+Ejecutando consultas con 1 repeticiones...
+-------------------------------------------
+Time: 1.27869e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 1561143, us/query = 1.27869e+06, us/cell = 8190.73
+-------------------------------------------
+********** TRQC_time_windowQuery **********
+Cargando archivo NQC: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/CAPE.qc04
+Leído...
+	filas: 464 - columnas: 224 - instantes: 2664
+	d_quad: 4 - nQuadRows: 116 - nQuadCols: 56
+Cargando archivo de consultas: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+	10000 consultas en el archivo.
+Ejecutando consultas con 1 repeticiones...
+-------------------------------------------
+Time: 1.28715e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 1561143, us/query = 1.28715e+06, us/cell = 8244.91
+-------------------------------------------
+********** TRQC_time_windowQuery **********
+Cargando archivo NQC: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/CONVfrac.qc04
+Leído...
+	filas: 464 - columnas: 224 - instantes: 2664
+	d_quad: 4 - nQuadRows: 116 - nQuadCols: 56
+Cargando archivo de consultas: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+	10000 consultas en el archivo.
+Ejecutando consultas con 1 repeticiones...
+-------------------------------------------
+Time: 1.21599e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 1561143, us/query = 1.21599e+06, us/cell = 7789.13
+-------------------------------------------
+********** TRQC_time_windowQuery **********
+Cargando archivo NQC: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/DLWRF.qc04
+Leído...
+	filas: 464 - columnas: 224 - instantes: 2664
+	d_quad: 4 - nQuadRows: 116 - nQuadCols: 56
+Cargando archivo de consultas: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+	10000 consultas en el archivo.
+Ejecutando consultas con 1 repeticiones...
+-------------------------------------------
+Time: 1.29242e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 1561143, us/query = 1.29242e+06, us/cell = 8278.69
+-------------------------------------------
+********** TRQC_time_windowQuery **********
+Cargando archivo NQC: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/DSWRF.qc04
+Leído...
+	filas: 464 - columnas: 224 - instantes: 2664
+	d_quad: 4 - nQuadRows: 116 - nQuadCols: 56
+Cargando archivo de consultas: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+	10000 consultas en el archivo.
+Ejecutando consultas con 1 repeticiones...
+-------------------------------------------
+Time: 1.28334e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 1561143, us/query = 1.28334e+06, us/cell = 8220.51
+-------------------------------------------
+********** TRQC_time_windowQuery **********
+Cargando archivo NQC: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/PEVAP.qc04
+Leído...
+	filas: 464 - columnas: 224 - instantes: 2665
+	d_quad: 4 - nQuadRows: 116 - nQuadCols: 56
+Cargando archivo de consultas: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+	10000 consultas en el archivo.
+Ejecutando consultas con 1 repeticiones...
+-------------------------------------------
+Time: 1.2664e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 1561143, us/query = 1.2664e+06, us/cell = 8111.99
+-------------------------------------------
+********** TRQC_time_windowQuery **********
+Cargando archivo NQC: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/PRES.qc04
+Leído...
+	filas: 464 - columnas: 224 - instantes: 2664
+	d_quad: 4 - nQuadRows: 116 - nQuadCols: 56
+Cargando archivo de consultas: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+	10000 consultas en el archivo.
+Ejecutando consultas con 1 repeticiones...
+-------------------------------------------
+Time: 1.29156e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 1561143, us/query = 1.29156e+06, us/cell = 8273.18
+-------------------------------------------
+********** TRQC_time_windowQuery **********
+Cargando archivo NQC: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/SPFH.qc04
+Leído...
+	filas: 464 - columnas: 224 - instantes: 2664
+	d_quad: 4 - nQuadRows: 116 - nQuadCols: 56
+Cargando archivo de consultas: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+	10000 consultas en el archivo.
+Ejecutando consultas con 1 repeticiones...
+-------------------------------------------
+Time: 5.0586e+06 milliseconds. Queries: 10000 (1x10000) Nº cells = 1561143, us/query = 505860, us/cell = 3240.32
+-------------------------------------------
+********** TRQC_time_windowQuery **********
+Cargando archivo NQC: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/TMP.qc04
+Leído...
+	filas: 464 - columnas: 224 - instantes: 2665
+	d_quad: 4 - nQuadRows: 116 - nQuadCols: 56
+Cargando archivo de consultas: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+	10000 consultas en el archivo.
+Ejecutando consultas con 1 repeticiones...
+-------------------------------------------
+Time: 1.28183e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 1561143, us/query = 1.28183e+06, us/cell = 8210.83
+-------------------------------------------
+********** TRQC_time_windowQuery **********
+Cargando archivo NQC: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/UGRD.qc04
+Leído...
+	filas: 464 - columnas: 224 - instantes: 2664
+	d_quad: 4 - nQuadRows: 116 - nQuadCols: 56
+Cargando archivo de consultas: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+	10000 consultas en el archivo.
+Ejecutando consultas con 1 repeticiones...
+-------------------------------------------
+Time: 1.27873e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 1561143, us/query = 1.27873e+06, us/cell = 8190.96
+-------------------------------------------
+********** TRQC_time_windowQuery **********
+Cargando archivo NQC: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/data/VGRD.qc04
+Leído...
+	filas: 464 - columnas: 224 - instantes: 2664
+	d_quad: 4 - nQuadRows: 116 - nQuadCols: 56
+Cargando archivo de consultas: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+	10000 consultas en el archivo.
+Ejecutando consultas con 1 repeticiones...
+-------------------------------------------
+Time: 1.27947e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 1561143, us/query = 1.27947e+06, us/cell = 8195.71
+-------------------------------------------
+
+******************** WINDOW QUERY TK2-RASTER ********************
+
+Archivo de ejecución tk2-raster: /home/cquijada/k2-raster/build/bin/get_values_window_tk2r
+Directorio de datos: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/tk2r_files_110/
+Archivo de queries: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+
+Check OK!!!
+Time: 2.33324e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 2.33324e+06, us/cell = 0.217296
+Archivo de ejecución tk2-raster: /home/cquijada/k2-raster/build/bin/get_values_window_tk2r
+Directorio de datos: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/tk2r_files_110/
+Archivo de queries: 
+
+APCP_tk2r_110.tk2r
+Check OK!!!
+Time: 0 milliseconds. Queries: 0 (1x0) Nº cells = 0, us/query = -nan, us/cell = -nan
+CAPE_tk2r_110.tk2r
+Check OK!!!
+Time: 0 milliseconds. Queries: 0 (1x0) Nº cells = 0, us/query = -nan, us/cell = -nan
+CONVfrac_tk2r_110.tk2r
+Check OK!!!
+Time: 0.001 milliseconds. Queries: 0 (1x0) Nº cells = 0, us/query = inf, us/cell = inf
+DLWRF_tk2r_110.tk2r
+Check OK!!!
+Time: 0 milliseconds. Queries: 0 (1x0) Nº cells = 0, us/query = -nan, us/cell = -nan
+DSWRF_tk2r_110.tk2r
+Check OK!!!
+Time: 0 milliseconds. Queries: 0 (1x0) Nº cells = 0, us/query = -nan, us/cell = -nan
+PEVAP_tk2r_110.tk2r
+Check OK!!!
+Time: 0.001 milliseconds. Queries: 0 (1x0) Nº cells = 0, us/query = inf, us/cell = inf
+PRES_tk2r_110.tk2r
+Check OK!!!
+Time: 0 milliseconds. Queries: 0 (1x0) Nº cells = 0, us/query = -nan, us/cell = -nan
+SPFH_tk2r_110.tk2r
+Check OK!!!
+Time: 0.001 milliseconds. Queries: 0 (1x0) Nº cells = 0, us/query = inf, us/cell = inf
+TMP_tk2r_110.tk2r
+Check OK!!!
+Time: 0.001 milliseconds. Queries: 0 (1x0) Nº cells = 0, us/query = inf, us/cell = inf
+UGRD_tk2r_110.tk2r
+Check OK!!!
+Time: 0.001 milliseconds. Queries: 0 (1x0) Nº cells = 0, us/query = inf, us/cell = inf
+VGRD_tk2r_110.tk2r
+Check OK!!!
+Time: 0 milliseconds. Queries: 0 (1x0) Nº cells = 0, us/query = -nan, us/cell = -nan
+
+----------------------------------------------------------------
+
+Fecha FIN ejecución: 2024/10/04 13:01:02
+Archivo de ejecución tk2-raster: /home/cquijada/k2-raster/build/bin/get_values_window_tk2r
+Directorio de datos: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/tk2r_files_110/
+Archivo de queries: /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/queries/query_window_fromregionquery_10000.txt
+
+APCP_tk2r_110.tk2r
+Time: 4.66937e+06 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 466937, us/cell = 0.0434861
+CAPE_tk2r_110.tk2r
+Time: 5.3038e+06 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 530380, us/cell = 0.0493946
+CONVfrac_tk2r_110.tk2r
+Time: 2.436e+06 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 243600, us/cell = 0.0226866
+DLWRF_tk2r_110.tk2r
+Time: 1.03616e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 1.03616e+06, us/cell = 0.0964977
+DSWRF_tk2r_110.tk2r
+Time: 5.52048e+06 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 552048, us/cell = 0.0514126
+PEVAP_tk2r_110.tk2r
+Time: 8.09711e+06 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 809711, us/cell = 0.0754089
+PRES_tk2r_110.tk2r
+Time: 1.05458e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 1.05458e+06, us/cell = 0.0982137
+SPFH_tk2r_110.tk2r
+Time: 1.15043e+06 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 115043, us/cell = 0.010714
+TMP_tk2r_110.tk2r
+Time: 1.00784e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 1.00784e+06, us/cell = 0.0938609
+UGRD_tk2r_110.tk2r
+Time: 1.01974e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 1.01974e+06, us/cell = 0.0949691
+VGRD_tk2r_110.tk2r
+Time: 1.02304e+07 milliseconds. Queries: 10000 (1x10000) Nº cells = 107376147180, us/query = 1.02304e+06, us/cell = 0.0952765
+
+----------------------------------------------------------------
+
+Fecha FIN ejecución: 2024/10/05 11:16:12
