@@ -58,7 +58,9 @@ print("# pMin =",min,"- pMax =",max)
 cmap = sns.color_palette("coolwarm", as_cmap=True)
 
 # Crear un mapa de calor
-heatmap = sns.heatmap(proms, cmap=cmap, cbar_kws={'label':'Promedio'}, vmin=min, vmax=max)
+plt.figure(figsize=(8, 4))
+plt.axis('off')
+heatmap = sns.heatmap(proms, cmap=cmap, vmin=min, vmax=max)
 plt.savefig(sys.argv[1] + '.heatmap.promedio_v2.png', bbox_inches='tight')
 #plt.show()
 plt.close()
