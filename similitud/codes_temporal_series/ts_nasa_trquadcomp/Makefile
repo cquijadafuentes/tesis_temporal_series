@@ -4,7 +4,8 @@ PREFLAGS=-std=c++11 -g -O0 -DNDEBUG -I ~/include -L ~/lib
 
 POSFLAGS=-lsdsl -ldivsufsort -ldivsufsort64
 
-BINS=TRQC_build_from_bin TRQC_load_trqc \
+BINS=TRQC_build_from_eeg_bin TRQC_build_from_nasa_bin \
+	TRQC_load_trqc \
 	TRQC_test_bin_trqc TRQC_test_bin_trqc_windowQuery \
 	TRQC_test_fromInput TRQC_test_windowQ_fromInput \
 	TRQC_time_accessQuery TRQC_time_getSerieQuery \
@@ -19,7 +20,10 @@ all: bin
 
 bin: $(OBJECTS) $(BINS)
 	
-TRQC_build_from_bin:
+TRQC_build_from_eeg_bin:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
+	
+TRQC_build_from_nasa_bin:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 	
 TRQC_load_trqc:
