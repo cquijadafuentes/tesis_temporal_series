@@ -1,3 +1,5 @@
+# pip install PyQt6
+
 import sys
 import matplotlib.pyplot as plt
 

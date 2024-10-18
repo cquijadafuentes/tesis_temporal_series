@@ -6,20 +6,21 @@ import matplotlib.pyplot as plt
 # mat = sio.loadmat("/home/carlos/testing_data/627_Depression_REST.mat")
 
 if len(sys.argv) != 2:
-  print("Error! en la cantidad de argumentos.")
-  print(sys.argv[0], "<filename.mat>")
-  sys.exit()
+	print("Error! en la cantidad de argumentos.")
+	print(sys.argv[0], "<filename.mat>")
+	sys.exit()
 
 mat = sio.loadmat(sys.argv[1])
 data = mat['EEG'][0]['data'][0]
 labels = []
 mx = max(data[0])
 mn = min(data[0])
+l = len(mat['EEG'][0]['chanlocs'][0][0])
 
-for i in range(len(mat['EEG'][0]['chanlocs'][0][0])):
-  labels.append(str(mat['EEG'][0]['chanlocs'][0][0][i][0][0]))
-  mx = max(mx, max(data[i]))
-  mn = min(mn, min(data[i]))
+for i in range(l):
+	labels.append(str(mat['EEG'][0]['chanlocs'][0][0][i][0][0]))
+	mx = max(mx, max(data[i]))
+	mn = min(mn, min(data[i]))
 print("máximo:",mx," - mínimo:", mn)
 
 # Diccionario con las posiciones de cada etiqueta
@@ -91,49 +92,17 @@ posiciones["CB2"] = [8,6]
 posiciones["HEOG"] = [0,1]
 posiciones["VEOG"] = [0,7]
 
-fig, ax = plt.subplots()
-plt.plot(data[0], color='black')
-plt.title(labels[0])
-ax.grid(True)
-ax.set_ylim([mn, mx])
-plt.setp(ax.get_xticklabels(), visible=False)
-plt.setp(ax.get_yticklabels(), visible=False)
-
-fig.set_size_inches(3, 2)
+fig, ax = plt.subplots(9, 9, figsize=(30, 20))
+for i in range(l):
+	if labels[i] in posiciones:
+		px = posiciones[labels[i]][0]
+		py = posiciones[labels[i]][1]
+		ax[px][py].plot(data[i], color='blue')
+		#ax[px][py].title()
+		ax[px][py].grid(True)
+		ax[px][py].set_ylim([mn, mx])
+	else:
+		print("Lablel",labels[i],"no esta en archivo",sys.argv[1])
 
 plt.tight_layout()
-plt.savefig("Prueba_61")
-
-sys.exit()
-
-# Generar datos de ejemplo
-x = np.linspace(0, 10, 100)
-y1 = np.sin(x)
-y2 = np.cos(x)
-y3 = np.tan(x)
-y4 = np.exp(-x)
-
-# Crear una figura con 4 subfiguras
-fig, axs = plt.subplots(4, figsize=(10, 8))
-
-# Subfigura 1
-axs[0].plot(x, y1, 'r')
-axs[0].set_title('Seno')
-
-# Subfigura 2
-axs[1].plot(x, y2, 'g')
-axs[1].set_title('Coseno')
-
-# Subfigura 3
-axs[2].plot(x, y3, 'b')
-axs[2].set_title('Tangente')
-
-# Subfigura 4
-axs[3].plot(x, y4, 'y')
-axs[3].set_title('Exponencial Decay')
-
-# Ajustar el layout para que no se solapen las subfiguras
-plt.tight_layout()
-
-# Mostrar la figura
-plt.show()
+plt.savefig(str(sys.argv[1]+".preview.png"))
