@@ -1,6 +1,7 @@
 import sys
 import numpy as np
 import scipy.io as sio
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 # mat = sio.loadmat("/home/carlos/testing_data/627_Depression_REST.mat")
@@ -16,7 +17,8 @@ labels = []
 mx = max(data[0])
 mn = min(data[0])
 l = len(mat['EEG'][0]['chanlocs'][0][0])
-
+sum_diffs = np.zeros((l, l))
+diff_proms = np.zeros((l, l))
 for i in range(l):
 	labels.append(str(mat['EEG'][0]['chanlocs'][0][0][i][0][0]))
 	mx = max(mx, max(data[i]))
@@ -93,16 +95,50 @@ posiciones["HEOG"] = [0,1]
 posiciones["VEOG"] = [0,7]
 
 fig, ax = plt.subplots(9, 9, figsize=(30, 20))
+t = str("EEG "+ sys.argv[1])
+fig.suptitle(t, y=0.99)
+plt.subplots_adjust(top=0.92)
 for i in range(l):
 	if labels[i] in posiciones:
+		# Generando gráfica de previsualización
 		px = posiciones[labels[i]][0]
 		py = posiciones[labels[i]][1]
 		ax[px][py].plot(data[i], color='blue')
+		ax[px][py].set_title(labels[i])
 		#ax[px][py].title()
 		ax[px][py].grid(True)
 		ax[px][py].set_ylim([mn, mx])
+		# Generando datos para gráfica de similitud
+		for j in range(l):
+			sumi = sum(data[i])
+			sumj = sum(data[j])
+			sum_diffs[i][j] = sumi - sumj
+			diff_proms[i][j] = (sumi / l) - (sumj / l)
 	else:
 		print("Lablel",labels[i],"no esta en archivo",sys.argv[1])
 
 plt.tight_layout()
 plt.savefig(str(sys.argv[1]+".preview.png"))
+plt.close()
+
+
+cmap = sns.color_palette("coolwarm", as_cmap=True)
+# Crear un mapa de calor
+# De la suma de diferencias
+plt.figure(figsize=(14, 12))
+menor = np.min(sum_diffs)
+mayor = np.max(sum_diffs)
+heatmapSF = sns.heatmap(sum_diffs, cmap=cmap, vmin=menor, vmax=mayor, xticklabels=labels, yticklabels=labels)
+plt.title('Suma de Diferencias')
+plt.savefig(sys.argv[1] + '.heatmap.suma_diferencias.png', bbox_inches='tight')
+plt.close()
+
+# De la diferencia de promedios
+plt.figure(figsize=(14, 12))
+menor = np.min(diff_proms)
+mayor = np.max(diff_proms)
+heatmapDP = sns.heatmap(diff_proms, cmap=cmap, vmin=menor, vmax=mayor, xticklabels=labels, yticklabels=labels)
+plt.title('Diferencia de Promedios')
+plt.savefig(sys.argv[1] + '.heatmap.diferencia_proms.png', bbox_inches='tight')
+#plt.show()
+plt.close()
