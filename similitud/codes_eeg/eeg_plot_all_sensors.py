@@ -4,28 +4,16 @@ import scipy.io as sio
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# mat = sio.loadmat("/home/carlos/testing_data/627_Depression_REST.mat")
-
 if len(sys.argv) != 2:
 	print("Error! en la cantidad de argumentos.")
 	print(sys.argv[0], "<filename.mat>")
 	sys.exit()
 
-mat = sio.loadmat(sys.argv[1])
-data = mat['EEG'][0]['data'][0]
-labels = []
-mx = max(data[0])
-mn = min(data[0])
-l = len(mat['EEG'][0]['chanlocs'][0][0])
-sum_diffs = np.zeros((l, l))
-diff_proms = np.zeros((l, l))
-for i in range(l):
-	labels.append(str(mat['EEG'][0]['chanlocs'][0][0][i][0][0]))
-	mx = max(mx, max(data[i]))
-	mn = min(mn, min(data[i]))
-print("máximo:",mx," - mínimo:", mn)
+# Etiquetas por FILAS y COLUMNAS
+labelsXrow = ["HEOG","VEOG","FP1","FPZ","FP2","AF3","AF4","F7","F5","F3","F1","FZ","F2","F4","F6","F8","FT7","FC5","FC3","FC1","FCZ","FC2","FC4","FC6","FT8","T7","C5","C3","C1","CZ","C2","C4","C6","T8","M1","M2","TP7","CP5","CP3","CP1","CPZ","CP2","CP4","CP6","TP8","P7","P5","P3","P1","PZ","P2","P4","P6","P8","PO7","PO5","PO3","POZ","PO4","PO6","PO8","CB1","O1","OZ","O2","CB2"]
+labelsXcol = ["HEOG","VEOG","M1","F7","FT7","T7","TP7","P7","PO7","F5","FC5","C5","CP5","P5","PO5","AF3","F3","FC3","C3","CP3","P3","PO3","FP1","F1","FC1","C1","CP1","P1","O1","CB1","FPZ","FZ","FCZ","CZ","CPZ","PZ","POZ","OZ","FP2","F2","FC2","C2","CP2","P2","O2","CB2","AF4","F4","FC4","C4","CP4","P4","PO4","F6","FC6","C6","CP6","P6","PO6","F8","FT8","T8","TP8","M2","P8","PO8"]
 
-# Diccionario con las posiciones de cada etiqueta
+# Diccionario con las POSICIONES EN MATRIZ de cada etiqueta
 posiciones = {}
 posiciones["FP1"] = [0,3]
 posiciones["FPZ"] = [0,4]
@@ -94,51 +82,163 @@ posiciones["CB2"] = [8,6]
 posiciones["HEOG"] = [0,1]
 posiciones["VEOG"] = [0,7]
 
+# mat = sio.loadmat("/home/carlos/testing_data/627_Depression_REST.mat")
+
+mat = sio.loadmat(sys.argv[1])
+mx = max(mat['EEG'][0]['data'][0][0])
+mn = min(mat['EEG'][0]['data'][0][0])
+l = len(mat['EEG'][0]['chanlocs'][0][0])
+ldata = len(mat['EEG'][0]['data'][0][0])
+
+data = {}
+sumas = {}
+
+for i in range(l):
+	etiqueta = str(mat['EEG'][0]['chanlocs'][0][0][i][0][0])
+	if(etiqueta != "EKG"):
+		d = mat['EEG'][0]['data'][0][i]
+		sumas[etiqueta] = sum(d)
+		mx = max(mx, max(d))
+		mn = min(mn, min(d))
+		data[etiqueta] = d
+print("máximo:",mx," - mínimo:", mn)
+
+print("Graficando previews del EEG")
+
 fig, ax = plt.subplots(9, 9, figsize=(30, 20))
 t = str("EEG "+ sys.argv[1])
 fig.suptitle(t, y=0.99)
 plt.subplots_adjust(top=0.92)
-for i in range(l):
-	if labels[i] in posiciones:
-		# Generando gráfica de previsualización
-		px = posiciones[labels[i]][0]
-		py = posiciones[labels[i]][1]
-		ax[px][py].plot(data[i], color='blue')
-		ax[px][py].set_title(labels[i])
-		#ax[px][py].title()
-		ax[px][py].grid(True)
-		ax[px][py].set_ylim([mn, mx])
-		# Generando datos para gráfica de similitud
-		for j in range(l):
-			sumi = sum(data[i])
-			sumj = sum(data[j])
-			sum_diffs[i][j] = sumi - sumj
-			diff_proms[i][j] = (sumi / l) - (sumj / l)
-	else:
-		print("Lablel",labels[i],"no esta en archivo",sys.argv[1])
+for lxr in labelsXrow:
+	# Generando gráfica de previsualización
+	px = posiciones[lxr][0]
+	py = posiciones[lxr][1]
+	ax[px][py].plot(data[lxr], color='blue')
+	ax[px][py].set_title(lxr)
+	#ax[px][py].title()
+	ax[px][py].grid(True)
+	ax[px][py].set_ylim([mn, mx])
 
 plt.tight_layout()
 plt.savefig(str(sys.argv[1]+".preview.png"))
 plt.close()
 
+print("Calculando suma de diferencias")
+
+sum_diffs = {}
+diff_proms = {}
+acum_sum_diffs = {}
+
+for e1 in labelsXrow:
+	for e2 in labelsXrow:
+		sd = sumas[e1] - sumas[e2]
+		dp = (sumas[e1] / ldata) - (sumas[e2] / ldata)
+		sum_diffs[(e1,e2)] = sd
+		diff_proms[(e1,e2)] = dp
+		if e1 not in acum_sum_diffs:
+			acum_sum_diffs[e1] = 0
+		acum_sum_diffs[e1] = acum_sum_diffs[e1] + sd
+
+l = len(labelsXrow) # == len(labelsXcol)
+matriz = np.zeros((l, l))
 
 cmap = sns.color_palette("coolwarm", as_cmap=True)
-# Crear un mapa de calor
-# De la suma de diferencias
+
+
+print("Creando un mapa de calor de la suma de diferencias x fila")
+for i in range(l):
+	for j in range(l):
+		li = labelsXrow[i]
+		lj = labelsXrow[j]
+		matriz[i][j] = sum_diffs[(li,lj)]
+
 plt.figure(figsize=(14, 12))
-menor = np.min(sum_diffs)
-mayor = np.max(sum_diffs)
-heatmapSF = sns.heatmap(sum_diffs, cmap=cmap, vmin=menor, vmax=mayor, xticklabels=labels, yticklabels=labels)
+menor = np.min(matriz)
+mayor = np.max(matriz)
+heatmapSF = sns.heatmap(matriz, cmap=cmap, vmin=menor, vmax=mayor, xticklabels=labelsXrow, yticklabels=labelsXrow)
 plt.title('Suma de Diferencias')
-plt.savefig(sys.argv[1] + '.heatmap.suma_diferencias.png', bbox_inches='tight')
+plt.savefig(sys.argv[1] + '.heatmap.suma_diferencias_xRow.png', bbox_inches='tight')
 plt.close()
 
-# De la diferencia de promedios
+print("Crear un mapa de calor de la diferencia de promedios x fila")
+for i in range(l):
+	for j in range(l):
+		li = labelsXrow[i]
+		lj = labelsXrow[j]
+		matriz[i][j] = diff_proms[(li,lj)]
 plt.figure(figsize=(14, 12))
-menor = np.min(diff_proms)
-mayor = np.max(diff_proms)
-heatmapDP = sns.heatmap(diff_proms, cmap=cmap, vmin=menor, vmax=mayor, xticklabels=labels, yticklabels=labels)
+menor = np.min(matriz)
+mayor = np.max(matriz)
+heatmapDP = sns.heatmap(matriz, cmap=cmap, vmin=menor, vmax=mayor, xticklabels=labelsXrow, yticklabels=labelsXrow)
 plt.title('Diferencia de Promedios')
-plt.savefig(sys.argv[1] + '.heatmap.diferencia_proms.png', bbox_inches='tight')
-#plt.show()
+plt.savefig(sys.argv[1] + '.heatmap.diferencia_proms_xRow.png', bbox_inches='tight')
 plt.close()
+
+
+print("Creando un mapa de calor de la suma de diferencias x columna")
+for i in range(l):
+	for j in range(l):
+		li = labelsXcol[i]
+		lj = labelsXcol[j]
+		matriz[i][j] = sum_diffs[(li,lj)]
+plt.figure(figsize=(14, 12))
+menor = np.min(matriz)
+mayor = np.max(matriz)
+heatmapSF = sns.heatmap(matriz, cmap=cmap, vmin=menor, vmax=mayor, xticklabels=labelsXcol, yticklabels=labelsXcol)
+plt.title('Suma de Diferencias')
+plt.savefig(sys.argv[1] + '.heatmap.suma_diferencias_xCol.png', bbox_inches='tight')
+plt.close()
+
+print("Crear un mapa de calor de la diferencia de promedios x columna")
+for i in range(l):
+	for j in range(l):
+		li = labelsXcol[i]
+		lj = labelsXcol[j]
+		matriz[i][j] = diff_proms[(li,lj)]
+plt.figure(figsize=(14, 12))
+menor = np.min(matriz)
+mayor = np.max(matriz)
+heatmapDP = sns.heatmap(matriz, cmap=cmap, vmin=menor, vmax=mayor, xticklabels=labelsXcol, yticklabels=labelsXcol)
+plt.title('Diferencia de Promedios')
+plt.savefig(sys.argv[1] + '.heatmap.diferencia_proms_xCol.png', bbox_inches='tight')
+plt.close()
+
+
+
+##########################################
+
+
+print("Creando un mapa de calor de la suma de diferencias x menor diferencia acumulada")
+llavs = list(acum_sum_diffs.keys())
+vals = list(acum_sum_diffs.values())
+
+for i in range(len(llavs)):
+	if(vals[i] != acum_sum_diffs[llavs[i]]):
+		print("Se encontró diferencia en valores")
+
+sorted_vals, sorted_llavs = zip(*sorted(zip(vals, llavs)))
+for i in range(l):
+	for j in range(l):
+		li = sorted_llavs[i]
+		lj = sorted_llavs[j]
+		matriz[i][j] = sum_diffs[(li,lj)]
+plt.figure(figsize=(14, 12))
+menor = np.min(matriz)
+mayor = np.max(matriz)
+heatmapDP = sns.heatmap(matriz, cmap=cmap, vmin=menor, vmax=mayor, xticklabels=sorted_llavs, yticklabels=sorted_llavs)
+plt.title('Diferencia de Promedios')
+plt.savefig(sys.argv[1] + '.heatmap.suma_diferencias_xsumdiffacum.png', bbox_inches='tight')
+plt.close()
+
+print("Archivo:",sys.argv[1],sorted_llavs[0]," sensor con menor suma acumulada de diferencias con valor:", sorted_vals[0])
+mll = llavs[0]
+mv = abs(vals[0])
+for i in range(len(sorted_vals)):
+	if abs(sorted_vals[i]) < mv:
+		mv = abs(sorted_vals[i])
+		mll = sorted_llavs[i]
+	print(sorted_llavs[i], sorted_vals[i], abs(sorted_vals[i]))
+print("Archivo:", sys.argv[1], mll, " sensor con valor más cercano a 0 con valor:", mv)
+
+#plt.show()
+print("FIN")
