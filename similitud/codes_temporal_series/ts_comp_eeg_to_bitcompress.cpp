@@ -13,7 +13,7 @@ void codificaPorReferencia(vector<vector<int>> series, vector<int> referencia, s
 int main(int argc, char const *argv[]){
 	if(argc < 2){
 		cout << "Error! Faltan argumentos." << endl;
-		cout << argv[0] << " <inputFile>" << endl;
+		cout << argv[0] << " <inputFile> [<n_ref>]" << endl;
 		return 0;
 	}
 	// Leyendo datos desde el archivo de entrada
@@ -57,6 +57,12 @@ int main(int argc, char const *argv[]){
 		referencia[i] = serieAcumulada[i] / electrodos;
 	}
 	codificaPorReferencia(temporalSeries, referencia, "refProm");
+
+	if(argc > 2){
+		int r = stoi(argv[2]);
+		referencia = temporalSeries[r];
+		codificaPorReferencia(temporalSeries, referencia, "ref_"+r);
+	}
 }
 
 
