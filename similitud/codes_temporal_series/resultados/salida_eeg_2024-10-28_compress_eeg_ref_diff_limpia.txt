@@ -1,0 +1,836 @@
+Fecha INICIO BUILD: 2024/10/28 18:44:00
+Medir compressión en EEG con serie de referencia
+File: 507_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	89	65
+refSer1	128	54	90	68
+refSerF	128	54	91	68
+refProm	128	54	88	68
+refMDA	128	54	91	68
+File: 508_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	125	50	87	63
+refSer1	125	52	89	66
+refSerF	125	52	88	66
+refProm	125	52	86	66
+refMDA	125	52	87	66
+File: 509_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	51	90	66
+refSer1	129	54	89	69
+refSerF	129	54	91	69
+refProm	129	54	88	69
+refMDA	129	54	89	69
+File: 510_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	134	54	93	68
+refSer1	134	56	94	72
+refSerF	134	56	94	72
+refProm	134	56	92	71
+refMDA	134	56	94	72
+File: 511_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	50	88	65
+refSer1	127	53	88	67
+refSerF	127	53	92	67
+refProm	127	53	87	67
+refMDA	127	53	89	67
+File: 512_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	136	54	95	69
+refSer1	136	57	95	72
+refSerF	136	57	98	72
+refProm	136	57	94	72
+refMDA	136	57	95	72
+File: 513_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	51	89	65
+refSer1	127	53	89	68
+refSerF	127	53	90	68
+refProm	127	53	88	68
+refMDA	127	53	89	68
+File: 514_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	89	65
+refSer1	128	54	89	68
+refSerF	128	54	92	68
+refProm	128	54	88	68
+refMDA	128	54	89	68
+File: 515_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	51	88	65
+refSer1	127	53	90	68
+refSerF	127	53	90	68
+refProm	127	53	87	68
+refMDA	127	53	88	68
+File: 516_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	51	89	65
+refSer1	127	53	91	68
+refSerF	127	53	90	68
+refProm	127	53	87	68
+refMDA127	53	89	68
+File: 517_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	136	54	94	69
+refSer1	136	57	94	72
+refSerF	136	57	98	72
+refProm	136	57	93	72
+refMDA	136	57	94	72
+File: 518_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	136	54	95	69
+refSer1	136	57	97	72
+refSerF	136	57	99	72
+refProm	136	57	93	72
+refMDA	136	57	96	72
+File: 519_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	139	55	96	71
+refSer1	139	58	96	74
+refSerF	139	58	100	74
+refProm	139	58	95	74
+refMDA	139	58	97	74
+File: 520_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	130	52	91	66
+refSer1	130	55	91	69
+refSerF	130	55	96	69
+refProm	130	55	90	69
+refMDA	130	55	93	69
+File: 521_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	130	52	91	66
+refSer1	130	55	92	69
+refSerF	130	55	93	69
+refProm	130	55	90	69
+refMDA	130	55	92	69
+File: 522_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	111	44	78	57
+refSer1	111	47	78	59
+refSerF	111	47	78	59
+refProm	111	47	77	59
+refMDA111	47	78	59
+File: 523_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	130	52	91	66
+refSer1	130	54	91	69
+refSerF	130	54	92	69
+refProm	130	54	90	69
+refMDA	130	54	92	69
+File: 524_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	130	52	91	66
+refSer1	130	55	91	69
+refSerF	130	55	89	69
+refProm	130	55	90	69
+refMDA	130	55	91	69
+File: 525_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	126	50	88	64
+refSer1	126	53	89	67
+refSerF	126	53	89	67
+refProm	126	53	87	67
+refMDA	126	53	88	67
+File: 526_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	89	65
+refSer1	128	54	89	68
+refSerF	128	54	90	68
+refProm	128	54	87	68
+refMDA	128	54	89	68
+File: 527_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	125	50	88	64
+refSer1	125	52	88	66
+refSerF	125	52	88	66
+refProm	125	52	86	66
+refMDA	125	52	88	66
+File: 528_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	126	50	87	64
+refSer1	126	53	88	67
+refSerF	126	53	89	67
+refProm	126	53	86	67
+refMDA	126	53	89	67
+File: 529_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	133	53	92	68
+refSer1	133	56	93	71
+refSerF	133	56	94	71
+refProm	133	56	91	71
+refMDA	133	56	93	71
+File: 530_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	120	31	83	46
+refSer1	120	33	84	47
+refSerF	120	33	83	48
+refProm	120	32	82	47
+refMDA	120	32	83	47
+File: 531_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	131	34	90	50
+refSer1	131	34	91	51
+refSerF	131	36	92	49
+refProm	131	34	89	51
+refMDA	131	34	90	51
+File: 532_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	89	65
+refSer1	128	54	90	68
+refSerF	128	54	90	68
+refProm	128	54	89	68
+refMDA	128	54	89	68
+File: 533_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	125	50	87	64
+refSer1	125	52	88	67
+refSerF	125	52	89	67
+refProm	125	52	85	67
+refMDA	125	52	87	67
+File: 534_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	126	50	87	64
+refSer1	126	53	88	67
+refSerF	126	53	89	67
+refProm	126	53	86	67
+refMDA	126	53	88	67
+File: 535_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	127	94	84
+refSer1	129	129	95	127
+refSerF	129	129	100	91
+refProm	129	129	92	80
+refMDA	129	129	94	108
+File: 536_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	117	47	81	60
+refSer1	117	49	82	62
+refSerF	117	49	83	62
+refProm	117	49	80	62
+refMDA	117	49	81	62
+File: 537_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	89	65
+refSer1	128	54	89	68
+refSerF	128	54	87	68
+refProm	128	54	88	68
+refMDA	128	54	89	68
+File: 538_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	51	90	65
+refSer1	129	54	91	68
+refSerF	129	54	92	68
+refProm	129	54	88	68
+refMDA129	54	91	68
+File: 539_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	86	34	60	44
+refSer1	86	36	60	46
+refSerF	86	36	63	46
+refProm	86	36	59	46
+refMDA	86	36	60	46
+File: 540_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	117	115	83	87
+refSer1	117	117	83	117
+refSerF	117	117	85	117
+refProm	117	117	81	71
+refMDA	117	117	83	100
+File: 541_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	89	65
+refSer1	128	53	89	68
+refSerF	128	53	90	68
+refProm	128	54	87	68
+refMDA	128	53	90	68
+File: 542_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	89	65
+refSer1	128	54	90	68
+refSerF	128	54	92	68
+refProm	128	54	88	68
+refMDA128	54	91	68
+File: 543_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	126	33	88	49
+refSer1	126	35	88	49
+refSerF	126	37	89	51
+refProm	126	33	86	49
+refMDA	126	33	88	49
+File: 545_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	126	50	87	64
+refSer1	126	53	89	67
+refSerF	126	53	89	67
+refProm	126	53	86	67
+refMDA126	53	90	67
+File: 546_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	124	49	86	63
+refSer1	124	52	87	66
+refSerF	124	52	88	66
+refProm	124	52	85	66
+refMDA	124	52	86	66
+File: 547_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	50	88	64
+refSer1	127	53	89	67
+refSerF	127	53	91	67
+refProm	127	53	87	67
+refMDA	127	53	88	67
+File: 548_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	51	90	66
+refSer1	129	54	93	69
+refSerF	129	54	91	69
+refProm	129	54	88	69
+refMDA	129	54	89	69
+File: 549_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	124	49	86	63
+refSer1	124	52	87	66
+refSerF	124	52	88	66
+refProm	124	52	85	66
+refMDA	124	52	87	66
+File: 550_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	117	46	81	59
+refSer1	117	49	82	62
+refSerF	117	49	83	62
+refProm	117	49	80	62
+refMDA	117	49	81	62
+File: 551_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	124	50	87	63
+refSer1	124	52	87	66
+refSerF	124	52	88	66
+refProm	124	52	87	66
+refMDA	124	52	91	66
+File: 552_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	132	53	91	67
+refSer1	132	56	92	70
+refSerF	132	56	93	70
+refProm	132	56	90	70
+refMDA	132	56	92	70
+File: 553_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	134	53	92	68
+refSer1	134	56	93	71
+refSerF	134	56	94	71
+refProm	134	56	91	71
+refMDA	134	56	96	71
+File: 554_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	138	36	96	53
+refSer1	138	37	97	54
+refSerF	138	39	101	54
+refProm	138	37	95	54
+refMDA	138	37	96	54
+File: 555_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	51	94	66
+refSer1	129	54	90	69
+refSerF	129	54	93	68
+refProm	129	54	88	68
+refMDA129	54	91	68
+File: 556_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	124	32	86	48
+refSer1	124	34	88	50
+refSerF	124	35	86	49
+refProm	124	33	85	48
+refMDA	124	33	86	48
+File: 557_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	125	33	86	48
+refSer1	125	33	87	49
+refSerF	125	35	87	50
+refProm	125	33	85	49
+refMDA	125	33	89	49
+File: 558_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	115	46	80	58
+refSer1	115	48	81	61
+refSerF	115	48	81	61
+refProm	115	48	79	61
+refMDA	115	48	80	61
+File: 559_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	51	88	65
+refSer1	127	53	88	68
+refSerF	127	53	89	68
+refProm	127	53	86	68
+refMDA	127	53	89	68
+File: 560_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	125	50	88	64
+refSer1	125	52	87	66
+refSerF	125	52	88	66
+refProm	125	52	86	66
+refMDA	125	52	90	66
+File: 561_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	52	90	66
+refSer1	129	54	91	69
+refSerF	129	54	89	69
+refProm	129	54	89	69
+refMDA	129	54	90	69
+File: 562_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	125	50	87	63
+refSer1	125	52	89	66
+refSerF	125	52	87	66
+refProm	125	52	86	66
+refMDA	125	52	87	66
+File: 563_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	124	49	86	63
+refSer1	124	52	87	66
+refSerF	124	52	84	66
+refProm	124	52	85	66
+refMDA	124	52	87	66
+File: 564_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	52	89	66
+refSer1	129	54	91	69
+refSerF	129	54	90	69
+refProm	129	54	88	69
+refMDA	129	54	90	69
+File: 565_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	51	90	66
+refSer1	129	54	91	69
+refSerF	129	54	92	69
+refProm	129	54	89	69
+refMDA	129	54	91	69
+File: 566_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	130	52	90	66
+refSer1	130	54	92	69
+refSerF	130	54	92	69
+refProm	130	54	89	69
+refMDA	130	54	92	69
+File: 567_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	126	50	87	64
+refSer1	126	53	90	67
+refSerF	126	53	87	67
+refProm	126	53	86	67
+refMDA126	53	89	67
+File: 568_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	125	33	87	48
+refSer1	125	35	88	51
+refSerF	125	33	87	49
+refProm	125	33	86	49
+refMDA	125	33	88	49
+File: 569_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	130	52	91	66
+refSer1	130	54	91	69
+refSerF	130	54	92	69
+refProm	130	54	89	69
+refMDA	130	54	90	69
+File: 570_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	51	89	65
+refSer1	127	53	90	68
+refSerF	127	53	92	68
+refProm	127	53	87	68
+refMDA	127	53	94	68
+File: 573_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	122	48	85	62
+refSer1	122	51	86	65
+refSerF	122	51	86	65
+refProm	122	51	83	65
+refMDA	122	51	84	65
+File: 574_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	89	65
+refSer1	128	54	91	68
+refSerF	128	54	93	68
+refProm	128	53	88	68
+refMDA	128	54	90	68
+File: 575_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	51	89	65
+refSer1	129	54	89	68
+refSerF	129	54	88	68
+refProm	129	54	88	68
+refMDA	129	54	91	68
+File: 576_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	130	34	90	50
+refSer1	130	36	90	53
+refSerF	130	36	91	53
+refProm	130	35	90	51
+refMDA	130	35	89	51
+File: 577_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	137	54	95	70
+refSer1	137	57	95	73
+refSerF	137	57	95	73
+refProm	137	57	93	73
+refMDA	137	57	95	73
+File: 578_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	130	52	91	66
+refSer1	130	54	91	69
+refSerF	130	54	93	69
+refProm	130	54	89	69
+refMDA	130	54	91	69
+File: 579_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	34	89	49
+refSer1	128	36	90	51
+refSerF	128	35	89	50
+refProm	128	35	88	50
+refMDA	128	34	88	50
+File: 580_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	142	37	98	55
+refSer1	142	40	99	58
+refSerF	142	42	100	58
+refProm	142	38	96	55
+refMDA	142	38	99	55
+File: 581_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	136	54	94	69
+refSer1	136	57	94	72
+refSerF	136	57	111	72
+refProm	136	57	93	72
+refMDA	136	57	94	72
+File: 582_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	135	36	93	52
+refSer1	135	37	94	55
+refSerF	135	40	93	55
+refProm	135	36	91	52
+refMDA	135	36	92	52
+File: 583_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	131	34	91	51
+refSer1	131	37	91	53
+refSerF	131	39	95	53
+refProm	131	35	90	51
+refMDA	131	35	94	51
+File: 584_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	88	65
+refSer1	128	53	89	68
+refSerF	128	53	92	68
+refProm	128	53	87	68
+refMDA	128	53	88	68
+File: 585_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	33	88	49
+refSer1	127	35	90	51
+refSerF	127	37	88	52
+refProm	127	34	87	49
+refMDA	127	34	88	49
+File: 586_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	120	48	84	61
+refSer1	120	50	84	64
+refSerF	120	50	87	64
+refProm	120	50	82	64
+refMDA	120	50	84	64
+File: 587_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	89	65
+refSer1	128	54	90	68
+refSerF	128	54	91	68
+refProm	128	54	88	68
+refMDA	128	54	89	68
+File: 588_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	150	60	104	76
+refSer1	150	63	106	80
+refSerF	150	63	106	80
+refProm	150	63	103	80
+refMDA	150	63	105	80
+File: 589_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	126	50	87	64
+refSer1	126	53	88	67
+refSerF	126	53	88	67
+refProm	126	53	85	67
+refMDA	126	53	87	67
+File: 590_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	34	89	50
+refSer1	129	36	91	50
+refSerF	129	38	92	52
+refProm	129	34	88	50
+refMDA	129	34	94	50
+File: 591_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	90	65
+refSer1	128	54	90	68
+refSerF	128	54	91	68
+refProm	128	54	88	68
+refMDA	128	54	90	68
+File: 592_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	130	34	89	50
+refSer1	130	36	93	51
+refSerF	130	36	94	53
+refProm	130	34	88	51
+refMDA	130	34	91	51
+File: 593_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	33	87	49
+refSer1	128	34	89	50
+refSerF	128	36	89	49
+refProm	128	33	87	50
+refMDA	128	33	88	50
+File: 594_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	89	65
+refSer1	128	54	90	68
+refSerF	128	54	88	68
+refProm	128	54	88	68
+refMDA	128	54	90	68
+File: 595_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	51	89	65
+refSer1	128	54	88	68
+refSerF	128	54	89	68
+refProm	128	54	87	68
+refMDA	128	54	91	68
+File: 596_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	126	50	87	64
+refSer1	126	53	88	67
+refSerF	126	53	89	67
+refProm	126	53	86	67
+refMDA	126	53	89	67
+File: 597_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	147	39	103	57
+refSer1	147	41	103	60
+refSerF	147	43	106	60
+refProm	147	39	102	57
+refMDA	147	40	108	57
+File: 598_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	116	30	80	45
+refSer1	116	30	81	45
+refSerF	116	32	81	45
+refProm	116	30	79	45
+refMDA	116	30	81	45
+File: 599_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	131	52	92	67
+refSer1	131	55	92	70
+refSerF	131	55	92	70
+refProm	131	55	90	70
+refMDA	131	55	92	70
+File: 600_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	132	53	92	67
+refSer1	132	55	92	70
+refSerF	132	55	98	70
+refProm	132	55	90	70
+refMDA	132	55	92	70
+File: 601_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	33	88	49
+refSer1	128	35	90	50
+refSerF	128	36	87	50
+refProm	128	34	87	50
+refMDA	128	34	89	50
+File: 602_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	51	88	65
+refSer1	127	53	88	68
+refSerF	127	53	93	68
+refProm	127	51	87	66
+refMDA	127	53	88	68
+File: 603_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	32	90	48
+refSer1	129	34	90	50
+refSerF	129	34	92	49
+refProm	129	32	88	48
+refMDA	129	32	91	48
+File: 604_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	50	88	64
+refSer1	127	53	89	67
+refSerF	127	53	90	67
+refProm	127	53	86	67
+refMDA	127	53	89	67
+File: 605_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	130	34	90	50
+refSer1	130	34	92	50
+refSerF	130	35	91	51
+refProm	130	34	89	51
+refMDA	130	34	90	51
+File: 606_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	126	50	87	64
+refSer1	126	53	88	67
+refSerF	126	53	89	67
+refProm	126	53	86	67
+refMDA	126	53	90	67
+File: 607_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	126	33	88	49
+refSer1	126	35	89	49
+refSerF	126	37	91	51
+refProm	126	34	87	49
+refMDA	126	34	89	49
+File: 608_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	34	89	50
+refSer1	128	36	89	52
+refSerF	128	36	91	51
+refProm	128	34	87	50
+refMDA	128	35	91	50
+File: 609_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	34	90	50
+refSer1	129	36	89	51
+refSerF	129	36	91	52
+refProm	129	34	88	50
+refMDA	129	35	90	50
+File: 610_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	125	32	87	48
+refSer1	125	33	88	47
+refSerF	125	33	88	49
+refProm	125	33	87	49
+refMDA	125	33	88	49
+File: 611_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	126	33	87	49
+refSer1	126	35	87	51
+refSerF	126	35	88	50
+refProm	126	33	86	49
+refMDA	126	33	88	49
+File: 612_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	143	38	99	55
+refSer1	143	40	100	58
+refSerF	143	42	104	58
+refProm	143	39	98	56
+refMDA	143	39	103	56
+File: 613_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	59	23	42	30
+refSer1	59	25	41	31
+refSerF	59	25	42	31
+refProm	59	25	41	31
+refMDA	59	25	43	31
+File: 614_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	130	52	92	66
+refSer1	130	54	90	69
+refSerF	130	54	95	69
+refProm	130	52	89	69
+refMDA	130	54	91	69
+File: 615_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	123	31	85	46
+refSer1	123	32	85	47
+refSerF	123	34	87	50
+refProm	123	31	84	46
+refMDA	123	32	91	46
+File: 616_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	140	37	97	54
+refSer1	140	39	99	57
+refSerF	140	39	99	56
+refProm	140	38	97	54
+refMDA	140	39	102	55
+File: 617_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	118	30	82	44
+refSer1	118	31	83	46
+refSerF	118	33	80	47
+refProm	118	30	80	44
+refMDA	118	31	81	44
+File: 618_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	33	89	49
+refSer1	128	34	89	50
+refSerF	128	36	93	50
+refProm	128	34	87	50
+refMDA	128	34	89	50
+File: 619_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	132	52	91	67
+refSer1	132	55	92	70
+refSerF	132	55	95	70
+refProm	132	55	89	70
+refMDA	132	55	93	70
+File: 620_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	33	88	49
+refSer1	127	35	88	51
+refSerF	127	37	89	52
+refProm	127	34	87	50
+refMDA	127	34	89	50
+File: 621_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	34	89	49
+refSer1	128	36	90	52
+refSerF	128	38	89	51
+refProm	128	34	87	50
+refMDA	128	34	88	50
+File: 622_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	127	33	87	49
+refSer1	127	35	84	51
+refSerF	127	35	89	52
+refProm	127	34	86	50
+refMDA	127	34	89	50
+File: 623_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	137	55	95	70
+refSer1	137	57	95	73
+refSerF	137	57	96	73
+refProm	137	57	94	73
+refMDA	137	57	98	73
+File: 624_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	123	32	85	47
+refSer1	123	33	87	48
+refSerF	123	36	87	50
+refProm	123	33	85	48
+refMDA	123	33	86	48
+File: 625_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	128	33	89	49
+refSer1	128	36	90	50
+refSerF	128	36	90	50
+refProm	128	34	87	50
+refMDA	128	34	89	50
+File: 626_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	129	33	89	49
+refSer1	129	34	89	50
+refSerF	129	34	91	50
+refProm	129	34	88	50
+refMDA	129	34	93	50
+File: 627_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	131	34	91	51
+refSer1	131	36	91	52
+refSerF	131	37	93	53
+refProm	131	35	89	51
+refMDA	131	35	91	51
+File: 628_Depression_REST.eeg.bin
+Name	32bits	bitComp	EncodV	VLCV [KB]
+Directo	150	40	104	58
+refSer1	150	42	104	60
+refSerF	150	44	104	61
+refProm	150	41	102	59
+refMDA	150	42	108	59
+Fecha FIN BUILD: 2024/10/28 19:37:00

@@ -61,7 +61,7 @@ int main(int argc, char const *argv[]){
 	if(argc > 2){
 		int r = stoi(argv[2]);
 		referencia = temporalSeries[r];
-		codificaPorReferencia(temporalSeries, referencia, "ref_"+r);
+		codificaPorReferencia(temporalSeries, referencia, "ref_"+to_string(r));
 	}
 }
 
@@ -135,7 +135,7 @@ void codificaPorReferencia(vector<vector<int>> series, vector<int> referencia, s
 	long long int mbytesEncodedV = bytesEncodedV/1024/1024;
 	long long int mbytesVLCVector = bytesVLCV/1024/1024;
 
-	cout << "Name\t32bits\tbitComp\tEncodV\tVLCV [KB]" << endl;
+	cout << "Name\t32bits\tbitComp\tEncodV\tVLCV [MB]" << endl;
 	cout << name << "\t";
 	cout << mbytes32bits << "\t";
 	cout << mbytesBitCompress << "\t";
