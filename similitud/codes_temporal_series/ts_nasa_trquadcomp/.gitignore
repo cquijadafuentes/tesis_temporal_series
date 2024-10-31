@@ -1,5 +1,15 @@
 *.o
-TRQC_build_from_bin
+TRQC_eeg_build_from_bin
+TRQC_eeg_time_getseries_queries
 TRQC_load_trqc
+TRQC_nasa_build_from_bin
+TRQC_print_getSerie
 TRQC_test_bin_trqc
+TRQC_test_bin_trqc_windowQuery
 TRQC_test_fromInput
+TRQC_test_windowQ_fromInput
+TRQC_time_accessQuery
+TRQC_time_getSerieQuery
+TRQC_time_windowQuery
+TRQC_user_menu
+TempRaster_QuadComp

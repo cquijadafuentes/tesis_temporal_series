@@ -6,7 +6,7 @@ POSFLAGS=-lsdsl -ldivsufsort -ldivsufsort64
 
 BINS=TRQC_eeg_build_from_bin TRQC_eeg_time_getseries_queries \
 	TRQC_nasa_build_from_bin \
-	TRQC_load_trqc \
+	TRQC_load_trqc TRQC_print_getSerie\
 	TRQC_test_bin_trqc TRQC_test_bin_trqc_windowQuery \
 	TRQC_test_fromInput TRQC_test_windowQ_fromInput \
 	TRQC_time_accessQuery TRQC_time_getSerieQuery \
@@ -31,6 +31,9 @@ TRQC_nasa_build_from_bin:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 	
 TRQC_load_trqc:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
+
+TRQC_print_getSerie:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
 TRQC_test_bin_trqc:

@@ -13,15 +13,12 @@ ps = int(sys.argv[2])
 data = mat['EEG'][0]['data'][0][ps]
 et = str(mat['EEG'][0]['chanlocs'][0][0][ps][0][0])
 
-fig, ax = plt.subplots()
-plt.plot(data, color='black')
-plt.title("Sensor " + sys.argv[2] + " [" + et + "]")
-ax.set_ylabel("Señal")
-ax.set_xlabel('Tiempo')
-ax.grid(True)
+print("Archivo:",sys.argv[1])
+print("Sensor " + sys.argv[2] + " [" + et + "]")
 
-fig.set_size_inches(12, 4)
-
-plt.tight_layout()
-#plt.savefig("Prueba_60")
-plt.show()
+for i in range(len(data)):
+  x = data[i]
+  print(x, end =" - ")
+print("")
+print("Archivo:",sys.argv[1])
+print("Sensor " + sys.argv[2] + " [" + et + "]")

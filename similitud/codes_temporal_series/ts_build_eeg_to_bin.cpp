@@ -31,7 +31,8 @@ int main(int argc, char const *argv[]){
 			if(auxD > maxi){
 				maxi = auxD;
 			}
-			auxF = (int) auxD*100;
+			auxD *= 100;
+			auxF = auxD;
 			outfile.write((const char*)&auxF, sizeof(int));
 		}
 	}
