@@ -100,6 +100,7 @@ int main(int argc, char const *argv[]){
 		for(int i=0; i<nrstq; i++){
 			tr = rand() % rows;
 			tc = rand() % cols;
+			cout << "Consulta " << (i+1) << " serie de tiempo [f:" << tr << ",c:" << tc << "]" << endl;
 			temporalNQC = nqc.getSerie(tr,tc);
 			if(temporalNQC.size() < lenTempSerie){
 				cout << "\tError! La serie [f:" << tr << ",c:" << tc << "] no coincide en largo." << endl;
