@@ -18,7 +18,7 @@ while read p; do
 	echo "Procesando ${p}" >> ${OUTFILE}
 	${BUILDBIN} ${p}_float.txt ${p}.bin >> ${OUTFILE}
 	echo "BIN construido." >> ${OUTFILE}
-	${EXECBUILD} ${p}.eeg.bin ${MAPLIST} ${QUADSIZE} ${p}.qc${QUADSIZE} >> ${OUTFILE}
+	${BUILDNQC} ${p}.bin ${MAPLIST} ${QUADSIZE} ${p}.qc${QUADSIZE} >> ${OUTFILE}
 	echo "NQC construido." >> ${OUTFILE}
 
 done < "${LISTFILE}"
