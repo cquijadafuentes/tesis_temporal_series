@@ -80,13 +80,14 @@ int main(int argc, char const *argv[]){
 	cout << " - nQuadCols: " << nqc.nQuadCols << endl;
 
 	cout << "Comparando getSerie" << endl;
-	if(nrstq > (nqc.d_quad*nqc.d_quad) || argc == 4){
+	if(nrstq > (nqc.n_rows*nqc.n_cols) || argc == 4){
 		cout << "Consultando por todas las series de tiempo..." << endl;
-		nrstq = nqc.d_quad*nqc.d_quad;
+		int q = 1;
 		vector<int> temporalNQC;
-		for(int i=0; i<nqc.d_quad; i++){
-			for(int j = 0; j < nqc.d_quad; j++){
+		for(int i=0; i<nqc.n_rows; i++){
+			for(int j = 0; j < nqc.n_cols; j++){
 				temporalNQC = nqc.getSerie(i,j);
+				cout << "Consulta " << q << " serie de tiempo [f:" << i << ",c:" << j << "]" << endl;
 				if(temporalNQC.size() < muestras){
 					cout << "\tError! La serie [f:" << i << ",c:" << j << "] no coincide en largo." << endl;
 					cout << "\tNQC: " << mostrarserie(temporalNQC) << endl;
