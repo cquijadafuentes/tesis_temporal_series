@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -ne 5 ]; then
+if [ $# -ne 6 ]; then
 	echo "$(basename $0) <EEG_filelist.txt> <executable_BIN_build> <executable_QuadComp_build> <mapping_list> <cuad_size> <output_file>"
 	exit 1
 fi
