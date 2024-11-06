@@ -80,7 +80,7 @@ int main(int argc, char const *argv[]){
 	cout << " - nQuadCols: " << nqc.nQuadCols << endl;
 
 	cout << "Comparando getSerie" << endl;
-	if(nrstq > (nqc.d_quad*nqc.d_quad) || argc == 3){
+	if(nrstq > (nqc.d_quad*nqc.d_quad) || argc == 4){
 		cout << "Consultando por todas las series de tiempo..." << endl;
 		nrstq = nqc.d_quad*nqc.d_quad;
 		vector<int> temporalNQC;
