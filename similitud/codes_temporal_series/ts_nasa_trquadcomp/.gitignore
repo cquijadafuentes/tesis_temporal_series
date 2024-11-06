@@ -1,15 +1,15 @@
 *.o
-TRQC_eeg_build_from_bin	 \
-TRQC_eeg_time_getseries_queries	 \
-TRQC_load_trqc \
-TRQC_nasa_build_from_bin \
-TRQC_print_getSerie \
-TRQC_test_eeg_bin_trqc \
-TRQC_test_nasa_bin_trqc \
-TRQC_test_nasa_bin_trqc_windowQuery \
-TRQC_test_nasa_fromInput \
-TRQC_test_nasa_windowQ_fromInput \
-TRQC_time_accessQuery \
-TRQC_time_getSerieQuery \
-TRQC_time_windowQuery \
+TRQC_eeg_build_from_bin
+TRQC_eeg_time_getseries_queries
+TRQC_load_trqc
+TRQC_nasa_build_from_bin
+TRQC_print_getSerie
+TRQC_test_eeg_bin_trqc
+TRQC_test_nasa_bin_trqc
+TRQC_test_nasa_bin_trqc_windowQuery
+TRQC_test_nasa_fromInput
+TRQC_test_nasa_windowQ_fromInput
+TRQC_time_accessQuery
+TRQC_time_getSerieQuery
+TRQC_time_windowQuery
 TRQC_user_menu
