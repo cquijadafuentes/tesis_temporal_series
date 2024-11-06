@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -ne 5 ]; then
-	echo "$(basename $0) <EEG_filelist.txt> ./<executable_BIN_build> ./<executable_QuadComp_build> <mapping_list> <cuad_size> <output_file>"
+	echo "$(basename $0) <EEG_filelist.txt> <executable_BIN_build> <executable_QuadComp_build> <mapping_list> <cuad_size> <output_file>"
 	exit 1
 fi
 
@@ -16,9 +16,9 @@ echo "Fecha INICIO EEG BIN and QUADCOMP construction: $(date +'%Y/%m/%d %H:%M:%S
 
 while read p; do
 	echo "Procesando ${p}" >> ${OUTFILE}
-	${BUILDBIN} ${p}_float.txt ${p}.bin >> ${OUTFILE}
+	./${BUILDBIN} ${p}_float.txt ${p}.bin >> ${OUTFILE}
 	echo "BIN construido." >> ${OUTFILE}
-	${BUILDNQC} ${p}.bin ${MAPLIST} ${QUADSIZE} ${p}.qc${QUADSIZE} >> ${OUTFILE}
+	./${BUILDNQC} ${p}.bin ${MAPLIST} ${QUADSIZE} ${p}.qc${QUADSIZE} >> ${OUTFILE}
 	echo "NQC construido." >> ${OUTFILE}
 
 done < "${LISTFILE}"
