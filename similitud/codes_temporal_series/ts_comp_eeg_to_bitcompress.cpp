@@ -8,7 +8,7 @@
 using namespace std;
 using namespace sdsl;
 
-void codificaPorReferencia(vector<vector<int>> series, vector<int> referencia, string name);
+void codificaPorReferencia(vector<vector<int>> &series, vector<int> &referencia, string name);
 
 int main(int argc, char const *argv[]){
 	if(argc < 2){
@@ -40,6 +40,9 @@ int main(int argc, char const *argv[]){
 			serieAcumulada[j] += temporalSeries[i][j];
 		}
 	}
+	
+	cout << "Name\t32bits\tbitComp\tEncodV\tVLCV [MB]\tvMin\tvMax" << endl;
+	
 	// Referencia en 0
 	vector<int> referencia(muestras, 0);
 	codificaPorReferencia(temporalSeries, referencia, "Directo");
@@ -66,7 +69,7 @@ int main(int argc, char const *argv[]){
 }
 
 
-void codificaPorReferencia(vector<vector<int>> series, vector<int> referencia, string name){
+void codificaPorReferencia(vector<vector<int>> &series, vector<int> &referencia, string name){
 	if(referencia.size() != series[0].size()){
 		cout << "Tamaño de vector de referencia no coincide con las series." << endl;
 		return;
@@ -88,9 +91,9 @@ void codificaPorReferencia(vector<vector<int>> series, vector<int> referencia, s
 			}
 		}
 	}
-	cout << "Rango de valores: [" << minimo << " , " << maximo << "]" << endl;
+	//cout << "Rango de valores: [" << minimo << " , " << maximo << "]" << endl;
 
-	cout << "Procesando referencia..." << endl;
+	//cout << "Procesando referencia..." << endl;
 	int refMin = referencia[0];
 	for(int i=0; i<referencia.size(); i++){
 		if(referencia[i] < refMin){
@@ -116,7 +119,7 @@ void codificaPorReferencia(vector<vector<int>> series, vector<int> referencia, s
 	vlc_vector<> vlcvx(x);
 	bytesVLCV += size_in_bytes(vlcvx);	
 
-	cout << "Comprimiendo series..." << endl;
+	//cout << "Comprimiendo series..." << endl;
 	for(int i=0; i<electrodos; i++){
 		int_vector<> v(muestras);
 		for(int j=0; j<muestras; j++){
@@ -135,10 +138,11 @@ void codificaPorReferencia(vector<vector<int>> series, vector<int> referencia, s
 	long long int mbytesEncodedV = bytesEncodedV/1024/1024;
 	long long int mbytesVLCVector = bytesVLCV/1024/1024;
 
-	cout << "Name\t32bits\tbitComp\tEncodV\tVLCV [MB]" << endl;
 	cout << name << "\t";
 	cout << mbytes32bits << "\t";
 	cout << mbytesBitCompress << "\t";
 	cout << mbytesEncodedV << "\t";
-	cout << mbytesVLCVector << endl;
+	cout << mbytesVLCVector << "\t";
+	cout << minimo << "\t";
+	cout << maximo << endl;
 }
