@@ -36,7 +36,7 @@ int main(int argc, char const *argv[]){
 	for(int i=0; i<electrodos; i++){
 		for(int j=0; j<muestras; j++){
 			infile.read((char *)&auxInt, sizeof(int));
-			temporalSeries[i][j] = (int)(100*auxInt);
+			temporalSeries[i][j] = auxInt;
 			serieAcumulada[j] += temporalSeries[i][j];
 		}
 	}
