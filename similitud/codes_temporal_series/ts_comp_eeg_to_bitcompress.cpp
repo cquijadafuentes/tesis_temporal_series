@@ -32,11 +32,11 @@ int main(int argc, char const *argv[]){
 
 	vector<vector<int>> temporalSeries(electrodos, vector<int>(muestras));
 	vector<long long> serieAcumulada(muestras, 0);
-	float auxFloat;
+	int auxInt;
 	for(int i=0; i<electrodos; i++){
 		for(int j=0; j<muestras; j++){
-			infile.read((char *)&auxFloat, sizeof(float));
-			temporalSeries[i][j] = (int)(100*auxFloat);
+			infile.read((char *)&auxInt, sizeof(int));
+			temporalSeries[i][j] = (int)(100*auxInt);
 			serieAcumulada[j] += temporalSeries[i][j];
 		}
 	}
