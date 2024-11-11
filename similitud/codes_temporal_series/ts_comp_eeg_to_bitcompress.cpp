@@ -41,7 +41,7 @@ int main(int argc, char const *argv[]){
 		}
 	}
 	
-	cout << "Name\t32bits\tbitComp\tEncodV\tVLCV [MB]\tvMin\tvMax" << endl;
+	cout << "Name\t64bits\tbitComp\tEncodV\tVLCV [MB]\tvMin\tvMax" << endl;
 	
 	// Referencia en 0
 	vector<int> referencia(muestras, 0);
@@ -106,12 +106,12 @@ void codificaPorReferencia(vector<vector<int>> &series, vector<int> &referencia,
 	}
 
 	// Cálculo del bytes
-	long long int bytes32bits = 0;
+	long long int bytes64bits = 0;
 	long long int bytesBitCompress = 0;
 	long long int bytesEncodedV = 0;
 	long long int bytesVLCV = 0;
 
-	bytes32bits += size_in_bytes(x);
+	bytes64bits += size_in_bytes(x);
 	util::bit_compress(x);
 	bytesBitCompress += size_in_bytes(x);
 	enc_vector<> evx(x);
@@ -125,7 +125,7 @@ void codificaPorReferencia(vector<vector<int>> &series, vector<int> &referencia,
 		for(int j=0; j<muestras; j++){
 			v[j] = series[i][j] - minimo;
 		}
-		bytes32bits += size_in_bytes(v);
+		bytes64bits += size_in_bytes(v);
 		util::bit_compress(v);
 		bytesBitCompress += size_in_bytes(v);
 		enc_vector<> ev(v);
@@ -133,13 +133,13 @@ void codificaPorReferencia(vector<vector<int>> &series, vector<int> &referencia,
 		vlc_vector<> vv(v);
 		bytesVLCV += size_in_bytes(vv);
 	}
-	long long int mbytes32bits = bytes32bits/1024/1024;
+	long long int mbytes64bits = bytes64bits/1024/1024;
 	long long int mbytesBitCompress = bytesBitCompress/1024/1024;
 	long long int mbytesEncodedV = bytesEncodedV/1024/1024;
 	long long int mbytesVLCVector = bytesVLCV/1024/1024;
 
 	cout << name << "\t";
-	cout << mbytes32bits << "\t";
+	cout << mbytes64bits << "\t";
 	cout << mbytesBitCompress << "\t";
 	cout << mbytesEncodedV << "\t";
 	cout << mbytesVLCVector << "\t";
