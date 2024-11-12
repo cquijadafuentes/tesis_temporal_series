@@ -207,7 +207,7 @@ bool TempRasterQuadComp::save(string outputFilename){
 int TempRasterQuadComp::size_bytes(){
 	int bytes = 0;
 	// Atributos enteros
-	bytes += (sizeof(int) * 8);
+	bytes += (sizeof(int) * 9);
 	// int_vectors
 	bytes += size_in_bytes(fixedValue);
 	bytes += size_in_bytes(refFirstValue);
@@ -481,7 +481,7 @@ unsigned int TempRasterQuadComp::zigzag_encode(int i){
 }
 
 int TempRasterQuadComp::zigzag_decode(int i){
-	 return ((i >> 1) ^ -(i & 1));
+	return ((i >> 1) ^ -(i & 1));
 }
 
 bool TempRasterQuadComp::esFija(vector<int> serie){
