@@ -12,4 +12,5 @@ TRQC_test_nasa_windowQ_fromInput
 TRQC_time_accessQuery
 TRQC_time_getSerieQuery
 TRQC_time_windowQuery
+TRQC_to_bin_tk2tree_format
 TRQC_user_menu

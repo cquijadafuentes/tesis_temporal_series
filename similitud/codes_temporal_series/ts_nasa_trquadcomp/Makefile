@@ -17,6 +17,7 @@ BINS=TRQC_eeg_build_from_bin	 \
 		TRQC_time_accessQuery \
 		TRQC_time_getSerieQuery \
 		TRQC_time_windowQuery \
+		TRQC_to_bin_tk2tree_format \
 		TRQC_user_menu
 
 OBJECTS=TempRaster_QuadComp.o
@@ -65,6 +66,9 @@ TRQC_time_getSerieQuery:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
 TRQC_time_windowQuery:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
+
+TRQC_to_bin_tk2tree_format:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
 TRQC_user_menu:

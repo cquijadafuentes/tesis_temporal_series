@@ -21,12 +21,6 @@ int main(int argc, char const *argv[]){
 		return 0;
 	}
 	// Leyendo datos desde el archivo de entrada
-	string binFilename(argv[1]);
-	ifstream binfile(binFilename, ofstream::binary);
-	if(binfile.fail()){
-		cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
-		return -1;
-	}
 	string nqcFilename(argv[1]);
 	TempRasterQuadComp nqc(nqcFilename);
 
