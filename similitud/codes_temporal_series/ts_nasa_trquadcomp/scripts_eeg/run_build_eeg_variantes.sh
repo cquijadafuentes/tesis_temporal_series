@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -ne 3 ]; then
+if [ $# -ne 4 ]; then
 	echo "$(basename $0) <EEG_filelist.txt> <executable_BIN_build> <mapping_list> <output_file>"
 	exit 1
 fi
