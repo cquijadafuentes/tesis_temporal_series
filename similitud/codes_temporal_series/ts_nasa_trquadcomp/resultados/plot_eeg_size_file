@@ -33,3 +33,11 @@ plot 'eeg_data_filesize_20241108.txt' using 1:2 title 'bit compress' with linesp
      '' using 1:5 title 'S. MDA vlc vector' with linespoints lt 2 pt 7 lc rgb skyblue,   \
      '' using 1:6 title 'bin' with linespoints lt 2 pt 7 lc rgb darkgreen,   \
      '' using 1:7 title 'QC4' with linespoints lt 2 pt 7 lc rgb black
+
+
+set terminal png size 1200,400
+set title 'Filesize of EEG QC y Variantes'
+set output 'eeg_data_filesize_20241112.png'
+plot 'eeg_data_filesize_20241112.txt' using 1:2 title 'Compresión por Cuadrantes' with linespoints lt 2 pt 7 lc rgb red,   \
+     '' using 1:3 title 'Compresión por Filas' with linespoints lt 2 pt 7 lc rgb blue,   \
+     '' using 1:4 title 'Compresión por Columnas' with linespoints lt 2 pt 7 lc rgb green
