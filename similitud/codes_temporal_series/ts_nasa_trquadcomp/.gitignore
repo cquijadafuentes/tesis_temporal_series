@@ -1,5 +1,6 @@
 *.o
 TRQC_eeg_build_from_bin
+TRQC_eeg_build_variante_columnas
 TRQC_eeg_build_variante_filas
 TRQC_eeg_time_getseries_queries
 TRQC_load_trqc
