@@ -1,0 +1,241 @@
+Fecha INICIO EEG BIN variante: 2024/11/19 10:30:36
+Ejecutando TRQC_eeg_build_variante_filas
+name	vlc	bc
+507_Depression_REST.bin	66015	55492 [KB]
+name	vlc	bc
+508_Depression_REST.bin	64488	54208 [KB]
+name	vlc	bc
+509_Depression_REST.bin	66730	55691 [KB]
+name	vlc	bc
+510_Depression_REST.bin	69479	57972 [KB]
+name	vlc	bc
+511_Depression_REST.bin	64577	54403 [KB]
+name	vlc	bc
+512_Depression_REST.bin	69258	57884 [KB]
+name	vlc	bc
+513_Depression_REST.bin	65620	55251 [KB]
+name	vlc	bc
+514_Depression_REST.bin	65183	54913 [KB]
+name	vlc	bc
+515_Depression_REST.bin	65804	55223 [KB]
+name	vlc	bc
+516_Depression_REST.bin	65789	55240 [KB]
+name	vlc	bc
+517_Depression_REST.bin	69243	58320 [KB]
+name	vlc	bc
+518_Depression_REST.bin	69210	57779 [KB]
+name	vlc	bc
+519_Depression_REST.bin	70648	59013 [KB]
+name	vlc	bc
+520_Depression_REST.bin	66330	55849 [KB]
+name	vlc	bc
+521_Depression_REST.bin	67257	56366 [KB]
+name	vlc	bc
+522_Depression_REST.bin	56802	47695 [KB]
+name	vlc	bc
+523_Depression_REST.bin	66135	55225 [KB]
+name	vlc	bc
+524_Depression_REST.bin	66351	55375 [KB]
+name	vlc	bc
+525_Depression_REST.bin	65013	54259 [KB]
+name	vlc	bc
+526_Depression_REST.bin	66157	55734 [KB]
+name	vlc	bc
+527_Depression_REST.bin	64544	54254 [KB]
+name	vlc	bc
+528_Depression_REST.bin	64998	54276 [KB]
+name	vlc	bc
+529_Depression_REST.bin	67630	56931 [KB]
+name	vlc	bc
+530_Depression_REST.bin	46454	32515 [KB]
+name	vlc	bc
+531_Depression_REST.bin	51219	35013 [KB]
+name	vlc	bc
+532_Depression_REST.bin	65335	54527 [KB]
+name	vlc	bc
+533_Depression_REST.bin	64729	53991 [KB]
+name	vlc	bc
+534_Depression_REST.bin	64934	54584 [KB]
+name	vlc	bc
+535_Depression_REST.bin	150313	126296 [KB]
+name	vlc	bc
+536_Depression_REST.bin	59700	50101 [KB]
+name	vlc	bc
+537_Depression_REST.bin	65298	54557 [KB]
+name	vlc	bc
+538_Depression_REST.bin	66510	55657 [KB]
+name	vlc	bc
+539_Depression_REST.bin	44498	37547 [KB]
+name	vlc	bc
+540_Depression_REST.bin	138363	116260 [KB]
+name	vlc	bc
+541_Depression_REST.bin	65988	55561 [KB]
+name	vlc	bc
+542_Depression_REST.bin	66277	55344 [KB]
+name	vlc	bc
+543_Depression_REST.bin	49435	34892 [KB]
+name	vlc	bc
+545_Depression_REST.bin	65403	54645 [KB]
+name	vlc	bc
+546_Depression_REST.bin	64035	53946 [KB]
+name	vlc	bc
+547_Depression_REST.bin	65461	54692 [KB]
+name	vlc	bc
+548_Depression_REST.bin	66720	56208 [KB]
+name	vlc	bc
+549_Depression_REST.bin	64246	54094 [KB]
+name	vlc	bc
+550_Depression_REST.bin	60316	50758 [KB]
+name	vlc	bc
+551_Depression_REST.bin	64355	53709 [KB]
+name	vlc	bc
+552_Depression_REST.bin	68463	57156 [KB]
+name	vlc	bc
+553_Depression_REST.bin	69090	58191 [KB]
+name	vlc	bc
+554_Depression_REST.bin	52009	36391 [KB]
+name	vlc	bc
+555_Depression_REST.bin	66557	56040 [KB]
+name	vlc	bc
+556_Depression_REST.bin	48555	34118 [KB]
+name	vlc	bc
+557_Depression_REST.bin	48304	32783 [KB]
+name	vlc	bc
+558_Depression_REST.bin	59363	49735 [KB]
+name	vlc	bc
+559_Depression_REST.bin	64852	54634 [KB]
+name	vlc	bc
+560_Depression_REST.bin	63691	53713 [KB]
+name	vlc	bc
+561_Depression_REST.bin	65926	55599 [KB]
+name	vlc	bc
+562_Depression_REST.bin	63445	53331 [KB]
+name	vlc	bc
+563_Depression_REST.bin	63070	53132 [KB]
+name	vlc	bc
+564_Depression_REST.bin	65931	55543 [KB]
+name	vlc	bc
+565_Depression_REST.bin	65657	55312 [KB]
+name	vlc	bc
+566_Depression_REST.bin	66014	55123 [KB]
+name	vlc	bc
+567_Depression_REST.bin	64025	53937 [KB]
+name	vlc	bc
+568_Depression_REST.bin	48517	32867 [KB]
+name	vlc	bc
+569_Depression_REST.bin	65983	55097 [KB]
+name	vlc	bc
+570_Depression_REST.bin	65773	55469 [KB]
+name	vlc	bc
+573_Depression_REST.bin	62987	52536 [KB]
+name	vlc	bc
+574_Depression_REST.bin	66036	55201 [KB]
+name	vlc	bc
+575_Depression_REST.bin	65477	54676 [KB]
+name	vlc	bc
+576_Depression_REST.bin	50238	35861 [KB]
+name	vlc	bc
+577_Depression_REST.bin	70766	59665 [KB]
+name	vlc	bc
+578_Depression_REST.bin	66062	55163 [KB]
+name	vlc	bc
+579_Depression_REST.bin	49450	35332 [KB]
+name	vlc	bc
+580_Depression_REST.bin	55026	38194 [KB]
+name	vlc	bc
+581_Depression_REST.bin	70249	59232 [KB]
+name	vlc	bc
+582_Depression_REST.bin	52056	36802 [KB]
+name	vlc	bc
+583_Depression_REST.bin	50819	35451 [KB]
+name	vlc	bc
+584_Depression_REST.bin	64961	54245 [KB]
+name	vlc	bc
+585_Depression_REST.bin	49021	34163 [KB]
+name	vlc	bc
+586_Depression_REST.bin	61122	51435 [KB]
+name	vlc	bc
+587_Depression_REST.bin	65046	54798 [KB]
+name	vlc	bc
+588_Depression_REST.bin	76340	63980 [KB]
+name	vlc	bc
+589_Depression_REST.bin	65025	54750 [KB]
+name	vlc	bc
+590_Depression_REST.bin	47837	32999 [KB]
+name	vlc	bc
+591_Depression_REST.bin	66015	55614 [KB]
+name	vlc	bc
+592_Depression_REST.bin	48285	33771 [KB]
+name	vlc	bc
+593_Depression_REST.bin	47595	32905 [KB]
+name	vlc	bc
+594_Depression_REST.bin	65257	54975 [KB]
+name	vlc	bc
+595_Depression_REST.bin	65177	54788 [KB]
+name	vlc	bc
+596_Depression_REST.bin	64935	54674 [KB]
+name	vlc	bc
+597_Depression_REST.bin	56720	39705 [KB]
+name	vlc	bc
+598_Depression_REST.bin	45394	31171 [KB]
+name	vlc	bc
+599_Depression_REST.bin	66673	56169 [KB]
+name	vlc	bc
+600_Depression_REST.bin	67273	56534 [KB]
+name	vlc	bc
+601_Depression_REST.bin	49345	34335 [KB]
+name	vlc	bc
+602_Depression_REST.bin	64766	52701 [KB]
+name	vlc	bc
+603_Depression_REST.bin	48681	34012 [KB]
+name	vlc	bc
+604_Depression_REST.bin	65494	54993 [KB]
+name	vlc	bc
+605_Depression_REST.bin	50226	34642 [KB]
+name	vlc	bc
+606_Depression_REST.bin	65220	54520 [KB]
+name	vlc	bc
+607_Depression_REST.bin	48950	34483 [KB]
+name	vlc	bc
+608_Depression_REST.bin	49881	35398 [KB]
+name	vlc	bc
+609_Depression_REST.bin	50550	35713 [KB]
+name	vlc	bc
+610_Depression_REST.bin	49135	33622 [KB]
+name	vlc	bc
+611_Depression_REST.bin	49574	34933 [KB]
+name	vlc	bc
+612_Depression_REST.bin	55458	38807 [KB]
+name	vlc	bc
+613_Depression_REST.bin	30718	25883 [KB]
+name	vlc	bc
+614_Depression_REST.bin	66056	53812 [KB]
+name	vlc	bc
+615_Depression_REST.bin	46611	32774 [KB]
+name	vlc	bc
+616_Depression_REST.bin	54806	39491 [KB]
+name	vlc	bc
+617_Depression_REST.bin	43766	30039 [KB]
+name	vlc	bc
+618_Depression_REST.bin	49467	33904 [KB]
+name	vlc	bc
+619_Depression_REST.bin	67125	56506 [KB]
+name	vlc	bc
+620_Depression_REST.bin	49247	33666 [KB]
+name	vlc	bc
+621_Depression_REST.bin	50283	35189 [KB]
+name	vlc	bc
+622_Depression_REST.bin	49964	35428 [KB]
+name	vlc	bc
+623_Depression_REST.bin	70849	59640 [KB]
+name	vlc	bc
+624_Depression_REST.bin	47555	33496 [KB]
+name	vlc	bc
+625_Depression_REST.bin	50335	34594 [KB]
+name	vlc	bc
+626_Depression_REST.bin	49983	34569 [KB]
+name	vlc	bc
+627_Depression_REST.bin	51593	36405 [KB]
+name	vlc	bc
+628_Depression_REST.bin	58000	41351 [KB]
+Fecha FIN EEG BIN variante: 2024/11/19 10:39:13
