@@ -13,10 +13,10 @@ int sizeBytesVLC(vector<int> x, int min_value){
 	return size_in_bytes(vlcv);
 }
 
-int sizeBytesVLC(vector<vector<int>> x, int min_value){
+int sizeBytesVLC(vector<vector<int>> x){
 	int bytes = 0;
 	for(int i=0; i<x.size(); i++){
-		bytes += sizeBytesVLC(x[i], min_value);
+		bytes += sizeBytesVLC(x[i], 0);
 	}
 	return bytes;
 }
@@ -30,10 +30,10 @@ int sizeBytesBitCompressing(vector<int> x, int min_value){
 	return size_in_bytes(iv);
 }
 
-int sizeBytesBitCompressing(vector<vector<int>> x, int min_value){
+int sizeBytesBitCompressing(vector<vector<int>> x){
 	int bytes = 0;
 	for(int i=0; i<x.size(); i++){
-		bytes += sizeBytesBitCompressing(x[i], min_value);
+		bytes += sizeBytesBitCompressing(x[i], 0);
 	}
 	return bytes;
 
@@ -115,12 +115,14 @@ int main(int argc, char const *argv[]){
 			}
 		}
 	}
+	cout << "min: " << min_value << " - max: " << max_value << endl;
 	bit_vector bvSF(81);		// Marcar las series fijas
 	vector<vector<int>> series;
 	vector<vector<int>> refs;
 	vector<int> valoresPVSR;		// Guarda el primer valor de cada serie de referencia
 	vector<int> valoresSF;		// Guarda el valor de cada serie fija
-	int iFV = 0;
+	int min_zze = zigzag_encode(tseries[0][0][1] - tseries[0][0][0]);
+	int max_zze = min_zze;
 	for(int f=0; f<n_rows; f++){		// fc = fila-cuadrante
 		vector<int> serieReferencia = tseries[f][0];
 		for(int t=0; t<n_inst; t++){
@@ -133,6 +135,12 @@ int main(int argc, char const *argv[]){
 		for(int k=1; k<n_inst; k++){
 			val = tseries[f][0][k] - tseries[f][0][k-1];
 			ivaux[k-1] = zigzag_encode(val);
+			if(ivaux[k-1] < min_zze){
+				min_zze = ivaux[k-1];
+			}
+			if(ivaux[k-1] > max_zze){
+				max_zze = ivaux[k-1];
+			}
 		}
 		refs.push_back(ivaux);
 		for(int c=1; c<n_cols; c++){
@@ -146,6 +154,12 @@ int main(int argc, char const *argv[]){
 				for(int k=0; k<n_inst; k++){
 					val = serieReferencia[k] - tseries[f][c][k];
 					ivaux2[k] = zigzag_encode(val);
+					if(ivaux2[k] < min_zze){
+						min_zze = ivaux2[k];
+					}
+					if(ivaux2[k] > max_zze){
+						max_zze = ivaux2[k];
+					}
 				}
 				series.push_back(ivaux2);
 				bvSF[iCelda] = 0;
@@ -166,11 +180,11 @@ int main(int argc, char const *argv[]){
 	bytesVLCV += sizeBytesVLC(valoresPVSR, min_value);
 	bytesBC += sizeBytesBitCompressing(valoresPVSR, min_value);
 	// Serie de Referencia
-	bytesVLCV += sizeBytesVLC(refs, min_value);
-	bytesBC += sizeBytesBitCompressing(refs, min_value);
+	bytesVLCV += sizeBytesVLC(refs);
+	bytesBC += sizeBytesBitCompressing(refs);
 	// Series Referenciadas
-	bytesVLCV += sizeBytesVLC(series, min_value);
-	bytesBC += sizeBytesBitCompressing(series, min_value);
+	bytesVLCV += sizeBytesVLC(series);
+	bytesBC += sizeBytesBitCompressing(series);
 	// Bitmap de series fijas
 	sd_vector<> bvSeriesFijas(bvSF);
 	bytesVLCV += size_in_bytes(bvSeriesFijas);
