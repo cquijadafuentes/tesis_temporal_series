@@ -3,6 +3,42 @@
 using namespace std;
 using namespace sdsl;
 
+int sizeBytesVLC(vector<int> x, int min_value){
+	int_vector<> iv(x.size());
+	for(int i=0; i<x.size(); i++){
+		iv[i] = x[i] - min_value;
+	}
+	vlc_vector<> vlcv(iv);
+
+	return size_in_bytes(vlcv);
+}
+
+int sizeBytesVLC(vector<vector<int>> x, int min_value){
+	int bytes = 0;
+	for(int i=0; i<x.size(); i++){
+		bytes += sizeBytesVLC(x[i], min_value);
+	}
+	return bytes;
+}
+
+int sizeBytesBitCompressing(vector<int> x, int min_value){
+	int_vector<> iv(x.size());
+	for(int i=0; i<x.size(); i++){
+		iv[i] = x[i] - min_value;
+	}
+	util::bit_compress(iv);
+	return size_in_bytes(iv);
+}
+
+int sizeBytesBitCompressing(vector<vector<int>> x, int min_value){
+	int bytes = 0;
+	for(int i=0; i<x.size(); i++){
+		bytes += sizeBytesBitCompressing(x[i], min_value);
+	}
+	return bytes;
+
+}
+
 bool esFija(vector<int> serie){
 	for(int j=1; j<serie.size(); j++){
 		if(serie[j] != serie[j-1]){
@@ -80,8 +116,8 @@ int main(int argc, char const *argv[]){
 		}
 	}
 	bit_vector bvSF(81);		// Marcar las series fijas
-	vector<int_vector<>> series;
-	vector<int_vector<>> refs;
+	vector<vector<int>> series;
+	vector<vector<int>> refs;
 	vector<int> valoresPVSR;		// Guarda el primer valor de cada serie de referencia
 	vector<int> valoresSF;		// Guarda el valor de cada serie fija
 	int iFV = 0;
@@ -93,12 +129,11 @@ int main(int argc, char const *argv[]){
 		valoresPVSR.push_back(tseries[f][0][0]);
 		bvSF[9*f] = 0;
 		int val;
-		int_vector<> ivaux(n_inst-1);
+		vector<int> ivaux(n_inst-1);
 		for(int k=1; k<n_inst; k++){
 			val = tseries[f][0][k] - tseries[f][0][k-1];
 			ivaux[k-1] = zigzag_encode(val);
 		}
-		util::bit_compress(ivaux);
 		refs.push_back(ivaux);
 		for(int c=1; c<n_cols; c++){
 			int iCelda = 9*f+c;
@@ -107,49 +142,45 @@ int main(int argc, char const *argv[]){
 				valoresSF.push_back(tseries[f][c][0]);
 				bvSF[iCelda] = 1;
 			}else{
-				int_vector<> ivaux2(n_inst);
+				vector<int> ivaux2(n_inst);
 				for(int k=0; k<n_inst; k++){
 					val = serieReferencia[k] - tseries[f][c][k];
 					ivaux2[k] = zigzag_encode(val);
 				}
-				util::bit_compress(ivaux2);
 				series.push_back(ivaux2);
 				bvSF[iCelda] = 0;
 			}
 		}
 	}
 
-	int_vector<> fixedValue(valoresSF.size());
-	for(int i=0; i<valoresSF.size(); i++){
-		fixedValue[i] = valoresSF[i] - min_value;
-	}
-	util::bit_compress(fixedValue);
-
-	int_vector<> refFirstValue(valoresPVSR.size());
-	for(int i=0; i<valoresPVSR.size(); i++){
-		refFirstValue[i] = valoresPVSR[i] - min_value;
-	}
-	util::bit_compress(refFirstValue);
-
-	sd_vector<> bvSeriesFijas(bvSF);
-
 	// CALCULANDO TAMAÑO
-	int bytes = 0;
-	// Atributos enteros
-	bytes += (sizeof(int) * 5);
-	// int_vectors
-	bytes += size_in_bytes(fixedValue);
-	bytes += size_in_bytes(refFirstValue);
-	for(int i=0; i<refs.size(); i++){
-		bytes += size_in_bytes(refs[i]);
-	}
-	for(int i=0; i<series.size(); i++){
-		bytes += size_in_bytes(series[i]);
-	}
-	// bit_vectors
-	bytes += size_in_bytes(bvSeriesFijas);
-	int kbytes = bytes / 1024;
-	cout << argv[1] << "\t" << kbytes << " [KB]" << endl;
+	int bytesVLCV = 0;
+	int bytesBC = 0;
+	// Valores enteros
+	bytesVLCV += (sizeof(int) * 5);
+	bytesBC += (sizeof(int) * 5);
+	// Valores Fijos
+	bytesVLCV += sizeBytesVLC(valoresSF, min_value);
+	bytesBC += sizeBytesBitCompressing(valoresSF, min_value);
+	// Primer Valor de Referencias
+	bytesVLCV += sizeBytesVLC(valoresPVSR, min_value);
+	bytesBC += sizeBytesBitCompressing(valoresPVSR, min_value);
+	// Serie de Referencia
+	bytesVLCV += sizeBytesVLC(refs, min_value);
+	bytesBC += sizeBytesBitCompressing(refs, min_value);
+	// Series Referenciadas
+	bytesVLCV += sizeBytesVLC(series, min_value);
+	bytesBC += sizeBytesBitCompressing(series, min_value);
+	// Bitmap de series fijas
+	sd_vector<> bvSeriesFijas(bvSF);
+	bytesVLCV += size_in_bytes(bvSeriesFijas);
+	bytesBC += size_in_bytes(bvSeriesFijas);
+
+	int kbytesVLC = bytesVLCV / 1024;
+	int kbytesBC = bytesBC / 1024;
+
+	cout << "name\tvlc\tbc" << endl;
+	cout << argv[1] << "\t" << kbytesVLC << "\t" << kbytesBC << " [KB]" << endl;
 
 	return 0;
 }
