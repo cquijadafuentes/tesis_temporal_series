@@ -42,6 +42,8 @@ int main(int argc, char const *argv[]){
     	}        
     }
 
+    cout << "Name\t32bits\tbitComp\tEncodV\tVLCV [MB]" << endl;
+
 	// Referencia en 0
 	vector<int> referencia(lenTempSerie, 0);
 	codificaPorReferencia(temporalSeries, referencia, "Directo");
@@ -87,9 +89,9 @@ void codificaPorReferencia(vector<vector<vector<int>>> series, vector<int> refer
 			}
 		}
 	}
-	cout << "Rango de valores: [" << minimo << " , " << maximo << "]" << endl;
+//	cout << "Rango de valores: [" << minimo << " , " << maximo << "]" << endl;
 
-	cout << "Procesando referencia..." << endl;
+//	cout << "Procesando referencia..." << endl;
 	int refMin = referencia[0];
 	for(int i=0; i<referencia.size(); i++){
 		if(referencia[i] < refMin){
@@ -113,9 +115,9 @@ void codificaPorReferencia(vector<vector<vector<int>>> series, vector<int> refer
 	enc_vector<> evx(x);
 	bytesEncodedV += size_in_bytes(evx);
 	vlc_vector<> vlcvx(x);
-	bytesVLCV += size_in_bytes(vlcvx);	
+	bytesVLCV += size_in_bytes(vlcvx);
 
-	cout << "Comprimiendo series..." << endl;
+//	cout << "Comprimiendo series..." << endl;
 	for(int f=0; f<filas; f++){
 		for(int c=0; c<columnas; c++){
 			int_vector<> v(muestras);
@@ -136,7 +138,6 @@ void codificaPorReferencia(vector<vector<vector<int>>> series, vector<int> refer
 	long long int mbytesEncodedV = bytesEncodedV/1024/1024;
 	long long int mbytesVLCVector = bytesVLCV/1024/1024;
 
-	cout << "Name\t32bits\tbitComp\tEncodV\tVLCV [KB]" << endl;
 	cout << name << "\t";
 	cout << mbytes32bits << "\t";
 	cout << mbytesBitCompress << "\t";

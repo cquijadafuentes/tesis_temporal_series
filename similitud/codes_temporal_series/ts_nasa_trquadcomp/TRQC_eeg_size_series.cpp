@@ -23,21 +23,19 @@ int main(int argc, char const *argv[]){
 	// Leyendo datos desde el archivo de entrada
 	string nqcFilename(argv[1]);
 	TempRasterQuadComp nqc(nqcFilename);
-
-	/***********    MODIFICABLE    ***********/
-	//nqc.print();
+	
 	int bytes = 0;
 	bytes += size_in_bytes(nqc.fixedValue);
 	bytes += size_in_bytes(nqc.refFirstValue);
 	for(int i=0; i<nqc.refs.size(); i++){
 		bytes += size_in_bytes(nqc.refs[i]);
-	}
+	}	
 	for(int i=0; i<nqc.series.size(); i++){
 		bytes += size_in_bytes(nqc.series[i]);
 	}
-	bytes += size_in_bytes(nqc.bvSeriesFijas);
-	int kbytes = bytes / 1024;
-	cout << argv[1] << "\t" << kbytes << " [KB]" << endl;
+
+	int kbytes = bytes / 1024 ;
+	cout << argv[1] << "\t" << kbytes << "[KB]" << endl;
 
 	return 0;
 }

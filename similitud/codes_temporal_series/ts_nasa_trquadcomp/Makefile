@@ -7,6 +7,7 @@ POSFLAGS=-lsdsl -ldivsufsort -ldivsufsort64
 BINS=TRQC_eeg_build_from_bin \
 		TRQC_eeg_build_variante_columnas \
 		TRQC_eeg_build_variante_filas \
+		TRQC_eeg_size_series \
 		TRQC_eeg_time_getseries_queries \
 		TRQC_load_trqc \
 		TRQC_nasa_build_from_bin \
@@ -30,19 +31,22 @@ OBJECTS=TempRaster_QuadComp.o
 all: bin
 
 bin: $(OBJECTS) $(BINS)
-	
+
 TRQC_eeg_build_from_bin:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
-	
-TRQC_eeg_build_variante_filas:
-	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
-	
+
 TRQC_eeg_build_variante_columnas:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
-	
+
+TRQC_eeg_build_variante_filas:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
+
+TRQC_eeg_size_series:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
+
 TRQC_eeg_time_getseries_queries:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
-	
+
 TRQC_load_trqc:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 

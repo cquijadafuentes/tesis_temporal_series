@@ -117,7 +117,7 @@ void codificaPorReferencia(vector<vector<int>> &series, vector<int> &referencia,
 	enc_vector<> evx(x);
 	bytesEncodedV += size_in_bytes(evx);
 	vlc_vector<> vlcvx(x);
-	bytesVLCV += size_in_bytes(vlcvx);	
+	bytesVLCV += size_in_bytes(vlcvx);
 
 	//cout << "Comprimiendo series..." << endl;
 	for(int i=0; i<electrodos; i++){

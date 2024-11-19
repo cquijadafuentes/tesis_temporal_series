@@ -148,8 +148,8 @@ int main(int argc, char const *argv[]){
 	}
 	// bit_vectors
 	bytes += size_in_bytes(bvSeriesFijas);
-	int mbytes = bytes / 1024 / 1024;
-	cout << argv[1] << "\t" << mbytes << " [MB]" << endl;
+	int kbytes = bytes / 1024;
+	cout << argv[1] << "\t" << kbytes << " [KB]" << endl;
 
 	return 0;
 }
