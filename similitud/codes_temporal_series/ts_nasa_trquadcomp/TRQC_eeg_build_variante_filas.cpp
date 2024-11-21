@@ -3,20 +3,42 @@
 using namespace std;
 using namespace sdsl;
 
+int minimo(vector<int> x){
+	int min = x[0];
+	for(int i=1; i<x.size(); i++){
+		if(x[i] < min){
+			min = x[i];
+		}
+	}
+	return min;
+}
+
+int minimo(vector<vector<int>> x){
+	int min = minimo(x[0]);
+	int aux;
+	for(int i=1; i<x.size(); i++){
+		aux = minimo(x[i]);
+		if(aux < min){
+			min = aux;
+		}
+	}
+	return min;
+}
+
 int sizeBytesVLC(vector<int> x, int min_value){
 	int_vector<> iv(x.size());
 	for(int i=0; i<x.size(); i++){
 		iv[i] = x[i] - min_value;
 	}
 	vlc_vector<> vlcv(iv);
-
 	return size_in_bytes(vlcv);
 }
 
 int sizeBytesVLC(vector<vector<int>> x){
+	int min = minimo(x);
 	int bytes = 0;
 	for(int i=0; i<x.size(); i++){
-		bytes += sizeBytesVLC(x[i], 0);
+		bytes += sizeBytesVLC(x[i], min);
 	}
 	return bytes;
 }
@@ -31,12 +53,12 @@ int sizeBytesBitCompressing(vector<int> x, int min_value){
 }
 
 int sizeBytesBitCompressing(vector<vector<int>> x){
+	int min = minimo(x);
 	int bytes = 0;
 	for(int i=0; i<x.size(); i++){
-		bytes += sizeBytesBitCompressing(x[i], 0);
+		bytes += sizeBytesBitCompressing(x[i], min);
 	}
 	return bytes;
-
 }
 
 bool esFija(vector<int> serie){
@@ -115,58 +137,53 @@ int main(int argc, char const *argv[]){
 			}
 		}
 	}
-	cout << "min: " << min_value << " - max: " << max_value << endl;
+	//cout << "min: " << min_value << " - max: " << max_value << endl;
 	bit_vector bvSF(81);		// Marcar las series fijas
 	vector<vector<int>> series;
 	vector<vector<int>> refs;
+	vector<vector<int>> seriesZZ;
+	vector<vector<int>> refsZZ;
 	vector<int> valoresPVSR;		// Guarda el primer valor de cada serie de referencia
 	vector<int> valoresSF;		// Guarda el valor de cada serie fija
-	int min_zze = zigzag_encode(tseries[0][0][1] - tseries[0][0][0]);
-	int max_zze = min_zze;
+	vector<int> valoresPVSRzz;
+	vector<int> valoresSFzz;	
 	for(int f=0; f<n_rows; f++){		// fc = fila-cuadrante
 		vector<int> serieReferencia = tseries[f][0];
 		for(int t=0; t<n_inst; t++){
 			serieReferencia[t] = tseries[f][0][t];
 		}
 		valoresPVSR.push_back(tseries[f][0][0]);
+		valoresPVSRzz.push_back(zigzag_encode(tseries[f][0][0]));
 		bvSF[9*f] = 0;
 		int val;
 		vector<int> ivaux(n_inst-1);
+		vector<int> ivauxZZ(n_inst-1,0);
 		for(int k=1; k<n_inst; k++){
-			val = tseries[f][0][k] - tseries[f][0][k-1];
-			ivaux[k-1] = zigzag_encode(val);
-			if(ivaux[k-1] < min_zze){
-				min_zze = ivaux[k-1];
-			}
-			if(ivaux[k-1] > max_zze){
-				max_zze = ivaux[k-1];
-			}
+			ivaux[k-1] = tseries[f][0][k] - tseries[f][0][k-1];
+			ivauxZZ[k-1] = zigzag_encode(ivaux[k-1]);
 		}
 		refs.push_back(ivaux);
+		refsZZ.push_back(ivauxZZ);
 		for(int c=1; c<n_cols; c++){
 			int iCelda = 9*f+c;
 			if(esFija(tseries[f][c])){
 				// La serie de tiempo es fija y no se representa
 				valoresSF.push_back(tseries[f][c][0]);
+				valoresSFzz.push_back(zigzag_encode(tseries[f][c][0]));
 				bvSF[iCelda] = 1;
 			}else{
-				vector<int> ivaux2(n_inst);
+				ivaux = vector<int>(n_inst,0);
+				ivauxZZ = vector<int>(n_inst,0);
 				for(int k=0; k<n_inst; k++){
-					val = serieReferencia[k] - tseries[f][c][k];
-					ivaux2[k] = zigzag_encode(val);
-					if(ivaux2[k] < min_zze){
-						min_zze = ivaux2[k];
-					}
-					if(ivaux2[k] > max_zze){
-						max_zze = ivaux2[k];
-					}
+					ivaux[k] = serieReferencia[k] - tseries[f][c][k];
+					ivauxZZ[k] = zigzag_encode(ivaux[k]);
 				}
-				series.push_back(ivaux2);
+				series.push_back(ivaux);
+				seriesZZ.push_back(ivauxZZ);
 				bvSF[iCelda] = 0;
 			}
 		}
 	}
-
 	// CALCULANDO TAMAÑO
 	int bytesVLCV = 0;
 	int bytesBC = 0;
@@ -174,11 +191,13 @@ int main(int argc, char const *argv[]){
 	bytesVLCV += (sizeof(int) * 5);
 	bytesBC += (sizeof(int) * 5);
 	// Valores Fijos
-	bytesVLCV += sizeBytesVLC(valoresSF, min_value);
-	bytesBC += sizeBytesBitCompressing(valoresSF, min_value);
+	int auxmin = minimo(valoresSF);
+	bytesVLCV += sizeBytesVLC(valoresSF, auxmin);
+	bytesBC += sizeBytesBitCompressing(valoresSF, auxmin);
 	// Primer Valor de Referencias
-	bytesVLCV += sizeBytesVLC(valoresPVSR, min_value);
-	bytesBC += sizeBytesBitCompressing(valoresPVSR, min_value);
+	auxmin = minimo(valoresPVSR);
+	bytesVLCV += sizeBytesVLC(valoresPVSR, auxmin);
+	bytesBC += sizeBytesBitCompressing(valoresPVSR, auxmin);
 	// Serie de Referencia
 	bytesVLCV += sizeBytesVLC(refs);
 	bytesBC += sizeBytesBitCompressing(refs);
@@ -189,12 +208,39 @@ int main(int argc, char const *argv[]){
 	sd_vector<> bvSeriesFijas(bvSF);
 	bytesVLCV += size_in_bytes(bvSeriesFijas);
 	bytesBC += size_in_bytes(bvSeriesFijas);
+	// Valores en ZIG-ZAG ENCODE
+	int bytesVLCVzz = 0;
+	int bytesBCzz = 0;
+	// Valores enteros
+	bytesVLCVzz += (sizeof(int) * 5);
+	bytesBCzz += (sizeof(int) * 5);
+	// Valores Fijos
+	bytesVLCVzz += sizeBytesVLC(valoresSFzz, 0);
+	bytesBCzz += sizeBytesBitCompressing(valoresSFzz, 0);
+	// Primer Valor de Referencias
+	bytesVLCVzz += sizeBytesVLC(valoresPVSRzz, 0);
+	bytesBCzz += sizeBytesBitCompressing(valoresPVSRzz, 0);
+	// Serie de Referencia
+	for(int i=0; i<refsZZ.size(); i++){
+		bytesVLCVzz += sizeBytesVLC(refsZZ[i], 0);
+		bytesBCzz += sizeBytesBitCompressing(refsZZ[i], 0);
+	}
+	// Series Referenciadas
+	for(int i=0; i<seriesZZ.size(); i++){
+		bytesVLCVzz += sizeBytesVLC(seriesZZ[i], 0);
+		bytesBCzz += sizeBytesBitCompressing(seriesZZ[i], 0);
+	}
+	// Bitmap de series fijas
+	bytesVLCVzz += size_in_bytes(bvSeriesFijas);
+	bytesBCzz += size_in_bytes(bvSeriesFijas);
 
 	int kbytesVLC = bytesVLCV / 1024;
 	int kbytesBC = bytesBC / 1024;
+	int kbytesVLCzz = bytesVLCVzz / 1024;
+	int kbytesBCzz = bytesBCzz / 1024;
 
-	cout << "name\tvlc\tbc" << endl;
-	cout << argv[1] << "\t" << kbytesVLC << "\t" << kbytesBC << " [KB]" << endl;
+	cout << "name\tvlc\tbc\tvlc_zz\tbc_zz" << endl;
+	cout << argv[1] << "\t" << kbytesVLC << "\t" << kbytesBC << "\t" << kbytesVLCzz << "\t" << kbytesBCzz << " [KB]" << endl;
 
 	return 0;
 }

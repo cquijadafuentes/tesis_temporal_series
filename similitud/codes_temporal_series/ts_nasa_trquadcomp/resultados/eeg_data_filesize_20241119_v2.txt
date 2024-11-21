@@ -1,0 +1,1 @@
+#EEG	vlc	bitcompress [Columnas] vlc bitcompress [Filas] bitcompress [nqc Parcial]
