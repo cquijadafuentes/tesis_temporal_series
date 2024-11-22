@@ -12,7 +12,7 @@ OUTFILE=$4
 
 echo "Fecha INICIO EEG BIN variante: $(date +'%Y/%m/%d %H:%M:%S')" > ${OUTFILE}
 echo "Ejecutando ${BUILDBIN}" >> ${OUTFILE}
-
+./${BUILDBIN} >> ${OUTFILE}
 while read p; do
 	./${BUILDBIN} ${p}.bin ${MAPLIST} >> ${OUTFILE}
 done < "${LISTFILE}"

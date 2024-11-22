@@ -82,6 +82,7 @@ int main(int argc, char const *argv[]){
 	if(argc < 3){
 		cout << "Error! Faltan argumentos." << endl;
 		cout << argv[0] << " <inputFile> <mapping_sensor_matrix>" << endl;
+		cout << "name\tvlc\tbc\tvlc_zz\tbc_zz" << endl;
 		return 0;
 	}
 	// Leyendo datos desde el archivo de entrada
@@ -239,7 +240,7 @@ int main(int argc, char const *argv[]){
 	int kbytesVLCzz = bytesVLCVzz / 1024;
 	int kbytesBCzz = bytesBCzz / 1024;
 
-	cout << "name\tvlc\tbc\tvlc_zz\tbc_zz" << endl;
+	//cout << "name\tvlc\tbc\tvlc_zz\tbc_zz" << endl;
 	cout << argv[1] << "\t" << kbytesVLC << "\t" << kbytesBC << "\t" << kbytesVLCzz << "\t" << kbytesBCzz << " [KB]" << endl;
 
 	return 0;
