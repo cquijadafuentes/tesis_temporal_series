@@ -15,6 +15,7 @@ echo "Fecha INICIO FIN BUILD EEG VLC: $(date +'%Y/%m/%d %H:%M:%S')" > ${OUTFILE}
 ./${BUILDBIN} >> ${OUTFILE}
 echo "Ejecutando $0 ${LISTFILE} ${BUILDBIN} ${MAPLIST} ${OUTFILE}" >> ${OUTFILE}
 while read p; do
+	echo "./${BUILDBIN} ${p}.bin ${MAPLIST} 4 ${p}.qc4vlc" >> ${OUTFILE}
 	./${BUILDBIN} ${p}.bin ${MAPLIST} 4 ${p}.qc4vlc >> ${OUTFILE}
 done < "${LISTFILE}"
 
