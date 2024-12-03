@@ -4,13 +4,13 @@ PREFLAGS=-std=c++11 -g -O0 -DNDEBUG -I ~/include -L ~/lib
 
 POSFLAGS=-lsdsl -ldivsufsort -ldivsufsort64
 
-BINS=TRQC_eeg_build_from_bin \
-		TRQC_load_trqc \
-		TRQC_test_eeg_bin_trqc \
-		TRQC_test_nasa_bin_trqc \
-		TRQC_user_menu
+BINS=TRRC_eeg_build_from_bin \
+		TRRC_load_TRRC \
+		TRRC_test_eeg_bin_TRRC \
+		TRRC_test_nasa_bin_TRRC \
+		TRRC_user_menu
 
-OBJECTS=TempRaster_RowComp.o
+OBJECTS=TempRaster_QuadComp.o
 
 %.o: %.cpp
 	$(CPP) $(PREFLAGS) -c $< -o $@ $(POSFLAGS)
@@ -19,19 +19,19 @@ all: bin
 
 bin: $(OBJECTS) $(BINS)
 
-TRQC_eeg_build_from_bin:
+TRRC_eeg_build_from_bin:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
-TRQC_load_trqc:
+TRRC_load_TRRC:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
-TRQC_test_eeg_bin_trqc:
+TRRC_test_eeg_bin_TRRC:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
-TRQC_test_nasa_bin_trqc:
+TRRC_test_nasa_bin_TRRC:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
-TRQC_user_menu:
+TRRC_user_menu:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
 clean:
