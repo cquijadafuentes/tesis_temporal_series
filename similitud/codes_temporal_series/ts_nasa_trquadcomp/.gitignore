@@ -3,6 +3,8 @@ TRQC_eeg_build_from_bin
 TRQC_eeg_build_variante_columnas
 TRQC_eeg_build_variante_cuadrantes
 TRQC_eeg_build_variante_filas
+TRQC_eeg_build_variante_filas_+histo
+TRQC_eeg_histograma_build_variante_filas
 TRQC_eeg_time_getseries_queries
 TRQC_load_trqc
 TRQC_nasa_build_from_bin

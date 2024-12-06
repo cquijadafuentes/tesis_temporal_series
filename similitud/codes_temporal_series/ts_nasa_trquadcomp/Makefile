@@ -7,6 +7,8 @@ POSFLAGS=-lsdsl -ldivsufsort -ldivsufsort64
 BINS=TRQC_eeg_build_from_bin \
 		TRQC_eeg_build_variante_columnas \
 		TRQC_eeg_build_variante_filas \
+		TRQC_eeg_build_variante_filas_+histo \
+		TRQC_eeg_histograma_build_variante_filas \
 		TRQC_eeg_size_series \
 		TRQC_eeg_time_getseries_queries \
 		TRQC_load_trqc \
@@ -41,7 +43,13 @@ TRQC_eeg_build_variante_columnas:
 TRQC_eeg_build_variante_filas:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
+TRQC_eeg_build_variante_filas_+histo:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
+
 TRQC_eeg_size_series:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
+
+TRQC_eeg_histograma_build_variante_filas:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
 TRQC_eeg_time_getseries_queries:

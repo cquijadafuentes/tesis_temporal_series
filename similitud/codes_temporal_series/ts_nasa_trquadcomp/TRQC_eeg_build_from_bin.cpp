@@ -90,7 +90,7 @@ int main(int argc, char const *argv[]){
     eegMappingMatrix.close();
 
 	// Construcción del QuadComp para EEG
-	TempRasterQuadComp nqc(temporalSeries, dcuad);	
+	TempRasterQuadComp nqc(temporalSeries, dcuad);
 
 	string ofilename(argv[4]);
 	nqc.save(ofilename);
