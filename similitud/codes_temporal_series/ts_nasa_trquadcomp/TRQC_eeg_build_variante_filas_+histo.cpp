@@ -245,31 +245,53 @@ int build_int_vlc_zz(vector<vector<vector<int>>> s){
 }
 
 int minHistogramas(){
+	cout << "Buscando minimo de histogramas..." << endl;
 	vector<int> m(6);
-	m[0] = histoINT.begin()->first;
-	m[1] = histoBC.begin()->first;
-	m[2] = histoBC2.begin()->first;
-	m[3] = histoBCdiff.begin()->first;
-	m[4] = histoVLCdiff.begin()->first;
-	m[5] = histoVLCzz.begin()->first;
+	map<int,int>::iterator aux;
+	aux = histoINT.begin();
+	m[0] = aux->first;
+	aux = histoBC.begin();
+	m[1] = aux->first;
+	aux = histoBC2.begin();
+	m[2] = aux->first;
+	aux = histoBCdiff.begin();
+	m[3] = aux->first;
+	aux = histoVLCdiff.begin();
+	m[4] = aux->first;
+	aux = histoVLCzz.begin();
+	m[5] = aux->first;
 	return minimo(m);
 }
 
 int maxHistogramas(){
+	cout << "Buscando máximo de histogramas..." << endl;
 	vector<int> m(6);
-	m[0] = ((histoINT.end())--)->first;
-	m[1] = ((histoBC.end())--)->first;
-	m[2] = ((histoBC2.end())--)->first;
-	m[3] = ((histoBCdiff.end())--)->first;
-	m[4] = ((histoVLCdiff.end())--)->first;
-	m[5] = ((histoVLCzz.end())--)->first;
+	map<int,int>::iterator aux;
+	aux = histoINT.end();
+	aux--;
+	m[0] = aux->first;
+	aux = histoBC.end();
+	aux--;
+	m[1] = aux->first;
+	aux = histoBC2.end();
+	aux--;
+	m[2] = aux->first;
+	aux = histoBCdiff.end();
+	aux--;
+	m[3] = aux->first;
+	aux = histoVLCdiff.end();
+	aux--;
+	m[4] = aux->first;
+	aux = histoVLCzz.end();
+	aux--;
+	m[5] = aux->first;
 	return maximo(m);
 }
 
 int main(int argc, char const *argv[]){
-	if(argc < 4){
+	if(argc < 3){
 		cout << "Error! Faltan argumentos." << endl;
-		cout << argv[0] << " <inputFile> <mapping_sensor_matrix> <output_histogram>" << endl;
+		cout << argv[0] << " <inputFile> <mapping_sensor_matrix> [<output_histogram>]" << endl;
 		cout << "File\tkb_bc\tkb_bc2\tkb_bc_diff\tkb_vlc_diff\tkb_vlc_zz\t[KB]" << endl;
 		return 0;
 	}
@@ -284,6 +306,7 @@ int main(int argc, char const *argv[]){
 	// Cargando datos
 	infile.read((char *)&electrodos, sizeof(int));
 	infile.read((char *)&muestras, sizeof(int));
+	cout << "Electrodos: " << electrodos << " - Muestras: " << muestras << endl;
 
 	vector<vector<int>> eegData(electrodos, vector<int>(muestras));
 	for(int i=0; i<electrodos; i++){
@@ -294,6 +317,7 @@ int main(int argc, char const *argv[]){
 	}
 	int min_value = minimo(eegData);
 	int max_value = maximo(eegData);
+	cout << "Rango valores: [" << min_value << " , " << max_value << "]" << endl;
 
 	//	Lectura de matriz con el mapeo de los ids por FILAS
 	ifstream eegMappingMatrix(argv[2], ifstream::in);
@@ -310,11 +334,6 @@ int main(int argc, char const *argv[]){
         tseries[f][c] = eegData[pos];
     }
     eegMappingMatrix.close();
-
-	// Construcción del QuadComp para EEG POR FILAS
-	int n_rows = tseries.size();			// filas
-	int n_cols = tseries[0].size();		// columnas
-	int n_inst = tseries[0][0].size();	// length of temporal series
 	
 	int kb_bc = build_int_compress(tseries, min_value);
 	int kb_bc2 = build_int_compress(tseries);
@@ -328,14 +347,17 @@ int main(int argc, char const *argv[]){
 	int hMax = maxHistogramas();
 
 	cout << "Rango Histogramas: [" << hMin << " , " << hMax << "]" << endl;
-	ofstream salida(argv[3]);
-	if(salida.fail()){
-		cout << "Error! Al crear el archivo " << argv[3] << " de salida." << endl;
-		return -1;
-	}
-	salida << "#num\tint\tbc\tbc2\tbcdiff\tvlcdiff\tvlczz" << endl;
-	for(int i=hMin; i<=hMax; i++){
-		salida << i << "\t" << histoINT[i] << "\t" << histoBC[i] << "\t" << histoBC2[i] << "\t" << histoBCdiff[i] << "\t" << histoVLCdiff[i] << "\t" << histoVLCzz[i] << endl;
+	
+	if(argc >= 4){
+		ofstream salida(argv[3]);
+		if(salida.fail()){
+			cout << "Error! Al crear el archivo " << argv[3] << " de salida." << endl;
+			return -1;
+		}
+		salida << "#num\tint\tbc\tbc2\tbcdiff\tvlcdiff\tvlczz" << endl;
+		for(int i=hMin; i<=hMax; i++){
+			salida << i << "\t" << histoINT[i] << "\t" << histoBC[i] << "\t" << histoBC2[i] << "\t" << histoBCdiff[i] << "\t" << histoVLCdiff[i] << "\t" << histoVLCzz[i] << endl;
+		}
 	}
 
 	return 0;
