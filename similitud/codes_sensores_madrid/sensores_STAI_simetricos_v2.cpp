@@ -230,93 +230,26 @@ int main(int argc, char const *argv[]){
 		return -1;
 	}
 	vector<string> titulos = {"intensidad", "ocupacion", "carga\t", "vmed\t"};
-	int sensores, muestras;
-	dataSensores >> sensores >> muestras;
-	cout << "Cantidad de sensores: " << sensores << endl;
-	cout << "Cantidad de muestras: " << muestras << endl;
-	vector<int> ids(sensores);
-	map<int, int> mapIdsPos;
 	int auxId;
-	for(int i=0; i<sensores; i++){
-		// Lectura de los identificadores de sensores
-		dataSensores >> auxId;
-		mapIdsPos[auxId] = i;
-		ids[i] = auxId;
-	}
-	// Vectores con los datos
-	vector<vector<int>> dataInten(sensores, vector<int>(muestras));
-	vector<vector<float>> dataOcupa(sensores, vector<float>(muestras));
-	vector<vector<int>> dataCarga(sensores, vector<int>(muestras));
-	vector<vector<float>> dataVelMed(sensores, vector<float>(muestras));
-	// Valores auxiliares para 'tapar' los valores nan
-	int auxInten;
-	float auxOcupa;
-	int auxCarga;
-	float auxVelMed;
-	string auxString;
-	vector<int> nans(4,0);
-	for(int i=0; i<sensores; i++){
-		// Intensidad
-		for(int k=0; k<muestras; k++){
-			dataSensores >> auxString;
-			if(auxString == "nan"){
-				dataInten[i][k] = auxInten;
-				nans[0]++;
-			}else{
-				dataInten[i][k] = stof(auxString);
-				auxInten = dataInten[i][k];
-			}
-		}
-		// Ocupación
-		for(int k=0; k<muestras; k++){
-			dataSensores >> auxString;
-			if(auxString == "nan"){
-				dataOcupa[i][k] = auxOcupa;
-				nans[1]++;
-			}else{
-				dataOcupa[i][k] = stoi(auxString);
-				auxOcupa = dataOcupa[i][k];
-			}
-		}
-		// Carga
-		for(int k=0; k<muestras; k++){
-			dataSensores >> auxString;
-			if(auxString == "nan"){
-				dataCarga[i][k] = auxCarga;
-				nans[2]++;
-			}else{
-				dataCarga[i][k] = stof(auxString);
-				auxCarga = dataCarga[i][k];
-			}
-		}
-		// Velocidad Media
-		for(int k=0; k<muestras; k++){
-			dataSensores >> auxString;
-			if(auxString == "nan"){
-				dataVelMed[i][k] = auxVelMed;
-				nans[3]++;
-			}else{
-				dataVelMed[i][k] = stof(auxString);
-				auxVelMed = dataVelMed[i][k];
-			}
-		}
-	}
-	dataSensores.close();
 
+	//				CARGANDO LISTA DE PESOS
 	cout << "Lista de pesos W: " << argv[2] << endl;
 	ifstream entradaListaPesos(argv[2], ifstream::in);
 	if(entradaListaPesos.fail()){
 		cout << "Error! Lectura de " << argv[2] << " fallida." << endl;
 		return -1;
 	}
-	int listIds, cantVec, idVec, pos, posVec;
-	entradaListaPesos >> listIds;
-	cout << "Cantidad de Ids en la lista de pesos: " << listIds << endl;
-	for(int i=0; i<listIds; i++){
-		entradaListaPesos >> auxId;
+	int cantIDs, cantVec, idVec, pos, posVec;
+	entradaListaPesos >> cantIDs;
+	cout << "Cantidad de Ids en la lista de pesos: " << cantIDs << endl;
+	map<int, int> mapIdsPos;
+	for(int i=0; i<cantIDs; i++){
+		entradaListaPesos >> auxId;     // Identificador de la lista
+		mapIdsPos[auxId] = i;
 	}
-	vector<set<int>> listaPesos(sensores, set<int>());
-	for(int i=0; i<listIds; i++){
+	cout << endl;
+	vector<set<int>> listaPesos(cantIDs, set<int>());
+	for(int i=0; i<cantIDs; i++){
 		entradaListaPesos >> auxId;     // Identificador de la lista
 		if(mapIdsPos.find(auxId) == mapIdsPos.end()){
 			pos = -1;
@@ -324,7 +257,6 @@ int main(int argc, char const *argv[]){
 			pos = mapIdsPos[auxId];         // Posición en la lista de 
 		}
 		entradaListaPesos >> cantVec;    // Cantidad de elementos de la lista
-		cout << "Sensor " << auxId << " tiene " << cantVec << " vecinos: ";
 		for(int j=0; j<cantVec; j++){
 			entradaListaPesos >> idVec;
 			cout << idVec << " - ";
@@ -337,6 +269,88 @@ int main(int argc, char const *argv[]){
 		cout << endl;
 	}
 	entradaListaPesos.close();
+
+
+	//		CARGANDO DATOS FILTRANDO SI EXISTE EN LA LISTA DE PESOS
+	int sensores, muestras;
+	dataSensores >> sensores >> muestras;
+	cout << "Cantidad de sensores: " << sensores << endl;
+	cout << "Cantidad de muestras: " << muestras << endl;
+	vector<int> idsData(sensores);
+	for(int i=0; i<sensores; i++){
+		// Lectura de los identificadores de sensores
+		dataSensores >> auxId;
+		idsData[i] = auxId;
+	}
+	// Vectores con los datos
+	vector<vector<int>> dataInten(cantIDs, vector<int>(muestras));
+	vector<vector<float>> dataOcupa(cantIDs, vector<float>(muestras));
+	vector<vector<int>> dataCarga(cantIDs, vector<int>(muestras));
+	vector<vector<float>> dataVelMed(cantIDs, vector<float>(muestras));
+	// Valores auxiliares para 'tapar' los valores nan
+	int auxInten;
+	float auxOcupa;
+	int auxCarga;
+	float auxVelMed;
+	string auxString;
+	vector<int> nans(4,0);
+	for(int i=0; i<sensores; i++){
+		auxId = idsData[i];
+		if(mapIdsPos.find(auxId) != mapIdsPos.end()){
+			pos = mapIdsPos[auxId];
+			// Intensidad
+			for(int k=0; k<muestras; k++){
+				dataSensores >> auxString;
+				if(auxString == "nan"){
+					dataInten[pos][k] = auxInten;
+					nans[0]++;
+				}else{
+					dataInten[pos][k] = stof(auxString);
+					auxInten = dataInten[pos][k];
+				}
+			}
+			// Ocupación
+			for(int k=0; k<muestras; k++){
+				dataSensores >> auxString;
+				if(auxString == "nan"){
+					dataOcupa[pos][k] = auxOcupa;
+					nans[1]++;
+				}else{
+					dataOcupa[pos][k] = stoi(auxString);
+					auxOcupa = dataOcupa[pos][k];
+				}
+			}
+			// Carga
+			for(int k=0; k<muestras; k++){
+				dataSensores >> auxString;
+				if(auxString == "nan"){
+					dataCarga[pos][k] = auxCarga;
+					nans[2]++;
+				}else{
+					dataCarga[pos][k] = stof(auxString);
+					auxCarga = dataCarga[pos][k];
+				}
+			}
+			// Velocidad Media
+			for(int k=0; k<muestras; k++){
+				dataSensores >> auxString;
+				if(auxString == "nan"){
+					dataVelMed[pos][k] = auxVelMed;
+					nans[3]++;
+				}else{
+					dataVelMed[pos][k] = stof(auxString);
+					auxVelMed = dataVelMed[pos][k];
+				}
+			}
+		}else{
+			for(int i=0; i<4; i++){
+				for(int k=0; k<muestras; k++){
+					dataSensores >> auxString;
+				}
+			}
+		}
+	}
+	dataSensores.close();
 
 	cout << "Cantidad sensores: " << dataInten.size() << endl;
 	cout << "Cantidad de nans: " << endl;

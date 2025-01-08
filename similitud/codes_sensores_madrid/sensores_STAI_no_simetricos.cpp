@@ -182,6 +182,8 @@ void calculaIAET(vector<int> ids, const vector<vector<TipoNumero>>& datos, map<i
 
     // El valor N depende en este caso de los sensores considerados en la matriz de pesos
     int N = sensores - cantFijas - cantSinPeso - cantSinVecinos;
+    cout << "N = sensores - cantFijas - cantSinPeso - cantSinVecinos" << endl;
+    cout << N << " = " << sensores << " - " << cantFijas << " - " << cantSinPeso << " - " << cantSinVecinos << endl;
     double IAET = ((0.0+N) / sumaW) * (numerador / denominador);
     cout << "N: " << N << " - valorN: " << valorN << endl;
     cout << setprecision(4) << fixed;
