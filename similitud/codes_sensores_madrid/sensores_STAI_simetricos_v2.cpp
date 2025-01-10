@@ -247,7 +247,7 @@ int main(int argc, char const *argv[]){
 		entradaListaPesos >> auxId;     // Identificador de la lista
 		mapIdsPos[auxId] = i;
 	}
-	cout << endl;
+	//cout << endl;
 	vector<set<int>> listaPesos(cantIDs, set<int>());
 	for(int i=0; i<cantIDs; i++){
 		entradaListaPesos >> auxId;     // Identificador de la lista
@@ -259,14 +259,14 @@ int main(int argc, char const *argv[]){
 		entradaListaPesos >> cantVec;    // Cantidad de elementos de la lista
 		for(int j=0; j<cantVec; j++){
 			entradaListaPesos >> idVec;
-			cout << idVec << " - ";
+			//cout << idVec << " - ";
 			if(pos >= 0 && mapIdsPos.find(idVec) != mapIdsPos.end()){
 				posVec = mapIdsPos[idVec];
 				listaPesos[pos].insert(posVec);
 				listaPesos[posVec].insert(pos);
 			}
 		}
-		cout << endl;
+		//cout << endl;
 	}
 	entradaListaPesos.close();
 
