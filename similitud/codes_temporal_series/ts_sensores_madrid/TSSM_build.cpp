@@ -7,11 +7,110 @@ int main(int argc, char const *argv[]){
 	if(argc < 6){
 		cout << "Error! Faltan argumentos." << endl;
 		cout << argv[0] << " <inputFile> <groupsFile> <N-data> <k> <outputFile>" << endl;
+		cout << "inputFile: archivo con los datos en el formato usado para STAI" << endl;
+		cout << "\t(numero muestras, numero sensores, ids sensores, por cada sensor 4 series de tiempo de largo numero muestras)" << endl;
+		cout << "groupsFile: archivo con los ids de los 5 grupos para la estructura." << endl;
+		cout << "\t(cantidad de cada grupo, por cada grupo la lista de los ids)" << endl;
+		cout << "N-data: Para qué serie de tiempo se crea la estructura (1,2,3 o 4)." << endl;
+		cout << "k: Frecuencia para definir series de referencia." << endl;
+		cout << "outputFile: nombre del archivo de salida" << endl;
 		return 0;
 	}
 	// Leyendo datos desde el archivo de entrada
 	
-	TempSeriesSensoresMadrid("Hello");
+	cout << "Iniciando TSSM_build.cpp" << endl;
+
+	int aux;
+	int nData = (int)stoi(argv[3]);
+	int kValue = (int)stoi(argv[4]);
+	int cantGrupos = 5;
+	ifstream listaIDS(argv[2], ifstream::in);
+	if(listaIDS.fail()){
+		cout << "Error! Lectura de " << argv[2] << " fallida." << endl;
+		return -1;
+	}
+	vector<int> cantIds(cantGrupos);
+	int totalIds = 0;
+	for(int i=0; i<cantGrupos; i++){
+		listaIDS >> cantIds[i];
+		totalIds += cantIds[i];
+	}
+	map<int, pair<int,int>> mapeoIdsPos;
+	for(int i=0; i<cantGrupos; i++){
+		for(int j=0; j<cantIds[i]; j++){
+			listaIDS >> aux;
+			mapeoIdsPos[aux] = make_pair(i,j);
+		}
+	}
+	listaIDS.close();
+
+	map<int, pair<int,int>>::iterator mIPit;
+	int noEncontrado = 0;
+
+	ifstream dataSensores(argv[1], ifstream::in);
+	if(dataSensores.fail()){
+		cout << "Error! Lectura de " << argv[1] << " fallida." << endl;
+		return -1;
+	}
+
+	int sensores, muestras;
+	dataSensores >> sensores >> muestras;
+	cout << "Cantidad de sensores: " << sensores << endl;
+	cout << "Cantidad de muestras: " << muestras << endl;
+
+	if(sensores != totalIds){
+		cout << "Lista de datos no coinciden: cantidad de IDs no coinciden." << endl;
+	}
+
+	vector<int> idsData(sensores);
+	for(int i=0; i<sensores; i++){
+		// Lectura de los identificadores de sensores
+		dataSensores >> idsData[i];
+		mIPit = mapeoIdsPos.find(idsData[i]);
+		if(mIPit == mapeoIdsPos.end()){
+			cout << "Lista de datos no coinciden: ID en los datos no está agrupada." << endl;
+			noEncontrado++;
+		}
+	}
+
+	if(sensores - noEncontrado < totalIds){
+		cout << "La cantidad de IDs registrados es menor que las IDs del listado de grupos." << endl;
+	}
+
+	// Matriz con los datos
+	vector<vector<int>> data(cantGrupos);
+	for(int i=0; i<cantGrupos; i++){
+		data[i] = vector<int>(cantIds[i], 0);
+	}
+	pair<int,int> pPos;
+	int posG, posI;
+	for(int i=0; i<sensores; i++){
+		mIPit = mapeoIdsPos.find(idsData[i]);
+		if(mIPit != mapeoIdsPos.end()){
+			pPos = mapeoIdsPos[idsData[i]];
+			posG = pPos.first;
+			posI = pPos.second;
+			for(int j=0; j<4; j++){
+				if(j == (kValue-1)){
+					for(int k=0; k<muestras; k++){
+						dataSensores >> data[posG][posI];
+					}
+				}else{
+					for(int k=0; k<muestras; k++){
+						dataSensores >> aux;
+					}
+				}
+			}
+		}else{
+			for(int j=0; j<4; j++){
+				for(int k=0; k<muestras; k++){
+					dataSensores >> aux;
+				}
+			}
+		}		
+	}
+	dataSensores.close();
+
 
 	return 0;
 }
