@@ -24,7 +24,7 @@ public:
 	vector<int_vector<>> refs;		//	Series de Referencias
 	vector<int_vector<>> series;	//	Series que no son referencia ni fijas
 	
-	TempSeriesSensoresMadrid(vector<vector<int>>&, vector<int>&, int);
+	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int);
 	TempSeriesSensoresMadrid(string);
 
 	bool save(string);

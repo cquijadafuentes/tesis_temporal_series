@@ -1,9 +1,17 @@
 
 #include "TS_SM.hpp"
 
-
-TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<int>>&valores, vector<int>&cantidades, int frec){
+TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&valores, vector<int>&cantidades, vector<int>&ids, int kValue){
 	cout << "Construyendo ..." << endl;
+
+	int auxP = 0;
+	for(int g=0; g<valores.size(); g++){
+		cout << "Grupo " << g << " contiene " << cantidades[g] << " series de tiempo." << endl;
+		for(int i=0; i<valores[g].size(); i++){
+			cout << "\tid:" << ids[auxP++] << " contiene " << valores[g][i].size() << " muestras." << endl;
+		}
+	}
+
 }
 
 TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(string inputFilename){

@@ -20,7 +20,7 @@ int main(int argc, char const *argv[]){
 	
 	cout << "Iniciando TSSM_build.cpp" << endl;
 
-	int aux;
+	int aux, auxP;
 	int nData = (int)stoi(argv[3]);
 	int kValue = (int)stoi(argv[4]);
 	int cantGrupos = 5;
@@ -35,11 +35,15 @@ int main(int argc, char const *argv[]){
 		listaIDS >> cantIds[i];
 		totalIds += cantIds[i];
 	}
+	cout << "Total Ids en grupos: " << totalIds << endl;
 	map<int, pair<int,int>> mapeoIdsPos;
+	vector<int> idsGroups(totalIds, 0);
+	auxP = 0;
 	for(int i=0; i<cantGrupos; i++){
 		for(int j=0; j<cantIds[i]; j++){
 			listaIDS >> aux;
 			mapeoIdsPos[aux] = make_pair(i,j);
+			idsGroups[auxP++] = aux;
 		}
 	}
 	listaIDS.close();
@@ -68,19 +72,27 @@ int main(int argc, char const *argv[]){
 		dataSensores >> idsData[i];
 		mIPit = mapeoIdsPos.find(idsData[i]);
 		if(mIPit == mapeoIdsPos.end()){
-			cout << "Lista de datos no coinciden: ID en los datos no está agrupada." << endl;
+			//cout << "Lista de datos no coinciden: ID en los datos no está agrupada." << endl;
 			noEncontrado++;
 		}
 	}
 
 	if(sensores - noEncontrado < totalIds){
-		cout << "La cantidad de IDs registrados es menor que las IDs del listado de grupos." << endl;
+		cout << "La cantidad de IDs en los datos es " << sensores << "." << endl;
+		cout << "La cantidad de IDs en los grupos es " << totalIds << "." << endl;
+		if(noEncontrado > 0){
+			cout << noEncontrado << " IDs desde la fuente de datos que no se encontraron en los grupos." << endl;
+		}
+		if (totalIds < (sensores - noEncontrado)){
+			cout << ((sensores - noEncontrado) - totalIds) << " IDs desde los grupos que no se encontraron en la fuente de datos." << endl;
+		}
+		
 	}
 
 	// Matriz con los datos
-	vector<vector<int>> data(cantGrupos);
+	vector<vector<vector<int>>> data(cantGrupos);
 	for(int i=0; i<cantGrupos; i++){
-		data[i] = vector<int>(cantIds[i], 0);
+		data[i] = vector<vector<int>>(cantIds[i], vector<int>(muestras));
 	}
 	pair<int,int> pPos;
 	int posG, posI;
@@ -91,9 +103,10 @@ int main(int argc, char const *argv[]){
 			posG = pPos.first;
 			posI = pPos.second;
 			for(int j=0; j<4; j++){
-				if(j == (kValue-1)){
+				if(j == (nData-1)){
 					for(int k=0; k<muestras; k++){
-						dataSensores >> data[posG][posI];
+						dataSensores >> aux;
+						data[posG][posI][k] = aux;
 					}
 				}else{
 					for(int k=0; k<muestras; k++){
@@ -111,6 +124,7 @@ int main(int argc, char const *argv[]){
 	}
 	dataSensores.close();
 
+	TempSeriesSensoresMadrid(data, cantIds, idsGroups, kValue);
 
 	return 0;
 }
