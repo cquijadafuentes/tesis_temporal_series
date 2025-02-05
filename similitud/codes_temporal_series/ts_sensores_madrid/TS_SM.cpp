@@ -1,16 +1,139 @@
 
 #include "TS_SM.hpp"
 
-TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&valores, vector<int>&cantidades, vector<int>&ids, int kValue){
+TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&valores, vector<int>&cantidades, vector<int>&ids, int kValue, int muestras){
+	int aux;
+	bool flag = false;
+	cout << "Verificando datos..." << endl;
+	if(cantidades.size() != valores.size()){
+		cout << "Largo de 'cantidades' y 'valores' no coindice." << endl;
+		flag = true;
+	}
+
+	int totalSensoresValores = 0;
+	int totalSensoresCantidades = 0;
+	for(int g=0; g<cantidades.size(); g++){
+		//	Recorriendo grupos
+		if(valores[g].size() != cantidades[g]){
+			cout << "En grupo " << g << " no coinciden la cantidad del grupo y la cantidad de valores." << endl;
+			flag = true;
+		}
+		totalSensoresValores += valores[g].size();
+		totalSensoresCantidades += cantidades[g];
+		for(int i=0; i<cantidades[g]; i++){
+			aux = valores[g][i].size();
+			if(aux != muestras){
+				cout << "La serie de tiempo " << i << " del grupo " << g << " tiene " << aux << " muestras en vez de " << muestras << "." << endl;
+				flag = true;
+			}
+		}
+	}
+
+	if(totalSensoresValores != ids.size()){
+		cout << "Cantidad de sensores del arreglo 'Valores' no coincide con el número de IDs" << endl;
+		flag = true;
+	}
+	if(totalSensoresCantidades != ids.size()){
+		cout << "Cantidad de sensores del arreglo 'Cantidades' no coincide con el número de IDs" << endl;
+		flag = true;
+	}
+
+	if(flag){
+		cout << "Se cancela construcción de la estructura." << endl;
+		return;
+	}
+
 	cout << "Construyendo ..." << endl;
 
 	int auxP = 0;
-	for(int g=0; g<valores.size(); g++){
-		cout << "Grupo " << g << " contiene " << cantidades[g] << " series de tiempo." << endl;
-		for(int i=0; i<valores[g].size(); i++){
-			cout << "\tid:" << ids[auxP++] << " contiene " << valores[g][i].size() << " muestras." << endl;
+	num_sensores = ids.size();
+	num_groups = cantidades.size();
+	num_muestras = muestras;
+	sens_x_group = vector<int>(num_groups);
+	refs_of_group = vector<int>(num_groups);
+	k = kValue;
+	int acum_refs = 0;
+	for(int g=0; g<cantidades.size(); g++){
+		sens_x_group[g] = cantidades[g];
+		refs_of_group[g] = acum_refs;
+		aux = cantidades[g] / k;
+		if(cantidades[g] % k != 0){
+			aux++;
+		}
+		acum_refs += aux;
+	}
+	pgFirstValue = int_vector<>(acum_refs);
+	pgReference = vector<int_vector<>>(acum_refs);
+
+	cout << "Pos iniciales de refs de cada grupo: " << endl;
+	for(int i=0; i<refs_of_group.size(); i++){
+		cout << refs_of_group[i] << "\t";
+	}
+	cout << endl;
+
+	
+	min_value = valores[0][0][0];
+	max_value = valores[0][0][0];
+
+	int posPGR = 0;
+	bool serieRef = false;
+	vector<int> serieReferenciaTemporal;
+	for(int i=0; i<num_groups-1; i++){
+		//	Recorrido en los grupos principales
+
+		for(int j=0; j<sens_x_group[i]; j++){
+			//	Recorrido en las series del grupo 'i'
+			for(int k=0; k<num_muestras; k++){
+				//	Recorrido en las muestras de la serie 'j' del grupo 'i'
+				
+				if(valores[i][j][k] < min_value){
+					min_value = valores[i][j][k];
+				}
+				if(valores[i][j][k] > max_value){
+					max_value = valores[i][j][k];
+				}
+			}
+
+			serieRef = (j % k == 0);
+			if(serieRef){
+				//	Procesando una serie de referencia
+				serieReferenciaTemporal = valores[i][j];
+				pgFirstValue[posPGR] = serieReferenciaTemporal[0] - min_value;
+				int_vector<> ivT(num_muestras-1);
+				for(int k=1; k<num_muestras; k++){
+					ivT[k-1] = zigzag_encode(serieReferenciaTemporal[k] - serieReferenciaTemporal[k-1]);
+				}
+				util::bit_compress(ivT);
+				pgReference[posPGR] = ivT;
+				posPGR++;
+			}else{
+				//	Procesando una serie normal
+				int_vector<> ivT(num_muestras);
+				for(int k=0; k<num_muestras; k++){
+					ivT[k] = zigzag_encode(valores[i][j][k] - serieReferenciaTemporal[k]);
+				}
+				util::bit_compress(ivT);
+				pgSeries.push_back(ivT);
+			}
+			serieRef = false;
 		}
 	}
+	util::bit_compress(pgFirstValue);
+
+	int sens_lg = sens_x_group[num_groups-1];
+	int lastGroup = num_groups - 1;
+	lgFirstValue = int_vector<>(sens_lg);
+	// Recorrido para el último grupo
+	for(int j=0; j<sens_lg; j++){
+		lgFirstValue[j] = valores[lastGroup][j][0] - min_value;
+		int_vector<> ivT(num_muestras-1);
+		for(int k=1; k<muestras; k++){
+			ivT[k-1] = valores[lastGroup][j][k] - valores[lastGroup][j][k-1];
+		}
+		util::bit_compress(ivT);
+		lgSeries.push_back(ivT);
+	}
+	util::bit_compress(lgFirstValue);
 
 }
 
@@ -25,6 +148,24 @@ bool TempSeriesSensoresMadrid::save(string outputFilename){
 
 int TempSeriesSensoresMadrid::size_bytes(){
 	int bytes = 0;
+	
+	bytes += (sizeof(unsigned int) * 4);
+	bytes += (sizeof(int) * 2);
+	bytes += (sizeof(int) * sens_x_group.size());
+	bytes += (sizeof(int) * refs_of_group.size());
+
+	bytes += size_in_bytes(pgFirstValue);
+	bytes += size_in_bytes(lgFirstValue);
+	for(int i=0; i<pgReference.size(); i++){
+		bytes += size_in_bytes(pgReference[i]);
+	}
+	for(int i=0; i<pgSeries.size(); i++){
+		bytes += size_in_bytes(pgSeries[i]);
+	}
+	for(int i=0; i<lgSeries.size(); i++){
+		bytes += size_in_bytes(lgSeries[i]);
+	}
+	
 	return bytes;
 }
 

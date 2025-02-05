@@ -11,7 +11,9 @@ OBJECTS=TS_SM.o
 %.o: %.cpp
 	$(CPP) $(PREFLAGS) -c $< -o $@ $(POSFLAGS)
 
-all: bin
+default: bin
+
+all: clean bin
 
 bin: $(OBJECTS) $(BINS)
 

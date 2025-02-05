@@ -124,7 +124,8 @@ int main(int argc, char const *argv[]){
 	}
 	dataSensores.close();
 
-	TempSeriesSensoresMadrid(data, cantIds, idsGroups, kValue);
+	TempSeriesSensoresMadrid tssm(data, cantIds, idsGroups, kValue, muestras);
+	cout << tssm.size_kbytes() << " [Kbytes]." << endl;
 
 	return 0;
 }

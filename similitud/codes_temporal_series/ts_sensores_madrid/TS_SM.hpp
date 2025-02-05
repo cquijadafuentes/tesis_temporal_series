@@ -14,17 +14,23 @@ using namespace sdsl;
 //  -------------------- Inicio clase Temporal Series - Sensores Madrid -------------------
 class TempSeriesSensoresMadrid{
 public:
-	unsigned int n_sensores;	// Número de sensores
-	vector<int> n_sens_group;	// Número de sensores por grupo
-	unsigned int k;				// Frecuencia de los referentes
+	unsigned int num_sensores;	//	Número de sensores.
+	unsigned int num_groups;	//	Número de grupos.
+	unsigned int num_muestras;	//	Número de muestras del conjunto.
+	unsigned int k;				//	Frecuencia de las series de referencia.
 	
 	int min_value;
 	int max_value;
-	vector<int_vector<>> refFirstValue;		//	Primer valor de las series de referencia
-	vector<int_vector<>> refs;		//	Series de Referencias
-	vector<int_vector<>> series;	//	Series que no son referencia ni fijas
+	vector<int> sens_x_group;	//	Cantidad de sensores por grupo.
+	vector<int> refs_of_group;	//	Cantidad de referencias por grupo.
 	
-	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int);
+	int_vector<> pgFirstValue;			//	Primer valor de las referencias de los grupos principales.
+	vector<int_vector<>> pgReference;	//	Series de referencia para series de los grupos principales.
+	vector<int_vector<>> pgSeries;		//	Series de los grupos principales.
+	int_vector<> lgFirstValue;			//	Primer valor de las series del último grupo.
+	vector<int_vector<>> lgSeries;		//	Series del último grupo.
+	
+	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int, int);
 	TempSeriesSensoresMadrid(string);
 
 	bool save(string);
