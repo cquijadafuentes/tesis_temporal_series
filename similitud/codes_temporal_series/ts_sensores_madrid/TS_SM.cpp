@@ -120,15 +120,15 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 	}
 	util::bit_compress(pgFirstValue);
 
-	int sens_lg = sens_x_group[num_groups-1];
 	int lastGroup = num_groups - 1;
+	int sens_lg = sens_x_group[lastGroup];
 	lgFirstValue = int_vector<>(sens_lg);
 	// Recorrido para el último grupo
 	for(int j=0; j<sens_lg; j++){
 		lgFirstValue[j] = valores[lastGroup][j][0] - min_value;
 		int_vector<> ivT(num_muestras-1);
-		for(int k=1; k<muestras; k++){
-			ivT[k-1] = valores[lastGroup][j][k] - valores[lastGroup][j][k-1];
+		for(int k=1; k<num_muestras; k++){
+			ivT[k-1] = zigzag_encode(valores[lastGroup][j][k] - valores[lastGroup][j][k-1]);
 		}
 		util::bit_compress(ivT);
 		lgSeries.push_back(ivT);
@@ -148,24 +148,53 @@ bool TempSeriesSensoresMadrid::save(string outputFilename){
 
 int TempSeriesSensoresMadrid::size_bytes(){
 	int bytes = 0;
+	int auxBytes = 0;
 	
-	bytes += (sizeof(unsigned int) * 4);
-	bytes += (sizeof(int) * 2);
-	bytes += (sizeof(int) * sens_x_group.size());
-	bytes += (sizeof(int) * refs_of_group.size());
+	auxBytes += (sizeof(unsigned int) * 4);
+	auxBytes += (sizeof(int) * 2);
+	auxBytes += (sizeof(int) * sens_x_group.size());
+	auxBytes += (sizeof(int) * refs_of_group.size());
 
-	bytes += size_in_bytes(pgFirstValue);
-	bytes += size_in_bytes(lgFirstValue);
+	cout << "Enteros:\t" << auxBytes << " [Bytes]" << endl;
+	bytes += auxBytes;
+	auxBytes = 0;
+
+	auxBytes += size_in_bytes(pgFirstValue);
+
+	cout << "pgFirst:\t" << auxBytes << " [Bytes]" << endl;
+	bytes += auxBytes;
+	auxBytes = 0;
+
+	auxBytes += size_in_bytes(lgFirstValue);
+
+	cout << "lgFirst:\t" << auxBytes << " [Bytes]" << endl;
+	bytes += auxBytes;
+	auxBytes = 0;
+
 	for(int i=0; i<pgReference.size(); i++){
-		bytes += size_in_bytes(pgReference[i]);
+		auxBytes += size_in_bytes(pgReference[i]);
 	}
+
+	cout << "Referencias:\t" << auxBytes << " [Bytes]" << endl;
+	bytes += auxBytes;
+	auxBytes = 0;
+
 	for(int i=0; i<pgSeries.size(); i++){
-		bytes += size_in_bytes(pgSeries[i]);
+		auxBytes += size_in_bytes(pgSeries[i]);
 	}
+
+	cout << "pgseries:\t" << auxBytes << " [Bytes]" << endl;
+	bytes += auxBytes;
+	auxBytes = 0;
+
 	for(int i=0; i<lgSeries.size(); i++){
-		bytes += size_in_bytes(lgSeries[i]);
+		auxBytes += size_in_bytes(lgSeries[i]);
 	}
 	
+	cout << "lgSeries:\t" << auxBytes << " [Bytes]" << endl;
+	bytes += auxBytes;
+	auxBytes = 0;
+
 	return bytes;
 }
 

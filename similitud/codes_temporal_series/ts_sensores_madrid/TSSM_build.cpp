@@ -3,6 +3,8 @@
 using namespace std;
 using namespace sdsl;
 
+int bytesBitCompress(vector<int> &v);
+
 int main(int argc, char const *argv[]){
 	if(argc < 6){
 		cout << "Error! Faltan argumentos." << endl;
@@ -125,7 +127,30 @@ int main(int argc, char const *argv[]){
 	dataSensores.close();
 
 	TempSeriesSensoresMadrid tssm(data, cantIds, idsGroups, kValue, muestras);
-	cout << tssm.size_kbytes() << " [Kbytes]." << endl;
+	int kbytesTSSM = tssm.size_kbytes();
+	cout << "Estructura:\t" << kbytesTSSM << " [Kbytes]." << endl;
+
+	long long int bytesRepEnteros = (sizeof(int) * sensores) + (sizeof(int) * sensores * muestras);
+	int kbRepEnt = bytesRepEnteros / 1024;
+	cout << "Enteros:\t" << kbRepEnt << " [Kbytes]." << endl;
+
+	long long int bytesIntVector = bytesBitCompress(idsGroups);
+	for(int i=0; i<data.size(); i++){
+		for(int j=0; j<data[i].size(); j++){
+			bytesIntVector += bytesBitCompress(data[i][j]);
+		}
+	}
+	int kbytesIntVector = bytesIntVector / 1024;
+	cout << "IntVector:\t" << kbytesIntVector << " [Kbytes]." << endl;
 
 	return 0;
+}
+
+int bytesBitCompress(vector<int> &v){
+	int_vector<> iv(v.size());
+	for(int i=0; i<v.size(); i++){
+		iv[i] = v[i];
+	}
+	util::bit_compress(iv);
+	return size_in_bytes(iv);
 }
