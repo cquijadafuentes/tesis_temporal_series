@@ -71,29 +71,15 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 	}
 	cout << endl;
 
-	
-	min_value = valores[0][0][0];
-	max_value = valores[0][0][0];
+	encuentraLimites(valores);
 
 	int posPGR = 0;
 	bool serieRef = false;
 	vector<int> serieReferenciaTemporal;
 	for(int i=0; i<num_groups-1; i++){
 		//	Recorrido en los grupos principales
-
 		for(int j=0; j<sens_x_group[i]; j++){
 			//	Recorrido en las series del grupo 'i'
-			for(int k=0; k<num_muestras; k++){
-				//	Recorrido en las muestras de la serie 'j' del grupo 'i'
-				
-				if(valores[i][j][k] < min_value){
-					min_value = valores[i][j][k];
-				}
-				if(valores[i][j][k] > max_value){
-					max_value = valores[i][j][k];
-				}
-			}
-
 			serieRef = (j % k == 0);
 			if(serieRef){
 				//	Procesando una serie de referencia
@@ -134,6 +120,122 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 		lgSeries.push_back(ivT);
 	}
 	util::bit_compress(lgFirstValue);
+
+}
+
+TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&valores, vector<int>&cantidades, vector<int>&ids, int kValue, int muestras, bool todosIgual){
+	/*
+		Variante que codifica las series con respecto a la inmediatamente anterior.
+			bool todosIgual: se usa para saber si todos los grupos se codifican igual,
+			o si el último grupo mantiene su configuración de la versión tradicional
+	*/
+	int aux;
+	bool flag = false;
+	cout << "Verificando datos..." << endl;
+	if(cantidades.size() != valores.size()){
+		cout << "Largo de 'cantidades' y 'valores' no coindice." << endl;
+		flag = true;
+	}
+
+	int totalSensoresValores = 0;
+	int totalSensoresCantidades = 0;
+	for(int g=0; g<cantidades.size(); g++){
+		//	Recorriendo grupos
+		if(valores[g].size() != cantidades[g]){
+			cout << "En grupo " << g << " no coinciden la cantidad del grupo y la cantidad de valores." << endl;
+			flag = true;
+		}
+		totalSensoresValores += valores[g].size();
+		totalSensoresCantidades += cantidades[g];
+		for(int i=0; i<cantidades[g]; i++){
+			aux = valores[g][i].size();
+			if(aux != muestras){
+				cout << "La serie de tiempo " << i << " del grupo " << g << " tiene " << aux << " muestras en vez de " << muestras << "." << endl;
+				flag = true;
+			}
+		}
+	}
+
+	if(totalSensoresValores != ids.size()){
+		cout << "Cantidad de sensores del arreglo 'Valores' no coincide con el número de IDs" << endl;
+		flag = true;
+	}
+	if(totalSensoresCantidades != ids.size()){
+		cout << "Cantidad de sensores del arreglo 'Cantidades' no coincide con el número de IDs" << endl;
+		flag = true;
+	}
+
+	if(flag){
+		cout << "Se cancela construcción de la estructura." << endl;
+		return;
+	}
+
+	cout << "Construyendo ..." << endl;
+
+	int auxP = 0;
+	num_sensores = ids.size();
+	num_groups = cantidades.size();
+	num_muestras = muestras;
+	sens_x_group = vector<int>(num_groups);
+	refs_of_group = vector<int>(num_groups);
+	k = kValue;
+	int acum_refs = 0;
+	for(int g=0; g<cantidades.size(); g++){
+		sens_x_group[g] = cantidades[g];
+	}
+	pgFirstValue = int_vector<>(0);
+	pgReference = vector<int_vector<>>(0);
+	encuentraLimites(valores);
+
+	int gruposIguales = num_groups-1;
+	int sensoresIguales = num_sensores - sens_x_group[num_groups-1];
+	if(todosIgual){
+		gruposIguales = num_groups;
+		sensoresIguales = num_sensores;
+		lgFirstValue = int_vector<>(0);
+		lgSeries = vector<int_vector<>>(0);
+	}
+	pgSeries = vector<int_vector<>>(gruposIguales);
+
+	vector<int> serieReferenciaTemporal;
+	int posSeries = 0;
+	for(int i=0; i<gruposIguales; i++){
+		//	Recorrido en los grupos principales
+		pgSeries[posSeries] = int_vector<>(num_muestras);
+		//	Tratamiento para la primera serie del grupo
+		pgSeries[posSeries][0] = valores[i][0][0] - min_value;
+		for(int k=1; k<num_muestras; k++){
+			pgSeries[posSeries][k] = zigzag_encode(valores[i][0][k] - valores[i][0][k-1]);
+
+		}
+		posSeries++;
+		//	Tratamiento para las demás series del grupo
+		serieReferenciaTemporal = valores[i][0];
+		for(int j=1; j<sens_x_group[i]; j++){
+			pgSeries[posSeries][k] = zigzag_encode(valores[i][j][k] - serieReferenciaTemporal[k]);
+			serieReferenciaTemporal = valores[i][j];
+			posSeries++;
+		}
+	}
+
+	cout << "posSeries: " << posSeries << " - sensoresIguales: " << sensoresIguales << endl;
+
+	if(!todosIgual){
+		int lastGroup = num_groups - 1;
+		int sens_lg = sens_x_group[lastGroup];
+		lgFirstValue = int_vector<>(sens_lg);
+		// Recorrido para el último grupo
+		for(int j=0; j<sens_lg; j++){
+			lgFirstValue[j] = valores[lastGroup][j][0] - min_value;
+			int_vector<> ivT(num_muestras-1);
+			for(int k=1; k<num_muestras; k++){
+				ivT[k-1] = zigzag_encode(valores[lastGroup][j][k] - valores[lastGroup][j][k-1]);
+			}
+			util::bit_compress(ivT);
+			lgSeries.push_back(ivT);
+		}
+		util::bit_compress(lgFirstValue);
+	}
 
 }
 
@@ -243,4 +345,23 @@ bool TempSeriesSensoresMadrid::esFija(vector<int> serie){
 		}
 	}
 	return true;
+}
+
+void TempSeriesSensoresMadrid::encuentraLimites(vector<vector<vector<int>>>&valores){
+
+	min_value = valores[0][0][0];
+	max_value = valores[0][0][0];
+
+	for(int i=0; i<valores.size(); i++){
+		for(int j=0; j<valores[i].size(); j++){
+			for(int k=0; k<valores[i][j].size(); k++){
+				if(valores[i][j][k] < min_value){
+					min_value = valores[i][j][k];
+				}
+				if(valores[i][j][k] > max_value){
+					max_value = valores[i][j][k];
+				}
+			}
+		}
+	}
 }

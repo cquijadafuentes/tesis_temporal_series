@@ -31,6 +31,7 @@ public:
 	vector<int_vector<>> lgSeries;		//	Series del último grupo.
 	
 	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int, int);
+	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int, int, bool);
 	TempSeriesSensoresMadrid(string);
 
 	bool save(string);
@@ -45,6 +46,7 @@ private:
 	unsigned int zigzag_encode(int);
 	int zigzag_decode(int);
 	bool esFija(vector<int>);
+	void encuentraLimites(vector<vector<vector<int>>>&);
 };
 
 #endif

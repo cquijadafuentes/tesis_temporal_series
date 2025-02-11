@@ -4,7 +4,7 @@ PREFLAGS=-std=c++11 -g -O0 -DNDEBUG -I ~/include -L ~/lib
 
 POSFLAGS=-lsdsl -ldivsufsort -ldivsufsort64
 
-BINS=TSSM_build
+BINS=TSSM_build TSSM_build_full
 
 OBJECTS=TS_SM.o
 
@@ -15,12 +15,15 @@ default: bin
 
 all: clean bin
 
+compile: clean all
+
+clean:
+	rm -f $(BINS) $(OBJECTS)
+
 bin: $(OBJECTS) $(BINS)
 
 TSSM_build:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
-clean:
-	rm -f $(BINS) $(OBJECTS)
-
-compile: clean all
+TSSM_build_full:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
