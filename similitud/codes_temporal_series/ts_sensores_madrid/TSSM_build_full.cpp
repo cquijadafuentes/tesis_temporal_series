@@ -127,20 +127,31 @@ int main(int argc, char const *argv[]){
 	dataSensores.close();
 
 	TempSeriesSensoresMadrid tssm(data, cantIds, idsGroups, kValue, muestras);
-	int kbytesTSSM = tssm.size_kbytes();
-	cout << "Estructura:\t" << kbytesTSSM << " [Kbytes]." << endl;
-
 	TempSeriesSensoresMadrid tssm2(data, cantIds, idsGroups, kValue, muestras, false);
-	kbytesTSSM = tssm.size_kbytes();
-	cout << "Est.Cod.Sec.:\t" << kbytesTSSM << " [Kbytes]." << endl;
-
 	TempSeriesSensoresMadrid tssm3(data, cantIds, idsGroups, kValue, muestras, true);
-	kbytesTSSM = tssm.size_kbytes();
-	cout << "E.Cod.Sec.TI:\t" << kbytesTSSM << " [Kbytes]." << endl;
+
+	cout << "------------------------------------" << endl;
+
+	long long int kbytesTSSM = tssm.size_kbytes();
+	cout << "\tEstructura:\t" << kbytesTSSM << " [Kbytes]." << endl;
+
+	cout << "------------------------------------" << endl;
+
+	kbytesTSSM = tssm2.size_kbytes();
+	cout << "\tEst.Cod.Sec.:\t" << kbytesTSSM << " [Kbytes]." << endl;
+
+	cout << "------------------------------------" << endl;
+
+	kbytesTSSM = tssm3.size_kbytes();
+	cout << "\tE.Cod.Sec.TI:\t" << kbytesTSSM << " [Kbytes]." << endl;
+
+	cout << "------------------------------------" << endl;
 
 	long long int bytesRepEnteros = (sizeof(int) * sensores) + (sizeof(int) * sensores * muestras);
 	int kbRepEnt = bytesRepEnteros / 1024;
-	cout << "Enteros:\t" << kbRepEnt << " [Kbytes]." << endl;
+	cout << "\tEnteros:\t" << kbRepEnt << " [Kbytes]." << endl;
+
+	cout << "------------------------------------" << endl;
 
 	long long int bytesIntVector = bytesBitCompress(idsGroups);
 	for(int i=0; i<data.size(); i++){
@@ -149,7 +160,9 @@ int main(int argc, char const *argv[]){
 		}
 	}
 	int kbytesIntVector = bytesIntVector / 1024;
-	cout << "IntVector:\t" << kbytesIntVector << " [Kbytes]." << endl;
+	cout << "\tIntVector:\t" << kbytesIntVector << " [Kbytes]." << endl;
+
+	cout << "------------------------------------" << endl;
 
 	return 0;
 }

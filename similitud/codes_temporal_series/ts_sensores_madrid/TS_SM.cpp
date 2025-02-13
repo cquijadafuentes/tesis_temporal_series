@@ -195,25 +195,31 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 		lgFirstValue = int_vector<>(0);
 		lgSeries = vector<int_vector<>>(0);
 	}
-	pgSeries = vector<int_vector<>>(gruposIguales);
+	pgSeries = vector<int_vector<>>(sensoresIguales);
 
-	vector<int> serieReferenciaTemporal;
 	int posSeries = 0;
 	for(int i=0; i<gruposIguales; i++){
+		cout << "posSeries: " << posSeries << "/" << sensoresIguales << endl;
 		//	Recorrido en los grupos principales
-		pgSeries[posSeries] = int_vector<>(num_muestras);
 		//	Tratamiento para la primera serie del grupo
-		pgSeries[posSeries][0] = valores[i][0][0] - min_value;
+		int_vector<> ivT(num_muestras);
+		ivT[0] = valores[i][0][0] - min_value;
 		for(int k=1; k<num_muestras; k++){
-			pgSeries[posSeries][k] = zigzag_encode(valores[i][0][k] - valores[i][0][k-1]);
+			ivT[k] = zigzag_encode(valores[i][0][k] - valores[i][0][k-1]);
 
 		}
+		util::bit_compress(ivT);
+		pgSeries[posSeries] = ivT;
 		posSeries++;
 		//	Tratamiento para las demás series del grupo
-		serieReferenciaTemporal = valores[i][0];
 		for(int j=1; j<sens_x_group[i]; j++){
-			pgSeries[posSeries][k] = zigzag_encode(valores[i][j][k] - serieReferenciaTemporal[k]);
-			serieReferenciaTemporal = valores[i][j];
+//			cout << "posSeries: " << posSeries << "/" << sensoresIguales << endl;
+			ivT = int_vector<>(num_muestras);
+			for(int k=0; k<num_muestras; k++){
+				ivT[k] = zigzag_encode(valores[i][j][k] - valores[i][j-1][k]);
+			}
+			util::bit_compress(ivT);
+			pgSeries[posSeries] = ivT;
 			posSeries++;
 		}
 	}

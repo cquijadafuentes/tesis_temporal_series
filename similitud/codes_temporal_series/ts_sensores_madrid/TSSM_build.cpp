@@ -128,7 +128,7 @@ int main(int argc, char const *argv[]){
 
 	TempSeriesSensoresMadrid tssm(data, cantIds, idsGroups, kValue, muestras);
 	int kbytesTSSM = tssm.size_kbytes();
-	cout << "Estructura:\t" << kbytesTSSM << " [Kbytes]." << endl;
+	cout << "\tEstructura:\t" << kbytesTSSM << " [Kbytes]." << endl;
 
 	return 0;
 }
