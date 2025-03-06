@@ -5,6 +5,15 @@ using namespace sdsl;
 
 int bytesBitCompress(vector<int> &v);
 
+int bytesEncVectorED(vector<int_vector<>> &v);
+int bytesEncVectorED(int_vector<> &v);
+
+int bytesEncVectorEG(vector<int_vector<>> &v);
+int bytesEncVectorEG(int_vector<> &v);
+
+int bytesEncVectorF(vector<int_vector<>> &v);
+int bytesEncVectorF(int_vector<> &v);
+
 int main(int argc, char const *argv[]){
 	if(argc < 6){
 		cout << "Error! Faltan argumentos." << endl;
@@ -164,6 +173,30 @@ int main(int argc, char const *argv[]){
 
 	cout << "------------------------------------" << endl;
 
+	cout << "enc_vector" << endl;
+	cout << "pgFirstValue: \t" << bytesEncVectorED(tssm.pgFirstValue) << "\t" << bytesEncVectorEG(tssm.pgFirstValue) << "\t" << bytesEncVectorF(tssm.pgFirstValue) << " [Bytes]" << endl;
+	cout << "lgFirstValue: \t" << bytesEncVectorED(tssm.lgFirstValue) << "\t" << bytesEncVectorEG(tssm.lgFirstValue) << "\t" << bytesEncVectorF(tssm.lgFirstValue) << " [Bytes]" << endl;
+	cout << "pgReference: \t" << bytesEncVectorED(tssm.pgReference) << "\t" << bytesEncVectorEG(tssm.pgReference) << "\t" << bytesEncVectorF(tssm.pgReference) << " [Bytes]" << endl;
+	cout << "pgSeries: \t" << bytesEncVectorED(tssm.pgSeries) << "\t" << bytesEncVectorEG(tssm.pgSeries) << "\t" << bytesEncVectorF(tssm.pgSeries) << " [Bytes]" << endl;
+	cout << "lgSeries: \t" << bytesEncVectorED(tssm.lgSeries) << "\t" << bytesEncVectorEG(tssm.lgSeries) << "\t" << bytesEncVectorF(tssm.lgSeries) << " [Bytes]" << endl;
+
+	cout << "------------------------------------" << endl;
+
+	TempSeriesSensoresMadrid tssm4(data, cantIds, idsGroups, muestras);
+	int kbytesTSSMrefprom = tssm4.size_kbytes();
+	cout << "\tEst. RProm:\t" << kbytesTSSMrefprom << " [Kbytes]." << endl;
+
+	cout << "------------------------------------" << endl;
+
+	cout << "enc_vector" << endl;
+	cout << "pgFirstValue: \t" << bytesEncVectorED(tssm4.pgFirstValue) << "\t" << bytesEncVectorEG(tssm4.pgFirstValue) << "\t" << bytesEncVectorF(tssm4.pgFirstValue) << " [Bytes]" << endl;
+	cout << "lgFirstValue: \t" << bytesEncVectorED(tssm4.lgFirstValue) << "\t" << bytesEncVectorEG(tssm4.lgFirstValue) << "\t" << bytesEncVectorF(tssm4.lgFirstValue) << " [Bytes]" << endl;
+	cout << "pgReference: \t" << bytesEncVectorED(tssm4.pgReference) << "\t" << bytesEncVectorEG(tssm4.pgReference) << "\t" << bytesEncVectorF(tssm4.pgReference) << " [Bytes]" << endl;
+	cout << "pgSeries: \t" << bytesEncVectorED(tssm4.pgSeries) << "\t" << bytesEncVectorEG(tssm4.pgSeries) << "\t" << bytesEncVectorF(tssm4.pgSeries) << " [Bytes]" << endl;
+	cout << "lgSeries: \t" << bytesEncVectorED(tssm4.lgSeries) << "\t" << bytesEncVectorEG(tssm4.lgSeries) << "\t" << bytesEncVectorF(tssm4.lgSeries) << " [Bytes]" << endl;
+
+	cout << "------------------------------------" << endl;
+
 	return 0;
 }
 
@@ -174,4 +207,43 @@ int bytesBitCompress(vector<int> &v){
 	}
 	util::bit_compress(iv);
 	return size_in_bytes(iv);
+}
+
+int bytesEncVectorED(vector<int_vector<>> &v){
+	int bytes = 0;
+	for(int i=0; i<v.size(); i++){
+		bytes += bytesEncVectorED(v[i]);
+	}
+	return bytes;
+}
+
+int bytesEncVectorED(int_vector<> &v){
+	enc_vector<coder::elias_delta> ev(v);
+	return size_in_bytes(ev);
+}
+
+int bytesEncVectorEG(vector<int_vector<>> &v){
+	int bytes = 0;
+	for(int i=0; i<v.size(); i++){
+		bytes += bytesEncVectorEG(v[i]);
+	}
+	return bytes;
+}
+
+int bytesEncVectorEG(int_vector<> &v){
+	enc_vector<coder::elias_gamma> ev(v);
+	return size_in_bytes(ev);
+}
+
+int bytesEncVectorF(vector<int_vector<>> &v){
+	int bytes = 0;
+	for(int i=0; i<v.size(); i++){
+		bytes += bytesEncVectorF(v[i]);
+	}
+	return bytes;
+}
+
+int bytesEncVectorF(int_vector<> &v){
+	enc_vector<coder::fibonacci> ev(v);
+	return size_in_bytes(ev);
 }

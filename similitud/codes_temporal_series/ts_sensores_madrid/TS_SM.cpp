@@ -245,6 +245,115 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 
 }
 
+TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&valores, vector<int>&cantidades, vector<int>&ids, int muestras){
+	/*
+		Variante que codifica las series con respecto a serie promedio de cada grupo.
+	*/
+	int aux;
+	bool flag = false;
+	cout << "Verificando datos..." << endl;
+	if(cantidades.size() != valores.size()){
+		cout << "Largo de 'cantidades' y 'valores' no coindice." << endl;
+		flag = true;
+	}
+
+	int totalSensoresValores = 0;
+	int totalSensoresCantidades = 0;
+	for(int g=0; g<cantidades.size(); g++){
+		//	Recorriendo grupos
+		if(valores[g].size() != cantidades[g]){
+			cout << "En grupo " << g << " no coinciden la cantidad del grupo y la cantidad de valores." << endl;
+			flag = true;
+		}
+		totalSensoresValores += valores[g].size();
+		totalSensoresCantidades += cantidades[g];
+		for(int i=0; i<cantidades[g]; i++){
+			aux = valores[g][i].size();
+			if(aux != muestras){
+				cout << "La serie de tiempo " << i << " del grupo " << g << " tiene " << aux << " muestras en vez de " << muestras << "." << endl;
+				flag = true;
+			}
+		}
+	}
+
+	if(totalSensoresValores != ids.size()){
+		cout << "Cantidad de sensores del arreglo 'Valores' no coincide con el número de IDs" << endl;
+		flag = true;
+	}
+	if(totalSensoresCantidades != ids.size()){
+		cout << "Cantidad de sensores del arreglo 'Cantidades' no coincide con el número de IDs" << endl;
+		flag = true;
+	}
+
+	if(flag){
+		cout << "Se cancela construcción de la estructura." << endl;
+		return;
+	}
+
+	cout << "Construyendo ..." << endl;
+
+	int auxP = 0;
+	num_sensores = ids.size();
+	num_groups = cantidades.size();
+	num_muestras = muestras;
+	sens_x_group = vector<int>(num_groups);
+	refs_of_group = vector<int>(0);
+	k = 0;
+	for(int g=0; g<cantidades.size(); g++){
+		sens_x_group[g] = cantidades[g];
+	}
+	pgFirstValue = int_vector<>(0);
+	lgFirstValue = int_vector<>(0);
+	lgSeries = vector<int_vector<>>(0);
+
+	pgReference = vector<int_vector<>>(num_groups);
+	pgSeries = vector<int_vector<>>(num_sensores);
+	encuentraLimites(valores);
+
+	int iaux = 0;
+
+	for(int i=0; i<num_groups; i++){
+		// Construir la secuencia de referencia
+		int_vector<> ivR(num_muestras);
+		long long int acum;
+		for(int j=0; j<num_muestras; j++){
+			acum = 0;
+			for(int k=0; k<sens_x_group[i]; k++){
+				acum += valores[i][k][j];
+			}
+			acum /= sens_x_group[i];
+			ivR[j] = acum;
+		}
+		
+		//	Codificar las demás secuencias según la referencia
+		for(int j=0; j<sens_x_group[i]; j++){
+//			cout << "posSeries: " << posSeries << "/" << sensoresIguales << endl;
+			int_vector<> ivT(num_muestras);
+			for(int k=0; k<num_muestras; k++){
+				ivT[k] = zigzag_encode(valores[i][j][k] - ivR[k]);
+			}
+			util::bit_compress(ivT);
+			pgSeries[iaux++] = ivT;
+		}
+
+		//	Reducir rango de la serie de referencia
+		int mm = ivR[0];
+		for(int k=1; k<num_muestras; k++){
+			if(ivR[k] < mm){
+				mm = ivR[k];
+			}
+		}
+		for(int k=0; k<num_muestras; k++){
+			ivR[k] = ivR[k] - mm;
+		}
+		util::bit_compress(ivR);
+		pgReference[i] = ivR;
+	}
+
+	cout << "iaux: " << iaux << " - num_sensores: " << num_sensores << endl;
+
+}
+
 TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(string inputFilename){
 	cout << "Cargando archivo " << inputFilename << endl;
 }

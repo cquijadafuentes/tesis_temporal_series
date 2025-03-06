@@ -30,8 +30,9 @@ public:
 	int_vector<> lgFirstValue;			//	Primer valor de las series del último grupo.
 	vector<int_vector<>> lgSeries;		//	Series del último grupo.
 	
-	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int, int);
-	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int, int, bool);
+	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int, int);		//	Construcción básica original: codificación respecto de referencia
+	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int, int, bool);	//	Construcción para permitir codificación de series respecto la anterior
+	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int);			//	Construcción para usar serie promedio de grupo como referencia
 	TempSeriesSensoresMadrid(string);
 
 	bool save(string);
