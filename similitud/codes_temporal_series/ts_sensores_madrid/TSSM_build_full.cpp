@@ -14,6 +14,15 @@ int bytesEncVectorEG(int_vector<> &v);
 int bytesEncVectorF(vector<int_vector<>> &v);
 int bytesEncVectorF(int_vector<> &v);
 
+int bytesVlcVectorED(vector<int_vector<>> &v);
+int bytesVlcVectorED(int_vector<> &v);
+
+int bytesVlcVectorEG(vector<int_vector<>> &v);
+int bytesVlcVectorEG(int_vector<> &v);
+
+int bytesVlcVectorF(vector<int_vector<>> &v);
+int bytesVlcVectorF(int_vector<> &v);
+
 int main(int argc, char const *argv[]){
 	if(argc < 6){
 		cout << "Error! Faltan argumentos." << endl;
@@ -173,12 +182,21 @@ int main(int argc, char const *argv[]){
 
 	cout << "------------------------------------" << endl;
 
-	cout << "enc_vector" << endl;
+	cout << "enc_vector Est:" << endl;
 	cout << "pgFirstValue: \t" << bytesEncVectorED(tssm.pgFirstValue) << "\t" << bytesEncVectorEG(tssm.pgFirstValue) << "\t" << bytesEncVectorF(tssm.pgFirstValue) << " [Bytes]" << endl;
 	cout << "lgFirstValue: \t" << bytesEncVectorED(tssm.lgFirstValue) << "\t" << bytesEncVectorEG(tssm.lgFirstValue) << "\t" << bytesEncVectorF(tssm.lgFirstValue) << " [Bytes]" << endl;
 	cout << "pgReference: \t" << bytesEncVectorED(tssm.pgReference) << "\t" << bytesEncVectorEG(tssm.pgReference) << "\t" << bytesEncVectorF(tssm.pgReference) << " [Bytes]" << endl;
 	cout << "pgSeries: \t" << bytesEncVectorED(tssm.pgSeries) << "\t" << bytesEncVectorEG(tssm.pgSeries) << "\t" << bytesEncVectorF(tssm.pgSeries) << " [Bytes]" << endl;
 	cout << "lgSeries: \t" << bytesEncVectorED(tssm.lgSeries) << "\t" << bytesEncVectorEG(tssm.lgSeries) << "\t" << bytesEncVectorF(tssm.lgSeries) << " [Bytes]" << endl;
+
+	cout << "------------------------------------" << endl;
+
+	cout << "enc_vector Est:" << endl;
+	cout << "pgFirstValue: \t" << bytesVlcVectorED(tssm.pgFirstValue) << "\t" << bytesVlcVectorEG(tssm.pgFirstValue) << "\t" << bytesVlcVectorF(tssm.pgFirstValue) << " [Bytes]" << endl;
+	cout << "lgFirstValue: \t" << bytesVlcVectorED(tssm.lgFirstValue) << "\t" << bytesVlcVectorEG(tssm.lgFirstValue) << "\t" << bytesVlcVectorF(tssm.lgFirstValue) << " [Bytes]" << endl;
+	cout << "pgReference: \t" << bytesVlcVectorED(tssm.pgReference) << "\t" << bytesVlcVectorEG(tssm.pgReference) << "\t" << bytesVlcVectorF(tssm.pgReference) << " [Bytes]" << endl;
+	cout << "pgSeries: \t" << bytesVlcVectorED(tssm.pgSeries) << "\t" << bytesVlcVectorEG(tssm.pgSeries) << "\t" << bytesVlcVectorF(tssm.pgSeries) << " [Bytes]" << endl;
+	cout << "lgSeries: \t" << bytesVlcVectorED(tssm.lgSeries) << "\t" << bytesVlcVectorEG(tssm.lgSeries) << "\t" << bytesVlcVectorF(tssm.lgSeries) << " [Bytes]" << endl;
 
 	cout << "------------------------------------" << endl;
 
@@ -188,12 +206,21 @@ int main(int argc, char const *argv[]){
 
 	cout << "------------------------------------" << endl;
 
-	cout << "enc_vector" << endl;
+	cout << "enc_vector Est. Prom." << endl;
 	cout << "pgFirstValue: \t" << bytesEncVectorED(tssm4.pgFirstValue) << "\t" << bytesEncVectorEG(tssm4.pgFirstValue) << "\t" << bytesEncVectorF(tssm4.pgFirstValue) << " [Bytes]" << endl;
 	cout << "lgFirstValue: \t" << bytesEncVectorED(tssm4.lgFirstValue) << "\t" << bytesEncVectorEG(tssm4.lgFirstValue) << "\t" << bytesEncVectorF(tssm4.lgFirstValue) << " [Bytes]" << endl;
 	cout << "pgReference: \t" << bytesEncVectorED(tssm4.pgReference) << "\t" << bytesEncVectorEG(tssm4.pgReference) << "\t" << bytesEncVectorF(tssm4.pgReference) << " [Bytes]" << endl;
 	cout << "pgSeries: \t" << bytesEncVectorED(tssm4.pgSeries) << "\t" << bytesEncVectorEG(tssm4.pgSeries) << "\t" << bytesEncVectorF(tssm4.pgSeries) << " [Bytes]" << endl;
 	cout << "lgSeries: \t" << bytesEncVectorED(tssm4.lgSeries) << "\t" << bytesEncVectorEG(tssm4.lgSeries) << "\t" << bytesEncVectorF(tssm4.lgSeries) << " [Bytes]" << endl;
+
+	cout << "------------------------------------" << endl;
+
+	cout << "vlc_vector Est. Prom." << endl;
+	cout << "pgFirstValue: \t" << bytesVlcVectorED(tssm4.pgFirstValue) << "\t" << bytesVlcVectorEG(tssm4.pgFirstValue) << "\t" << bytesVlcVectorF(tssm4.pgFirstValue) << " [Bytes]" << endl;
+	cout << "lgFirstValue: \t" << bytesVlcVectorED(tssm4.lgFirstValue) << "\t" << bytesVlcVectorEG(tssm4.lgFirstValue) << "\t" << bytesVlcVectorF(tssm4.lgFirstValue) << " [Bytes]" << endl;
+	cout << "pgReference: \t" << bytesVlcVectorED(tssm4.pgReference) << "\t" << bytesVlcVectorEG(tssm4.pgReference) << "\t" << bytesVlcVectorF(tssm4.pgReference) << " [Bytes]" << endl;
+	cout << "pgSeries: \t" << bytesVlcVectorED(tssm4.pgSeries) << "\t" << bytesVlcVectorEG(tssm4.pgSeries) << "\t" << bytesVlcVectorF(tssm4.pgSeries) << " [Bytes]" << endl;
+	cout << "lgSeries: \t" << bytesVlcVectorED(tssm4.lgSeries) << "\t" << bytesVlcVectorEG(tssm4.lgSeries) << "\t" << bytesVlcVectorF(tssm4.lgSeries) << " [Bytes]" << endl;
 
 	cout << "------------------------------------" << endl;
 
@@ -208,6 +235,10 @@ int bytesBitCompress(vector<int> &v){
 	util::bit_compress(iv);
 	return size_in_bytes(iv);
 }
+
+// ===================================================
+//				ENC_VECTOR
+// ===================================================
 
 int bytesEncVectorED(vector<int_vector<>> &v){
 	int bytes = 0;
@@ -246,4 +277,47 @@ int bytesEncVectorF(vector<int_vector<>> &v){
 int bytesEncVectorF(int_vector<> &v){
 	enc_vector<coder::fibonacci> ev(v);
 	return size_in_bytes(ev);
+}
+
+// ===================================================
+//				VLC_VECTOR
+// ===================================================
+
+int bytesVlcVectorED(vector<int_vector<>> &v){
+	int bytes = 0;
+	for(int i=0; i<v.size(); i++){
+		bytes += bytesVlcVectorED(v[i]);
+	}
+	return bytes;
+}
+
+int bytesVlcVectorED(int_vector<> &v){
+	vlc_vector<coder::elias_delta> vv(v);
+	return size_in_bytes(vv);
+}
+
+int bytesVlcVectorEG(vector<int_vector<>> &v){
+	int bytes = 0;
+	for(int i=0; i<v.size(); i++){
+		bytes += bytesVlcVectorEG(v[i]);
+	}
+	return bytes;
+}
+
+int bytesVlcVectorEG(int_vector<> &v){
+	vlc_vector<coder::elias_gamma> vv(v);
+	return size_in_bytes(vv);
+}
+
+int bytesVlcVectorF(vector<int_vector<>> &v){
+	int bytes = 0;
+	for(int i=0; i<v.size(); i++){
+		bytes += bytesVlcVectorF(v[i]);
+	}
+	return bytes;
+}
+
+int bytesVlcVectorF(int_vector<> &v){
+	vlc_vector<coder::fibonacci> vv(v);
+	return size_in_bytes(vv);
 }
