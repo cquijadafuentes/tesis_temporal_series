@@ -24,11 +24,11 @@ public:
 	vector<int> sens_x_group;	//	Cantidad de sensores por grupo.
 	vector<int> refs_of_group;	//	Cantidad de referencias por grupo.
 	
-	int_vector<> pgFirstValue;			//	Primer valor de las referencias de los grupos principales.
-	vector<int_vector<>> pgReference;	//	Series de referencia para series de los grupos principales.
-	vector<int_vector<>> pgSeries;		//	Series de los grupos principales.
-	int_vector<> lgFirstValue;			//	Primer valor de las series del último grupo.
-	vector<int_vector<>> lgSeries;		//	Series del último grupo.
+	vlc_vector<coder::fibonacci> pgFirstValue;			//	Primer valor de las referencias de los grupos principales.
+	vector<vlc_vector<coder::fibonacci>> pgReference;	//	Series de referencia para series de los grupos principales.
+	vector<vlc_vector<coder::fibonacci>> pgSeries;		//	Series de los grupos principales.
+	vlc_vector<coder::fibonacci> lgFirstValue;			//	Primer valor de las series del último grupo.
+	vector<vlc_vector<coder::fibonacci>> lgSeries;		//	Series del último grupo.
 	
 	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int, int);		//	Construcción básica original: codificación respecto de referencia
 	TempSeriesSensoresMadrid(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int, int, bool);	//	Construcción para permitir codificación de series respecto la anterior

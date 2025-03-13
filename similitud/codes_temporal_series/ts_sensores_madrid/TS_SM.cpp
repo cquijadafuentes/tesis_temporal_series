@@ -62,8 +62,8 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 		}
 		acum_refs += aux;
 	}
-	pgFirstValue = int_vector<>(acum_refs);
-	pgReference = vector<int_vector<>>(acum_refs);
+	int_vector<> ivTempPGFV(acum_refs);
+	pgReference = vector<vlc_vector<coder::fibonacci>>(acum_refs);
 
 	cout << "Pos iniciales de refs de cada grupo: " << endl;
 	for(int i=0; i<refs_of_group.size(); i++){
@@ -84,13 +84,12 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 			if(serieRef){
 				//	Procesando una serie de referencia
 				serieReferenciaTemporal = valores[i][j];
-				pgFirstValue[posPGR] = serieReferenciaTemporal[0] - min_value;
+				ivTempPGFV[posPGR] = serieReferenciaTemporal[0] - min_value;
 				int_vector<> ivT(num_muestras-1);
 				for(int k=1; k<num_muestras; k++){
 					ivT[k-1] = zigzag_encode(serieReferenciaTemporal[k] - serieReferenciaTemporal[k-1]);
 				}
-				util::bit_compress(ivT);
-				pgReference[posPGR] = ivT;
+				pgReference[posPGR] = vlc_vector<coder::fibonacci>(ivT);
 				posPGR++;
 			}else{
 				//	Procesando una serie normal
@@ -98,28 +97,26 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 				for(int k=0; k<num_muestras; k++){
 					ivT[k] = zigzag_encode(valores[i][j][k] - serieReferenciaTemporal[k]);
 				}
-				util::bit_compress(ivT);
-				pgSeries.push_back(ivT);
+				pgSeries.push_back(vlc_vector<coder::fibonacci>(ivT));
 			}
 			serieRef = false;
 		}
 	}
-	util::bit_compress(pgFirstValue);
 
 	int lastGroup = num_groups - 1;
 	int sens_lg = sens_x_group[lastGroup];
-	lgFirstValue = int_vector<>(sens_lg);
+	int_vector<> ivTempLGFV(sens_lg);
 	// Recorrido para el último grupo
 	for(int j=0; j<sens_lg; j++){
-		lgFirstValue[j] = valores[lastGroup][j][0] - min_value;
+		ivTempLGFV[j] = valores[lastGroup][j][0] - min_value;
 		int_vector<> ivT(num_muestras-1);
 		for(int k=1; k<num_muestras; k++){
 			ivT[k-1] = zigzag_encode(valores[lastGroup][j][k] - valores[lastGroup][j][k-1]);
 		}
-		util::bit_compress(ivT);
-		lgSeries.push_back(ivT);
-	}
-	util::bit_compress(lgFirstValue);
+		lgSeries.push_back(vlc_vector<coder::fibonacci>(ivT));
+	}	
+	pgFirstValue = vlc_vector<coder::fibonacci>(ivTempLGFV);
+	pgFirstValue = vlc_vector<coder::fibonacci>(ivTempPGFV);
 
 }
 
@@ -184,7 +181,7 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 		sens_x_group[g] = cantidades[g];
 	}
 	pgFirstValue = int_vector<>(0);
-	pgReference = vector<int_vector<>>(0);
+	pgReference = vector<vlc_vector<coder::fibonacci>>(0);
 	encuentraLimites(valores);
 
 	int gruposIguales = num_groups-1;
@@ -192,10 +189,10 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 	if(todosIgual){
 		gruposIguales = num_groups;
 		sensoresIguales = num_sensores;
-		lgFirstValue = int_vector<>(0);
-		lgSeries = vector<int_vector<>>(0);
+		lgFirstValue = vlc_vector<coder::fibonacci>(int_vector<>(0));
+		lgSeries = vector<vlc_vector<coder::fibonacci>>();
 	}
-	pgSeries = vector<int_vector<>>(sensoresIguales);
+	pgSeries = vector<vlc_vector<coder::fibonacci>>(sensoresIguales);
 
 	int posSeries = 0;
 	for(int i=0; i<gruposIguales; i++){
@@ -208,8 +205,7 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 			ivT[k] = zigzag_encode(valores[i][0][k] - valores[i][0][k-1]);
 
 		}
-		util::bit_compress(ivT);
-		pgSeries[posSeries] = ivT;
+		pgSeries[posSeries] = vlc_vector<coder::fibonacci>(ivT);
 		posSeries++;
 		//	Tratamiento para las demás series del grupo
 		for(int j=1; j<sens_x_group[i]; j++){
@@ -218,8 +214,7 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 			for(int k=0; k<num_muestras; k++){
 				ivT[k] = zigzag_encode(valores[i][j][k] - valores[i][j-1][k]);
 			}
-			util::bit_compress(ivT);
-			pgSeries[posSeries] = ivT;
+			pgSeries[posSeries] = vlc_vector<coder::fibonacci>(ivT);
 			posSeries++;
 		}
 	}
@@ -229,10 +224,10 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 	if(!todosIgual){
 		int lastGroup = num_groups - 1;
 		int sens_lg = sens_x_group[lastGroup];
-		lgFirstValue = int_vector<>(sens_lg);
+		int_vector<> ivTempLGFV(sens_lg);
 		// Recorrido para el último grupo
 		for(int j=0; j<sens_lg; j++){
-			lgFirstValue[j] = valores[lastGroup][j][0] - min_value;
+			ivTempLGFV[j] = valores[lastGroup][j][0] - min_value;
 			int_vector<> ivT(num_muestras-1);
 			for(int k=1; k<num_muestras; k++){
 				ivT[k-1] = zigzag_encode(valores[lastGroup][j][k] - valores[lastGroup][j][k-1]);
@@ -240,7 +235,7 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 			util::bit_compress(ivT);
 			lgSeries.push_back(ivT);
 		}
-		util::bit_compress(lgFirstValue);
+		lgFirstValue = vlc_vector<coder::fibonacci>(lgFirstValue);
 	}
 
 }
@@ -302,12 +297,12 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 	for(int g=0; g<cantidades.size(); g++){
 		sens_x_group[g] = cantidades[g];
 	}
-	pgFirstValue = int_vector<>(0);
-	lgFirstValue = int_vector<>(0);
-	lgSeries = vector<int_vector<>>(0);
+	pgFirstValue = vlc_vector<coder::fibonacci>(int_vector<>(0));
+	lgFirstValue = vlc_vector<coder::fibonacci>(int_vector<>(0));
+	lgSeries = vector<vlc_vector<coder::fibonacci>>(0);
 
-	pgReference = vector<int_vector<>>(num_groups);
-	pgSeries = vector<int_vector<>>(num_sensores);
+	pgReference = vector<vlc_vector<coder::fibonacci>>(num_groups);
+	pgSeries = vector<vlc_vector<coder::fibonacci>>(num_sensores);
 	encuentraLimites(valores);
 
 	int iaux = 0;
@@ -332,8 +327,7 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 			for(int k=0; k<num_muestras; k++){
 				ivT[k] = zigzag_encode(valores[i][j][k] - ivR[k]);
 			}
-			util::bit_compress(ivT);
-			pgSeries[iaux++] = ivT;
+			pgSeries[iaux++] = vlc_vector<coder::fibonacci>(ivT);
 		}
 
 		//	Reducir rango de la serie de referencia
@@ -346,8 +340,7 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 		for(int k=0; k<num_muestras; k++){
 			ivR[k] = ivR[k] - mm;
 		}
-		util::bit_compress(ivR);
-		pgReference[i] = ivR;
+		pgReference[i] = vlc_vector<coder::fibonacci>(ivR);
 	}
 
 	cout << "iaux: " << iaux << " - num_sensores: " << num_sensores << endl;
