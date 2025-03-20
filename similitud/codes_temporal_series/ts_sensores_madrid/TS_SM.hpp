@@ -41,6 +41,7 @@ public:
 	int size_mbytes();
 
 	void print();
+	void stats();
 
 private:
 	void buildRanksSelects();
@@ -48,6 +49,7 @@ private:
 	int zigzag_decode(int);
 	bool esFija(vector<int>);
 	void encuentraLimites(vector<vector<vector<int>>>&);
+	string statsEV(vlc_vector<>);
 };
 
 #endif

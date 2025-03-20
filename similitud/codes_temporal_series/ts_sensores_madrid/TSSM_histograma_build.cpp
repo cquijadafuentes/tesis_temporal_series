@@ -6,9 +6,9 @@ using namespace sdsl;
 int bytesBitCompress(vector<int> &v);
 
 int main(int argc, char const *argv[]){
-	if(argc < 6){
+	if(argc < 7){
 		cout << "Error! Faltan argumentos." << endl;
-		cout << argv[0] << " <inputFile> <groupsFile> <N-data> <k> <outputFile>" << endl;
+		cout << argv[0] << " <inputFile> <groupsFile> <N-data> <k> <histograma_datos> <histograma_estructura>" << endl;
 		cout << "inputFile: archivo con los datos en el formato usado para STAI" << endl;
 		cout << "\t(numero muestras, numero sensores, ids sensores, por cada sensor 4 series de tiempo de largo numero muestras)" << endl;
 		cout << "groupsFile: archivo con los ids de los 5 grupos para la estructura." << endl;
@@ -61,8 +61,6 @@ int main(int argc, char const *argv[]){
 
 	int sensores, muestras;
 	dataSensores >> sensores >> muestras;
-	cout << "Cantidad de sensores: " << sensores << endl;
-	cout << "Cantidad de muestras: " << muestras << endl;
 
 	if(sensores != totalIds){
 		cout << "Lista de datos no coinciden: cantidad de IDs no coinciden." << endl;
@@ -127,8 +125,63 @@ int main(int argc, char const *argv[]){
 	dataSensores.close();
 
 	TempSeriesSensoresMadrid tssm(data, cantIds, idsGroups, kValue, muestras);
-	int kbytesTSSM = tssm.size_kbytes();
-	cout << "\tEstructura:\t" << kbytesTSSM << " [Kbytes]." << endl;
+	cout << "tssm.max_value: " << tssm.max_value << endl;
+	int mmm = tssm.max_value;
+	vector<int> histoDatosOriginales(mmm+1, 0);
+	vector<int> histoDatosEstructura(2*(mmm+1), 0);
+	long long int acum = 0;
+	int cant = 0;
+
+	//			HISTOGRAMA de los DATOS ORIGINALES
+	for(int i=0; i<data.size(); i++){
+		for(int j=0; j<data[i].size(); j++){
+			for(int k=0; k<data[i][j].size(); k++){
+				histoDatosOriginales[data[i][j][k]]++;
+				acum += data[i][j][k];
+				cant++;
+			}
+		}
+	}
+	ofstream histoOriginal(argv[5]);
+	for(int i=0; i<histoDatosOriginales.size(); i++){
+		histoOriginal << i << " " << histoDatosOriginales[i] << endl;
+	}
+	histoOriginal.close();
+
+	//			HISTOGRAMA de los DATOS de la ESTRUCTURA
+	for(int i=0; i<tssm.pgFirstValue.size(); i++){
+		histoDatosEstructura[tssm.pgFirstValue[i]]++;
+	}
+	for(int i=0; i<tssm.pgReference.size(); i++){
+		for(int j=0; j<tssm.pgReference[i].size(); j++){
+			histoDatosEstructura[tssm.pgReference[i][j]]++;
+		}
+	}
+	for(int i=0; i<tssm.pgSeries.size(); i++){
+		for(int j=0; j<tssm.pgSeries[i].size(); j++){
+			histoDatosEstructura[tssm.pgSeries[i][j]]++;
+		}
+	}
+	for(int i=0; i<tssm.lgFirstValue.size(); i++){
+		histoDatosEstructura[tssm.lgFirstValue[i]]++;
+	}
+	for(int i=0; i<tssm.lgSeries.size(); i++){
+		for(int j=0; j<tssm.lgSeries[i].size(); j++){
+			histoDatosEstructura[tssm.lgSeries[i][j]]++;
+		}
+	}
+	ofstream histoEstructura(argv[6]);
+	for(int i=0; i<histoDatosEstructura.size(); i++){
+		histoEstructura << i << " " << histoDatosEstructura[i] << endl;
+	}
+	histoEstructura.close();
+
+	cout << "Datos exportados correctamente." << endl;
+	cout << "Cantidad de datos: " << cant << endl;
+	cout << "Suma acumulada de los valores: " << acum << endl;
+	double prom = (0.0 + acum) / cant;
+	cout << "Promedio del conjunto de valores: " << prom << endl;
+
 
 	return 0;
 }

@@ -131,6 +131,7 @@ int main(int argc, char const *argv[]){
 	TempSeriesSensoresMadrid tssm(data, cantIds, idsGroups, kValue, muestras);
 	TempSeriesSensoresMadrid tssm2(data, cantIds, idsGroups, kValue, muestras, false);
 	TempSeriesSensoresMadrid tssm3(data, cantIds, idsGroups, kValue, muestras, true);
+	TempSeriesSensoresMadrid tssm4(data, cantIds, idsGroups, muestras);
 
 	cout << "------------------------------------" << endl;
 
@@ -167,28 +168,51 @@ int main(int argc, char const *argv[]){
 	cout << "------------------------------------" << endl;
 
 	cout << "bitcompress Est:" << endl;
-	cout << "pgFirstValue: \t" << bytesBitCompress(tssm.pgFirstValue) << "\t" << bytesBitCompress(tssm.pgFirstValue) << "\t" << bytesBitCompress(tssm.pgFirstValue) << " [Bytes]" << endl;
-	cout << "lgFirstValue: \t" << bytesBitCompress(tssm.lgFirstValue) << "\t" << bytesBitCompress(tssm.lgFirstValue) << "\t" << bytesBitCompress(tssm.lgFirstValue) << " [Bytes]" << endl;
-	cout << "pgReference: \t" << bytesBitCompress(tssm.pgReference) << "\t" << bytesBitCompress(tssm.pgReference) << "\t" << bytesBitCompress(tssm.pgReference) << " [Bytes]" << endl;
-	cout << "pgSeries: \t" << bytesBitCompress(tssm.pgSeries) << "\t" << bytesBitCompress(tssm.pgSeries) << "\t" << bytesBitCompress(tssm.pgSeries) << " [Bytes]" << endl;
-	cout << "lgSeries: \t" << bytesBitCompress(tssm.lgSeries) << "\t" << bytesBitCompress(tssm.lgSeries) << "\t" << bytesBitCompress(tssm.lgSeries) << " [Bytes]" << endl;
+	cout << "pgFirstValue: \t" << bytesBitCompress(tssm.pgFirstValue) << " [Bytes]" << endl;
+	cout << "lgFirstValue: \t" << bytesBitCompress(tssm.lgFirstValue) << " [Bytes]" << endl;
+	cout << "pgReference: \t" << bytesBitCompress(tssm.pgReference) << " [Bytes]" << endl;
+	cout << "pgSeries: \t" << bytesBitCompress(tssm.pgSeries) << " [Bytes]" << endl;
+	cout << "lgSeries: \t" << bytesBitCompress(tssm.lgSeries) << " [Bytes]" << endl;
 
 	cout << "------------------------------------" << endl;
 
-	TempSeriesSensoresMadrid tssm4(data, cantIds, idsGroups, muestras);
 	int kbytesTSSMrefprom = tssm4.size_kbytes();
 	cout << "\tEst. RProm:\t" << kbytesTSSMrefprom << " [Kbytes]." << endl;
 
 	cout << "------------------------------------" << endl;
 
 	cout << "bitcompress Est. Prom." << endl;
-	cout << "pgFirstValue: \t" << bytesBitCompress(tssm4.pgFirstValue) << "\t" << bytesBitCompress(tssm4.pgFirstValue) << "\t" << bytesBitCompress(tssm4.pgFirstValue) << " [Bytes]" << endl;
-	cout << "lgFirstValue: \t" << bytesBitCompress(tssm4.lgFirstValue) << "\t" << bytesBitCompress(tssm4.lgFirstValue) << "\t" << bytesBitCompress(tssm4.lgFirstValue) << " [Bytes]" << endl;
-	cout << "pgReference: \t" << bytesBitCompress(tssm4.pgReference) << "\t" << bytesBitCompress(tssm4.pgReference) << "\t" << bytesBitCompress(tssm4.pgReference) << " [Bytes]" << endl;
-	cout << "pgSeries: \t" << bytesBitCompress(tssm4.pgSeries) << "\t" << bytesBitCompress(tssm4.pgSeries) << "\t" << bytesBitCompress(tssm4.pgSeries) << " [Bytes]" << endl;
-	cout << "lgSeries: \t" << bytesBitCompress(tssm4.lgSeries) << "\t" << bytesBitCompress(tssm4.lgSeries) << "\t" << bytesBitCompress(tssm4.lgSeries) << " [Bytes]" << endl;
+	cout << "pgFirstValue: \t" << bytesBitCompress(tssm4.pgFirstValue) << " [Bytes]" << endl;
+	cout << "lgFirstValue: \t" << bytesBitCompress(tssm4.lgFirstValue) << " [Bytes]" << endl;
+	cout << "pgReference: \t" << bytesBitCompress(tssm4.pgReference) << endl;
+	cout << "pgSeries: \t" << bytesBitCompress(tssm4.pgSeries) << endl;
+	cout << "lgSeries: \t" << bytesBitCompress(tssm4.lgSeries) << endl;
 
 	cout << "------------------------------------" << endl;
+
+	cout << "Estadísticas de la estructura: tssm" << endl;
+	tssm.stats();
+
+	cout << "------------------------------------" << endl;
+
+	cout << "Estadísticas de la estructura: tssm2" << endl;
+	tssm2.stats();
+
+	cout << "------------------------------------" << endl;
+
+	cout << "Estadísticas de la estructura: tssm3" << endl;
+	tssm3.stats();
+
+	cout << "------------------------------------" << endl;
+
+	cout << "Estadísticas de la estructura: tssm4" << endl;
+	tssm4.stats();
+
+	string filename = argv[5];
+	tssm.save(filename);
+	tssm2.save(filename+"2");
+	tssm3.save(filename+"2");
+	tssm4.save(filename+"2");
 
 	return 0;
 }

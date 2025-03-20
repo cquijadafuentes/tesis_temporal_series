@@ -62,8 +62,9 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 		}
 		acum_refs += aux;
 	}
-	int_vector<> ivTempPGFV(acum_refs);
-	pgReference = vector<vlc_vector<coder::fibonacci>>(acum_refs);
+	int_vector<> ivTempPGFV(acum_refs-aux);
+	pgReference = vector<vlc_vector<coder::fibonacci>>(acum_refs-aux);
+	cout << "pgReference: " << pgReference.size() << " - acum_refs: " << acum_refs << endl;
 
 	cout << "Pos iniciales de refs de cada grupo: " << endl;
 	for(int i=0; i<refs_of_group.size(); i++){
@@ -115,8 +116,8 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 		}
 		lgSeries.push_back(vlc_vector<coder::fibonacci>(ivT));
 	}	
-	pgFirstValue = vlc_vector<coder::fibonacci>(ivTempLGFV);
 	pgFirstValue = vlc_vector<coder::fibonacci>(ivTempPGFV);
+	lgFirstValue = vlc_vector<coder::fibonacci>(ivTempLGFV);
 
 }
 
@@ -235,7 +236,7 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 			util::bit_compress(ivT);
 			lgSeries.push_back(ivT);
 		}
-		lgFirstValue = vlc_vector<coder::fibonacci>(lgFirstValue);
+		lgFirstValue = vlc_vector<coder::fibonacci>(ivTempLGFV);
 	}
 
 }
@@ -349,10 +350,119 @@ TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(vector<vector<vector<int>>>&v
 
 TempSeriesSensoresMadrid::TempSeriesSensoresMadrid(string inputFilename){
 	cout << "Cargando archivo " << inputFilename << endl;
+	ifstream infile(inputFilename, ofstream::binary);
+	if(!infile){
+		cout << "Error en la carga!" << endl;
+		return;
+	}    
+	int aux1, aux2;
+	// --------- Cargando valores enteros
+	infile.read((char *)&num_sensores, sizeof(int));
+	infile.read((char *)&num_groups, sizeof(int));
+	infile.read((char *)&num_muestras, sizeof(int));
+	infile.read((char *)&k, sizeof(int));
+	infile.read((char *)&min_value, sizeof(int));	
+	infile.read((char *)&max_value, sizeof(int));
+	// --------- Cargando vectores
+	infile.read((char *)&aux1, sizeof(int));
+	sens_x_group = vector<int>(aux1);
+	for(int i=0; i<aux1; i++){
+		infile.read((char *)&aux2, sizeof(int));
+		sens_x_group[i] = aux2;
+	}
+	infile.read((char *)&aux1, sizeof(int));
+	refs_of_group = vector<int>(aux1);
+	for(int i=0; i<aux1; i++){
+		infile.read((char *)&aux2, sizeof(int));
+		refs_of_group[i] = aux2;
+	}
+	// --------- Cargando vectores de int_vectors
+	vlc_vector<coder::fibonacci> temporalVLC;
+	
+	pgFirstValue.load(infile);
+	
+	infile.read((char *)&aux1,sizeof(int));
+	pgReference = vector<vlc_vector<coder::fibonacci>>(aux1);
+	for(int i=0; i<aux1; i++){
+		temporalVLC.load(infile);
+		pgReference[i] = temporalVLC;
+	}
+	
+	infile.read((char *)&aux1,sizeof(int));
+	pgSeries = vector<vlc_vector<coder::fibonacci>>(aux1);
+	for(int i=0; i<aux1; i++){
+		temporalVLC.load(infile);
+		pgSeries[i] = temporalVLC;
+	}
+	
+	lgFirstValue.load(infile);
+	
+	infile.read((char *)&aux1,sizeof(int));
+	lgSeries = vector<vlc_vector<coder::fibonacci>>(aux1);
+	for(int i=0; i<aux1; i++){
+		temporalVLC.load(infile);
+		lgSeries[i] = temporalVLC;
+	}
+
+	// Cerrando archivo
+	infile.close();
+	cout << "Archivo " << inputFilename << " cargado exitosamente." << endl;
 }
 
 bool TempSeriesSensoresMadrid::save(string outputFilename){
 	cout << "Guardando archivo " << outputFilename << endl;
+	ofstream outfile(outputFilename, ofstream::binary);
+	if(!outfile){
+		cout << "Error en la carga!" << endl;
+		return false;
+	}   
+	int aux;
+	// Guardando valores enteros
+	outfile.write((char const*)&num_sensores, sizeof(int));
+	outfile.write((char const*)&num_groups, sizeof(int));
+	outfile.write((char const*)&num_muestras, sizeof(int));
+	outfile.write((char const*)&k, sizeof(int));
+	outfile.write((char const*)&min_value, sizeof(int));
+	outfile.write((char const*)&max_value, sizeof(int));
+	// Guardando vectores
+	aux = sens_x_group.size();
+	outfile.write((char const*)&aux, sizeof(int));
+	for(int i=0; i<sens_x_group.size(); i++){
+		aux = sens_x_group[i];
+		outfile.write((char const*)&aux, sizeof(int));
+	}
+	aux = refs_of_group.size();
+	outfile.write((char const*)&aux, sizeof(int));
+	for(int i=0; i<refs_of_group.size(); i++){
+		aux = refs_of_group[i];
+		outfile.write((char const*)&aux, sizeof(int));
+	}
+	// Guardando vlc_vectors y vectores de vlc_vector
+	pgFirstValue.serialize(outfile);
+	
+	aux = pgReference.size();
+	outfile.write((char const*)&aux, sizeof(int));
+	for(int i=0; i<pgReference.size(); i++){
+		pgReference[i].serialize(outfile);
+	}
+	
+	aux = pgSeries.size();
+	outfile.write((char const*)&aux, sizeof(int));
+	for(int i=0; i<pgSeries.size(); i++){
+		pgSeries[i].serialize(outfile);
+	}
+	
+	lgFirstValue.serialize(outfile);
+	
+	aux = lgSeries.size();
+	outfile.write((char const*)&aux, sizeof(int));
+	for(int i=0; i<lgSeries.size(); i++){
+		lgSeries[i].serialize(outfile);
+	}
+
+	// Cerrando archivo
+	outfile.close();
+	cout << "Archivo " << outputFilename << " creado exitosamente." << endl;
 	return true;
 }
 
@@ -418,6 +528,40 @@ int TempSeriesSensoresMadrid::size_mbytes(){
 	return mbytes;
 }
 
+void TempSeriesSensoresMadrid::stats(){
+
+	cout << "rango de valores: " << min_value << " - " << max_value << endl;
+	cout << "cantidad de sensores: " << num_sensores << endl;
+	cout << "cantidad de muestras: " << num_muestras << endl;
+	cout << "cantidad de grupos: " << num_groups << "[";
+	for(int i=0; i<num_groups; i++){
+		cout << " - " << sens_x_group[i];
+	}
+	cout << "]" << endl;
+	cout << "K: " << k << endl;
+	cout << "Referencias por grupo: [";
+	for(int i=0; i<refs_of_group.size(); i++){
+		cout << " - " << refs_of_group[i];
+	}
+	cout << "]" << endl;
+	cout << " --------- Arreglos de Valores --------- " << endl;
+	cout << "|pgFirstValue|: " << pgFirstValue.size() << " - " << statsEV(pgFirstValue) << endl;
+	cout << "|pgReference|: " << pgReference.size() << endl;
+	for(int i=0; i<pgReference.size(); i++){
+		cout << "G_" << i << ": " << pgReference[i].size() << " - " << statsEV(pgReference[i]) << endl;
+	}
+	cout << "|pgSeries|: " << pgSeries.size() << endl;
+	for(int i=0; i<pgSeries.size(); i++){
+		cout << "G_" << i << ": " << pgSeries[i].size() << " - " << statsEV(pgSeries[i]) << endl;
+	}
+	cout << "|lgFirstValue|: " << lgFirstValue.size() << " - " << statsEV(lgFirstValue) << endl;
+	cout << "|lgSeries|: " << lgSeries.size() << endl;
+	for(int i=0; i<lgSeries.size(); i++){
+		cout << "G_" << i << ": " << lgSeries[i].size() << " - " << statsEV(lgSeries[i]) << endl;
+	}
+
+}
+
 void TempSeriesSensoresMadrid::print(){
 
 	cout << "Mostrando los datos: " << endl;
@@ -472,4 +616,27 @@ void TempSeriesSensoresMadrid::encuentraLimites(vector<vector<vector<int>>>&valo
 			}
 		}
 	}
+}
+
+string TempSeriesSensoresMadrid::statsEV(vlc_vector<> x){
+	string r = "[]";
+	if(x.size() == 0){
+		return r;
+	}
+	int mmin = x[0];
+	int mmax = x[0];
+	int acum = 0;
+	for(int i=0; i<x.size(); i++){
+		acum += x[i];
+		if(x[i] < mmin){
+			mmin = x[i];
+		}
+		if(x[i] > mmax){
+			mmax = x[i];
+		}
+	}
+	r = "[min: " + to_string(mmin) + " - max: " + to_string(mmax) + " - ";
+	double prom = (0.0 + acum) / x.size();
+	r += "prom: " + to_string(prom) + "]";
+	return r;
 }
