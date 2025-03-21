@@ -129,6 +129,7 @@ int main(int argc, char const *argv[]){
 	TempSeriesSensoresMadrid tssm(data, cantIds, idsGroups, kValue, muestras);
 	int kbytesTSSM = tssm.size_kbytes();
 	cout << "\tEstructura:\t" << kbytesTSSM << " [Kbytes]." << endl;
-
+	string outputfile(argv[5]);
+	tssm.save(outputfile);
 	return 0;
 }

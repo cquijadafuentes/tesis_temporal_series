@@ -211,8 +211,8 @@ int main(int argc, char const *argv[]){
 	string filename = argv[5];
 	tssm.save(filename);
 	tssm2.save(filename+"2");
-	tssm3.save(filename+"2");
-	tssm4.save(filename+"2");
+	tssm3.save(filename+"3");
+	tssm4.save(filename+"4");
 
 	return 0;
 }
