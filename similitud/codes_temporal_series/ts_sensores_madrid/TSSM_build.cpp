@@ -131,5 +131,62 @@ int main(int argc, char const *argv[]){
 	cout << "\tEstructura:\t" << kbytesTSSM << " [Kbytes]." << endl;
 	string outputfile(argv[5]);
 	tssm.save(outputfile);
+
+	cout << " -------------------------------------------------------- " << endl;
+	// Calculando promedios en datos originales
+	long long int acumDO = 0;
+	int cantDO = 0;
+	for(int i=0; i<data.size(); i++){
+		for(int j=0; j<data[i].size(); j++){
+			for(int k=0; k<data[i][j].size(); k++){
+				acumDO += data[i][j][k];
+				cantDO++;
+			}
+		}
+	}
+
+	double promDO = (0.0 + acumDO) / cantDO;
+	cout << "Promedio datos originales: " << promDO << endl;
+	cout << "Cantidad de elementos considerados: " << cantDO << endl;
+
+	cout << " -------------------------------------------------------- " << endl;
+	// Calculando promedio en datos de estructura
+	long long int acumDE = 0;
+	int cantDE = 0;
+	for(int i=0; i<tssm.pgFirstValue.size(); i++){
+		acumDE += tssm.pgFirstValue[i];
+		cantDE++;
+	}
+	
+	for(int i=0; i<tssm.lgFirstValue.size(); i++){
+		acumDE += tssm.lgFirstValue[i];
+		cantDE++;
+	}
+	
+	for(int i=0; i<tssm.pgReference.size(); i++){
+		for(int j=0; j<tssm.pgReference[i].size(); j++){
+			acumDE += tssm.pgReference[i][j];
+			cantDE++;
+		}
+	}
+
+	for(int i=0; i<tssm.pgSeries.size(); i++){
+		for(int j=0; j<tssm.pgSeries[i].size(); j++){
+			acumDE += tssm.pgSeries[i][j];
+			cantDE++;
+		}
+	}
+
+	for(int i=0; i<tssm.lgSeries.size(); i++){
+		for(int j=0; j<tssm.lgSeries[i].size(); j++){
+			acumDE += tssm.lgSeries[i][j];
+			cantDE++;
+		}
+	}
+
+	double promDE = (0.0 + acumDE) / cantDE;
+	cout << "Promedio en datos de estructura: " << promDE << endl;
+	cout << "Cantidad de elementos considerados: " << cantDE << endl;
+
 	return 0;
 }

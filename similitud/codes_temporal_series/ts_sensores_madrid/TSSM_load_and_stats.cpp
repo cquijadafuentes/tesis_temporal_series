@@ -13,4 +13,6 @@ int main(int argc, char const *argv[]){
 	string filename = argv[1];
 	TempSeriesSensoresMadrid tssm(filename);
 	tssm.stats();
+
+	return 0;
 }
