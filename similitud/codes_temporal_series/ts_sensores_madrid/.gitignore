@@ -3,4 +3,5 @@ TSSM_build_full
 TSSM_histograma_build
 TSSM_load_and_stats
 TSSM_load_and_preview
-TS_SM.o
+*.o
+TSSMWEEK_build
