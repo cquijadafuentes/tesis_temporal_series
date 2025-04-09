@@ -1,7 +1,7 @@
 
-#include "TS_SM_week.hpp"
+#include "TS_SM_factor.hpp"
 
-TempSeriesSensoresMadridWeek::TempSeriesSensoresMadridWeek(vector<vector<vector<int>>>&valores, vector<int>&cantidades, vector<int>&ids, int muestras){
+TempSeriesSensoresMadridFactor::TempSeriesSensoresMadridFactor(vector<vector<vector<int>>>&valores, vector<int>&cantidades, vector<int>&ids, int muestras, bool prom){
 	int aux;
 	bool flag = false;
 	cout << "Verificando datos..." << endl;
@@ -49,10 +49,7 @@ TempSeriesSensoresMadridWeek::TempSeriesSensoresMadridWeek(vector<vector<vector<
 	num_sensores = ids.size();
 	num_groups = cantidades.size();
 	num_muestras = muestras;
-	num_times_x_week = 7 * 24 * 4;
-	int weeksXyear = 366 / 7;	// 2024 fue bisiesto
-	int timesXyear = 366 * 24 * 4;
-
+	
 	encuentraLimites(valores);
 	min_id = ids[0];
 	for(int i=1; i<ids.size(); i++){
@@ -72,35 +69,64 @@ TempSeriesSensoresMadridWeek::TempSeriesSensoresMadridWeek(vector<vector<vector<
 	}
 	ids_sens = vlc_vector<coder::fibonacci>(temp_ids_sens);
 
-	// Codificación con serie semana de referencia por grupo
+	// Codificación con serie promedio de referencia por grupo
 
-	weeks = vector<vlc_vector<coder::fibonacci>>(num_groups);
+	refs = vector<vlc_vector<coder::fibonacci>>(num_groups);
 
 	for(int g=0; g<valores.size(); g++){
-		int_vector<> semana(num_times_x_week);
-		for(int s=0; s<valores[g].size(); s++){
+		int_vector<> referencia(num_muestras);
+		if(prom){
+			//	Referencia es el promedio del grupo
+			for(int s=0; s<valores[g].size(); s++){
+				for(int k=0; k<muestras; k++){
+					referencia[k] += valores[g][s][k];
+				}
+			}
 			for(int k=0; k<muestras; k++){
-				semana[k%num_times_x_week] += valores[g][s][k];
+				referencia[k] = int(referencia[k] / valores[g].size());
+			}
+		}else{
+			//	Referencia es el valor menor de cada muestra del grupo
+			for(int k=0; k<muestras; k++){
+				referencia[k] = valores[g][0][k];
+				for(int s=1; s<valores[g].size(); s++){
+					if(valores[g][s][k] < referencia[k]){
+						referencia[k] = valores[g][s][k];
+					}
+				}
 			}
 		}
-		for(int w=0; w<num_times_x_week; w++){
-			semana[w] = int(semana[w] / (valores[g].size() * weeksXyear));
-		}
-		weeks[g] = vlc_vector<coder::fibonacci>(semana);
 		
+		refs[g] = vlc_vector<coder::fibonacci>(referencia);
+		long long int acumRef = 0;
+		for(int k=0; k<muestras; k++){
+			acumRef += referencia[k];
+		}
+		cout << "Ref++: " << acumRef << endl;
+		int_vector<> ivFact(num_sensores);
+		int fp = 0;
 		for(int s=0; s<valores[g].size(); s++){
-			int_vector<> ivSerie(timesXyear);
+			long long int acumSerie = 0;
 			for(int k=0; k<muestras; k++){
-				aux = semana[k%num_times_x_week] - valores[g][s][k];
+				acumSerie += valores[g][s][k];
+			}
+			cout << "\tSerie++: " << acumRef << endl;
+			int fact = int(acumSerie / acumRef);
+			ivFact[fp++] = fact;
+
+			int_vector<> ivSerie(muestras);
+			for(int k=0; k<muestras; k++){
+				aux = valores[g][s][k] - (referencia[k] * fact);
 				ivSerie[k] = zigzag_encode(aux);
 			}
 			vlc_vector<coder::fibonacci> vlcSerie(ivSerie);
 			series.push_back(vlcSerie);
 		}
+		factores = vlc_vector<coder::fibonacci>(ivFact);
 	}
 }
 
-TempSeriesSensoresMadridWeek::TempSeriesSensoresMadridWeek(string inputFilename){
+TempSeriesSensoresMadridFactor::TempSeriesSensoresMadridFactor(string inputFilename){
 	cout << "Cargando archivo " << inputFilename << endl;
 	ifstream infile(inputFilename, ofstream::binary);
 	if(!infile){
@@ -112,7 +138,6 @@ TempSeriesSensoresMadridWeek::TempSeriesSensoresMadridWeek(string inputFilename)
 	infile.read((char *)&num_sensores, sizeof(int));
 	infile.read((char *)&num_groups, sizeof(int));
 	infile.read((char *)&num_muestras, sizeof(int));
-	infile.read((char *)&num_times_x_week, sizeof(int));
 	infile.read((char *)&min_value, sizeof(int));
 	infile.read((char *)&max_value, sizeof(int));
 	infile.read((char *)&min_id, sizeof(int));
@@ -125,9 +150,9 @@ TempSeriesSensoresMadridWeek::TempSeriesSensoresMadridWeek(string inputFilename)
 
 	ids_sens.load(infile);
 
-	weeks = vector<vlc_vector<coder::fibonacci>>(num_groups);
+	refs = vector<vlc_vector<coder::fibonacci>>(num_groups);
 	for(int i=0; i<num_groups; i++){
-		weeks[i].load(infile);
+		refs[i].load(infile);
 	}
 
 	series = vector<vlc_vector<coder::fibonacci>>(num_sensores);
@@ -135,12 +160,14 @@ TempSeriesSensoresMadridWeek::TempSeriesSensoresMadridWeek(string inputFilename)
 		series[i].load(infile);
 	}
 
+	factores.load(infile);
+
 	// Cerrando archivo
 	infile.close();
 	cout << "Archivo " << inputFilename << " cargado exitosamente." << endl;
 }
 
-vector<int> TempSeriesSensoresMadridWeek::getSerieByID(int idq){
+vector<int> TempSeriesSensoresMadridFactor::getSerieByID(int idq){
 	vector<int> res;
 	if(idq < min_id){
 		cout << "ID [" << idq << "] no encontrada." << endl;
@@ -173,18 +200,13 @@ vector<int> TempSeriesSensoresMadridWeek::getSerieByID(int idq){
 	int aux;
 	for(int i=0; i<num_muestras; i++){
 		aux = zigzag_decode(series[pos][i]);
-		res[i]  = weeks[nGroup][i%num_times_x_week] - aux;
+		aux += factores[pos]*refs[nGroup][i];
+		res[i] = aux;
 	}
-/*
-	cout << "Valor de celda 0 de la serie codificada: " << series[pos][0] << endl;
-	cout << "Valor de celda 0 de la serie decodificada: " << zigzag_decode(series[pos][0]) << endl;
-	cout << "Valor de celda 0 de la serie de referencia: " << weeks[nGroup][0] << endl;
-	cout << "Valor obtenido de la fórmula coded = zzencode(semana - valor): " << res[0] << endl;
-*/
 	return res;
 }
 
-bool TempSeriesSensoresMadridWeek::save(string outputFilename){
+bool TempSeriesSensoresMadridFactor::save(string outputFilename){
 	cout << "Guardando archivo " << outputFilename << endl;
 	ofstream outfile(outputFilename, ofstream::binary);
 	if(!outfile){
@@ -196,7 +218,6 @@ bool TempSeriesSensoresMadridWeek::save(string outputFilename){
 	outfile.write((char const*)&num_sensores, sizeof(int));
 	outfile.write((char const*)&num_groups, sizeof(int));
 	outfile.write((char const*)&num_muestras, sizeof(int));
-	outfile.write((char const*)&num_times_x_week, sizeof(int));
 	outfile.write((char const*)&min_value, sizeof(int));
 	outfile.write((char const*)&max_value, sizeof(int));
 	outfile.write((char const*)&min_id, sizeof(int));
@@ -209,12 +230,14 @@ bool TempSeriesSensoresMadridWeek::save(string outputFilename){
 	ids_sens.serialize(outfile);
 
 	for(int i=0; i<num_groups; i++){
-		weeks[i].serialize(outfile);
+		refs[i].serialize(outfile);
 	}
 
 	for(int i=0; i<num_sensores; i++){
 		series[i].serialize(outfile);
 	}
+
+	factores.serialize(outfile);
 
 	// Cerrando archivo
 	outfile.close();
@@ -222,11 +245,11 @@ bool TempSeriesSensoresMadridWeek::save(string outputFilename){
 	return true;
 }
 
-int TempSeriesSensoresMadridWeek::size_bytes(){
+int TempSeriesSensoresMadridFactor::size_bytes(){
 	int bytes = 0;
 	int auxBytes = 0;
 	
-	auxBytes += (sizeof(unsigned int) * 7);		// ints
+	auxBytes += (sizeof(unsigned int) * 6);		// ints
 	auxBytes += (sizeof(int) * sens_x_group.size());
 	
 	cout << "Enteros:\t" << auxBytes << " [Bytes]" << endl;
@@ -240,11 +263,11 @@ int TempSeriesSensoresMadridWeek::size_bytes(){
 	bytes += auxBytes;
 	auxBytes = 0;
 
-	for(int i=0; i<weeks.size(); i++){
-		auxBytes += size_in_bytes(weeks[i]);
+	for(int i=0; i<refs.size(); i++){
+		auxBytes += size_in_bytes(refs[i]);
 	}
 
-	cout << "weeks:\t" << auxBytes << " [Bytes]" << endl;
+	cout << "refs:\t" << auxBytes << " [Bytes]" << endl;
 	bytes += auxBytes;
 	auxBytes = 0;
 
@@ -254,21 +277,27 @@ int TempSeriesSensoresMadridWeek::size_bytes(){
 
 	cout << "series:\t" << auxBytes << " [Bytes]" << endl;
 	bytes += auxBytes;
+	auxBytes = 0;
+
+	auxBytes += size_in_bytes(factores);
+
+	cout << "factores:\t" << auxBytes << " [Bytes]" << endl;
+	bytes += auxBytes;
 
 	return bytes;
 }
 
-int TempSeriesSensoresMadridWeek::size_kbytes(){
+int TempSeriesSensoresMadridFactor::size_kbytes(){
 	int kbytes = size_bytes() / 1024;
 	return kbytes;
 }
 
-int TempSeriesSensoresMadridWeek::size_mbytes(){
+int TempSeriesSensoresMadridFactor::size_mbytes(){
 	int mbytes = size_bytes() / 1024 / 1024;
 	return mbytes;
 }
 
-void TempSeriesSensoresMadridWeek::stats(bool fullstats){
+void TempSeriesSensoresMadridFactor::stats(bool fullstats){
 	cout << "rango de valores: " << min_value << " - " << max_value << endl;
 	cout << "cantidad de sensores: " << num_sensores << endl;
 	cout << "cantidad de muestras: " << num_muestras << endl;
@@ -281,10 +310,10 @@ void TempSeriesSensoresMadridWeek::stats(bool fullstats){
 
 	cout << " --------- Arreglos de Valores --------- " << endl;
 	cout << "|ids_sens|: " << ids_sens.size() << " - " << statsEV(ids_sens) << endl;
-	cout << "|weeks|: " << weeks.size() << endl;
+	cout << "|refs|: " << refs.size() << endl;
 	if(fullstats){
-		for(int i=0; i<weeks.size(); i++){
-			cout << "G_" << i << ": " << weeks[i].size() << " - " << statsEV(weeks[i]) << endl;
+		for(int i=0; i<refs.size(); i++){
+			cout << "G_" << i << ": " << refs[i].size() << " - " << statsEV(refs[i]) << endl;
 		}
 	}
 	cout << "|series|: " << series.size() << endl;
@@ -295,7 +324,7 @@ void TempSeriesSensoresMadridWeek::stats(bool fullstats){
 	}
 }
 
-void TempSeriesSensoresMadridWeek::print(){
+void TempSeriesSensoresMadridFactor::print(){
 
 	cout << "Mostrando los datos: " << endl;
 
@@ -311,19 +340,19 @@ void TempSeriesSensoresMadridWeek::print(){
 						PRIVATE
 ***********************************************************/
 
-void TempSeriesSensoresMadridWeek::buildRanksSelects(){
+void TempSeriesSensoresMadridFactor::buildRanksSelects(){
 	cout << "buildRanksSelects" << endl;
 }
 
-unsigned int TempSeriesSensoresMadridWeek::zigzag_encode(int i){
+unsigned int TempSeriesSensoresMadridFactor::zigzag_encode(int i){
 	return ((i >> 31) ^ (i << 1));
 }
 
-int TempSeriesSensoresMadridWeek::zigzag_decode(int i){
+int TempSeriesSensoresMadridFactor::zigzag_decode(int i){
 	return ((i >> 1) ^ -(i & 1));
 }
 
-bool TempSeriesSensoresMadridWeek::esFija(vector<int> serie){
+bool TempSeriesSensoresMadridFactor::esFija(vector<int> serie){
 	for(int j=1; j<serie.size(); j++){
 		if(serie[j] != serie[j-1]){
 			return false;
@@ -332,7 +361,7 @@ bool TempSeriesSensoresMadridWeek::esFija(vector<int> serie){
 	return true;
 }
 
-void TempSeriesSensoresMadridWeek::encuentraLimites(vector<vector<vector<int>>>&valores){
+void TempSeriesSensoresMadridFactor::encuentraLimites(vector<vector<vector<int>>>&valores){
 
 	min_value = valores[0][0][0];
 	max_value = valores[0][0][0];
@@ -351,7 +380,7 @@ void TempSeriesSensoresMadridWeek::encuentraLimites(vector<vector<vector<int>>>&
 	}
 }
 
-string TempSeriesSensoresMadridWeek::statsEV(vlc_vector<> x){
+string TempSeriesSensoresMadridFactor::statsEV(vlc_vector<> x){
 	string r = "[]";
 	if(x.size() == 0){
 		return r;

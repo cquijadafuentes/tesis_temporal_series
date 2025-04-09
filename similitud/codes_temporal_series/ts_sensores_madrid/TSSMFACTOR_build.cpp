@@ -1,12 +1,12 @@
-#include "TS_SM_week.hpp"
+#include "TS_SM_factor.hpp"
 
 using namespace std;
 using namespace sdsl;
 
 int main(int argc, char const *argv[]){
-	if(argc < 4){
+	if(argc < 5){
 		cout << "Error! Faltan argumentos." << endl;
-		cout << argv[0] << " <inputFile> <groupsFile> <outputFile>" << endl;
+		cout << argv[0] << " <inputFile> <groupsFile> <outputFileProm> <outputFileMenor>" << endl;
 		cout << "inputFile: archivo con los datos. Formato de atributo individual" << endl;
 		cout << "groupsFile: archivo con los ids de los 5 grupos para la estructura." << endl;
 		return 0;
@@ -108,8 +108,18 @@ int main(int argc, char const *argv[]){
 	}
 	dataSensores.close();
 
-	TempSeriesSensoresMadridWeek tssmweek(data, cantIds, idsGroups, muestras);
-	tssmweek.save(argv[3]);
+	TempSeriesSensoresMadridFactor tssmfactorProm(data, cantIds, idsGroups, muestras, true);
+	tssmfactorProm.save(argv[3]);
+
+	TempSeriesSensoresMadridFactor tssmfactorMenor(data, cantIds, idsGroups, muestras, false);
+	tssmfactorMenor.save(argv[4]);
+
+	cout << "***************************** ref Promedio *****************************" << endl;
+	int skb1 = tssmfactorProm.size_kbytes();
+	cout << "\tTotal: " << skb1 << " [KB]" << endl;
+	cout << "***************************** ref Menor *****************************" << endl;
+	int skb2 = tssmfactorMenor.size_kbytes();
+	cout << "\tTotal: " << skb2 << " [KB]" << endl;
 
 	return 0;
 }

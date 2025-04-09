@@ -5,11 +5,9 @@ PREFLAGS=-std=c++11 -g -O0 -DNDEBUG -I ~/include -L ~/lib
 POSFLAGS=-lsdsl -ldivsufsort -ldivsufsort64
 
 BINS=TSSM_build TSSM_build_full TSSM_histograma_build \
-		TSSM_load_and_stats TSSM_load_and_preview \
-		TSSMWEEK_build TSSMWEEK_load_compare \
-		TSSMFACTOR_build
+		TSSM_load_and_stats TSSM_load_and_preview
 
-OBJECTS=TS_SM.o TS_SM_week.o TS_SM_factor.o
+OBJECTS=TS_SM.o
 
 %.o: %.cpp
 	$(CPP) $(PREFLAGS) -c $< -o $@ $(POSFLAGS)
@@ -40,11 +38,3 @@ TSSM_load_and_stats:
 TSSM_load_and_preview:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
-TSSMWEEK_build:
-	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
-
-TSSMWEEK_load_compare:
-	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
-
-TSSMFACTOR_build:
-	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)

@@ -1,8 +1,9 @@
 #include <iostream>
 #include <sdsl/vectors.hpp>
+#include <math.h>
 
 /*
-g++ -std=c++11 -g -O0 -DNDEBUG -fopenmp -I ~/include -L ~/lib -o TS_semana_referencia TS_semana_referencia.cpp -lsdsl -ldivsufsort -ldivsufsort64
+g++ -std=c++11 -g -O0 -DNDEBUG -fopenmp -I ~/include -L ~/lib -o TS_raiz_diferencia TS_raiz_diferencia.cpp -lsdsl -ldivsufsort -ldivsufsort64
 */
 
 using namespace std;
@@ -122,42 +123,37 @@ int main(int argc, char const *argv[]){
 	dataSensores.close();
 
 	// Codificaciones por semana
-	int timesXweek = 7 * 24 * 4;
-	int weeksXyear = 366 / 7;	// 2024 fue bisiesto
-	int timesXyear = 366 * 24 * 4;
-
-	// Codificación con serie semana de referencia por cada grupo
-	long long int bXgroupRefs = 0;
-	long long int bXgroupSeries = 0;
-
-	vector<vlc_vector<coder::fibonacci>> semanasXgrupo(5);
-	vector<vlc_vector<coder::fibonacci>> seriesCodificadas;
+	vector<vlc_vector<coder::fibonacci>> raices;
+	vector<vlc_vector<coder::fibonacci>> diferencias;
+	int auxR, auxD;
+	long long int bytes_raices = 0;
+	long long int bytes_diffs = 0;
 
 	for(int g=0; g<data.size(); g++){
-		int_vector<> semana(timesXweek);
 		for(int s=0; s<data[g].size(); s++){
+			int_vector<> ivRaiz(muestras);
+			int_vector<> ivDiff(muestras);
 			for(int k=0; k<muestras; k++){
-				semana[k%timesXweek] += data[g][s][k];
+				auxR = int(sqrt(data[g][s][k]));
+				auxD = data[g][s][k] - (auxR * auxR);
+				ivRaiz[k] = auxR;
+				ivDiff[k] = auxD;
 			}
-		}
-		for(int w=0; w<timesXweek; w++){
-			semana[w] = int(semana[w] / (data[g].size() * weeksXyear));
-		}
-		semanasXgrupo[g] = vlc_vector<coder::fibonacci>(semana);
-		bXgroupRefs += size_in_bytes(semanasXgrupo[g]);
-
-		for(int s=0; s<data[g].size(); s++){
-			int_vector<> ivSerie(timesXyear);
-			for(int k=0; k<muestras; k++){
-				aux = semana[k%timesXweek] - data[g][s][k];
-				ivSerie[k] = zigzag_encode(aux);
-			}
-			vlc_vector<coder::fibonacci> vlcSerie(ivSerie);
-			seriesCodificadas.push_back(vlcSerie);
-			bXgroupSeries += size_in_bytes(vlcSerie);
+			vlc_vector<coder::fibonacci> vlcRaiz(ivRaiz);
+			vlc_vector<coder::fibonacci> vlcDiff(ivDiff);
+			raices.push_back(vlcRaiz);
+			diferencias.push_back(vlcDiff);
+			bytes_raices += size_in_bytes(vlcRaiz);
+			bytes_diffs += size_in_bytes(vlcDiff);
 		}
 	}
 
+	cout << "Tamaño bytes raices: " << bytes_raices << endl;
+	cout << "Tamaño bytes diferencias: " << bytes_diffs << endl;
+	long long int totalKB = (bytes_raices + bytes_diffs) / 1024;
+	cout << "Tamaño total: " << totalKB << " [KB]" << endl;
+
+	/*
 	// Guardando semana x grupo
 	string ofn = argv[1];
 	ofn += ".weekXgroup";
@@ -307,6 +303,6 @@ int main(int argc, char const *argv[]){
 	long long int kbXsensorTotal2 = kbXsensorRefs2 + kbXsensorSeries2;
 	cout << "Sensores codificados por 2a semana de cada sensor: " << endl;
 	cout << "\t" << kbXsensorRefs2 << "[refs] + " << kbXsensorSeries2 << " [series] = " << kbXsensorTotal2 << " [KB]" << endl;
-
+	*/
 	return 0;
 }

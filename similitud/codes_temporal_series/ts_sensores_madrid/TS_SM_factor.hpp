@@ -1,5 +1,5 @@
-#ifndef TSSMWEEK
-#define TSSMWEEK
+#ifndef TSSMFACTOR
+#define TSSMFACTOR
 
 #include <iostream>
 #include <fstream>
@@ -12,12 +12,11 @@ using namespace std;
 using namespace sdsl;
 
 //  -------------------- Inicio clase Temporal Series - Sensores Madrid -------------------
-class TempSeriesSensoresMadridWeek{
+class TempSeriesSensoresMadridFactor{
 public:
 	unsigned int num_sensores;	//	Número de sensores.
 	unsigned int num_groups;	//	Número de grupos.
 	unsigned int num_muestras;	//	Número de muestras del conjunto.
-	unsigned int num_times_x_week;
 	
 	int min_value;
 	int max_value;
@@ -25,11 +24,12 @@ public:
 	vector<int> sens_x_group;	//	Cantidad de sensores por grupo.
 	vlc_vector<coder::fibonacci> ids_sens;		//	Lista de los IDs de los sensores.
 	
-	vector<vlc_vector<coder::fibonacci>> weeks;		//	Referencias correspondientes a promedio de semanas por grupo
+	vector<vlc_vector<coder::fibonacci>> refs;		//	Referencias correspondientes a promedio de semanas por grupo
 	vector<vlc_vector<coder::fibonacci>> series;	//	Series codificadas según la semana correspondiente
+	vlc_vector<coder::fibonacci> factores;			//	Factores que se usan en cada serie
 	
-	TempSeriesSensoresMadridWeek(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int);
-	TempSeriesSensoresMadridWeek(string);
+	TempSeriesSensoresMadridFactor(vector<vector<vector<int>>>&, vector<int>&, vector<int>&, int, bool);
+	TempSeriesSensoresMadridFactor(string);
 
 	vector<int> getSerieByID(int);
 

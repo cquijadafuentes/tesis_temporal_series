@@ -5,3 +5,5 @@ TSSM_load_and_stats
 TSSM_load_and_preview
 *.o
 TSSMWEEK_build
+TSSMWEEK_load_compare
+TSSMFACTOR_build
