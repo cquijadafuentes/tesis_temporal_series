@@ -1,0 +1,51 @@
+carlos@carlos-VirtualBox:~/jupyter/procesa_archivos_2024/outputdata_m30_fulldates$ ./TS_stats_datos m30_2024_data_fulldates.txt 4
+Archivo de entrada: m30_2024_data_fulldates.txt
+Num Atributos: 4
+Cantidad de sensores: 240
+Cantidad de muestras: 35136
+	Int	Ocup	Carga	Vel
+Min:	0	0	0	0
+Max:	8452	100	100	235
+Prom:	1294.3	5.63085	36.3677	69.071
+Var:	1.66497e+06	46.8947	694.801	386.895
+DEst.:	1290.34	6.84797	26.3591	19.6697
+carlos@carlos-VirtualBox:~/jupyter/procesa_archivos_2024/outputdata_m30_fulldates$ ./TS_stats_datos m30_2024_data_fulldates_intensidad.txt
+Archivo de entrada: m30_2024_data_fulldates_intensidad.txt
+Num Atributos: 1
+Cantidad de sensores: 240
+Cantidad de muestras: 35136
+Min:	0
+Max:	8452
+Prom:	1294.3
+Var:	1.66497e+06
+DEst.:	1290.34
+carlos@carlos-VirtualBox:~/jupyter/procesa_archivos_2024/outputdata_m30_fulldates$ ./TS_stats_datos m30_2024_data_fulldates_ocupacion.txt
+Archivo de entrada: m30_2024_data_fulldates_ocupacion.txt
+Num Atributos: 1
+Cantidad de sensores: 241
+Cantidad de muestras: 35136
+Min:	0
+Max:	100
+Prom:	5.60749
+Var:	46.8038
+DEst.:	6.84133
+carlos@carlos-VirtualBox:~/jupyter/procesa_archivos_2024/outputdata_m30_fulldates$ ./TS_stats_datos m30_2024_data_fulldates_carga.txt
+Archivo de entrada: m30_2024_data_fulldates_carga.txt
+Num Atributos: 1
+Cantidad de sensores: 241
+Cantidad de muestras: 35136
+Min:	0
+Max:	100
+Prom:	36.2168
+Var:	697.295
+DEst.:	26.4063
+carlos@carlos-VirtualBox:~/jupyter/procesa_archivos_2024/outputdata_m30_fulldates$ ./TS_stats_datos m30_2024_data_fulldates_velocidad.txt
+Archivo de entrada: m30_2024_data_fulldates_velocidad.txt
+Num Atributos: 1
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Min:	0
+Max:	235
+Prom:	69.5861
+Var:	365.264
+DEst.:	19.1119

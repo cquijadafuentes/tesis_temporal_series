@@ -40,6 +40,12 @@ int main(int argc, char const *argv[]){
 	cout << "Cantidad de sensores: " << sensores << endl;
 	cout << "Cantidad de muestras: " << muestras << endl;
 
+	int aux;
+	for(int i=0; i<sensores; i++){
+		// Descartando información de IDs
+		dataSensores >> aux;
+	}
+
 	vector<vector<int>> histograma(33, vector<int>(4, 0)); // desde 0 a 32, máximo 32 bits
 	vector<vector<vector<int>>> limites(sensores, vector<vector<int>>(4, vector<int>(2, 0)));
 	vector<long long int> bytes(4, 0);
