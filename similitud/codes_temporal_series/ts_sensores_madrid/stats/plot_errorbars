@@ -1,3 +1,0 @@
-set title "Rangos por sensor"
-set output 'm30_rango_valores_por_sensor.png'
-plot "m30_2024_stats.valores_limite_x_sensor.txt" u 1:2:($3-$2) t "Intensidad" w yerr
