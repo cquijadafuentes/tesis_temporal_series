@@ -1,0 +1,235 @@
+===============================================================
+ LOS 10 QUE MÁS SE PARECÍAN AL PAR MÁS PARECIDO DE LA MATRIZ
+===============================================================
+
+Cantidad de sensores: 240
+Cantidad de muestras: 35136
+Ingrese cantidad de sensores a comparar: 
+10
+Ingrese los IDs de los 10 sensores: 
+10176	6661	10267	10178	6819	3838	7131	3489	6681	6777
+ ********************** 
+id	Bytes_1	Bytes_2	Bytes_3	Width_1	Width_2	Width_3	Range_1	Range_2	Range_3	RealR_1	RealR_2
+10176	48321	48321	48321	11	11	11	[0,1199]	[0,1199]	[0,1199]
+6661	39537	39537	48321	9	9	11	[0,271]	[0,271]	[0,1192]	[-136,92]	[-136,92
+10267	48321	48321	48321	11	11	11	[0,1951]	[0,1944]	[0,1259]	[-976,972]	[-969,972
+10178	52713	52713	48321	12	12	11	[0,2642]	[0,2456]	[0,1464]	[-980,1321]	[-1068,1228
+6819	52713	52713	48321	12	12	11	[0,2049]	[0,2721]	[0,1064]	[-1025,884]	[-1361,896
+3838	52713	52713	48321	12	12	11	[0,2097]	[0,2450]	[0,1256]	[-1049,904]	[-960,1225
+7131	52713	52713	48321	12	12	11	[0,2862]	[0,2504]	[0,1653]	[-879,1431]	[-1080,1252
+3489	48321	52713	48321	11	12	11	[0,1976]	[0,2773]	[0,1376]	[-930,988]	[-1387,1212
+6681	52713	52713	48321	12	12	11	[0,2152]	[0,2159]	[0,1684]	[-885,1076]	[-1080,1025
+6777	48321	52713	48321	11	12	11	[0,2040]	[0,2855]	[0,1416]	[-884,1020]	[-1428,1116
+ ********************** 
+Total 	496386	505170	483210	[Bytes]
+Total 	484	493	471	[KiloBytes]
+ ********************** 
+Bytes_x: Tamaño en bytes del int_vector para la estrategia x.
+Width_x: Cantidad de bits para representar los enteros del int_vector en la estrategia x.
+Range_x: Rango de valores almacenado en el int_vector en la estrategia x.
+RealR_x: Rango de valores en la operación de diferencia previo al zig-zag-encode en la estrategia x.
+ ********************** 
+Estrategia_1: sensor_actual_i - primer_sensor_i
+Estrategia_2: sensor_actual_i - sensor_anterior_i
+Estrategia_3: sensor_actual_i
+
+===============================================================
+ LOS 10 QUE MENOS SE PARECÍAN AL PAR MÁS PARECIDO DE LA MATRIZ
+===============================================================
+
+Cantidad de sensores: 240
+Cantidad de muestras: 35136
+Ingrese cantidad de sensores a comparar: 
+10
+Ingrese los IDs de los 10 sensores: 
+3819	6666	3799	6679	6725	6642	3490	6685	6715	6654
+ ********************** 
+id	Bytes_1	Bytes_2	Bytes_3	Width_1	Width_2	Width_3	Range_1	Range_2	Range_3	RealR_1	RealR_2
+3819	57105	57105	57105	13	13	13	[0,8105]	[0,8105]	[0,8105]
+6666	65889	65889	61497	15	15	14	[0,16448]	[0,16448]	[0,8452]	[-7333,8224]	[-7333,8224
+3799	61497	61497	57105	14	14	13	[0,14665]	[0,13016]	[0,6888]	[-7333,6846]	[-4946,6508
+6679	61497	61497	57105	14	14	13	[0,16103]	[0,13647]	[0,7263]	[-8052,7180]	[-6824,6400
+6725	61497	61497	57105	14	14	13	[0,15623]	[0,14192]	[0,7135]	[-7812,7009]	[-6960,7096
+6642	61497	61497	57105	14	14	13	[0,13856]	[0,12127]	[0,7016]	[-6407,6928]	[-6064,6052
+3490	61497	61497	57105	14	14	13	[0,15983]	[0,12365]	[0,6168]	[-7992,6148]	[-6183,5065
+6685	61497	61497	57105	14	14	13	[0,15827]	[0,12448]	[0,6600]	[-7914,6452]	[-6168,6224
+6715	61497	61497	57105	14	14	13	[0,14045]	[0,11824]	[0,6116]	[-7023,6071]	[-5836,5912
+6654	61497	61497	57105	14	14	13	[0,15455]	[0,11752]	[0,6184]	[-7728,6108]	[-5696,5876
+ ********************** 
+Total 	614970	614970	575442	[Bytes]
+Total 	600	600	561	[KiloBytes]
+ ********************** 
+Bytes_x: Tamaño en bytes del int_vector para la estrategia x.
+Width_x: Cantidad de bits para representar los enteros del int_vector en la estrategia x.
+Range_x: Rango de valores almacenado en el int_vector en la estrategia x.
+RealR_x: Rango de valores en la operación de diferencia previo al zig-zag-encode en la estrategia x.
+ ********************** 
+Estrategia_1: sensor_actual_i - primer_sensor_i
+Estrategia_2: sensor_actual_i - sensor_anterior_i
+Estrategia_3: sensor_actual_i
+
+*********************************************************************
+					SEGUNDA ITERACIÓN
+*********************************************************************
+===============================================================
+ LOS 10 QUE MÁS SE PARECÍAN AL PAR MÁS PARECIDO DE LA MATRIZ
+===============================================================
+
+carlos@carlos-VirtualBox:~/jupyter/procesa_archivos_2024/outputdata_m30_fulldates$ ./TS_explora_vlcvector_compara_series m30_2024_data_fulldates_intensidad.txt
+Cantidad de sensores: 240
+Cantidad de muestras: 35136
+Ingrese cantidad de sensores a comparar: 
+10
+Ingrese los IDs de los 10 sensores: 
+10176	6661	10267	10178	6819	3838	7131	3489	6681	6777
+ ********************** 
+id	B_c1	B_c2	B_c3	B_d1	B_d2	B_d3	B_g1	B_g2	B_g3	B_f1	B_f2	B_f3	Width_1	Width_2	Width_3	Range_1	Range_2	Range_3	RealR_1	RealR_2
+10176	48321	48321	48321	65697	65697	65697	76241	76241	76241	60313	60313	60313	11	11	11	[0,1199]	[0,1199]	[0,1199]
+6661	39537	39537	48321	30057	30057	65705	29025	29025	76249	25993	25993	60313	9	9	11	[0,271]	[0,271]	[0,1192]	[-136,92]	[-136,92
+10267	48321	48321	48321	53929	53921	65305	59641	59633	75633	48161	48169	59953	11	11	11	[0,1951]	[0,1944]	[0,1259]	[-976,972]	[-969,972
+
+10178	52713	52713	48321	54553	55713	65849	60521	62129	76513	48833	49969	60505	12	12	11	[0,2642]	[0,2456]	[0,1464]	[-980,1321]	[-1068,1228
+6819	52713	52713	48321	47849	56305	61745	52561	63025	71297	42969	50601	56673	12	12	11	[0,2049]	[0,2721]	[0,1064]	[-1025,884]	[-1361,896
+3838	52713	52713	48321	56113	58273	65417	62497	65561	75905	50265	52489	60177	12	12	11	[0,2097]	[0,2450]	[0,1256]	[-1049,904]	[-960,1225
+7131	52713	52713	48321	56657	59721	64457	63153	67449	74457	50705	53769	58801	12	12	11	[0,2862]	[0,2504]	[0,1653]	[-879,1431]	[-1080,1252
+3489	48321	52713	48321	56809	57961	64673	63473	65241	75081	50945	52249	59577	11	12	11	[0,1976]	[0,2773]	[0,1376]	[-930,988]	[-1387,1212
+6681	52713	52713	48321	56193	56657	65241	62673	63449	75865	50385	50961	59953	12	12	11	[0,2152]	[0,2159]	[0,1684]	[-885,1076]	[-1080,1025
+6777	48321	52713	48321	57745	55993	65281	64625	62177	75377	51793	50033	59609	11	12	11	[0,2040]	[0,2855]	[0,1416]	[-884,1020]	[-1428,1116
+ ********************** 
+Total 	496386	505170	483210	535602	550298	649370	594410	613930	752618	480362	494546	595874	[Bytes]
+Total 	484	493	471	523	537	634	580	599	734	469	482	581	[KiloBytes]
+ ********************** 
+B_xy: Tamaño en bytes del vector para la estrategia <x> usando el compresor <y>.
+Width_x: Cantidad de bits para representar los enteros del int_vector en la estrategia x.
+Range_x: Rango de valores almacenado en el int_vector en la estrategia x.
+RealR_x: Rango de valores en la operación de diferencia previo al zig-zag-encode en la estrategia x.
+ ********************** 
+Estrategia_1: sensor_actual_i - primer_sensor_i
+Estrategia_2: sensor_actual_i - sensor_anterior_i
+Estrategia_3: sensor_actual_i
+ ********************** 
+Compresor_c: utll::bit_compress básico de un int_vector.
+Compresor_d: coder::elias_delta de un vlc_vector.
+Compresor_g: coder::elias_gamma de un vlc_vector.
+Compresor_f: coder::fibonacci de un vlc_vector.
+
+===============================================================
+ LOS 10 QUE MENOS SE PARECÍAN AL PAR MÁS PARECIDO DE LA MATRIZ
+===============================================================
+
+carlos@carlos-VirtualBox:~/jupyter/procesa_archivos_2024/outputdata_m30_fulldates$ ./TS_explora_vlcvector_compara_series m30_2024_data_fulldates_intensidad.txt
+Cantidad de sensores: 240
+Cantidad de muestras: 35136
+Ingrese cantidad de sensores a comparar: 
+10
+Ingrese los IDs de los 10 sensores: 
+3819	6666	3799	6679	6725	6642	3490	6685	6715	6654
+ ********************** 
+id	B_c1	B_c2	B_c3	B_d1	B_d2	B_d3	B_g1	B_g2	B_g3	B_f1	B_f2	B_f3	Width_1	Width_2	Width_3	Range_1	Range_2	Range_3	RealR_1	RealR_2
+3819	57105	57105	57105	78145	78145	78145	99737	99737	99737	77601	77601	77601	13	13	13	[0,8105]	[0,8105]	[0,8105]
+6666	65889	65889	61497	71569	71569	79153	86617	86617	100529	67681	67681	77945	15	15	14	[0,16448]	[0,16448]	[0,8452]	[-7333,8224]	[-7333,8224
+3799	61497	61497	57105	72881	62289	78017	88761	71393	98985	69281	56649	76361	14	14	13	[0,14665]	[0,13016]	[0,6888]	[-7333,6846]	[-4946,6508
+6679	61497	61497	57105	71705	73449	67249	87417	89689	85585	68321	69929	66945	14	14	13	[0,16103]	[0,13647]	[0,7263]	[-8052,7180]	[-6824,6400
+6725	61497	61497	57105	75401	75441	78025	93689	93649	98529	72801	72737	76161	14	14	13	[0,15623]	[0,14192]	[0,7135]	[-7812,7009]	[-6960,7096
+6642	61497	61497	57105	75289	68993	77881	93121	82753	98081	72425	64897	75761	14	14	13	[0,13856]	[0,12127]	[0,7016]	[-6407,6928]	[-6064,6052
+3490	61497	61497	57105	72161	70993	79089	88497	85289	100521	69065	66777	77529	14	14	13	[0,15983]	[0,12365]	[0,6168]	[-7992,6148]	[-6183,5065
+6685	61497	61497	57105	74513	66185	78577	92273	77257	99505	71729	60889	76801	14	14	13	[0,15827]	[0,12448]	[0,6600]	[-7914,6452]	[-6168,6224
+6715	61497	61497	57105	76289	68785	78201	95329	81673	98665	73985	64089	76169	14	14	13	[0,14045]	[0,11824]	[0,6116]	[-7023,6071]	[-5836,5912
+6654	61497	61497	57105	77577	67745	77097	97473	80369	96673	75553	63153	74841	14	14	13	[0,15455]	[0,11752]	[0,6184]	[-7728,6108]	[-5696,5876
+ ********************** 
+Total 	614970	614970	575442	745530	703594	771434	922914	848426	976810	718442	664402	756114	[Bytes]
+Total 	600	600	561	728	687	753	901	828	953	701	648	738	[KiloBytes]
+ ********************** 
+B_xy: Tamaño en bytes del vector para la estrategia <x> usando el compresor <y>.
+Width_x: Cantidad de bits para representar los enteros del int_vector en la estrategia x.
+Range_x: Rango de valores almacenado en el int_vector en la estrategia x.
+RealR_x: Rango de valores en la operación de diferencia previo al zig-zag-encode en la estrategia x.
+ ********************** 
+Estrategia_1: sensor_actual_i - primer_sensor_i
+Estrategia_2: sensor_actual_i - sensor_anterior_i
+Estrategia_3: sensor_actual_i
+ ********************** 
+Compresor_c: utll::bit_compress básico de un int_vector.
+Compresor_d: coder::elias_delta de un vlc_vector.
+Compresor_g: coder::elias_gamma de un vlc_vector.
+Compresor_f: coder::fibonacci de un vlc_vector.
+
+*********************************************************************
+					SEGUNDA ITERACIÓN
+*********************************************************************
+===============================================================
+ LOS 10 QUE MÁS SE PARECÍAN AL PAR MÁS PARECIDO DE LA MATRIZ
+===============================================================
+
+./TS_explora_vlcvector_compara_series_doble_diferencia m30_2024_data_fulldates_intensidad.txt
+Cantidad de sensores: 240
+Cantidad de muestras: 35136
+Ingrese cantidad de sensores a comparar: 
+10
+Ingrese los IDs de los 10 sensores: 
+10176	6661	10267	10178	6819	3838	7131	3489	6681	6777
+
+id	B_bc1	B_ed1	B_eg1	B_fi1	B_bc2	B_ed2	B_eg2	B_fi2	wc1	wc2	ro	rc1	rc2
+10176	48321	51345	56401	45809	4401	4969	4969	9401	11	1	[0,1199]	[-568,621]	[0,0]	
+6661	48321	51265	56281	45753	39537	34473	34505	30009	11	9	[0,1192]	[-576,616]	[-163,157]	
+10267	48321	51737	56905	46201	48321	53665	59313	48025	11	11	[0,1259]	[-785,865]	[-942,902]	
+10178	48321	50745	55737	45369	48321	53945	59625	48241	11	11	[0,1464]	[-840,964]	[-875,968]	
+6819	48321	48337	52897	43329	48321	43169	46273	38577	11	11	[0,1064]	[-768,724]	[-692,665]	
+3838	52713	51633	56841	46177	52713	54585	60425	48809	12	12	[0,1256]	[-945,1107]	[-937,1239]	
+7131	48321	50617	55593	45249	48321	53817	59513	48153	11	11	[0,1653]	[-924,815]	[-913,927]	
+3489	48321	51241	56241	45737	48321	54177	59953	48489	11	11	[0,1376]	[-752,624]	[-813,723]	
+6681	52713	51137	56153	45633	52713	54257	60065	48545	12	12	[0,1684]	[-904,1035]	[-972,1068]	
+6777	48321	50657	55617	45257	48321	54169	59921	48457	11	11	[0,1416]	[-771,881]	[-789,1000]	
+ ********************** 
+Total 	491994	508714	558666	454514	439290	461226	504562	416706	[Bytes] ********************** 
+Total 	480	496	545	443	428	450	492	406	[KiloBytes] ********************** 
+B_xxy: Tamaño en bytes del vector para la estrategia <y> usando el compresor <xx>.
+Width_x: Cantidad de bits para representar los enteros del int_vector en la estrategia x.
+Range_x: Rango de valores almacenado en el int_vector en (o)riginal, code1 o code2.
+ ********************** 
+Estrategia_1: code1 = X[i] - X[i-1]
+Estrategia_2: code2 = X[i] - R[i], donde X es la serie a codificar y R la de referencia, ambas en code1
+ ********************** 
+bc: utll::bit_compress básico de un int_vector.
+ed: coder::elias_delta de un vlc_vector.
+eg: coder::elias_gamma de un vlc_vector.
+fi: coder::fibonacci de un vlc_vector.
+
+===============================================================
+ LOS 10 QUE MENOS SE PARECÍAN AL PAR MÁS PARECIDO DE LA MATRIZ
+===============================================================
+
+carlos@carlos-VirtualBox:~/jupyter/procesa_archivos_2024/outputdata_m30_fulldates$ ./TS_explora_vlcvector_compara_series_doble_diferencia m30_2024_data_fulldates_intensidad.txt
+Cantidad de sensores: 240
+Cantidad de muestras: 35136
+Ingrese cantidad de sensores a comparar: 
+10
+Ingrese los IDs de los 10 sensores: 
+3819	6666	3799	6679	6725	6642	3490	6685	6715	6654
+id	B_bc1	B_ed1	B_eg1	B_fi1	B_bc2	B_ed2	B_eg2	B_fi2	wc1	wc2	ro	rc1	rc2
+3819	61497	63353	73465	58177	4401	4969	4969	9401	14	1	[0,8105]	[-6284,5900]	[0,0]	
+6666	61497	63625	73417	58137	65889	63185	72705	57657	14	15	[0,8452]	[-7856,4928]	[-8625,5879]	
+3799	61497	61817	70985	56369	61497	62657	71889	57065	14	14	[0,6888]	[-5115,5188]	[-6516,6021]	
+6679	61497	54545	63081	50809	61497	64161	74289	58793	14	14	[0,7263]	[-6541,6108]	[-6793,6441]	
+6725	61497	63073	72673	57585	61497	65265	76081	60105	14	14	[0,7135]	[-6196,4420]	[-5748,5913]	
+6642	57105	63561	73505	58169	61497	63769	73681	58353	13	14	[0,7016]	[-3660,3530]	[-6143,5425]	
+3490	61497	62337	71457	56713	61497	63441	73089	57929	14	14	[0,6168]	[-6004,5149]	[-6652,6193]	
+6685	61497	62777	72017	57145	61497	64241	74369	58857	14	14	[0,6600]	[-4836,4737]	[-6365,6227]	
+6715	61497	63281	72937	57785	61497	64977	75593	59737	14	14	[0,6116]	[-4081,5088]	[-6681,6997]	
+6654	61497	62609	72009	57129	61497	63081	72497	57497	14	14	[0,6184]	[-5312,4468]	[-6379,5369]	
+ ********************** 
+Total 	610578	620978	715546	568018	562266	579746	669162	535394	[Bytes]
+ ********************** 
+Total 	596	606	698	554	549	566	653	522	[KiloBytes]
+ ********************** 
+B_xxy: Tamaño en bytes del vector para la estrategia <y> usando el compresor <xx>.
+Width_x: Cantidad de bits para representar los enteros del int_vector en la estrategia x.
+Range_x: Rango de valores almacenado en el int_vector en (o)riginal, code1 o code2.
+ ********************** 
+Estrategia_1: code1 = X[i] - X[i-1]
+Estrategia_2: code2 = X[i] - R[i], donde X es la serie a codificar y R la de referencia, ambas en code1
+ ********************** 
+bc: utll::bit_compress básico de un int_vector.
+ed: coder::elias_delta de un vlc_vector.
+eg: coder::elias_gamma de un vlc_vector.
+fi: coder::fibonacci de un vlc_vector.
