@@ -1,0 +1,48 @@
+red = "#FF0000"; green = "#00FF00"; blue = "#0000FF"; skyblue = "#87CEEB"; black = "#000000";
+
+set style data histogram
+set style histogram cluster gap 100
+set style fill solid
+#set boxwidth 0.9
+set grid ytics
+set key out horiz
+set terminal png size 1200,600
+
+set output 'histograma_dd_intensidad.png'
+#set logscale y
+set title 'Histograma Valores Doble Diferencia [INTENSIDAD]'
+set ylabel "Valores"
+set xlabel "Frecuencia"
+plot 'histograma_doble_diferencia_intensidad.txt' using 2:xtic(1) title 'Originales' linecolor rgb red,   \
+	'' using 3 title 'Code 1' linecolor rgb blue,   \
+	'' using 4 title 'Code 2' linecolor rgb green
+
+set output 'histograma_dd_ocupacion.png'
+#set logscale y
+set title 'Histograma Valores Doble Diferencia [OCUPACIÓN]'
+set ylabel "Valores"
+set xlabel "Frecuencia"
+set xtics 100
+plot 'histograma_doble_diferencia_ocupacion.txt' using 2:xtic(1) title 'Originales' linecolor rgb red,   \
+	'' using 3 title 'Code 1' linecolor rgb blue,   \
+	'' using 4 title 'Code 2' linecolor rgb green
+
+set output 'histograma_dd_carga.png'
+#set logscale y
+set title 'Histograma Valores Doble Diferencia [CARGA]'
+set ylabel "Valores"
+set xlabel "Frecuencia"
+set xtics 100
+plot 'histograma_doble_diferencia_carga.txt' using 2:xtic(1) title 'Originales' linecolor rgb red,   \
+	'' using 3 title 'Code 1' linecolor rgb blue,   \
+	'' using 4 title 'Code 2' linecolor rgb green
+
+set output 'histograma_dd_velocidad.png'
+#set logscale y
+set title 'Histograma Valores Doble Diferencia [VELOCIDAD]'
+set ylabel "Valores"
+set xlabel "Frecuencia"
+set xtics 100
+plot 'histograma_doble_diferencia_velocidad.txt' using 2:xtic(1) title 'Originales' linecolor rgb red,   \
+	'' using 3 title 'Code 1' linecolor rgb blue,   \
+	'' using 4 title 'Code 2' linecolor rgb green

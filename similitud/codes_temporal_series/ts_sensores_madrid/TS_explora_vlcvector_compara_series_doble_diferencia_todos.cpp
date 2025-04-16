@@ -11,10 +11,10 @@ map<int,int> histoV1;
 map<int,int> histoV2;
 vector<int> minima(3, 0);
 vector<int> maxima(3, 0);
-vector<int> promedio(3, 0);
-vector<int> varianza(3, 0);
-vector<int> desvstandar(3, 0);
 vector<int> cantM(3,0);
+vector<float> promedio(3, 0);
+vector<float> varianza(3, 0);
+vector<float> desvstandar(3, 0);
 vector<long long int> acumulado(3, 0);
 
 /*
@@ -98,9 +98,9 @@ void agregaHisto(vector<int> &v, map<int,int> &m){
 }
 
 int main(int argc, char const *argv[]){
-	if(argc < 3){
+	if(argc < 4){
 		cout << "Error! Faltan argumentos." << endl;
-		cout << argv[0] << " <inputFile> <groupsFile>" << endl;
+		cout << argv[0] << " <inputFile> <groupsFile> <outputHistoFile>" << endl;
 		cout << "inputFile: archivo con los datos. Formato de atributo individual" << endl;
 		cout << "groupsFile: archivo con los ids de los 5 grupos para la estructura." << endl;
 		return 0;
@@ -285,6 +285,18 @@ int main(int argc, char const *argv[]){
 
 	estadisticas();
 
+
+	int minmin = (minima[0] < minima[1]) ? minima[0] : minima[1];
+	minmin = (minima[2] < minmin) ? minima[2] : minmin;
+	int maxmax = (maxima[0] < maxima[1]) ? maxima[0] : maxima[1];
+	maxmax = (maxima[2] < maxmax) ? maxima[2] : maxmax;
+	ofstream histograma(argv[3]);
+	histograma << "% valor\tNoC_0\tNoC_1\tNoC_2" << endl;
+	for(int i=minmin; i<maxmax; i++){
+		histograma << i << "\t" << histoV0[i] << "\t" << histoV1[i] << "\t" << histoV2[i] << endl;
+	}
+	histograma.close();
+
 	return 0;
 }
 
@@ -295,7 +307,7 @@ void estadisticas(){
 	minima[0] = (histoV0.begin())->first;
 	maxima[0] = histoV0.begin()->first;
 	for(auto it = histoV0.begin(); it != histoV0.end(); it++){
-		aux = (it->first * it->second);
+		aux = int(it->first * it->second);
 		acumulado[0] += aux;
 		cantM[0] += it->second;
 		if(it->first < minima[0]){
@@ -305,7 +317,7 @@ void estadisticas(){
 			maxima[0] = it->first;
 		}
 	}
-	promedio[0] = acumulado[0] / cantM[0];
+	promedio[0] = (0.0 + acumulado[0]) / cantM[0];
 	// ------- V1 -------
 	minima[1] = (histoV1.begin())->first;
 	maxima[1] = histoV1.begin()->first;
@@ -320,7 +332,7 @@ void estadisticas(){
 			maxima[1] = it->first;
 		}
 	}
-	promedio[1] = acumulado[1] / cantM[1];
+	promedio[1] = (0.0 + acumulado[1]) / cantM[1];
 	// ------- V2 -------
 	minima[2] = (histoV2.begin())->first;
 	maxima[2] = histoV2.begin()->first;
@@ -335,31 +347,29 @@ void estadisticas(){
 			maxima[2] = it->first;
 		}
 	}
-	promedio[2] = acumulado[2] / cantM[2];
+	promedio[2] = (0.0 + acumulado[2]) / cantM[2];
 	// ************** Varianza y Desviación Estándar **************
+	vector<long long int> acumDE(3,0);
 	// ------- V0 -------
-	long long int acum0 = 0;
 	for(auto it = histoV0.begin(); it != histoV0.end(); it++){
 		aux = (it->first - promedio[0]);
-		acum0 += aux * aux * it->second;
+		acumDE[0] += aux * aux * it->second;
 	}
-	varianza[0] = acum0 / cantM[0];
+	varianza[0] = acumDE[0] / cantM[0];
 	desvstandar[0] = sqrt(varianza[0]);
 	// ------- V1 -------
-	long long int acum1 = 0;
 	for(auto it = histoV1.begin(); it != histoV1.end(); it++){
 		aux = (it->first - promedio[1]);
-		acum1 += aux * aux * it->second;
+		acumDE[1] += aux * aux * it->second;
 	}
-	varianza[1] = acum1 / cantM[1];
+	varianza[1] = acumDE[1] / cantM[1];
 	desvstandar[1] = sqrt(varianza[1]);
 	// ------- V2 -------
-	long long int acum2 = 0;
 	for(auto it = histoV2.begin(); it != histoV2.end(); it++){
 		aux = (it->first - promedio[2]);
-		acum2 += aux * aux * it->second;
+		acumDE[2] += aux * aux * it->second;
 	}
-	varianza[2] = acum2 / cantM[2];
+	varianza[2] = acumDE[2] / cantM[2];
 	desvstandar[2] = sqrt(varianza[2]);
 
 	// ************** Mostrando **************
@@ -370,6 +380,8 @@ void estadisticas(){
 	cout << "Media\t" << promedio[0] << "\t" << promedio[1] << "\t" << promedio[2] << endl;
 	cout << "Total\t" << acumulado[0] << "\t" << acumulado[1] << "\t" << acumulado[2] << endl;
 	cout << "NumMues\t" << cantM[0] << "\t" << cantM[1] << "\t" << cantM[2] << endl;
+	cout << fixed;
+    cout << setprecision(2);
 	cout << "Varian\t" << varianza[0] << "\t" << varianza[1] << "\t" << varianza[2] << endl;
 	cout << "DesEst\t" << desvstandar[0] << "\t" << desvstandar[1] << "\t" << desvstandar[2] << endl;
 	cout << " ********************** " << endl;
