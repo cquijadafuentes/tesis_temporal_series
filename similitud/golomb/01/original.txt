@@ -1,0 +1,288 @@
+Golomb coding
+
+    Article
+    Talk
+
+    Read
+    Edit
+    View history
+
+Tools
+
+Appearance
+Text
+
+    Small
+    Standard
+    Large
+
+Width
+
+    Standard
+    Wide
+
+Color (beta)
+
+    Automatic
+    Light
+    Dark
+
+From Wikipedia, the free encyclopedia
+	
+This section needs additional citations for verification. Relevant discussion may be found on the talk page. Please help improve this article by adding citations to reliable sources in this section. Unsourced material may be challenged and removed.
+Find sources: "Golomb coding" – news · newspapers · books · scholar · JSTOR (October 2024) (Learn how and when to remove this message)
+
+Golomb coding is a lossless data compression method using a family of data compression codes invented by Solomon W. Golomb in the 1960s. Alphabets following a geometric distribution will have a Golomb code as an optimal prefix code,[1] making Golomb coding highly suitable for situations in which the occurrence of small values in the input stream is significantly more likely than large values.
+Rice coding
+
+Rice coding (invented by Robert F. Rice) denotes using a subset of the family of Golomb codes to produce a simpler (but possibly suboptimal) prefix code. Rice used this set of codes in an adaptive coding scheme; "Rice coding" can refer either to that adaptive scheme or to using that subset of Golomb codes. Whereas a Golomb code has a tunable parameter that can be any positive integer value, Rice codes are those in which the tunable parameter is a power of two. This makes Rice codes convenient for use on a computer, since multiplication and division by 2 can be implemented more efficiently in binary arithmetic.
+
+Rice was motivated to propose this simpler subset due to the fact that geometric distributions are often varying with time, not precisely known, or both, so selecting the seemingly optimal code might not be very advantageous.
+
+Rice coding is used as the entropy encoding stage in a number of lossless image compression and audio data compression methods.
+Overview
+Golomb coding example for a source x with geometric distribution, with parameter p(0) = 0.2, using Golomb code with M = 3. The 2-bit code 00 is used 20% of the time; the 3-bit codes 010, 011, and 100 are used over 38% of the time; 4 bits or more are needed in a minority of cases. For this source, entropy = 3.610 bits; for this code with this source, rate = 3.639 bits; therefore redundancy = 0.030 bits, or efficiency = 0.992 bits per bit.
+Construction of codes
+
+Golomb coding uses a tunable parameter M to divide an input value x into two parts: q, the result of a division by M, and r, the remainder. The quotient is sent in unary coding, followed by the remainder in truncated binary encoding. When M = 1 {\displaystyle M=1}, Golomb coding is equivalent to unary coding.
+
+Golomb–Rice codes can be thought of as codes that indicate a number by the position of the bin (q), and the offset within the bin (r). The example figure shows the position q and offset r for the encoding of integer x using Golomb–Rice parameter M = 3, with source probabilities following a geometric distribution with p(0) = 0.2.
+
+Formally, the two parts are given by the following expression, where x is the nonnegative integer being encoded:
+
+    q = ⌊ x M ⌋ {\displaystyle q=\left\lfloor {\frac {x}{M}}\right\rfloor }
+
+and
+
+    r = x − q M {\displaystyle r=x-qM}.
+
+This image shows the redundancy, in bits, of the Golomb code, when M is chosen optimally, for 1 − p(0) ≥ 0.45
+
+Both q and r will be encoded using variable numbers of bits: q by a unary code, and r by b bits for Rice code, or a choice between b and b+1 bits for Golomb code (i.e. M is not a power of 2), with b = ⌊ log 2 ⁡ ( M ) ⌋ {\displaystyle b=\lfloor \log _{2}(M)\rfloor }. If r < 2 b + 1 − M {\displaystyle r<2^{b+1}-M}, then use b bits to encode r; otherwise, use b+1 bits to encode r. Clearly, b = log 2 ⁡ ( M ) {\displaystyle b=\log _{2}(M)} if M is a power of 2 and we can encode all values of r with b bits.
+
+The integer x treated by Golomb was the run length of a Bernoulli process, which has a geometric distribution starting at 0. The best choice of parameter M is a function of the corresponding Bernoulli process, which is parameterized by p = P ( x = 0 ) {\displaystyle p=P(x=0)} the probability of success in a given Bernoulli trial. M is either the median of the distribution or the median ±1. It can be determined by these inequalities:
+
+    ( 1 − p ) M + ( 1 − p ) M + 1 ≤ 1 < ( 1 − p ) M − 1 + ( 1 − p ) M , {\displaystyle (1-p)^{M}+(1-p)^{M+1}\leq 1<(1-p)^{M-1}+(1-p)^{M},}
+
+which are solved by
+
+    M = ⌈ − log ⁡ ( 2 − p ) log ⁡ ( 1 − p ) ⌉ {\displaystyle M=\left\lceil -{\frac {\log(2-p)}{\log(1-p)}}\right\rceil }.
+
+For the example with p(0) = 0.2:
+
+    M = ⌈ − log ⁡ ( 1.8 ) log ⁡ ( 0.8 ) ⌉ = ⌈ 2.634 ⌉ = 3 {\displaystyle M=\left\lceil -{\frac {\log(1.8)}{\log(0.8)}}\right\rceil =\left\lceil 2.634\right\rceil =3}.
+
+The Golomb code for this distribution is equivalent to the Huffman code for the same probabilities, if it were possible to compute the Huffman code for the infinite set of source values.
+Use with signed integers
+
+Golomb's scheme was designed to encode sequences of non-negative numbers. However, it is easily extended to accept sequences containing negative numbers using an overlap and interleave scheme, in which all values are reassigned to some positive number in a unique and reversible way. The sequence begins: 0, −1, 1, −2, 2, −3, 3, −4, 4, ... The n-th negative value (i.e., ⁠ − n {\displaystyle -n}⁠) is mapped to the nth odd number (⁠ 2 n − 1 {\displaystyle 2n-1}⁠), and the mth positive value is mapped to the m-th even number (⁠ 2 m {\displaystyle 2m}⁠). This may be expressed mathematically as follows: a positive value x is mapped to ( x ′ = 2 | x | = 2 x ,   x ≥ 0 {\displaystyle x'=2|x|=2x,\ x\geq 0}), and a negative value y is mapped to ( y ′ = 2 | y | − 1 = − 2 y − 1 ,   y < 0 {\displaystyle y'=2|y|-1=-2y-1,\ y<0}). Such a code may be used for simplicity, even if suboptimal. Truly optimal codes for two-sided geometric distributions include multiple variants of the Golomb code, depending on the distribution parameters, including this one.[2]
+Simple algorithm
+
+Below is the Rice–Golomb encoding, where the remainder code uses simple truncated binary encoding, also named "Rice coding" (other varying-length binary encodings, like arithmetic or Huffman encodings, are possible for the remainder codes, if the statistic distribution of remainder codes is not flat, and notably when not all possible remainders after the division are used). In this algorithm, if the M parameter is a power of 2, it becomes equivalent to the simpler Rice encoding:
+
+    Fix the parameter M to an integer value.
+    For N, the number to be encoded, find
+        quotient = q = floor(N/M)
+        remainder = r = N modulo M
+    Generate codeword
+        The code format : <Quotient code><Remainder code>, where
+        Quotient code (in unary coding)
+            Write a q-length string of 1 bits (alternatively, of 0 bits)
+            Write a 0 bit (respectively, a 1 bit)
+        Remainder code (in truncated binary encoding)
+            Let b = ⌊ log 2 ⁡ ( M ) ⌋ {\displaystyle b=\lfloor \log _{2}(M)\rfloor }
+                If r < 2 b + 1 − M {\displaystyle r<2^{b+1}-M} code r in binary representation using b bits.
+                If r ≥ 2 b + 1 − M {\displaystyle r\geq 2^{b+1}-M} code the number r + 2 b + 1 − M {\displaystyle r+2^{b+1}-M} in binary representation using b + 1 bits.
+
+Decoding:
+
+    Decode the unary representation of q (count the number of 1 in the beginning of the code)
+    Skip the 0 delimiter
+    Let b = ⌊ log 2 ⁡ ( M ) ⌋ {\displaystyle b=\lfloor \log _{2}(M)\rfloor }
+        Interpret next b bits as a binary number r'. If r ′ < 2 b + 1 − M {\displaystyle r'<2^{b+1}-M} holds, then the reminder r = r ′ {\displaystyle r=r'}
+        Otherwise interpret b + 1 bits as a binary number r', the reminder is given by r = r ′ − 2 b + 1 + M {\displaystyle r=r'-2^{b+1}+M}
+    Compute N = q ∗ M + r {\displaystyle N=q*M+r}
+
+Example
+
+Set M = 10. Thus b = ⌊ log 2 ⁡ ( 10 ) ⌋ = 3 {\displaystyle b=\lfloor \log _{2}(10)\rfloor =3}. The cutoff is 2 b + 1 − M = 16 − 10 = 6 {\displaystyle 2^{b+1}-M=16-10=6}.
+Encoding of quotient part
+q 	output bits
+0 	0
+1 	10
+2 	110
+3 	1110
+4 	11110
+5 	111110
+6 	1111110
+⋮ {\displaystyle \vdots } 	⋮ {\displaystyle \vdots }
+N 	111 ⋯ 111 ⏟ N 0 {\displaystyle \underbrace {111\cdots 111} _{N}0}
+	
+Encoding of remainder part
+r 	offset 	binary 	output bits
+0 	0 	0000 	000
+1 	1 	0001 	001
+2 	2 	0010 	010
+3 	3 	0011 	011
+4 	4 	0100 	100
+5 	5 	0101 	101
+6 	12 	1100 	1100
+7 	13 	1101 	1101
+8 	14 	1110 	1110
+9 	15 	1111 	1111
+
+For example, with a Rice–Golomb encoding using parameter M = 10, the decimal number 42 would first be split into q = 4 and r = 2, and would be encoded as qcode(q),rcode(r) = qcode(4),rcode(2) = 11110,010 (you don't need to encode the separating comma in the output stream, because the 0 at the end of the q code is enough to say when q ends and r begins; both the qcode and rcode are self-delimited).
+Use for run-length encoding
+
+    Note that p and 1 – p are reversed in this section compared to the use in earlier sections.
+
+Given an alphabet of two symbols, or a set of two events, P and Q, with probabilities p and (1 − p) respectively, where p ≥ 1/2, Golomb coding can be used to encode runs of zero or more P′s separated by single Q′s. In this application, the best setting of the parameter M is the nearest integer to − 1 log 2 ⁡ p {\displaystyle -{\frac {1}{\log _{2}p}}}. When p = 1/2, M = 1, and the Golomb code corresponds to unary (n ≥ 0 P′s followed by a Q is encoded as n ones followed by a zero). If a simpler code is desired, one can assign Golomb–Rice parameter b (i.e., Golomb parameter M = 2 b {\displaystyle M=2^{b}}) to the integer nearest to − log 2 ⁡ ( − log 2 ⁡ p ) {\displaystyle -\log _{2}(-\log _{2}p)}; although not always the best parameter, it is usually the best Rice parameter and its compression performance is quite close to the optimal Golomb code. (Rice himself proposed using various codes for the same data to figure out which was best. A later JPL researcher proposed various methods of optimizing or estimating the code parameter.[3])
+
+Consider using a Rice code with a binary portion having b bits to run-length encode sequences where P has a probability p. If P [ bit is part of  k -run ] {\displaystyle \mathbb {P} [{\text{bit is part of }}k{\text{-run}}]} is the probability that a bit will be part of an k-bit run ( k − 1 {\displaystyle k-1} Ps and one Q) and ( compression ratio of  k -run ) {\displaystyle ({\text{compression ratio of }}k{\text{-run}})} is the compression ratio of that run, then the expected compression ratio is
+
+    E [ compression ratio ] = ∑ k = 1 ∞ ( compression ratio of  k -run ) ⋅ P [ bit is part of  k -run ] = ∑ k = 1 ∞ b + 1 + ⌊ 2 − b ( k − 1 ) ⌋ k ⋅ k p k − 1 ( 1 − p ) 2 = ( 1 − p ) 2 ∑ j = 0 ∞ ( b + 1 + j ) ⋅ ∑ i = j 2 b + 1 ( j + 1 ) 2 b p i − 1 = ( 1 − p ) 2 ∑ j = 0 ∞ ( b + 1 + j ) ⋅ ( p 2 b j − p 2 b ( j + 1 ) ) = ( 1 − p ) ⋅ ( b + ∑ m = 0 ∞ p 2 b m ) = ( 1 − p ) ⋅ ( b + ( 1 − p 2 b ) − 1 ) {\displaystyle {\begin{aligned}\mathbb {E} [{\text{compression ratio}}]&=\sum _{k=1}^{\infty }({\text{compression ratio of }}k{\text{-run}})\cdot \mathbb {P} [{\text{bit is part of }}k{\text{-run}}]\\&=\sum _{k=1}^{\infty }{\frac {b+1+\lfloor 2^{-b}(k-1)\rfloor }{k}}\cdot kp^{k-1}(1-p)^{2}\\&=(1-p)^{2}\sum _{j=0}^{\infty }(b+1+j)\cdot \sum _{i=j2^{b}+1}^{(j+1)2^{b}}p^{i-1}\\&=(1-p)^{2}\sum _{j=0}^{\infty }(b+1+j)\cdot \left(p^{2^{b}j}-p^{2^{b}(j+1)}\right)\\&=(1-p)\cdot \left(b+\sum _{m=0}^{\infty }p^{2^{b}m}\right)\\&=(1-p)\cdot \left(b+{\left(1-p^{2^{b}}\right)}^{-1}\right)\\\end{aligned}}}
+
+Compression is often expressed in terms of 1 − E [ compression ratio ] {\displaystyle 1-\mathbb {E} [{\text{compression ratio}}]}, the proportion compressed. For p ≈ 1 {\displaystyle p\approx 1}, the run-length coding approach results in compression ratios close to entropy. For example, using Rice code b = 6 {\displaystyle b=6} for p = 0.99 {\displaystyle p=0.99} yields 91.89% compression, while the entropy limit is 91.92%.
+Adaptive run-length Golomb–Rice encoding
+
+When a probability distribution for integers is not known, the optimal parameter for a Golomb–Rice encoder cannot be determined. Thus, in many applications, a two-pass approach is used: first, the block of data is scanned to estimate a probability density function (PDF) for the data. The Golomb–Rice parameter is then determined from that estimated PDF. A simpler variation of that approach is to assume that the PDF belongs to a parametrized family, estimate the PDF parameters from the data, and then compute the optimal Golomb–Rice parameter. That is the approach used in most of the applications discussed below.
+
+An alternative approach to efficiently encode integer data whose PDF is not known, or is varying, is to use a backwards-adaptive encoder. The RLGR encoder [1] achieves that using a very simple algorithm that adjusts the Golomb–Rice parameter up or down, depending on the last encoded symbol. A decoder can follow the same rule to track the variation of the encoding parameters, so no side information needs to be transmitted, just the encoded data. Assuming a generalized Gaussian PDF, which covers a wide range of statistics seen in data such as prediction errors or transform coefficients in multimedia codecs, the RLGR encoding algorithm can perform very well in such applications.
+Applications
+Golomb-coded Rice algorithm experiment compression ratios
+
+Numerous signal codecs use a Rice code for prediction residues. In predictive algorithms, such residues tend to fall into a two-sided geometric distribution, with small residues being more frequent than large residues, and the Rice code closely approximates the Huffman code for such a distribution without the overhead of having to transmit the Huffman table. One signal that does not match a geometric distribution is a sine wave, because the differential residues create a sinusoidal signal whose values are not creating a geometric distribution (the highest and lowest residue values have similar high frequency of occurrences, only the median positive and negative residues occur less often).
+
+Several lossless audio codecs, such as Shorten,[4] FLAC,[5] Apple Lossless, and MPEG-4 ALS, use a Rice code after the linear prediction step (called "adaptive FIR filter" in Apple Lossless). Rice coding is also used in the FELICS lossless image codec.
+
+The Golomb–Rice coder is used in the entropy coding stage of Rice algorithm based lossless image codecs. One such experiment yields the compression ratio graph shown.
+
+The JPEG-LS scheme uses Rice–Golomb to encode the prediction residuals.
+
+The adaptive version of Golomb–Rice coding mentioned above, the RLGR encoder [2],is used for encoding screen content in virtual machines in the RemoteFX component of the Microsoft Remote Desktop Protocol.
+See also
+
+    Elias delta coding
+    Variable-length code
+
+References
+
+Gallager, R. G.; van Voorhis, D. C. (1975). "Optimal source codes for geometrically distributed integer alphabets". IEEE Transactions on Information Theory. 21 (2): 228–230. doi:10.1109/tit.1975.1055357.
+Merhav, N.; Seroussi, G.; Weinberger, M. J. (2000). "Coding of sources with two-sided geometric distributions and unknown parameters". IEEE Transactions on Information Theory. 46 (1): 229–236. doi:10.1109/18.817520.
+Kiely, A. (2004). Selecting the Golomb Parameter in Rice Coding (Technical report). Jet Propulsion Laboratory. 42-159.
+"man shorten". Archived from the original on 2014-01-30. Retrieved 2008-12-07.
+
+    "FLAC - Format overview". xiph.org.
+
+Further reading
+
+    Golomb, Solomon W. (1966). Run-length encodings. IEEE Transactions on Information Theory, IT--12(3):399--401
+    Rice, Robert F.; Plaunt, R. (1971). "Adaptive Variable-Length Coding for Efficient Compression of Spacecraft Television Data". IEEE Transactions on Communications. 16 (9): 889–897. doi:10.1109/TCOM.1971.1090789.
+    Robert F. Rice (1979), "Some Practical Universal Noiseless Coding Techniques", Jet Propulsion Laboratory, Pasadena, California, JPL Publication 79—22, March 1979.
+    Witten, Ian Moffat, Alistair Bell, Timothy. "Managing Gigabytes: Compressing and Indexing Documents and Images." Second Edition. Morgan Kaufmann Publishers, San Francisco CA. 1999 ISBN 1-55860-570-3
+    David Salomon. "Data Compression",ISBN 0-387-95045-1.
+    H. S. Malvar, Adaptive run-length/Golomb–Rice encoding of quantized generalized Gaussian sources with unknown statistics, Proc. Data Compression Conference, 2006.
+    RLGR Entropy Encoding, Microsoft MS-RDPRFX Open Specification, RemoteFX codec for Remote Desktop Protocol.
+    S. Büttcher, C. L. A. Clarke, and G. V. Cormack. Information Retrieval: Implementing and Evaluating Search Engines Archived 2020-10-05 at the Wayback Machine. MIT Press, Cambridge MA, 2010.
+
+    vte
+
+Data compression methods
+Lossless	
+Entropy type	
+
+    Adaptive coding Arithmetic Asymmetric numeral systems Golomb Huffman
+        Adaptive Canonical Modified Range Shannon Shannon–Fano Shannon–Fano–Elias Tunstall Unary Universal
+        Exp-Golomb Fibonacci Gamma Levenshtein
+
+Dictionary type	
+
+    Byte pair encoding Lempel–Ziv
+        842 LZ4 LZJB LZO LZRW LZSS LZW LZWL Snappy
+
+Other types	
+
+    BWT CTW CM Delta
+        Incremental DMC DPCM Grammar
+        Re-Pair Sequitur LDCT MTF PAQ PPM RLE
+
+Hybrid	
+
+    LZ77 + Huffman
+        Deflate LZX LZS LZ77 + ANS
+        LZFSE LZ77 + Huffman + ANS
+        Zstandard LZ77 + Huffman + context
+        Brotli LZSS + Huffman
+        LHA/LZH LZ77 + Range
+        LZMA LZHAM RLE + BWT + MTF + Huffman
+        bzip2
+
+Lossy	
+Transform type	
+
+    Discrete cosine transform
+        DCT MDCT DST FFT Wavelet
+        Daubechies DWT SPIHT
+
+Predictive type	
+
+    DPCM
+        ADPCM LPC
+        ACELP CELP LAR LSP WLPC Motion
+        Compensation Estimation Vector Psychoacoustic
+
+Audio	
+Concepts	
+
+    Bit rate
+        ABR CBR VBR Companding Convolution Dynamic range Latency Nyquist–Shannon theorem Sampling Silence compression Sound quality Speech coding Sub-band coding
+
+Codec parts	
+
+    A-law μ-law DPCM
+        ADPCM DM FT
+        FFT LPC
+        ACELP CELP LAR LSP WLPC MDCT Psychoacoustic model
+
+Image	
+Concepts	
+
+    Chroma subsampling Coding tree unit Color space Compression artifact Image resolution Macroblock Pixel PSNR Quantization Standard test image Texture compression
+
+Methods	
+
+    Chain code DCT Deflate Fractal KLT LP RLE Wavelet
+        Daubechies DWT EZW SPIHT
+
+Video	
+Concepts	
+
+    Bit rate
+        ABR CBR VBR Display resolution Frame Frame rate Frame types Interlace Video characteristics Video quality
+
+Codec parts	
+
+    DCT DPCM Deblocking filter Lapped transform Motion
+        Compensation Estimation Vector Wavelet
+        Daubechies DWT
+
+Theory	
+
+    Compressed data structures
+        Compressed suffix array FM-index Entropy Information theory
+        Timeline Kolmogorov complexity Prefix code Quantization Rate–distortion Redundancy Symmetry Smallest grammar problem
+
+Community	
+
+    Hutter Prize
+
+People	
+
+    Mark Adler
+
+Categories:
+
+    Entropy codingData compression
+
+    This page was last edited on 6 December 2024, at 00:48 (UTC).
+    Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.

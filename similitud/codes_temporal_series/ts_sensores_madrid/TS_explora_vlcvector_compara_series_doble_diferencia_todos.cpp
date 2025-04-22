@@ -118,6 +118,12 @@ int main(int argc, char const *argv[]){
 		cout << "groupsFile: archivo con los ids de los 5 grupos para la estructura." << endl;
 		return 0;
 	}
+	cout << "Ejecutando:";
+	for(int i=0; i<argc; i++){
+		cout << " " << argv[i];
+	}
+	cout << endl;
+
 	// Leyendo datos desde el archivo de entrada
 	
 	cout << "Iniciando lectura para codificación por semana" << endl;
@@ -273,44 +279,44 @@ int main(int argc, char const *argv[]){
 	}
 	cout << " ********************** " << endl;
 	cout << "\t\tBC\tED\tEG\tFi" << endl;
-	cout << "Datos Original";
+	cout << "Datos_Original";
 	for(int i=0; i<4; i++){
 		cout << "\t" << bytesV0[i];
 	}
 	cout << "\t[Bytes]" << endl;
-	cout << "Datos Code 1";
+	cout << "Datos_Code1";
 	for(int i=0; i<4; i++){
 		cout << "\t" << bytesV1[i];
 	}
 	cout << "\t[Bytes]" << endl;
-	cout << "Datos Code 2";
+	cout << "Datos_Code2";
 	for(int i=0; i<4; i++){
 		cout << "\t" << bytesV2[i];
 	}
 	cout << "\t[Bytes]" << endl;
-	cout << "D Code 2 zz";
+	cout << "D_Code2zz";
 	for(int i=0; i<4; i++){
 		cout << "\t" << bytesV3[i];
 	}
 	cout << "\t[Bytes]" << endl;
 	cout << " ********************** " << endl;
 	cout << "\t\tBC\tED\tEG\tFi" << endl;
-	cout << "Datos Original";
+	cout << "Datos_Original";
 	for(int i=0; i<4; i++){
 		cout << "\t" << (bytesV0[i] / 1024);
 	}
 	cout << "\t[KiloBytes]" << endl;
-	cout << "Datos Code 1";
+	cout << "Datos_Code1";
 	for(int i=0; i<4; i++){
 		cout << "\t" << (bytesV1[i] / 1024);
 	}
 	cout << "\t[KiloBytes]" << endl;
-	cout << "Datos Code 2";
+	cout << "Datos_Code2";
 	for(int i=0; i<4; i++){
 		cout << "\t" << (bytesV2[i] / 1024);
 	}
 	cout << "\t[KiloBytes]" << endl;
-	cout << "D Code 2 zz";
+	cout << "D_Code2zz";
 	for(int i=0; i<4; i++){
 		cout << "\t" << (bytesV3[i] / 1024);
 	}
@@ -318,7 +324,6 @@ int main(int argc, char const *argv[]){
 	cout << " ********************** " << endl;
 
 	estadisticas();
-
 
 	int min_01 = (minima[0] < minima[1]) ? minima[0] : minima[1];
 	int min_23 = (minima[2] < minima[3]) ? minima[2] : minima[3];
@@ -435,7 +440,7 @@ void estadisticas(){
 
 	// ************** Mostrando **************
 
-	cout << "\tOrig.\tCode 1\tCode 2" << endl;
+	cout << "\tOrig.\tCode 1\tCode 2\tCode 2zz" << endl;
 	cout << "Mínima\t" << minima[0] << "\t" << minima[1] << "\t" << minima[2] << "\t" << minima[3] << endl;
 	cout << "Máxima\t" << maxima[0] << "\t" << maxima[1] << "\t" << maxima[2] << "\t" << maxima[3] << endl;
 	cout << "Media\t" << promedio[0] << "\t" << promedio[1] << "\t" << promedio[2] << "\t" << promedio[3] << endl;
