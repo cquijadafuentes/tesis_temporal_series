@@ -62,7 +62,7 @@ long long int size_bytes_golomb(int_vector<> x){
 		bits += b;
 	}
 	// Creación del bitvector
-	cout << "bits para bit_vector: " << bits << endl;
+//	cout << "bits para bit_vector: " << bits << endl;
 	bit_vector bvG = bit_vector(bits, 0);
 	long long int p = 0;
 	for(int n=0; n<x.size(); n++){
