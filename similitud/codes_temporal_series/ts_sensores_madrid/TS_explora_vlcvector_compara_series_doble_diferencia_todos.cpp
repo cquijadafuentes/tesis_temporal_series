@@ -330,7 +330,7 @@ int main(int argc, char const *argv[]){
 		}
 	}
 	cout << " ********************** " << endl;
-	cout << "\t\tBC\tED\tEG\tFi" << endl;
+	cout << "\t\tBC\tED\tEG\tFi\tGo" << endl;
 	cout << "Datos_Original";
 	for(int i=0; i<4; i++){
 		cout << "\t" << bytesV0[i];
@@ -352,7 +352,7 @@ int main(int argc, char const *argv[]){
 	}
 	cout << "\t[Bytes]" << endl;
 	cout << " ********************** " << endl;
-	cout << "\t\tBC\tED\tEG\tFi" << endl;
+	cout << "\t\tBC\tED\tEG\tFi\tGo" << endl;
 	cout << "Datos_Original";
 	for(int i=0; i<4; i++){
 		cout << "\t" << (bytesV0[i] / 1024);
