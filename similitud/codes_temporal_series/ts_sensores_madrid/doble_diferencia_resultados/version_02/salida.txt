@@ -9,15 +9,15 @@ Cantidad de muestras: 35136
  ********************** 
 		BC	ED	EG	Fi
 Datos Original	12567672	16582328	19915848	15621216	[Bytes]
-Datos Code 1	13103496	13245000	14812568	11923248	[Bytes]
-Datos Code 2	13468032	14114888	15922248	12737816	[Bytes]
-D Code 2 zz	14355216	14680224	16791608	13354920	[Bytes]
+Datos Code_1	13103496	13245000	14812568	11923248	[Bytes]
+Datos Code_2	13468032	14114888	15922248	12737816	[Bytes]
+D Code_2zz	14355216	14680224	16791608	13354920	[Bytes]
  ********************** 
 		BC	ED	EG	Fi
 Datos Original	12273	16193	19449	15255	[KiloBytes]
-Datos Code 1	12796	12934	14465	11643	[KiloBytes]
-Datos Code 2	13152	13784	15549	12439	[KiloBytes]
-D Code 2 zz	14018	14336	16398	13041	[KiloBytes]
+Datos Code_1	12796	12934	14465	11643	[KiloBytes]
+Datos Code_2	13152	13784	15549	12439	[KiloBytes]
+D Code_2zz	14018	14336	16398	13041	[KiloBytes]
  ********************** 
 	Orig.	Code 1	Code 2
 Mínima	0	-7856	-8509	-8998
@@ -42,15 +42,15 @@ Cantidad de muestras: 35136
  ********************** 
 		BC	ED	EG	Fi
 Datos Original	6862473	5598097	5115769	4966921	[Bytes]
-Datos Code 1	7393905	3523489	3092905	3594673	[Bytes]
-Datos Code 2	7718913	4284105	3835897	4107529	[Bytes]
-D Code 2 zz	8689545	4707097	4374617	4440681	[Bytes]
+Datos Code_1	7393905	3523489	3092905	3594673	[Bytes]
+Datos Code_2	7718913	4284105	3835897	4107529	[Bytes]
+D Code_2zz	8689545	4707097	4374617	4440681	[Bytes]
  ********************** 
 		BC	ED	EG	Fi
 Datos Original	6701	5466	4995	4850	[KiloBytes]
-Datos Code 1	7220	3440	3020	3510	[KiloBytes]
-Datos Code 2	7538	4183	3745	4011	[KiloBytes]
-D Code 2 zz	8485	4596	4272	4336	[KiloBytes]
+Datos Code_1	7220	3440	3020	3510	[KiloBytes]
+Datos Code_2	7538	4183	3745	4011	[KiloBytes]
+D Code_2zz	8485	4596	4272	4336	[KiloBytes]
  ********************** 
 	Orig.	Code 1	Code 2
 Mínima	0	-99	-104	-141
@@ -75,15 +75,15 @@ Cantidad de muestras: 35136
  ********************** 
 		BC	ED	EG	Fi
 Datos Original	7349985	9528713	10115833	8543777	[Bytes]
-Datos Code 1	8004393	5995449	5526273	5276985	[Bytes]
-Datos Code 2	8368929	6709017	6263369	5805841	[Bytes]
-D Code 2 zz	9260505	7266993	6977473	6284633	[Bytes]
+Datos Code_1	8004393	5995449	5526273	5276985	[Bytes]
+Datos Code_2	8368929	6709017	6263369	5805841	[Bytes]
+D Code_2zz	9260505	7266993	6977473	6284633	[Bytes]
  ********************** 
 		BC	ED	EG	Fi
 Datos Original	7177	9305	9878	8343	[KiloBytes]
-Datos Code 1	7816	5854	5396	5153	[KiloBytes]
-Datos Code 2	8172	6551	6116	5669	[KiloBytes]
-D Code 2 zz	9043	7096	6813	6137	[KiloBytes]
+Datos Code_1	7816	5854	5396	5153	[KiloBytes]
+Datos Code_2	8172	6551	6116	5669	[KiloBytes]
+D Code_2zz	9043	7096	6813	6137	[KiloBytes]
  ********************** 
 	Orig.	Code 1	Code 2
 Mínima	0	-99	-106	-147
@@ -108,15 +108,15 @@ Cantidad de muestras: 35136
  ********************** 
 		BC	ED	EG	Fi
 Datos Original	7099560	10964304	12649208	10198000	[Bytes]
-Datos Code 1	7969176	5440520	5075864	4915648	[Bytes]
-Datos Code 2	8158032	6338728	6032688	5593008	[Bytes]
-D Code 2 zz	9106704	6785480	6604968	5991656	[Bytes]
+Datos Code_1	7969176	5440520	5075864	4915648	[Bytes]
+Datos Code_2	8158032	6338728	6032688	5593008	[Bytes]
+D Code_2zz	9106704	6785480	6604968	5991656	[Bytes]
  ********************** 
 		BC	ED	EG	Fi
 Datos Original	6933	10707	12352	9958	[KiloBytes]
-Datos Code 1	7782	5313	4956	4800	[KiloBytes]
-Datos Code 2	7966	6190	5891	5461	[KiloBytes]
-D Code 2 zz	8893	6626	6450	5851	[KiloBytes]
+Datos Code_1	7782	5313	4956	4800	[KiloBytes]
+Datos Code_2	7966	6190	5891	5461	[KiloBytes]
+D Code_2zz	8893	6626	6450	5851	[KiloBytes]
  ********************** 
 	Orig.	Code 1	Code 2
 Mínima	0	-235	-236	-189

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <sdsl/vectors.hpp>
+#include <sdsl/bit_vectors.hpp>
 #include <math.h>
 #include <map>
 
@@ -17,6 +18,10 @@ vector<float> promedio(4, 0);
 vector<float> varianza(4, 0);
 vector<float> desvstandar(4, 0);
 vector<long long int> acumulado(4, 0);
+
+int golombM = 10;
+int golombB = log2(golombM);
+int golombT = exp2(golombB+1) - golombM;
 
 /*
 g++ -std=c++11 -g -O0 -DNDEBUG -fopenmp -I ~/include -L ~/lib -o TS_explora_vlcvector_compara_series_doble_diferencia_todos TS_explora_vlcvector_compara_series_doble_diferencia_todos.cpp -lsdsl -ldivsufsort -ldivsufsort64
@@ -43,10 +48,47 @@ int encuentraPosicion(vector<int> &l, int x){
 	return -1;
 }
 
+long long int size_bytes_golomb(int_vector<> x){
+	// Estimación de bits
+	long long int bits = 0;
+	for(int n=0; n<x.size(); n++){
+		int q = x[n] / golombM;
+		int r = x[n] % golombM;
+		bits += q+1;
+		int b = golombB;
+		if(r >= golombT){
+			b++;
+		}
+		bits += b;
+	}
+	// Creación del bitvector
+	cout << "bits para bit_vector: " << bits << endl;
+	bit_vector bvG = bit_vector(bits, 0);
+	long long int p = 0;
+	for(int n=0; n<x.size(); n++){
+		int q = x[n] / golombM;
+		int r = x[n] % golombM;
+		for (int i = 0; i < q; i++) {
+			bvG[p++] = 1;
+		}
+		bvG[p++] = 0;
+		int b = golombB;
+		if(r >= golombT){
+			b++;
+		}
+		for(int i=b-1; i >= 0; i--){
+			bvG[p+i] = (r >> (b - 1 - i)) & 1;
+		}
+		p += b;	
+	}
+	sd_vector<> sdb(bvG);
+	return size_in_bytes(sdb);
+}
+
 void estadisticas();
 
-vector<int> kilobytes_vectores_sin_zze(vector<int> &x){
-	vector<int> r(4,0);
+vector<long long int> kilobytes_vectores_sin_zze(vector<int> &x){
+	vector<long long int> r(5,0);
 	int_vector<> ivBC(x.size());
 	for(int i=0; i<x.size(); i++){
 		ivBC[i] = x[i];
@@ -59,11 +101,12 @@ vector<int> kilobytes_vectores_sin_zze(vector<int> &x){
 	r[2] = size_in_bytes(vlcEG);
 	vlc_vector<coder::fibonacci> vlcFi(ivBC);
 	r[3] = size_in_bytes(vlcFi);
+	r[4] = size_bytes_golomb(ivBC);
 	return r;
 }
 
-vector<int> kilobytes_vectores_con_zze(vector<int> &x){
-	vector<int> r(4,0);
+vector<long long int> kilobytes_vectores_con_zze(vector<int> &x){
+	vector<long long int> r(5,0);
 	int_vector<> ivBC(x.size());
 	for(int i=0; i<x.size(); i++){
 		ivBC[i] = zigzag_encode(x[i]);
@@ -76,6 +119,7 @@ vector<int> kilobytes_vectores_con_zze(vector<int> &x){
 	r[2] = size_in_bytes(vlcEG);
 	vlc_vector<coder::fibonacci> vlcFi(ivBC);
 	r[3] = size_in_bytes(vlcFi);
+	r[4] = size_bytes_golomb(ivBC);
 	return r;
 }
 
@@ -113,7 +157,7 @@ void agregaHisto(vector<int> &v, map<int,int> &m){
 int main(int argc, char const *argv[]){
 	if(argc < 4){
 		cout << "Error! Faltan argumentos." << endl;
-		cout << argv[0] << " <inputFile> <groupsFile> <outputHistoFile>" << endl;
+		cout << argv[0] << " <inputFile> <groupsFile> <outputHistoFile> [<golomb_m>]" << endl;
 		cout << "inputFile: archivo con los datos. Formato de atributo individual" << endl;
 		cout << "groupsFile: archivo con los ids de los 5 grupos para la estructura." << endl;
 		return 0;
@@ -124,10 +168,18 @@ int main(int argc, char const *argv[]){
 	}
 	cout << endl;
 
-	// Leyendo datos desde el archivo de entrada
-	
-	cout << "Iniciando lectura para codificación por semana" << endl;
+	if(argc >= 5){
+		golombM = stoi(argv[4]);
+		golombB = log2(golombM);
+		golombT = exp2(golombB+1) - golombM;
+	}
+	cout << "Valores golomb: " << endl;
+	cout << "M: " << golombM << endl;
+	cout << "B: " << golombB << endl;
+	cout << "Tope: " << golombT << endl;
 
+	// Leyendo datos desde el archivo de entrada	
+	cout << "Iniciando lectura para codificación por semana" << endl;
 	int aux, auxP;
 	int cantGrupos = 5;
 	ifstream listaIDS(argv[2], ifstream::in);
@@ -221,15 +273,15 @@ int main(int argc, char const *argv[]){
 	}
 	dataSensores.close();
 
-	vector<int> bytesV0(4, 0);		// original - bit_compress, elias_delta, elias_gamma, fibonacci
-	vector<int> bytesV1(4, 0);		// code1 - bit_compress, elias_delta, elias_gamma, fibonacci
-	vector<int> bytesV2(4, 0);		// code2 - bit_compress, elias_delta, elias_gamma, fibonacci
-	vector<int> bytesV3(4, 0);		// code2zz - bit_compress, elias_delta, elias_gamma, fibonacci
+	vector<long long int> bytesV0(5, 0);		// original	==>> bit_compress, elias_delta, elias_gamma, fibonacci, golomb
+	vector<long long int> bytesV1(5, 0);		// code1	==>> bit_compress, elias_delta, elias_gamma, fibonacci, golomb
+	vector<long long int> bytesV2(5, 0);		// code2	==>> bit_compress, elias_delta, elias_gamma, fibonacci, golomb
+	vector<long long int> bytesV3(5, 0);		// code2zz	==>> bit_compress, elias_delta, elias_gamma, fibonacci, golomb
 	
 	for(int f=0; f<data.size(); f++){
 		//	Serie de referencia del grupo (la primera)
 		//	Tamaño datos originales
-		vector<int> tbytes = kilobytes_vectores_sin_zze(data[f][0]);
+		vector<long long int> tbytes = kilobytes_vectores_sin_zze(data[f][0]);
 		for(int i=0; i<4; i++){
 			bytesV0[i] += tbytes[i];
 		}

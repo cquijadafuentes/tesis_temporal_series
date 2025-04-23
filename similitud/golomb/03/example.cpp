@@ -14,8 +14,12 @@ vector<bool> encodeGolomb(int n, int m) {
 	}
 	encoded.push_back(false);
 
-	int b = ceil(log2(m));
-	vector<bool> remainderBits(b);
+	int b = log2(m);
+	int tope = exp2(b+1) - m;
+	if(r>=tope){
+		b++;
+	}
+	vector<bool> remainderBits(b);+
 	for (int i = b - 1; i >= 0; i--) {
 		remainderBits[i] = (r >> (b - 1 - i)) & 1;
 	}
@@ -40,7 +44,7 @@ int decodeGolomb(const vector<bool>& encoded, int m, int& index) {
 }
 
 int main(int argc, char const *argv[]){
-	int m = 10;
+	int m = 20;
 	int n = 10000;
 
 	if(argc > 1){
