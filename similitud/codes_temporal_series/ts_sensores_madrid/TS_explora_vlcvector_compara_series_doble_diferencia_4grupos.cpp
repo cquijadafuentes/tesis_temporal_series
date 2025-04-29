@@ -24,11 +24,11 @@ int golombB;
 int golombT;
 
 /*
-g++ -std=c++11 -g -O0 -DNDEBUG -fopenmp -I ~/include -L ~/lib -o TS_explora_vlcvector_compara_series_doble_diferencia_todos TS_explora_vlcvector_compara_series_doble_diferencia_todos.cpp -lsdsl -ldivsufsort -ldivsufsort64
-./TS_explora_vlcvector_compara_series_doble_diferencia_todos m30_2024_data_fulldates_intensidad.txt m30_2024_ids_estructura_intensidad.txt histograma_doble_diferencia_intensidad.txt
-./TS_explora_vlcvector_compara_series_doble_diferencia_todos m30_2024_data_fulldates_ocupacion.txt m30_2024_ids_estructura_ocupacion.txt histograma_doble_diferencia_ocupacion.txt
-./TS_explora_vlcvector_compara_series_doble_diferencia_todos m30_2024_data_fulldates_carga.txt m30_2024_ids_estructura_carga.txt histograma_doble_diferencia_carga.txt
-./TS_explora_vlcvector_compara_series_doble_diferencia_todos m30_2024_data_fulldates_velocidad.txt m30_2024_ids_estructura_velocidad.txt histograma_doble_diferencia_velocidad.txt
+g++ -std=c++11 -g -O0 -DNDEBUG -fopenmp -I ~/include -L ~/lib -o TS_explora_vlcvector_compara_series_doble_diferencia_4grupos TS_explora_vlcvector_compara_series_doble_diferencia_4grupos.cpp -lsdsl -ldivsufsort -ldivsufsort64
+./TS_explora_vlcvector_compara_series_doble_diferencia_4grupos m30_2024_data_fulldates_intensidad.txt m30_2024_ids_estructura_intensidad.txt histograma_doble_diferencia_intensidad.txt
+./TS_explora_vlcvector_compara_series_doble_diferencia_4grupos m30_2024_data_fulldates_ocupacion.txt m30_2024_ids_estructura_ocupacion.txt histograma_doble_diferencia_ocupacion.txt
+./TS_explora_vlcvector_compara_series_doble_diferencia_4grupos m30_2024_data_fulldates_carga.txt m30_2024_ids_estructura_carga.txt histograma_doble_diferencia_carga.txt
+./TS_explora_vlcvector_compara_series_doble_diferencia_4grupos m30_2024_data_fulldates_velocidad.txt m30_2024_ids_estructura_velocidad.txt histograma_doble_diferencia_velocidad.txt
 */
 
 int zigzag_decode(int i){
@@ -282,7 +282,7 @@ int main(int argc, char const *argv[]){
 	vector<long long int> bytesV2(5, 0);		// code2	==>> bit_compress, elias_delta, elias_gamma, fibonacci, golomb
 	vector<long long int> bytesV3(5, 0);		// code2zz	==>> bit_compress, elias_delta, elias_gamma, fibonacci, golomb
 	
-	for(int f=0; f<data.size(); f++){
+	for(int f=0; f<4; f++){
 		//	Serie de referencia del grupo (la primera)
 		//	Tamaño datos originales
 		vector<long long int> tbytes = kilobytes_vectores_sin_zze(data[f][0]);
