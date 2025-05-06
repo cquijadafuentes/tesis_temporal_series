@@ -47,7 +47,7 @@ int main(int argc, char const *argv[]){
 		n = stoi(argv[1]);
 	}
 
-	cout << "Original\tEncoded\tDecoded" << endl;
+	cout << "N\tEncoded\tDecoded" << endl;
 
 	for(int i=0; i<=50; i++){
 		cout << i << "\t";

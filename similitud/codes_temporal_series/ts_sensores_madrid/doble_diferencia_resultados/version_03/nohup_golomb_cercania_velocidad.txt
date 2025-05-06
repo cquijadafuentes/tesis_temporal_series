@@ -1,0 +1,522 @@
+Fecha INICIO: 2025/04/29 09:11:03
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 2
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 2
+Valores golomb: 
+M: 2
+B: 1
+Tope: 2
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Fecha INICIO: 2025/04/29 09:11:29
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 2
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 2
+Valores golomb: 
+M: 2
+B: 1
+Tope: 2
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	113131731	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	15447385	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	22792320	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	31345884	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	110480	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	15085	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	22258	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	30611	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 4
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 4
+Valores golomb: 
+M: 4
+B: 2
+Tope: 4
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	59394108	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	11544419	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	14405517	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	18885945	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	58002	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	11273	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	14067	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	18443	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 8
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 8
+Valores golomb: 
+M: 8
+B: 3
+Tope: 8
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	33241048	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	9978858	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	11908894	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	13544752	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	32461	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	9744	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	11629	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	13227	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 16
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 16
+Valores golomb: 
+M: 16
+B: 4
+Tope: 16
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	23948308	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	9248106	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	10804709	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	11866144	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	23387	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	9031	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	10551	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	11588	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 32
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 32
+Valores golomb: 
+M: 32
+B: 5
+Tope: 32
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	19411692	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	9022964	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	10359965	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	11200466	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	18956	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	8811	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	10117	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	10937	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 64
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 64
+Valores golomb: 
+M: 64
+B: 6
+Tope: 64
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	17238309	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	9034758	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	10260061	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	11039853	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	16834	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	8823	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	10019	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	10781	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 128
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 128
+Valores golomb: 
+M: 128
+B: 7
+Tope: 128
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	17950620	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	10515126	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	12079605	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	12934227	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	17529	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	10268	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	11796	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	12631	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 256
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 256
+Valores golomb: 
+M: 256
+B: 8
+Tope: 256
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	17953308	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	10516822	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	12080821	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	12934050	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	17532	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	10270	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	11797	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	12630	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 512
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 512
+Valores golomb: 
+M: 512
+B: 9
+Tope: 512
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	17955860	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	10518318	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	12081877	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	12934130	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	17535	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	10271	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	11798	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	12630	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 1024
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 1024
+Valores golomb: 
+M: 1024
+B: 10
+Tope: 1024
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	17958428	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	10519750	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	12082941	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	12934386	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	17537	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	10273	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	11799	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	12631	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 2048
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 2048
+Valores golomb: 
+M: 2048
+B: 11
+Tope: 2048
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	17960852	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	10520766	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	12083973	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	12934602	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	17539	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	10274	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	11800	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	12631	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 4096
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 4096
+Valores golomb: 
+M: 4096
+B: 12
+Tope: 4096
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	17963148	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	10521350	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	12084957	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	12934754	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	17542	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	10274	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	11801	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	12631	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+=======================================================================
+./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 8192
+Ejecutando: ./TS_explora_vlcvector_compara_series_doble_diferencia_todos_vgolomb m30_2024_data_fulldates_velocidad.txt m30_2024_ids_por_grupo_velocidad.txt borrar.txt 8192
+Valores golomb: 
+M: 8192
+B: 13
+Tope: 8192
+Iniciando lectura para codificación por semana
+Total Ids en grupos: 230
+Cantidad de sensores: 232
+Cantidad de muestras: 35136
+Lista de datos no coinciden: cantidad de IDs no coinciden.
+Error! no se encuentra en el mapa el id 7129
+Error! no se encuentra en el mapa el id 7015
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	7038054	10873366	12547302	10112638	17964996	[Bytes]
+Datos_Code1	7903278	5389646	5028038	4870414	10523246	[Bytes]
+Datos_Code2	8087742	6366158	6093526	5626158	12086933	[Bytes]
+D_Code2zz	9067158	6828126	6681766	6037982	12935186	[Bytes]
+ ********************** 
+		BC	ED	EG	Fi	Go
+Datos_Original	6873	10618	12253	9875	17543	[KiloBytes]
+Datos_Code1	7718	5263	4910	4756	10276	[KiloBytes]
+Datos_Code2	7898	6216	5950	5494	11803	[KiloBytes]
+D_Code2zz	8854	6668	6525	5896	12632	[KiloBytes]
+ ********************** 
+	Orig.	Code 1	Code 2	Code 2zz
+Mínima	0	-235	-230	-180
+Máxima	235	150	151	460
+Media	69.7037	0.00196739	-0.000120773	-0.761336
+Total	563295104	15899	-976	-6152566
+NumMues	8081280	8081280	8081280	8081280
+Varian	365.00	47.00	98.00	259.00
+DesEst	19.10	6.86	9.90	16.09
+ ********************** 
+Creando histograma desde valor -235 hasta valor 460 ...
+Histograma creado con éxito.
+=======================================================================
+Fecha FIN: 2025/04/29 09:18:56
