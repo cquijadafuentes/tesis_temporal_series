@@ -1,0 +1,7 @@
+Estadísticas Datos DSWRF_NLDAS_FORA0125_H.txt
+	Mínimo: -1.0
+	Máximo: 128095.0
+	Promedio: 11581.995501057361
+	Media: 0.0
+	Desviación estándar: 20572.084733151216
+	Varianza: 423210670.2679534

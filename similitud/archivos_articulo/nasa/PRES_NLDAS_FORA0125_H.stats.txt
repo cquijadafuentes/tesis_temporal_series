@@ -1,0 +1,7 @@
+Estadísticas Datos PRES_NLDAS_FORA0125_H.txt
+	Mínimo: 6301609.0
+	Máximo: 10502674.0
+	Promedio: 8679280.446018493
+	Media: 9320085.0
+	Desviación estándar: 1438057.7034465962
+	Varianza: 2068009958442.0986

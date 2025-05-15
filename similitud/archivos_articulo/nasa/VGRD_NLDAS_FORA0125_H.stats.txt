@@ -1,0 +1,7 @@
+Estadísticas Datos VGRD_NLDAS_FORA0125_H.txt
+	Mínimo: -2004.0
+	Máximo: 2182.0
+	Promedio: -431.7750038297418
+	Media: -102.0
+	Desviación estándar: 906.3737344831452
+	Varianza: 821513.3465609229

@@ -1,0 +1,7 @@
+Estadísticas Datos TMP_NLDAS_FORA0125_H.txt
+	Mínimo: 23421.0
+	Máximo: 31223.0
+	Promedio: 26531.288824256262
+	Media: 27016.0
+	Desviación estándar: 1965.169987371163
+	Varianza: 3861893.079264377

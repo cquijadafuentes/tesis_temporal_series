@@ -1,0 +1,7 @@
+Estadísticas Datos PEVAP_NLDAS_FORA0125_H.txt
+	Mínimo: -79.0
+	Máximo: 185.0
+	Promedio: -10.051920769975924
+	Media: 1.0
+	Desviación estándar: 40.21331367094281
+	Varianza: 1617.1105963976356

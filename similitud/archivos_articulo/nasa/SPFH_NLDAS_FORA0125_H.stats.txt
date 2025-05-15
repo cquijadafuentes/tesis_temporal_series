@@ -1,0 +1,7 @@
+Estadísticas Datos SPFH_NLDAS_FORA0125_H.txt
+	Mínimo: -1.0
+	Máximo: 2.0
+	Promedio: -0.1881744665116163
+	Media: 0.0
+	Desviación estándar: 0.47807901536795644
+	Varianza: 0.2285595449351947
