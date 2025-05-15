@@ -152,7 +152,7 @@ int main(int argc, char const *argv[]){
 //        cout << endl;
     }
 
-    // Cálculo de Medida de utocorrelación espacio-temporal
+    // Cálculo de índice de autocorrelación espacio-temporal
     int sumaW = 0;
     int cantFijas = 0;
     double numerador = 0.0;
