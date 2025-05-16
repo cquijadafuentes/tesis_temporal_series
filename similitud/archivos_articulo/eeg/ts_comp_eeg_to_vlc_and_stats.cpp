@@ -36,8 +36,10 @@ unsigned int zigzag_encode(int i){
 }
 
 void agregaHisto(vector<int> &v, map<int,int> &m){
+	int aux;
 	for(int i=0; i<v.size(); i++){
-		m[v[i]]++;
+		aux = v[i] / 1000;
+		m[aux]++;
 	}
 }
 
@@ -127,7 +129,7 @@ int main(int argc, char const *argv[]){
 	ofstream of_histograma(argv[2]);
 	cout << "Creando histograma desde valor " << minmin << " hasta valor " << maxmax  << " ..." << endl;
 	of_histograma << "% valor\tNoC_0\tNoC_1" << endl;
-	for(int i=minmin; i<maxmax; i++){
+	for(int i=minmin; i<=maxmax; i++){
 		of_histograma << i;
 		for(int h=0; h<histo.size(); h++){
 			of_histograma << "\t" << histo[h][i];

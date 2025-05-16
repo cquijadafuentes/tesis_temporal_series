@@ -26,6 +26,8 @@ def analizar_correlaciones(datos, title):
 		print(f"{np.mean(vals > 0.5)*100:.1f}", end="\t")
 	print("")
 
+
+
 if len(sys.argv) != 2:
 	print("Error! en la cantidad de argumentos.")
 	print(sys.argv[0], "<filename.txt>")
@@ -55,12 +57,15 @@ for i in lineas:
 	index = 0;
 	for c in range(rXc):
 		tSeries[c][iFile] = int(npI[index])
+		index += 1
+	iFile += 1
 
 fname = (str(sys.argv[1]))[:5]
 analizar_correlaciones(tSeries, fname)
-			
+
 
 """
+udec_server
 nohup python3 ~/codes_nasa/nasa_temporal_correlation.py APCP_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_APCP.txt &
 nohup python3 ~/codes_nasa/nasa_temporal_correlation.py CAPE_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_CAPE.txt &
 nohup python3 ~/codes_nasa/nasa_temporal_correlation.py CONVfrac_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_CONV.txt &
@@ -73,3 +78,4 @@ nohup python3 ~/codes_nasa/nasa_temporal_correlation.py TMP_NLDAS_FORA0125_H.txt
 nohup python3 ~/codes_nasa/nasa_temporal_correlation.py UGRD_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_UGRD.txt &
 nohup python3 ~/codes_nasa/nasa_temporal_correlation.py VGRD_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_VGRD.txt &
 """
+
