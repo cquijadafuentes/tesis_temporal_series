@@ -1,0 +1,270 @@
+ 1004  cd datasets/time_series/eeg/
+ 1006  tail salida_2024-10-28_compress_eeg_ref_diff.txt
+ 1008  cd datasets/time_series/eeg/
+ 1013  cd datasets/time_series/eeg/
+ 1016  cd datasets/time_series/eeg/
+ 1017  rm ts_comp_eeg_to_bitcompress
+ 1018  nohup ./run_compress_eeg_referencia.sh salida_2024-10-29_compress_eeg_ref_diff.txt &
+ 1022  cd datasets/time_series/eeg/
+ 1034  cd datasets/time_series/eeg/
+ 1036  cat run_build_bineeg_to_quadcompeeg.sh
+ 1041  ./run_build_bineeg_to_quadcompeeg.sh 
+ 1042  nohup ./run_build_bineeg_to_quadcompeeg.sh lista_archivos.txt /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/codes/TRQC_build_from_eeg_bin /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/codes/TRQC_build_from_eeg_bin_matrix_positions.txt 4 salida_2024-10-30_build_quadcomp_eeg_quad_4.txt &
+ 1044  cd datasets/time_series/eeg/
+ 1049  rm TRQC_build_from_eeg_bin_matrix_positions.txtTRQC_build_from_eeg_bin.cppTRQC_build_from_eeg_bin
+ 1050  rm TRQC_build_from_eeg_bin_matrix_positions.txt TRQC_build_from_eeg_bin.cpp TRQC_build_from_eeg_bin
+ 1058  nohup ./run_build_bineeg_to_quadcompeeg.sh lista_archivos.txt /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/codes/TRQC_eeg_build_from_bin /home/cquijada/datasets/time_series/temporal/NASA/NLDAS_FORA0125_H/quadcomp/codes/TRQC_eeg_build_from_bin_matrix_positions.txt 4 salida_2024-10-30_build_quadcomp_eeg_quad_4.txt &
+ 1061  rm ts_build_eeg_to_bin*
+ 1063  ./ts_test_read_bin_eeg 591_Depression_REST.eeg.bin
+ 1064  cp ../temporal/NASA/NLDAS_FORA0125_H/quadcomp/codes/TRQC_eeg_build_from_bin ./
+ 1066  cp ../temporal/NASA/NLDAS_FORA0125_H/quadcomp/codes/TRQC_eeg_build_from_bin_matrix_positions.txt ./
+ 1068  nohup ./run_build_bineeg_to_quadcompeeg.sh ./lista_archivos.txt TRQC_eeg_build_from_bin ./TRQC_eeg_build_from_bin_matrix_positions.txt 4 salida_2024-10-30_build_quadcomp_eeg_quad_4.txt &
+ 1071  cd datasets/time_series/eeg/
+ 1075  cd ../eeg/
+ 1084  cd datasets/time_series/eeg/
+ 1119  cd datasets/time_series/eeg/
+ 1157  cd ~/datasets/time_series/eeg/
+ 1165  cd ~/datasets/time_series/eeg/
+ 1166  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_build_eeg_to_bin 
+ 1167  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_build_eeg_to_bin 628_Depression_REST_float.txt 628_Depression_REST.bin
+ 1168  cmp 628_Depression_REST.bin 628_Depression_REST.eeg.bin 
+ 1169  /home/cquijada/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_from_bin 628_Depression_REST.bin
+ 1170  /home/cquijada/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_from_bin 628_Depression_REST.bin /home/cquijada/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_from_bin_matrix_positions.txt 4 628_Depression_REST.qc4v2
+ 1171  /home/cquijada/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_test_eeg_bin_trqc
+ 1172  /home/cquijada/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_test_eeg_bin_trqc 628_Depression_REST.bin 628_Depression_REST.qc4v2 
+ 1186  cat TRQC_eeg_build_from_bin_matrix_positions.txt
+ 1187  cp TRQC_eeg_build_from_bin_matrix_positions.txt ~/datasets/time_series/eeg/
+ 1189  cd datasets/time_series/eeg/
+ 1202  rm 507_Depression_REST.eeg.bin_old
+ 1204  mv *_Depression_REST.eeg.bin old_bins/
+ 1206  cat eeg_lectura.py
+ 1216  cd ~/datasets/time_series/eeg/
+ 1218  cat run_build_bineeg_to_quadcompeeg.sh
+ 1219  rm TRQC_eeg_build_from_bin ts_comp_eeg_to_bitcompress ts_test_read_bin_eeg ts_test_read_bin_eeg.cpp ts_comp_eeg_to_bitcompress.cpp TRQC_eeg_build_from_bin_matrix_positions.txt 
+ 1221  cat run_build_bineeg_to_quadcompeeg.sh
+ 1222  cat run_build_bin_size_eeg.sh
+ 1229  rm run_build_bineeg_to_quadcompeeg.sh
+ 1230  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/run_build_eeg_bin_and_quadcomp.sh ./
+ 1239  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_build_eeg_to_bin ./
+ 1248  cd datasets/time_series/eeg/
+ 1249  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_from_bin
+ 1250  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_from_bin 
+ 1251  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_from_bin ./
+ 1254  ./run_build_eeg_bin_and_quadcomp.sh
+ 1258  cd ../datasets/time_series/eeg/
+ 1259  scp /home/cquijada/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/run_build_eeg_bin_and_quadcomp.sh ./
+ 1261  ./run_build_eeg_bin_and_quadcomp.sh
+ 1262  cat run_build_eeg_bin_and_quadcomp.sh
+ 1263  nohup ./run_build_eeg_bin_and_quadcomp.sh ./lista_archivos.txt ./ts_build_eeg_to_bin ./TRQC_eeg_build_from_bin ./TRQC_eeg_build_from_bin_matrix_positions.txt 4 salida_2024-11-06_eeg_build_bin_nqc.txt &
+ 1265  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/run_build_eeg_bin_and_quadcomp.sh ./
+ 1267  ./run_build_eeg_bin_and_quadcomp.sh
+ 1268  ./run_build_eeg_bin_and_quadcomp.sh lista_archivos.txt ts_build_eeg_to_bin TRQC_eeg_build_from_bin TRQC_eeg_build_from_bin_matrix_positions.txt 4 salida_.txt
+ 1269  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/run_build_eeg_bin_and_quadcomp.sh ./
+ 1270  nohup ./run_build_eeg_bin_and_quadcomp.sh ./lista_archivos.txt ./ts_build_eeg_to_bin ./TRQC_eeg_build_from_bin ./TRQC_eeg_build_from_bin_matrix_positions.txt 4 salida_2024-11-06_eeg_build_bin_nqc.txt &
+ 1273  ./run_build_eeg_bin_and_quadcomp.sh lista_archivos.txt ts_build_eeg_to_bin TRQC_eeg_build_from_bin TRQC_eeg_build_from_bin_matrix_positions.txt 4 salida.txt
+ 1274  cat run_build_eeg_bin_and_quadcomp.sh
+ 1275  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/run_build_eeg_bin_and_quadcomp.sh ./
+ 1276  cat ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/run_build_eeg_bin_and_quadcomp.sh
+ 1280  cat ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/run_build_eeg_bin_and_quadcomp.sh
+ 1281  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/run_build_eeg_bin_and_quadcomp.sh ./
+ 1282  nohup ./run_build_eeg_bin_and_quadcomp.sh ./lista_archivos.txt ./ts_build_eeg_to_bin ./TRQC_eeg_build_from_bin ./TRQC_eeg_build_from_bin_matrix_positions.txt 4 salida_2024-11-06_eeg_build_bin_nqc.txt &
+ 1285  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_test_eeg_bin_trqc 
+ 1286  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_test_eeg_bin_trqc 587_Depression_REST.bin TRQC_eeg_build_from_bin_matrix_positions.txt 587_Depression_REST.qc4 
+ 1287  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_test_eeg_bin_trqc 587_Depression_REST.bin TRQC_eeg_build_from_bin_matrix_positions.txt 587_Depression_REST.qc4 15
+ 1293  cd ~/datasets/time_series/eeg
+ 1294  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_test_eeg_bin_trqc 587_Depression_REST.bin TRQC_eeg_build_from_bin_matrix_positions.txt 587_Depression_REST.qc4 
+ 1297  rm TRQC_test_eeg_bin_trqc
+ 1300  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_test_eeg_bin_trqc 587_Depression_REST.bin TRQC_eeg_build_from_bin_matrix_positions.txt 587_Depression_REST.qc4 
+ 1302  rm TRQC_test_eeg_bin_trqc
+ 1305  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_test_eeg_bin_trqc 587_Depression_REST.bin TRQC_eeg_build_from_bin_matrix_positions.txt 587_Depression_REST.qc4 
+ 1307  rm TRQC_test_eeg_bin_trqc
+ 1311  ./TRQC_test_eeg_bin_trqc
+ 1312  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_test_eeg_bin_trqc
+ 1313  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_test_eeg_bin_trqc 587_Depression_REST.bin TRQC_eeg_build_from_bin_matrix_positions.txt 587_Depression_REST.qc4 
+ 1316  rm TRQC_test_eeg_bin_trqc
+ 1319  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_test_eeg_bin_trqc 587_Depression_REST.bin TRQC_eeg_build_from_bin_matrix_positions.txt 587_Depression_REST.qc4 
+ 1330  cd datasets/time_series/eeg/
+ 1332  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_comp_eeg_to_bitcompress ./
+ 1333  cat run_compress_eeg_referencia.sh 
+ 1336  nohup ./run_compress_eeg_referencia.sh salida_2024-11-07_compress_eeg_ref_diff.txt &
+ 1346  cd datasets/time_series/eeg/
+ 1347  cat run_compress_eeg_referencia.sh 
+ 1348  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_comp_eeg_to_bitcompress.cpp ./
+ 1350  nohup ./run_compress_eeg_referencia.sh salida_2024-11-07_compress_eeg_ref_diff.txt &
+ 1354  cat salida_2024-11-07_compress_eeg_ref_diff.txt 
+ 1355  cp ~/tesis_temporal_series/similitud/codes_temporal_series/scripts/run_compress_eeg_referencia.sh ./
+ 1356  nohup ./run_compress_eeg_referencia.sh salida_2024-11-07_compress_eeg_ref_diff.txt &
+ 1361  cp ~/tesis_temporal_series/similitud/codes_temporal_series/scripts/run_compress_eeg_referencia.sh ./
+ 1362  nohup ./run_compress_eeg_referencia.sh salida_2024-11-07_compress_eeg_ref_diff.txt &
+ 1366  cd datasets/time_series/eeg/
+ 1368  cd datasets/time_series/eeg/
+ 1370  cat salida_2024-11-07_compress_eeg_ref_diff.txt 
+ 1373  cat salida_2024-11-07_compress_eeg_ref_diff.txt 
+ 1376  cat salida_2024-11-07_compress_eeg_ref_diff.txt 
+ 1383  cp ts_comp_eeg_to_bitcompress ~/datasets/time_series/eeg/
+ 1384  cd ~/datasets/time_series/eeg/
+ 1387  nohup ./run_compress_eeg_referencia.sh salida_2024-11-08_compress_eeg_ref_diff.txt &
+ 1388  cat ./run_compress_eeg_referencia.sh
+ 1390  cd datasets/time_series/eeg/
+ 1391  ./ts_comp_eeg_to_bitcompress 627_Depression_REST.bin 
+ 1396  rm ts_comp_eeg_to_bitcompress
+ 1397  cat ts_comp_eeg_to_bitcompress.cpp
+ 1400  cat ts_comp_eeg_to_bitcompress.cpp
+ 1405  rm ~/datasets/time_series/eeg/ts_comp_eeg_to_bitcompress*
+ 1406  cp ts_comp_eeg_to_bitcompress.cpp ~/datasets/time_series/eeg/
+ 1408  cd datasets/time_series/eeg/
+ 1411  cat salida_2024-11-08_compress_eeg_ref_diff.txt 
+ 1413  ./ts_comp_eeg_to_bitcompress 627_Depression_REST.bin 
+ 1416  nohup ./run_compress_eeg_referencia.sh salida_2024-11-08_compress_eeg_ref_diff.txt &
+ 1417  ./ts_comp_eeg_to_bitcompress 627_Depression_REST.bin 
+ 1419  cd datasets/time_series/eeg/
+ 1424  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_test_getSerie_bin_eeg 628_Depression_REST.bin 
+ 1425  ~/tesis_temporal_series/similitud/codes_temporal_series/ts_test_getSerie_bin_eeg 628_Depression_REST.bin 42
+ 1430  tail salida_2024-11-08_compress_eeg_ref_diff.txt 
+ 1449  cd ~/datasets/time_series/eeg/
+ 1463  cd ~/datasets/time_series/eeg/
+ 1513  cd ~/datasets/time_series/eeg/
+ 1514  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/run_build_eeg_variantes.sh ./
+ 1515  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_variante ./
+ 1516  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_variante_filas ./
+ 1517  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_variante_filas_matrix_positions.txt ./
+ 1518  ./run_build_eeg_bin_and_quadcomp.sh 
+ 1520  chmod +x run_build_eeg_variantes.sh
+ 1521  ./run_build_eeg_variantes.sh
+ 1522  ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_filas TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-11-12_eeg_variante_filas_size.txt
+ 1526  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/run_build_eeg_variantes.sh ./
+ 1527  chmod +x run_build_eeg_variantes.sh
+ 1528  ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_filas TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-11-12_eeg_variante_filas_size.txt
+ 1532  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/run_build_eeg_variantes.sh ./
+ 1533  ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_filas TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-11-12_eeg_variante_filas_size.txt
+ 1534  cat salida_2024-11-12_eeg_variante_filas_size.txt
+ 1535  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_filas TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-11-12_eeg_variante_filas_size.txt &
+ 1538  tail salida_2024-11-12_eeg_variante_filas_size.txt 
+ 1542  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_columnas TRQC_eeg_build_variante_columnas_matrix_positions.txt salida_2024-11-12_eeg_variante_columnas_size.txt &
+ 1548  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_columnas TRQC_eeg_build_variante_columnas_matrix_positions.txt salida_2024-11-12_eeg_variante_columnas_size.txt &
+ 1550  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_variante_columnas ./
+ 1551  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_columnas TRQC_eeg_build_variante_columnas_matrix_positions.txt salida_2024-11-12_eeg_variante_columnas_size.txt &
+ 1554  cd datasets/time_series/eeg/
+ 1555  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_variante_columnas_matrix_positions.txt ./
+ 1556  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_columnas TRQC_eeg_build_variante_columnas_matrix_positions.txt salida_2024-11-12_eeg_variante_columnas_size.txt &
+ 1557  head salida_2024-11-12_eeg_variante_columnas_size.txt 
+ 1559  tail salida_2024-11-12_eeg_variante_columnas_size.txt
+ 1569  cp TRQC_load_trqc ~/datasets/time_series/eeg/
+ 1571  cd datasets/time_series/eeg/
+ 1573  cd ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/
+ 1575  cp run_nqc_partial_size.sh ~/datasets/time_series/eeg/
+ 1578  ./run_nqc_partial_size.sh TRQC_load_trqc salida_2024-11-19_eeg_parcial_size.txt
+ 1579  ./run_nqc_partial_size.sh lista_archivos.txt TRQC_load_trqc salida_2024-11-19_eeg_parcial_size.txt
+ 1585  rm TRQC_eeg_build_variante_columnas
+ 1587  cat TRQC_eeg_build_variante_columnas.cpp 
+ 1589  cd datasets/time_series/eeg/
+ 1590  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_columnas TRQC_eeg_build_variante_columnas_matrix_positions.txt salida_2024-11-19_eeg_variante_columnas_size.txt &
+ 1593  cat salida_2024-11-19_eeg_variante_columnas_size.txt
+ 1594  cp ~/tesis_temporal_series/similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_build_variante_columnas ./
+ 1595  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_columnas TRQC_eeg_build_variante_columnas_matrix_positions.txt salida_2024-11-19_eeg_variante_columnas_size.txt &
+ 1598  head salida_2024-11-19_eeg_variante_columnas_size.txt
+ 1602  rm similitud/codes_temporal_series/ts_nasa_trquadcomp/TRQC_eeg_size_series
+ 1607  cat TRQC_eeg_build_variante_filas.cpp 
+ 1608  cp TRQC_eeg_build_variante_filas ~/datasets/time_series/eeg/
+ 1609  cd ~/datasets/time_series/eeg/
+ 1612  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_filas TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-11-19_eeg_variante_filas_size.txt &
+ 1614  head salida_2024-11-19_eeg_variante_filas_size.txt
+ 1618  cd datasets/time_series/eeg/
+ 1624  cp TRQC_eeg_build_variante_filas ~/datasets/time_series/eeg/
+ 1625  cp TRQC_eeg_build_variante_columnas ~/datasets/time_series/eeg/
+ 1627  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_columnas TRQC_eeg_build_variante_columnas_matrix_positions.txt salida_2024-11-12_eeg_variante_columnas_size_minmaxs.txt &
+ 1628  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_filas TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-11-12_eeg_variante_filas_size_minmaxs.txt &
+ 1631  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_filas TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-11-12_eeg_variante_filas_size_minmaxs.txt &
+ 1633  mv salida_2024-11-12_eeg_variante_filas_size_minmaxs.txt salida_2024-11-19_eeg_variante_filas_size_minmaxs.txt
+ 1635  mv salida_2024-11-12_eeg_variante_columnas_size_minmaxs.txt salida_2024-11-19_eeg_variante_columnas_size_minmaxs.txt
+ 1637  cd datasets/time_series/eeg/
+ 1639  cd datasets/time_series/eeg/
+ 1648  cp TRQC_eeg_build_variante_filas ~/datasets/time_series/eeg/
+ 1649  cp TRQC_eeg_build_variante_columnas ~/datasets/time_series/eeg/
+ 1652  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_columnas TRQC_eeg_build_variante_columnas_matrix_positions.txt salida_2024-11-21_eeg_variante_columnas_size_minmaxs.txt &
+ 1653  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_filas TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-11-21_eeg_variante_filas_size_minmaxs.txt &
+ 1655  cd ~/datasets/time_series/eeg
+ 1657  tail ~/datasets/time_series/eeg/salida_2024-11-21_eeg_variante_*
+ 1667  cp scripts_eeg/run_build_eeg_variantes.sh ~/datasets/time_series/eeg/
+ 1669  cp TRQC_eeg_build_variante_columnas ~/datasets/time_series/eeg/
+ 1670  cp TRQC_eeg_build_variante_filas ~/datasets/time_series/eeg/
+ 1671  cd ~/datasets/time_series/eeg/
+ 1673  cd datasets/time_series/eeg/
+ 1678  TRQC_eeg_build_variante_filas
+ 1679  ./TRQC_eeg_build_variante_filas
+ 1680  ./TRQC_eeg_build_variante_filas 535_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt
+ 1700  cp TRQC_eeg_build_from_bin ~/datasets/time_series/eeg/TRQCvlc_eeg_build_from_bin
+ 1701  cp scripts/run_build_qc_vlc.sh ~/datasets/time_series/eeg/
+ 1702  cd ~/datasets/time_series/eeg/
+ 1707  ./run_build_qc_vlc.sh lista_archivos.txt TRQCvlc_eeg_build_from_bin TRQC_eeg_build_from_bin_matrix_positions.txt salida_2024-11-26_eeg_build_qcvlc.txt &
+ 1710  cd datasets/time_series/eeg/
+ 1714  cat salida_2024-11-26_eeg_build_qcvlc.txt
+ 1715  head salida_2024-11-26_eeg_build_qcvlc.txt
+ 1723  cp similitud/codes_temporal_series/ts_vlc_trquadcomp/scripts/run_build_qc_vlc.sh ~/datasets/time_series/eeg/
+ 1724  cd ~/datasets/time_series/eeg/
+ 1726  nohup ./run_build_qc_vlc.sh lista_archivos.txt TRQCvlc_eeg_build_from_bin TRQC_eeg_build_from_bin_matrix_positions.txt salida_2024-11-26_eeg_build_qcvlc.txt &
+ 1730  cd datasets/time_series/eeg/
+ 1735  cd datasets/time_series/eeg/
+ 1745  cd datasets/time_series/eeg/
+ 1747  cat salida_2024-12-06_eeg_variante_filas_histograma.txt 
+ 1748  head salida_2024-12-06_eeg_variante_filas_histograma.txt 
+ 1749  head salida_2024-11-26_eeg_build_qcvlc.txt
+ 1750  head salida_2024-11-26_eeg_build_qcvlc.txt -n 10
+ 1751  head salida_2024-11-26_eeg_build_qcvlc.txt -n 15
+ 1752  head salida_2024-11-26_eeg_build_qcvlc.txt -n 20
+ 1754  head salida_2024-11-21_eeg_variante_filas_size_minmaxs.txt
+ 1755  head salida_2024-12-06_eeg_variante_filas_histograma.txt
+ 1763  ./TRQC_eeg_build_variante_filas_+histo
+ 1765  cd datasets/time_series/eeg/
+ 1774  cd datasets/time_series/eeg/
+ 1801  cp TRQC_eeg_build_variante_filas_+histo ~/datasets/time_series/eeg/
+ 1802  cp TRQC_eeg_build_variante_filas_matrix_positions.txt ~/datasets/time_series/eeg/eeg_
+ 1803  cp TRQC_eeg_build_variante_filas_matrix_positions.txt ~/datasets/time_series/eeg/
+ 1804  cp scripts_eeg/run_eeg_variantes_e_histograma.sh ~/datasets/time_series/eeg/
+ 1805  cd ~/datasets/time_series/eeg/
+ 1807  rm eeg_
+ 1812  ./TRQC_eeg_build_variante_filas_+histo 627_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt
+ 1813  ./TRQC_eeg_build_variante_filas_+histo 627_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt 627_Depression_REST.histograma.txt
+ 1816  nohup ./run_eeg_variantes_e_histograma.sh lista_archivos.txt TRQC_eeg_build_variante_filas_+histo TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-12-06_eeg_variante_filas_histograma_v2.txt 
+ 1818  nohup ./run_eeg_variantes_e_histograma.sh lista_archivos.txt TRQC_eeg_build_variante_filas_+histo TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-12-06_eeg_variante_filas_histograma_v2.txt &
+ 1834  cp TRQC_eeg_build_variante_filas_+histo ~/datasets/time_series/eeg/
+ 1835  cp TRQC_eeg_build_variante_filas_matrix_positions.txt ~/datasets/time_series/eeg/
+ 1837  cd scripts_eeg/
+ 1839  cp run_eeg_variantes_e_histograma.sh ~/datasets/time_series/eeg/
+ 1840  cd ~/datasets/time_series/eeg/
+ 1842  ./run_eeg_variantes_e_histograma.sh
+ 1843  nohup ./run_eeg_variantes_e_histograma.sh lista_archivos.txt TRQC_eeg_build_variante_filas_+histo TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-12-06_eeg_variante_filas_histograma.txt &
+ 1845  cd datasets/time_series/eeg/
+ 1851  cat run_build_eeg_variantes.sh 
+ 1852  ./TRQC_eeg_build_variante_filas_+histo
+ 1853  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_filas_+histo salida_2024-12-06_eeg_variante_filas_histograma_v3.txt &
+ 1855  nohup ./run_build_eeg_variantes.sh lista_archivos.txt TRQC_eeg_build_variante_filas_+histo TRQC_eeg_build_variante_filas_matrix_positions.txt salida_2024-12-06_eeg_variante_filas_histograma_v3.txt &
+ 1859  cd datasets/time_series/eeg/
+ 1866  cat salida_2024-12-06_eeg_variante_filas_histograma_v3.txt
+ 1872  cd datasets/time_series/eeg/
+ 1874  cd datasets/time_series/eeg/
+ 1879  ls plot_eeg 
+ 1880  gnuplot plot_eeg 
+ 1903  cd codes_temporal_series/ts_nasa_trquadcomp/scripts_eeg/histogramas/
+ 1905  cp plot ~/datasets/time_series/eeg/
+ 1906  cp script.sh ~/datasets/time_series/eeg/
+ 1907  cd ~/datasets/time_series/eeg/
+ 1911  cd datasets/time_series/eeg/
+ 1914  cd datasets/time_series/eeg/
+ 1930  cd datasets/time_series/eeg/
+ 1931  cat ./run_build_eeg_variantes.sh
+ 1936  TRQC_eeg_build_variante_filas_+histo
+ 1937  ./TRQC_eeg_build_variante_filas_+histo
+ 1939  ./TRQC_eeg_build_variante_filas_+histo 619_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt 619_Depression_REST.histograma.txt
+ 1941  ./TRQC_eeg_build_variante_filas_+histo 620_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt 620_Depression_REST.histograma.txt &
+ 1942  ./TRQC_eeg_build_variante_filas_+histo 621_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt 621_Depression_REST.histograma.txt &
+ 1943  ./TRQC_eeg_build_variante_filas_+histo 622_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt 622_Depression_REST.histograma.txt &
+ 1944  ./TRQC_eeg_build_variante_filas_+histo 623_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt 623_Depression_REST.histograma.txt &
+ 1945  ./TRQC_eeg_build_variante_filas_+histo 624_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt 624_Depression_REST.histograma.txt &
+ 1946  ./TRQC_eeg_build_variante_filas_+histo 625_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt 625_Depression_REST.histograma.txt &
+ 1947  ./TRQC_eeg_build_variante_filas_+histo 626_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt 626_Depression_REST.histograma.txt &
+ 1948  ./TRQC_eeg_build_variante_filas_+histo 628_Depression_REST.bin TRQC_eeg_build_variante_filas_matrix_positions.txt 628_Depression_REST.histograma.txt &
+ 1977  cd eeg/
+ 1984  cd /home/cquijada/datasets/time_series/eeg
+ 2002  history | grep eeg
+ 2003  history | grep eeg > history_eeg.txt
