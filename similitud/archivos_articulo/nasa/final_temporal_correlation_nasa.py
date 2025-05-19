@@ -65,17 +65,17 @@ analizar_correlaciones(tSeries, fname)
 
 
 """
-udec_server
-nohup python3 ~/codes_nasa/nasa_temporal_correlation.py APCP_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_APCP.txt &
-nohup python3 ~/codes_nasa/nasa_temporal_correlation.py CAPE_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_CAPE.txt &
-nohup python3 ~/codes_nasa/nasa_temporal_correlation.py CONVfrac_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_CONV.txt &
-nohup python3 ~/codes_nasa/nasa_temporal_correlation.py DLWRF_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_DLWRF.txt &
-nohup python3 ~/codes_nasa/nasa_temporal_correlation.py DSWRF_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_DSWRF.txt &
-nohup python3 ~/codes_nasa/nasa_temporal_correlation.py PEVAP_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_PEVAP.txt &
-nohup python3 ~/codes_nasa/nasa_temporal_correlation.py PRES_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_PRES.txt &
-nohup python3 ~/codes_nasa/nasa_temporal_correlation.py SPFH_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_SPFH.txt &
-nohup python3 ~/codes_nasa/nasa_temporal_correlation.py TMP_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_TMP_.txt &
-nohup python3 ~/codes_nasa/nasa_temporal_correlation.py UGRD_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_UGRD.txt &
-nohup python3 ~/codes_nasa/nasa_temporal_correlation.py VGRD_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-12_VGRD.txt &
+udec_server /home/carlos/datasets/times_series/NASA
+nohup python3 ~/codes_nasa/nasa_temporal_correlation.py APCP_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-19_APCP.txt &
+nohup python3 ~/codes_nasa/nasa_temporal_correlation.py CAPE_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-19_CAPE.txt &
+nohup python3 ~/codes_nasa/nasa_temporal_correlation.py CONVfrac_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-19_CONV.txt &
+nohup python3 ~/codes_nasa/nasa_temporal_correlation.py DLWRF_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-19_DLWRF.txt &
+nohup python3 ~/codes_nasa/nasa_temporal_correlation.py DSWRF_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-19_DSWRF.txt &
+nohup python3 ~/codes_nasa/nasa_temporal_correlation.py PEVAP_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-19_PEVAP.txt &
+nohup python3 ~/codes_nasa/nasa_temporal_correlation.py PRES_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-19_PRES.txt &
+nohup python3 ~/codes_nasa/nasa_temporal_correlation.py SPFH_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-19_SPFH.txt &
+nohup python3 ~/codes_nasa/nasa_temporal_correlation.py TMP_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-19_TMP_.txt &
+nohup python3 ~/codes_nasa/nasa_temporal_correlation.py UGRD_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-19_UGRD.txt &
+nohup python3 ~/codes_nasa/nasa_temporal_correlation.py VGRD_NLDAS_FORA0125_H.txt > ~/codes_nasa/salida_2025-05-19_VGRD.txt &
 """
 
