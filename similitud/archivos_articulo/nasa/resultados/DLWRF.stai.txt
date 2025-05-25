@@ -1,0 +1,2 @@
+dataset	IAET	totalCeldas	celdasFijas	totalW
+DLWRF_NLDAS_FORA0125_H.txt	0.942292	103936	23497	638170

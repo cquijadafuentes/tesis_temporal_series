@@ -194,3 +194,21 @@ int main(int argc, char const *argv[]){
 	cout << argv[1] << "\t" << IAET << "\t" << (rows*cols) << "\t" << cantFijas << "\t" << sumaW << endl;
 	return 0;
 }
+
+
+/*
+udec_server /home/carlos/datasets/times_series/NASA
+
+nohup ~/codes_nasa/final_stai_nasa APCP_NLDAS_FORA0125_H.txt > ~/codes_nasa/APCP.stai.txt &
+nohup ~/codes_nasa/final_stai_nasa CAPE_NLDAS_FORA0125_H.txt > ~/codes_nasa/CAPE.stai.txt &
+nohup ~/codes_nasa/final_stai_nasa CONVfrac_NLDAS_FORA0125_H.txt > ~/codes_nasa/CONVfrac.stai.txt &
+nohup ~/codes_nasa/final_stai_nasa DLWRF_NLDAS_FORA0125_H.txt > ~/codes_nasa/DLWRF.stai.txt &
+nohup ~/codes_nasa/final_stai_nasa DSWRF_NLDAS_FORA0125_H.txt > ~/codes_nasa/DSWRF.stai.txt &
+nohup ~/codes_nasa/final_stai_nasa PEVAP_NLDAS_FORA0125_H.txt > ~/codes_nasa/PEVAP.stai.txt &
+nohup ~/codes_nasa/final_stai_nasa PRES_NLDAS_FORA0125_H.txt > ~/codes_nasa/PRES.stai.txt &
+nohup ~/codes_nasa/final_stai_nasa SPFH_NLDAS_FORA0125_H.txt > ~/codes_nasa/SPFH.stai.txt &
+nohup ~/codes_nasa/final_stai_nasa TMP_NLDAS_FORA0125_H.txt > ~/codes_nasa/TMP.stai.txt &
+nohup ~/codes_nasa/final_stai_nasa UGRD_NLDAS_FORA0125_H.txt > ~/codes_nasa/UGRD.stai.txt &
+nohup ~/codes_nasa/final_stai_nasa VGRD_NLDAS_FORA0125_H.txt > ~/codes_nasa/VGRD.stai.txt &
+
+*/

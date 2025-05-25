@@ -1,0 +1,2 @@
+dataset	IAET	totalCeldas	celdasFijas	totalW
+APCP_NLDAS_FORA0125_H.txt	0.979284	103936	23607	637070

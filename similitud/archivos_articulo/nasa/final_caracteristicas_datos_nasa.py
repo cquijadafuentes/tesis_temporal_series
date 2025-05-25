@@ -6,17 +6,17 @@ import matplotlib.pyplot as plt
 
 """
 
-nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ APCP_NLDAS_FORA0125_H.txt ./ &
-nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ CAPE_NLDAS_FORA0125_H.txt ./ &
-nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ CONVfrac_NLDAS_FORA0125_H.txt ./ &
-nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ DLWRF_NLDAS_FORA0125_H.txt ./ &
-nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ DSWRF_NLDAS_FORA0125_H.txt ./ &
-nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ PEVAP_NLDAS_FORA0125_H.txt ./ &
-nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ PRES_NLDAS_FORA0125_H.txt ./ &
-nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ SPFH_NLDAS_FORA0125_H.txt ./ &
-nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ TMP_NLDAS_FORA0125_H.txt ./ &
-nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ UGRD_NLDAS_FORA0125_H.txt ./ &
-nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ VGRD_NLDAS_FORA0125_H.txt ./ &
+nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ APCP.stats.txt ./ &
+nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ CAPE.stats.txt ./ &
+nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ CONVfrac.stats.txt ./ &
+nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ DLWRF.stats.txt ./ &
+nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ DSWRF.stats.txt ./ &
+nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ PEVAP.stats.txt ./ &
+nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ PRES.stats.txt ./ &
+nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ SPFH.stats.txt ./ &
+nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ TMP.stats.txt ./ &
+nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ UGRD.stats.txt ./ &
+nohup python3 final_caracteristicas_datos_nasa.py ~/datasets/times_series/NASA/ VGRD.stats.txt ./ &
 """
 
 

@@ -1,0 +1,2 @@
+dataset	IAET	totalCeldas	celdasFijas	totalW
+PEVAP_NLDAS_FORA0125_H.txt	0.960998	103936	23497	638170

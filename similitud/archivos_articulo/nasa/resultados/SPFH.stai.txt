@@ -1,0 +1,2 @@
+dataset	IAET	totalCeldas	celdasFijas	totalW
+SPFH_NLDAS_FORA0125_H.txt	0.972764	103936	78353	195410

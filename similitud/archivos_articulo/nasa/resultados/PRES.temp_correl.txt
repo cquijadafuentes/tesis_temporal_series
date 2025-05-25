@@ -1,0 +1,6 @@
+/home/carlos/.local/lib/python3.10/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+464 224
+2664
+EEG	Lag_1	Lag_2	Lag_5	Lag_10	%>.5L_2	%>.5L_5	%>.5L_10
+PRES_	0.995	0.982	0.933	0.832	77.4	77.4	77.4	77.4	

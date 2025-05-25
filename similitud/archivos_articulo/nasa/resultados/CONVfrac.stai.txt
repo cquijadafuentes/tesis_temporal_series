@@ -1,0 +1,2 @@
+dataset	IAET	totalCeldas	celdasFijas	totalW
+CONVfrac_NLDAS_FORA0125_H.txt	0.964976	103936	26465	610732

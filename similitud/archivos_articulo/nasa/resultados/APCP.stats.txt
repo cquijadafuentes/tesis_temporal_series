@@ -1,0 +1,7 @@
+Estadísticas Datos APCP_NLDAS_FORA0125_H.txt
+	Mínimo: -1.0
+	Máximo: 10258.0
+	Promedio: 5.432642962850858
+	Media: 0.0
+	Desviación estándar: 38.08018611499287
+	Varianza: 1450.1005745524956
