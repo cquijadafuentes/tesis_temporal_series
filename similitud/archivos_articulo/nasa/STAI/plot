@@ -3,7 +3,7 @@ set grid ytics
 set key out horiz
 set terminal png size 800,300
 
-#set ylabel "STAI"
+set ylabel "Autocorrelation Index"
 #set xlabel "Dataset"
 
 set yrange [-1.15:1.15]
@@ -12,12 +12,8 @@ set xrange [0.5:11.5]
 set output 'autocorrelacion_full.png'
 #set title 'Autocorrelación Espacio-Temporal (Full)'
 
-plot 'AET_NASA_full_24-04-2024.data' using 3:xtic(1) title 'STAI' with linespoints lt 2 pt 4 lc rgb blue
-
-
-
-
-set output 'autocorrelacion_week.png'
-#set title 'Autocorrelación Espacio-Temporal (Week)'
-
-plot 'AET_NASA_week_24-04-2024.data' using 3:xtic(1) title 'STAI' with linespoints lt 2 pt 4 lc rgb blue
+plot 'autocorrelation.data' using 2:xtic(1) title 'Spatio-Temporal' with linespoints lt 2 pt 4 lc rgb red,   \
+     '' using 3 title 'Temporal (lag_1)' with linespoints lt 2 pt 4 lc rgb blue,   \
+     '' using 4 title 'Temporal (lag_2)' with linespoints lt 2 pt 4 lc rgb skyblue,   \
+     '' using 5 title 'Temporal (lag_5)' with linespoints lt 2 pt 4 lc rgb green,   \
+     '' using 5 title 'Temporal (lag_{10})' with linespoints lt 2 pt 4 lc rgb darkgreen
