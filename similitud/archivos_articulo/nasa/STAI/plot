@@ -16,4 +16,4 @@ plot 'autocorrelation.data' using 2:xtic(1) title 'Spatio-Temporal' with linespo
      '' using 3 title 'Temporal (lag_1)' with linespoints lt 2 pt 4 lc rgb blue,   \
      '' using 4 title 'Temporal (lag_2)' with linespoints lt 2 pt 4 lc rgb skyblue,   \
      '' using 5 title 'Temporal (lag_5)' with linespoints lt 2 pt 4 lc rgb green,   \
-     '' using 5 title 'Temporal (lag_{10})' with linespoints lt 2 pt 4 lc rgb darkgreen
+     '' using 6 title 'Temporal (lag_{10})' with linespoints lt 2 pt 4 lc rgb darkgreen
