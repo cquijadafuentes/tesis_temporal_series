@@ -1,17 +1,18 @@
 red = "#FF0000"; green = "#00FF00"; blue = "#0000FF"; skyblue = "#87CEEB"; black = "#000000"; darkgreen = "#006400"; darkred = "#8b0000";
 set grid ytics
 set key out horiz
-set terminal png size 800,400
+set terminal png size 800,300
 
-set ylabel "STAI"
+#set ylabel "STAI"
 #set xlabel "Dataset"
 
-set yrange [-1:1]
+set yrange [-1.15:1.15]
+set xrange [0.5:11.5]
 
 set output 'autocorrelacion_full.png'
 #set title 'Autocorrelación Espacio-Temporal (Full)'
 
-plot 'AET_NASA_full_24-04-2024.data' using 3 with linespoints lt 2 pt 4 lc rgb blue
+plot 'AET_NASA_full_24-04-2024.data' using 3:xtic(1) title 'STAI' with linespoints lt 2 pt 4 lc rgb blue
 
 
 
@@ -19,4 +20,4 @@ plot 'AET_NASA_full_24-04-2024.data' using 3 with linespoints lt 2 pt 4 lc rgb b
 set output 'autocorrelacion_week.png'
 #set title 'Autocorrelación Espacio-Temporal (Week)'
 
-plot 'AET_NASA_week_24-04-2024.data' using 3 with linespoints lt 2 pt 4 lc rgb blue
+plot 'AET_NASA_week_24-04-2024.data' using 3:xtic(1) title 'STAI' with linespoints lt 2 pt 4 lc rgb blue
