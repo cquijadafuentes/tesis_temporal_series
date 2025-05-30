@@ -9,16 +9,14 @@ set ylabel "STAI"
 set yrange [-1:1]
 
 set output 'autocorrelacion_full.png'
-set title 'Autocorrelación Espacio-Temporal (Full)'
+#set title 'Autocorrelación Espacio-Temporal (Full)'
 
-plot 'AET_NASA_full_24-04-2024.data' using 2:xtic(1) title 'Diff' with linespoints lt 2 pt 3 lc rgb red,   \
-     'AET_NASA_full_24-04-2024.data' using 3 title 'Zeta' with linespoints lt 2 pt 4 lc rgb blue
+plot 'AET_NASA_full_24-04-2024.data' using 3 with linespoints lt 2 pt 4 lc rgb blue
 
 
 
 
 set output 'autocorrelacion_week.png'
-set title 'Autocorrelación Espacio-Temporal (Week)'
+#set title 'Autocorrelación Espacio-Temporal (Week)'
 
-plot 'AET_NASA_week_24-04-2024.data' using 2:xtic(1) title 'Diff' with linespoints lt 2 pt 3 lc rgb red,   \
-     'AET_NASA_week_24-04-2024.data' using 3 title 'Zeta' with linespoints lt 2 pt 4 lc rgb blue
+plot 'AET_NASA_week_24-04-2024.data' using 3 with linespoints lt 2 pt 4 lc rgb blue
