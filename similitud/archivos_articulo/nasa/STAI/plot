@@ -3,10 +3,10 @@ set grid ytics
 set key out horiz
 set terminal png size 800,400
 
-set ylabel "Ìndice"
-set xlabel "Dataset"
+set ylabel "STAI"
+#set xlabel "Dataset"
 
-set xrange [-1:1]
+set yrange [-1:1]
 
 set output 'autocorrelacion_full.png'
 set title 'Autocorrelación Espacio-Temporal (Full)'
