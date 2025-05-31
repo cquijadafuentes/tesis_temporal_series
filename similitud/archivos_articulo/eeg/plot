@@ -1,0 +1,27 @@
+red = "#FF0000"; green = "#00FF00"; blue = "#0000FF"; skyblue = "#87CEEB"; black = "#000000"; darkgreen = "#006400"; darkred = "#8b0000";
+set grid ytics
+set key out horiz
+set terminal png size 800,300
+
+#set ylabel "Autocorrelation Index"
+#set xlabel "Dataset"
+
+unset xtics
+
+set output 'eeg_general_values_stats_1.png'
+
+plot 'eeg_stats_by_mean_1.data' using 3 title 'min value' with linespoints lt 2 pt 4 lc rgb red,   \
+     '' using 4 title 'max value' with linespoints lt 2 pt 4 lc rgb skyblue,   \
+     '' using 5 title 'mean value' with linespoints lt 2 pt 4 lc rgb green
+
+set output 'eeg_general_values_stats_2.png'
+
+plot 'eeg_stats_by_mean_2.data' using 3 title 'min value' with linespoints lt 2 pt 4 lc rgb red,   \
+     '' using 4 title 'max value' with linespoints lt 2 pt 4 lc rgb skyblue,   \
+     '' using 5 title 'mean value' with linespoints lt 2 pt 4 lc rgb green
+
+set output 'eeg_general_values_stats_3.png'
+set xrange [-0.25:1.25]
+plot 'eeg_stats_by_mean_3.data' using 3 title 'min value' with linespoints lt 2 pt 4 lc rgb red,   \
+     '' using 4 title 'max value' with linespoints lt 2 pt 4 lc rgb skyblue,   \
+     '' using 5 title 'mean value' with linespoints lt 2 pt 4 lc rgb green
