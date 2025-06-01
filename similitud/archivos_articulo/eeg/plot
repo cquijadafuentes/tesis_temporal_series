@@ -37,3 +37,16 @@ plot 'eeg_autocorrelation.data' using 6 title 'Spatio-Temporal' with linespoints
      '' using 3 title 'Temporal (lag_2)' with linespoints lt 2 pt 3 lc rgb skyblue,   \
      '' using 4 title 'Temporal (lag_5)' with linespoints lt 2 pt 3 lc rgb green,   \
      '' using 5 title 'Temporal (lag_{10})' with linespoints lt 2 pt 3 lc rgb darkgreen
+
+
+
+set terminal png size 500,400
+set output 'eeg_scatterplot.png'
+set xrange [10:2000000]
+set logscale x
+set xtics
+set ylabel "Auto-correlation"
+set xlabel "Standard Deviation"
+plot 'eeg_autocorrelation.data' using 7:2 title 'Temporal (lag_1)' lc rgb red,   \
+     '' using 7:6 title 'Spatio-Temporal' lc rgb blue
+
