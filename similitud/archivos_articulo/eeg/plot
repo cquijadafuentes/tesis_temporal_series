@@ -3,7 +3,7 @@ set grid ytics
 set key out horiz
 
 
-set terminal png size 600,300
+set terminal png size 700,300
 unset xtics
 
 
@@ -54,7 +54,7 @@ plot 'eeg_autocorrelation.data' using 7:2 title 'Temporal (lag_1)' lc rgb red,  
 
 
 
-set terminal png size 600,300
+set terminal png size 400,300
 unset logscale x
 set logscale y
 unset xrange
