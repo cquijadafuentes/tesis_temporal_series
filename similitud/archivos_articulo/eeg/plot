@@ -61,6 +61,7 @@ unset xrange
 unset yrange
 unset xtics
 set ylabel "Standard Deviation"
+unset xlabel
 set output 'eeg_standard_deviation.png'
 plot 'eeg_autocorrelation.data' using 7 title '' pt 3 lc rgb red
 
