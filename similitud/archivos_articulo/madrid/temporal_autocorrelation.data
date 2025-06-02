@@ -1,0 +1,5 @@
+Autocorr	Intensidad	Ocupación	Carga	Velocidad
+Temporal_{L1}	0.964	0.877	0.963	0.847
+Temporal_{L2}	0.931	0.799	0.933	0.767
+Temporal_{L5}	0.804	0.622	0.813	0.544
+Temporal_{L10}	0.572	0.391	0.578	0.243
