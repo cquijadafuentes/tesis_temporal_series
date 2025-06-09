@@ -99,13 +99,13 @@ TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, int
 		}
 	}
 
-	fixedValue = int_vector<>(valoresSF.size());
+	int_vector<> fixedValue(valoresSF.size());
 	for(int i=0; i<valoresSF.size(); i++){
 		fixedValue[i] = valoresSF[i] - min_value;
 	}
 	util::bit_compress(fixedValue);
 
-	refFirstValue = int_vector<>(valoresPVSR.size());
+	int_vector<> refFirstValue(valoresPVSR.size());
 	for(int i=0; i<valoresPVSR.size(); i++){
 		refFirstValue[i] = valoresPVSR[i] - min_value;
 	}
@@ -233,13 +233,13 @@ TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, boo
 		}
 	}
 
-	fixedValue = int_vector<>(valoresSF.size());
+	int_vector<> fixedValue(valoresSF.size());
 	for(int i=0; i<valoresSF.size(); i++){
 		fixedValue[i] = valoresSF[i] - min_value;
 	}
 	util::bit_compress(fixedValue);
 
-	refFirstValue = int_vector<>(valoresPVSR.size());
+	int_vector<> refFirstValue(valoresPVSR.size());
 	for(int i=0; i<valoresPVSR.size(); i++){
 		refFirstValue[i] = valoresPVSR[i] - min_value;
 	}
