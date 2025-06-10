@@ -7,8 +7,6 @@ set terminal png size 700,300
 unset xtics
 
 
-
-
 set output 'eeg_general_values_stats_1.png'
 plot 'eeg_stats_by_mean_1.data' using 3 title 'min value' with linespoints lt 2 pt 3 lc rgb red,   \
      '' using 4 title 'max value' with linespoints lt 2 pt 3 lc rgb skyblue,   \
@@ -31,14 +29,24 @@ plot 'eeg_stats_by_mean_3.data' using 3 title 'min value' with linespoints lt 2 
 
 
 set terminal png size 800,300
-set output 'eeg_autocorrelation.png'
 set xrange [0:118]
 set yrange [-1.25:1.25]
-plot 'eeg_autocorrelation.data' using 6 title 'Spatio-Temporal' with linespoints lt 2 pt 3 lc rgb red,   \
-     '' using 2 title 'Temporal (lag_1)' with linespoints lt 2 pt 3 lc rgb blue,   \
-     '' using 3 title 'Temporal (lag_2)' with linespoints lt 2 pt 3 lc rgb skyblue,   \
-     '' using 4 title 'Temporal (lag_5)' with linespoints lt 2 pt 3 lc rgb green,   \
-     '' using 5 title 'Temporal (lag_{10})' with linespoints lt 2 pt 3 lc rgb darkgreen
+set xlabel "EEGs"
+
+
+set ylabel "Temporal Auto-correlation Index"
+set output 'eeg_autocorrelation_temporal.png'
+plot 'eeg_autocorrelation.data' using 2 title 'lag_1' with linespoints lt 2 pt 3 lc rgb blue,   \
+     '' using 3 title 'lag_2' with linespoints lt 2 pt 3 lc rgb skyblue,   \
+     '' using 4 title 'lag_5' with linespoints lt 2 pt 3 lc rgb green,   \
+     '' using 5 title 'lag_{10}' with linespoints lt 2 pt 3 lc rgb darkgreen
+
+
+set ylabel "Spatio-temporal Auto-correlation Index"
+set output 'eeg_autocorrelation_spatiotemporal.png'
+plot 'eeg_autocorrelation.data' using 6 title 'Columns' with linespoints lt 2 pt 3 lc rgb red,   \
+     '' using 7 title 'Rows' with linespoints lt 2 pt 3 lc rgb blue,   \
+     '' using 8 title 'Quadrants' with linespoints lt 2 pt 3 lc rgb skyblue
 
 
 
@@ -47,10 +55,9 @@ set output 'eeg_scatterplot.png'
 set xrange [10:2000000]
 set logscale x
 set xtics
-set ylabel "Auto-correlation"
 set xlabel "Standard Deviation"
-plot 'eeg_autocorrelation.data' using 7:2 title 'Temporal (lag_1)' lc rgb red,   \
-     '' using 7:6 title 'Spatio-Temporal' lc rgb blue
+plot 'eeg_autocorrelation.data' using 9:2 title 'Temporal (lag_1)' lc rgb red,   \
+     '' using 9:6 title 'Spatio-Temporal' lc rgb blue
 
 
 
@@ -63,5 +70,5 @@ unset xtics
 set ylabel "Standard Deviation"
 unset xlabel
 set output 'eeg_standard_deviation.png'
-plot 'eeg_autocorrelation.data' using 7 title '' pt 3 lc rgb red
+plot 'eeg_autocorrelation.data' using 9 title '' pt 3 lc rgb red
 

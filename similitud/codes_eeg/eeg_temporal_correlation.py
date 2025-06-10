@@ -20,7 +20,7 @@ def analizar_correlaciones(datos, title):
 				autocorr = np.corrcoef(serie[:-lag], serie[lag:])[0,1]
 			autocorrs[f'Lag_{lag}'].append(autocorr)	
 	# Estadísticas temporales
-	print("EEG\tLag_1\tLag_2\tLag_5\tLag_10\t%>.5L_2\t%>.5L_5\t%>.5L_10")
+	print("EEG\tLag_1\tLag_2\tLag_5\tLag_10\t%>.5L_1\t%>.5L_2\t%>.5L_5\t%>.5L_10")
 	print(title, end="\t")
 	for lag in autocorrs:
 		vals = np.array(autocorrs[lag])
