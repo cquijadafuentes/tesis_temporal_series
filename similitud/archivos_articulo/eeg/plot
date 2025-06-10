@@ -7,6 +7,10 @@ set terminal png size 700,300
 unset xtics
 
 
+set ylabel "Values range"
+set xlabel "EEGs"
+
+
 set output 'eeg_general_values_stats_1.png'
 plot 'eeg_stats_by_mean_1.data' using 3 title 'min value' with linespoints lt 2 pt 3 lc rgb red,   \
      '' using 4 title 'max value' with linespoints lt 2 pt 3 lc rgb skyblue,   \
