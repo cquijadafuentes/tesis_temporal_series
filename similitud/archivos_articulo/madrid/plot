@@ -1,5 +1,8 @@
 red = "#FF0000"; green = "#00FF00"; blue = "#0000FF"; skyblue = "#87CEEB"; black = "#000000"; darkgreen = "#006400"; darkred = "#8b0000";
 rclaro = "#FF6666"; rmedio = "#FF3333"; rfuerte = "#CC0000"; roscuro = "#660000"
+r1 = "#581845"; r2 = "#900C3F"; r3 = "#C70039"; r4 = "#FF5733";
+p1 = "#4a235a"; p2 = "#7d3c98"; p3 = "#884ea0"; p4 = "#bb8fce";
+
 set grid ytics
 set key out horiz
 set yrange [-1.15:1.15]
@@ -7,7 +10,7 @@ set yrange [-1.15:1.15]
 
 
 set terminal png size 600,300
-set xrange [0.5:6.5]
+set xrange [0.75:6.25]
 set ylabel "Spatio-Temporal Auto-correlation"
 set output 'stai_madrid.png'
 plot 'spatio_temporal_autocorrelation.data' using 2:xtic(1) title 'Intensidad' with linespoints lt 2 pt 4 lc rgb red,   \
@@ -18,7 +21,7 @@ plot 'spatio_temporal_autocorrelation.data' using 2:xtic(1) title 'Intensidad' w
 
 
 set terminal png size 500,300
-set xrange [0.5:4.5]
+set xrange [0.75:4.25]
 set ylabel "Temporal Auto-correlation"
 set output 'tai_madrid.png'
 plot 'temporal_autocorrelation.data' using 2:xtic(1) title 'Intensidad' with linespoints lt 2 pt 4 lc rgb red,   \
@@ -26,4 +29,19 @@ plot 'temporal_autocorrelation.data' using 2:xtic(1) title 'Intensidad' with lin
      '' using 4 title 'Carga' with linespoints lt 2 pt 4 lc rgb skyblue,   \
      '' using 5 title 'Velocidad' with linespoints lt 2 pt 4 lc rgb green
 
+
+
+
+set terminal png size 800,400
+set yrange [0:35000]
+set ylabel "Filesize [KB]"
+set xlabel "Atribute"
+
+set output 'madrid_filesizes.png'
+plot 'madrid_filesize_encoders.data' using 2:xtic(1) title '32 bit ints' with linespoints lt 2 pt 2 lc rgb blue,   \
+     '' using 3 title 'Bit compress' with linespoints lt 2 pt 3 lc rgb p1,   \
+     '' using 4 title 'Elias delta' with linespoints lt 2 pt 4 lc rgb r2,   \
+     '' using 5 title 'Elias gamma' with linespoints lt 2 pt 5 lc rgb r3,   \
+     '' using 6 title 'Fibonacci' with linespoints lt 2 pt 6 lc rgb r4,   \
+     '' using 7 title 'GroupComp' with linespoints lt 2 pt 6 lc rgb darkgreen
 
