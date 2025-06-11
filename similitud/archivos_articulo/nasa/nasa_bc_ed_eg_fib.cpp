@@ -91,24 +91,17 @@ int main(int argc, char const *argv[]){
 		lenTempSerie++;
 	}
 	
-	//  Marcando series temporales fijas: todos sus elementos iguales
-	vector<vector<bool>> serieFija(rows, vector<bool>(cols, true));
-	for(int f=0; f<rows; f++){
-		for(int c=0; c<cols; c++){
-			for(int i=1; i<lenTempSerie; i++){
-				serieFija[f][c] = serieFija[f][c] && (temporalSeries[f][c][i] == temporalSeries[f][c][i-1]);
-			}
-		}
-	}
-	
 	long long int bytesIV = 0;
 	long long int bytesED = 0;
 	long long int bytesEG = 0;
 	long long int bytesFIB = 0;
-	
 	for(int f=0; f<rows; f++){
 		for(int c=0; c<cols; c++){
-			if(!serieFija[f][c]){
+			bool serieFija = true;
+			for(int i=1; i<lenTempSerie; i++){
+				serieFija = serieFija && (temporalSeries[f][c][i] == temporalSeries[f][c][i-1]);
+			}
+			if(!serieFija){
 				bytesIV += bytes_bitcompress(temporalSeries[f][c]);
 				bytesED += bytes_eliasdelta(temporalSeries[f][c]);
 				bytesEG += bytes_eliasgamma(temporalSeries[f][c]);
@@ -116,11 +109,12 @@ int main(int argc, char const *argv[]){
 			}
 		}
 	}
-	int kBytesIV = (bytesIV / 1024);
-	int kBytesED = (bytesED / 1024);
-	int kBytesEG = (bytesEG / 1024);
-	int kBytesFIB = (bytesFIB / 1024);
+	long long int kBytesIV = (bytesIV / 1024);
+	long long int kBytesED = (bytesED / 1024);
+	long long int kBytesEG = (bytesEG / 1024);
+	long long int kBytesFIB = (bytesFIB / 1024);
+	long long int kBytesBIN = (rows * cols * lenTempSerie * 4) / 1024;
 
-	cout << "id\tbc\ted\teg\tfib" << endl;
-	cout << argv[1] << "\t" << kBytesIV << "\t" << kBytesED << "\t" << kBytesEG << "\t" << kBytesFIB << endl;
+	cout << "id\tbc\ted\teg\tfib\tBIN" << endl;
+	cout << argv[1] << "\t" << kBytesIV << "\t" << kBytesED << "\t" << kBytesEG << "\t" << kBytesFIB << "\t" << kBytesBIN << endl;
 }
