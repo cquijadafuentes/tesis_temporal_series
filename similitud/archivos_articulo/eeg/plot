@@ -108,9 +108,9 @@ plot 'eeg_autocorrelation.data' using 9:2 title 'Temporal (lag_1)' lc rgb r1,   
 
 
 set output 'eeg_filesize_vs_standardeviation.png'
-plot 'eeg_filesize_all.data' using 10:7 title 'GC rows' pt 3 lc rgb darkgreen,   \
-     '' using 10:3 title 'Bit compress' pt 3 lc rgb p1,   \
-     '' using 10:6 title 'Elias delta' pt 4 lc rgb r2
+plot 'eeg_filesize_all.data' using 10:7 title 'GC rows' pt 1 lc rgb blue,   \
+     '' using 10:3 title 'Bit compress' pt 1 lc rgb red,   \
+     '' using 10:6 title 'Elias delta' pt 2 lc rgb green
 
 
 
