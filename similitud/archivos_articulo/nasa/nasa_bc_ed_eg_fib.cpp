@@ -13,14 +13,14 @@ using namespace sdsl;
 */
 
 /*
-g++ -std=c++11 -g -O0 -DNDEBUG -fopenmp -I ~/include -L ~/lib -o nasa_bc_ed_eg_fib nasa_bc_ed_eg_fib.cpp -lsdsl -ldivsufsort -ldivsufsort64
+	g++ -std=c++11 -g -O0 -DNDEBUG -fopenmp -I ~/include -L ~/lib -o nasa_bc_ed_eg_fib nasa_bc_ed_eg_fib.cpp -lsdsl -ldivsufsort -ldivsufsort64
 */
 
 unsigned int zigzag_encode(int i){
 	return ((i >> 31) ^ (i << 1));
 }
 
-int bytes_bitcompress(vector<int> x){
+long long int bytes_bitcompress(vector<int> x){
 	int_vector<> iv(x.size());
 	for(int i=0; i<x.size(); i++){
 		iv[i] = zigzag_encode(x[i]);
@@ -29,7 +29,7 @@ int bytes_bitcompress(vector<int> x){
 	return size_in_bytes(iv);
 }
 
-int bytes_eliasdelta(vector<int> x){
+long long int bytes_eliasdelta(vector<int> x){
 	int_vector<> iv(x.size());
 	for(int i=0; i<x.size(); i++){
 		iv[i] = zigzag_encode(x[i]);
@@ -38,7 +38,7 @@ int bytes_eliasdelta(vector<int> x){
 	return size_in_bytes(ed);
 }
 
-int bytes_eliasgamma(vector<int> x){
+long long int bytes_eliasgamma(vector<int> x){
 	int_vector<> iv(x.size());
 	for(int i=0; i<x.size(); i++){
 		iv[i] = zigzag_encode(x[i]);
@@ -47,7 +47,7 @@ int bytes_eliasgamma(vector<int> x){
 	return size_in_bytes(eg);
 }
 
-int bytes_eliasfibonacci(vector<int> x){
+long long int bytes_eliasfibonacci(vector<int> x){
 	int_vector<> iv(x.size());
 	for(int i=0; i<x.size(); i++){
 		iv[i] = zigzag_encode(x[i]);
@@ -101,20 +101,18 @@ int main(int argc, char const *argv[]){
 		}
 	}
 	
-	int bytesIV = 0;
-	int bytesED = 0;
-	int bytesEG = 0;
-	int bytesFIB = 0;
+	long long int bytesIV = 0;
+	long long int bytesED = 0;
+	long long int bytesEG = 0;
+	long long int bytesFIB = 0;
 	
 	for(int f=0; f<rows; f++){
 		for(int c=0; c<cols; c++){
-			for(int i=1; i<lenTempSerie; i++){
-				if(!serieFija[f][c]){
-					bytesIV += bytes_bitcompress(temporalSeries[f][c]);
-					bytesED += bytes_eliasdelta(temporalSeries[f][c]);
-					bytesEG += bytes_eliasgamma(temporalSeries[f][c]);
-					bytesFIB += bytes_eliasfibonacci(temporalSeries[f][c]);
-				}
+			if(!serieFija[f][c]){
+				bytesIV += bytes_bitcompress(temporalSeries[f][c]);
+				bytesED += bytes_eliasdelta(temporalSeries[f][c]);
+				bytesEG += bytes_eliasgamma(temporalSeries[f][c]);
+				bytesFIB += bytes_eliasfibonacci(temporalSeries[f][c]);
 			}
 		}
 	}
