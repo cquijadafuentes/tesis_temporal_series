@@ -1,0 +1,1669 @@
+Fecha INICIO EEG BIN variante: 2025/06/09 15:36:03
+Ejecutando TRQC_eeg_build_from_bin
+File: 507_Depression_REST.bin
+Electrodos: 66 - Muestras: 250734
+min_value: -31840796 - max_value: 31832996
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54543
+min_value: -31840796 - max_value: 31832996
+Construyendo ...
+Size in kBytes: 54543
+min_value: -31840796 - max_value: 31832996
+Construyendo ...
+Size in kBytes: 54482
+File: 508_Depression_REST.bin
+Electrodos: 66 - Muestras: 244934
+min_value: -31840796 - max_value: 31830109
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53281
+min_value: -31840796 - max_value: 31830109
+Construyendo ...
+Size in kBytes: 53281
+min_value: -31840796 - max_value: 31830109
+Construyendo ...
+Size in kBytes: 53221
+File: 509_Depression_REST.bin
+Electrodos: 66 - Muestras: 253454
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 55134
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 55104
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 55103
+File: 510_Depression_REST.bin
+Electrodos: 66 - Muestras: 263834
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 57392
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 57360
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 57360
+File: 511_Depression_REST.bin
+Electrodos: 67 - Muestras: 245274
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53355
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53355
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53355
+File: 512_Depression_REST.bin
+Electrodos: 67 - Muestras: 262994
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 57210
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 57210
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 57210
+File: 513_Depression_REST.bin
+Electrodos: 66 - Muestras: 249234
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54217
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54217
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54217
+File: 514_Depression_REST.bin
+Electrodos: 67 - Muestras: 247574
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53856
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53856
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53856
+File: 515_Depression_REST.bin
+Electrodos: 66 - Muestras: 249934
+min_value: -31840796 - max_value: 31804512
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54369
+min_value: -31840796 - max_value: 31804512
+Construyendo ...
+Size in kBytes: 54338
+min_value: -31840796 - max_value: 31804512
+Construyendo ...
+Size in kBytes: 54369
+File: 516_Depression_REST.bin
+Electrodos: 66 - Muestras: 249874
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54356
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54325
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54356
+File: 517_Depression_REST.bin
+Electrodos: 67 - Muestras: 262934
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 57197
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 57197
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 57197
+File: 518_Depression_REST.bin
+Electrodos: 67 - Muestras: 262810
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 57170
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 57170
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 57170
+File: 519_Depression_REST.bin
+Electrodos: 67 - Muestras: 268274
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 58359
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 58359
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 58359
+File: 520_Depression_REST.bin
+Electrodos: 67 - Muestras: 251934
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54804
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 54804
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 54804
+File: 521_Depression_REST.bin
+Electrodos: 66 - Muestras: 255390
+min_value: -31840796 - max_value: 31783465
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 55556
+min_value: -31840796 - max_value: 31783465
+Construyendo ...
+Size in kBytes: 55525
+min_value: -31840796 - max_value: 31783465
+Construyendo ...
+Size in kBytes: 55556
+File: 522_Depression_REST.bin
+Electrodos: 67 - Muestras: 215744
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 46931
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 46931
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 46931
+File: 523_Depression_REST.bin
+Electrodos: 67 - Muestras: 251194
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54643
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54643
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54643
+File: 524_Depression_REST.bin
+Electrodos: 67 - Muestras: 252014
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54821
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54821
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54821
+File: 525_Depression_REST.bin
+Electrodos: 66 - Muestras: 246934
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53716
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53716
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53716
+File: 526_Depression_REST.bin
+Electrodos: 66 - Muestras: 251274
+min_value: -31840796 - max_value: 31833906
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54661
+min_value: -31840796 - max_value: 31833906
+Construyendo ...
+Size in kBytes: 54661
+min_value: -31840796 - max_value: 31833906
+Construyendo ...
+Size in kBytes: 54661
+File: 527_Depression_REST.bin
+Electrodos: 66 - Muestras: 245144
+min_value: -31840796 - max_value: 31840538
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53327
+min_value: -31840796 - max_value: 31840538
+Construyendo ...
+Size in kBytes: 53327
+min_value: -31840796 - max_value: 31840538
+Construyendo ...
+Size in kBytes: 53327
+File: 528_Depression_REST.bin
+Electrodos: 66 - Muestras: 246874
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53703
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53703
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53703
+File: 529_Depression_REST.bin
+Electrodos: 67 - Muestras: 256814
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 55866
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 55866
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 55866
+File: 530_Depression_REST.bin
+Electrodos: 67 - Muestras: 232420
+min_value: -99758 - max_value: 83212
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 28940
+min_value: -99758 - max_value: 83212
+Construyendo ...
+Size in kBytes: 29819
+min_value: -99758 - max_value: 83212
+Construyendo ...
+Size in kBytes: 31210
+File: 531_Depression_REST.bin
+Electrodos: 66 - Muestras: 256320
+min_value: -95084 - max_value: 50958
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 29694
+min_value: -95084 - max_value: 50958
+Construyendo ...
+Size in kBytes: 30351
+min_value: -95084 - max_value: 50958
+Construyendo ...
+Size in kBytes: 32886
+File: 532_Depression_REST.bin
+Electrodos: 67 - Muestras: 248154
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53982
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53982
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53981
+File: 533_Depression_REST.bin
+Electrodos: 66 - Muestras: 245854
+min_value: -31840794 - max_value: 31840070
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53481
+min_value: -31840794 - max_value: 31840070
+Construyendo ...
+Size in kBytes: 53481
+min_value: -31840794 - max_value: 31840070
+Construyendo ...
+Size in kBytes: 53481
+File: 534_Depression_REST.bin
+Electrodos: 66 - Muestras: 246634
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53651
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 53651
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 53651
+File: 535_Depression_REST.bin
+Electrodos: 67 - Muestras: 248706
+min_value: -2147483648 - max_value: 2146708800
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 64120
+min_value: -2147483648 - max_value: 2146708800
+Construyendo ...
+Size in kBytes: 64120
+min_value: -2147483648 - max_value: 2146708800
+Construyendo ...
+Size in kBytes: 64120
+File: 536_Depression_REST.bin
+Electrodos: 67 - Muestras: 226750
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 49326
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 49326
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 49326
+File: 537_Depression_REST.bin
+Electrodos: 67 - Muestras: 248014
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53951
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53951
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53951
+File: 538_Depression_REST.bin
+Electrodos: 66 - Muestras: 252597
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54948
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54948
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54948
+File: 539_Depression_REST.bin
+Electrodos: 66 - Muestras: 169001
+min_value: -31840796 - max_value: 31840762
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 36764
+min_value: -31840796 - max_value: 31840762
+Construyendo ...
+Size in kBytes: 36764
+min_value: -31840796 - max_value: 31840762
+Construyendo ...
+Size in kBytes: 36764
+File: 540_Depression_REST.bin
+Electrodos: 66 - Muestras: 228941
+min_value: -2147483648 - max_value: 2146708800
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 59025
+min_value: -2147483648 - max_value: 2146708800
+Construyendo ...
+Size in kBytes: 59025
+min_value: -2147483648 - max_value: 2146708800
+Construyendo ...
+Size in kBytes: 59025
+File: 541_Depression_REST.bin
+Electrodos: 66 - Muestras: 250634
+min_value: -31840796 - max_value: 31839828
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54521
+min_value: -31840796 - max_value: 31839828
+Construyendo ...
+Size in kBytes: 54521
+min_value: -31840796 - max_value: 31839828
+Construyendo ...
+Size in kBytes: 54521
+File: 542_Depression_REST.bin
+Electrodos: 66 - Muestras: 251734
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54761
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54761
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54761
+File: 543_Depression_REST.bin
+Electrodos: 66 - Muestras: 247260
+min_value: -93754 - max_value: 104756
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 31874
+min_value: -93754 - max_value: 104756
+Construyendo ...
+Size in kBytes: 32387
+min_value: -93754 - max_value: 104756
+Construyendo ...
+Size in kBytes: 33323
+File: 545_Depression_REST.bin
+Electrodos: 66 - Muestras: 248414
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54038
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54038
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54038
+File: 546_Depression_REST.bin
+Electrodos: 66 - Muestras: 243214
+min_value: -31840796 - max_value: 31840794
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 52907
+min_value: -31840796 - max_value: 31840794
+Construyendo ...
+Size in kBytes: 52907
+min_value: -31840796 - max_value: 31840794
+Construyendo ...
+Size in kBytes: 52907
+File: 547_Depression_REST.bin
+Electrodos: 66 - Muestras: 248631
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54086
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54086
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54086
+File: 548_Depression_REST.bin
+Electrodos: 66 - Muestras: 253414
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 55126
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 55126
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 55095
+File: 549_Depression_REST.bin
+Electrodos: 66 - Muestras: 244014
+min_value: -31840796 - max_value: 31840794
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53081
+min_value: -31840796 - max_value: 31840794
+Construyendo ...
+Size in kBytes: 53081
+min_value: -31840796 - max_value: 31840794
+Construyendo ...
+Size in kBytes: 53081
+File: 550_Depression_REST.bin
+Electrodos: 66 - Muestras: 229092
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 49835
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 49835
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 49835
+File: 551_Depression_REST.bin
+Electrodos: 66 - Muestras: 244434
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53172
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53172
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53172
+File: 552_Depression_REST.bin
+Electrodos: 66 - Muestras: 259974
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 56553
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 56553
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 56553
+File: 553_Depression_REST.bin
+Electrodos: 66 - Muestras: 262354
+min_value: -31840796 - max_value: 31794690
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 57071
+min_value: -31840796 - max_value: 31794690
+Construyendo ...
+Size in kBytes: 57071
+min_value: -31840796 - max_value: 31794690
+Construyendo ...
+Size in kBytes: 57071
+File: 554_Depression_REST.bin
+Electrodos: 67 - Muestras: 267360
+min_value: -61715 - max_value: 112811
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 32964
+min_value: -61715 - max_value: 112811
+Construyendo ...
+Size in kBytes: 33453
+min_value: -61715 - max_value: 112811
+Construyendo ...
+Size in kBytes: 35803
+File: 555_Depression_REST.bin
+Electrodos: 66 - Muestras: 252795
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54991
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54991
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54991
+File: 556_Depression_REST.bin
+Electrodos: 66 - Muestras: 242820
+min_value: -113999 - max_value: 83126
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 29197
+min_value: -113999 - max_value: 83126
+Construyendo ...
+Size in kBytes: 29583
+min_value: -113999 - max_value: 83126
+Construyendo ...
+Size in kBytes: 32399
+File: 557_Depression_REST.bin
+Electrodos: 67 - Muestras: 241720
+min_value: -99745 - max_value: 130219
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 28859
+min_value: -99745 - max_value: 130219
+Construyendo ...
+Size in kBytes: 28888
+min_value: -99745 - max_value: 130219
+Construyendo ...
+Size in kBytes: 31662
+File: 558_Depression_REST.bin
+Electrodos: 66 - Muestras: 225470
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 49047
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 49047
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 49047
+File: 559_Depression_REST.bin
+Electrodos: 67 - Muestras: 246315
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53582
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53582
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53582
+File: 560_Depression_REST.bin
+Electrodos: 67 - Muestras: 241898
+min_value: -31840796 - max_value: 31826221
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 52621
+min_value: -31840796 - max_value: 31826221
+Construyendo ...
+Size in kBytes: 52621
+min_value: -31840796 - max_value: 31826221
+Construyendo ...
+Size in kBytes: 52621
+File: 561_Depression_REST.bin
+Electrodos: 67 - Muestras: 250391
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54468
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54468
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54468
+File: 562_Depression_REST.bin
+Electrodos: 67 - Muestras: 240972
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 52420
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 52420
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 52420
+File: 563_Depression_REST.bin
+Electrodos: 67 - Muestras: 239545
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 52109
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 52109
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 52109
+File: 564_Depression_REST.bin
+Electrodos: 67 - Muestras: 250415
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54473
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54473
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54473
+File: 565_Depression_REST.bin
+Electrodos: 67 - Muestras: 249375
+min_value: -31840796 - max_value: 31831312
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54247
+min_value: -31840796 - max_value: 31831312
+Construyendo ...
+Size in kBytes: 54247
+min_value: -31840796 - max_value: 31831312
+Construyendo ...
+Size in kBytes: 54247
+File: 566_Depression_REST.bin
+Electrodos: 67 - Muestras: 250730
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54542
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54542
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54542
+File: 567_Depression_REST.bin
+Electrodos: 67 - Muestras: 243175
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 52899
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 52899
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 52899
+File: 568_Depression_REST.bin
+Electrodos: 67 - Muestras: 242780
+min_value: -96389 - max_value: 61239
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 28363
+min_value: -96389 - max_value: 61239
+Construyendo ...
+Size in kBytes: 28778
+min_value: -96389 - max_value: 61239
+Construyendo ...
+Size in kBytes: 31534
+File: 569_Depression_REST.bin
+Electrodos: 67 - Muestras: 250611
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54516
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54516
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54516
+File: 570_Depression_REST.bin
+Electrodos: 66 - Muestras: 249806
+min_value: -31840796 - max_value: 31831871
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54341
+min_value: -31840796 - max_value: 31831871
+Construyendo ...
+Size in kBytes: 54341
+min_value: -31840796 - max_value: 31831871
+Construyendo ...
+Size in kBytes: 54341
+File: 573_Depression_REST.bin
+Electrodos: 66 - Muestras: 239226
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 52040
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 52040
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 52040
+File: 574_Depression_REST.bin
+Electrodos: 66 - Muestras: 250806
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54497
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54528
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54558
+File: 575_Depression_REST.bin
+Electrodos: 67 - Muestras: 248695
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54100
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54100
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54100
+File: 576_Depression_REST.bin
+Electrodos: 67 - Muestras: 251300
+min_value: -107682 - max_value: 130213
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 32058
+min_value: -107682 - max_value: 130213
+Construyendo ...
+Size in kBytes: 33223
+min_value: -107682 - max_value: 130213
+Construyendo ...
+Size in kBytes: 34389
+File: 577_Depression_REST.bin
+Electrodos: 66 - Muestras: 268702
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 58451
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 58451
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 58451
+File: 578_Depression_REST.bin
+Electrodos: 67 - Muestras: 250911
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54582
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54582
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 54582
+File: 579_Depression_REST.bin
+Electrodos: 67 - Muestras: 246960
+min_value: -108730 - max_value: 131142
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 32348
+min_value: -108730 - max_value: 131142
+Construyendo ...
+Size in kBytes: 32288
+min_value: -108730 - max_value: 131142
+Construyendo ...
+Size in kBytes: 34458
+File: 580_Depression_REST.bin
+Electrodos: 67 - Muestras: 275180
+min_value: -107089 - max_value: 142036
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 33290
+min_value: -107089 - max_value: 142036
+Construyendo ...
+Size in kBytes: 33861
+min_value: -107089 - max_value: 142036
+Construyendo ...
+Size in kBytes: 36615
+File: 581_Depression_REST.bin
+Electrodos: 66 - Muestras: 266750
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 57994
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 58027
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 57994
+File: 582_Depression_REST.bin
+Electrodos: 67 - Muestras: 260340
+min_value: -110337 - max_value: 130214
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 33179
+min_value: -110337 - max_value: 130214
+Construyendo ...
+Size in kBytes: 34101
+min_value: -110337 - max_value: 130214
+Construyendo ...
+Size in kBytes: 35022
+File: 583_Depression_REST.bin
+Electrodos: 67 - Muestras: 254080
+min_value: -104749 - max_value: 130289
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 31358
+min_value: -104749 - max_value: 130289
+Construyendo ...
+Size in kBytes: 32040
+min_value: -104749 - max_value: 130289
+Construyendo ...
+Size in kBytes: 34180
+File: 584_Depression_REST.bin
+Electrodos: 67 - Muestras: 246735
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53673
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53673
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53673
+File: 585_Depression_REST.bin
+Electrodos: 67 - Muestras: 245060
+min_value: -106570 - max_value: 137257
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 30693
+min_value: -106570 - max_value: 137257
+Construyendo ...
+Size in kBytes: 30573
+min_value: -106570 - max_value: 137257
+Construyendo ...
+Size in kBytes: 34253
+File: 586_Depression_REST.bin
+Electrodos: 67 - Muestras: 232147
+min_value: -31840796 - max_value: 31830109
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 50500
+min_value: -31840796 - max_value: 31830109
+Construyendo ...
+Size in kBytes: 50500
+min_value: -31840796 - max_value: 31830109
+Construyendo ...
+Size in kBytes: 50500
+File: 587_Depression_REST.bin
+Electrodos: 67 - Muestras: 247055
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53743
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53743
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53743
+File: 588_Depression_REST.bin
+Electrodos: 67 - Muestras: 289886
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 63060
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 63060
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 63060
+File: 589_Depression_REST.bin
+Electrodos: 66 - Muestras: 246975
+min_value: -31840796 - max_value: 31830109
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53725
+min_value: -31840796 - max_value: 31830109
+Construyendo ...
+Size in kBytes: 53725
+min_value: -31840796 - max_value: 31830109
+Construyendo ...
+Size in kBytes: 53725
+File: 590_Depression_REST.bin
+Electrodos: 67 - Muestras: 248920
+min_value: -44975 - max_value: 57237
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 30235
+min_value: -44975 - max_value: 57237
+Construyendo ...
+Size in kBytes: 30447
+min_value: -44975 - max_value: 57237
+Construyendo ...
+Size in kBytes: 32392
+File: 591_Depression_REST.bin
+Electrodos: 66 - Muestras: 250735
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54543
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54543
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54543
+File: 592_Depression_REST.bin
+Electrodos: 67 - Muestras: 251040
+min_value: -44641 - max_value: 78745
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 31963
+min_value: -44641 - max_value: 78745
+Construyendo ...
+Size in kBytes: 32178
+min_value: -44641 - max_value: 78745
+Construyendo ...
+Size in kBytes: 32944
+File: 593_Depression_REST.bin
+Electrodos: 67 - Muestras: 247520
+min_value: -48795 - max_value: 50480
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 29491
+min_value: -48795 - max_value: 50480
+Construyendo ...
+Size in kBytes: 30004
+min_value: -48795 - max_value: 50480
+Construyendo ...
+Size in kBytes: 31213
+File: 594_Depression_REST.bin
+Electrodos: 67 - Muestras: 247855
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53917
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53917
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53917
+File: 595_Depression_REST.bin
+Electrodos: 67 - Muestras: 247555
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53851
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 53851
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 53851
+File: 596_Depression_REST.bin
+Electrodos: 66 - Muestras: 246635
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53651
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53651
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 53651
+File: 597_Depression_REST.bin
+Electrodos: 67 - Muestras: 283820
+min_value: -77679 - max_value: 122204
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 37176
+min_value: -77679 - max_value: 122204
+Construyendo ...
+Size in kBytes: 37488
+min_value: -77679 - max_value: 122204
+Construyendo ...
+Size in kBytes: 39359
+File: 598_Depression_REST.bin
+Electrodos: 66 - Muestras: 227180
+min_value: -85570 - max_value: 87742
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 28204
+min_value: -85570 - max_value: 87742
+Construyendo ...
+Size in kBytes: 28592
+min_value: -85570 - max_value: 87742
+Construyendo ...
+Size in kBytes: 29896
+File: 599_Depression_REST.bin
+Electrodos: 67 - Muestras: 253235
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 55087
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 55087
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 55087
+File: 600_Depression_REST.bin
+Electrodos: 67 - Muestras: 255446
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 55568
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 55568
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 55568
+File: 601_Depression_REST.bin
+Electrodos: 67 - Muestras: 246940
+min_value: -94935 - max_value: 82591
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 30507
+min_value: -94935 - max_value: 82591
+Construyendo ...
+Size in kBytes: 31079
+min_value: -94935 - max_value: 82591
+Construyendo ...
+Size in kBytes: 32134
+File: 602_Depression_REST.bin
+Electrodos: 67 - Muestras: 245995
+min_value: -31840796 - max_value: 31755125
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 52011
+min_value: -31840796 - max_value: 31755125
+Construyendo ...
+Size in kBytes: 51981
+min_value: -31840796 - max_value: 31755125
+Construyendo ...
+Size in kBytes: 51800
+File: 603_Depression_REST.bin
+Electrodos: 66 - Muestras: 253520
+min_value: -51489 - max_value: 51002
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 30577
+min_value: -51489 - max_value: 51002
+Construyendo ...
+Size in kBytes: 30824
+min_value: -51489 - max_value: 51002
+Construyendo ...
+Size in kBytes: 32898
+File: 604_Depression_REST.bin
+Electrodos: 66 - Muestras: 248755
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 54112
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54082
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 54112
+File: 605_Depression_REST.bin
+Electrodos: 67 - Muestras: 251360
+min_value: -82545 - max_value: 130323
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 31574
+min_value: -82545 - max_value: 130323
+Construyendo ...
+Size in kBytes: 31912
+min_value: -82545 - max_value: 130323
+Construyendo ...
+Size in kBytes: 34274
+File: 606_Depression_REST.bin
+Electrodos: 66 - Muestras: 247710
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 53885
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53855
+min_value: -31840796 - max_value: 31840071
+Construyendo ...
+Size in kBytes: 53885
+File: 607_Depression_REST.bin
+Electrodos: 67 - Muestras: 244780
+min_value: -101083 - max_value: 125965
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 31435
+min_value: -101083 - max_value: 125965
+Construyendo ...
+Size in kBytes: 32063
+min_value: -101083 - max_value: 125965
+Construyendo ...
+Size in kBytes: 34035
+File: 608_Depression_REST.bin
+Electrodos: 67 - Muestras: 248480
+min_value: -123837 - max_value: 139176
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 30303
+min_value: -123837 - max_value: 139176
+Construyendo ...
+Size in kBytes: 30454
+min_value: -123837 - max_value: 139176
+Construyendo ...
+Size in kBytes: 33154
+File: 609_Depression_REST.bin
+Electrodos: 66 - Muestras: 252860
+min_value: -104672 - max_value: 116216
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 32071
+min_value: -104672 - max_value: 116216
+Construyendo ...
+Size in kBytes: 32966
+min_value: -104672 - max_value: 116216
+Construyendo ...
+Size in kBytes: 33923
+File: 610_Depression_REST.bin
+Electrodos: 66 - Muestras: 245920
+min_value: -76807 - max_value: 50445
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 29960
+min_value: -76807 - max_value: 50445
+Construyendo ...
+Size in kBytes: 30321
+min_value: -76807 - max_value: 50445
+Construyendo ...
+Size in kBytes: 31521
+File: 611_Depression_REST.bin
+Electrodos: 66 - Muestras: 247980
+min_value: -104678 - max_value: 122007
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 31089
+min_value: -104678 - max_value: 122007
+Construyendo ...
+Size in kBytes: 31755
+min_value: -104678 - max_value: 122007
+Construyendo ...
+Size in kBytes: 33027
+File: 612_Depression_REST.bin
+Electrodos: 67 - Muestras: 277160
+min_value: -108981 - max_value: 128362
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 34815
+min_value: -108981 - max_value: 128362
+Construyendo ...
+Size in kBytes: 34612
+min_value: -108981 - max_value: 128362
+Construyendo ...
+Size in kBytes: 38368
+File: 613_Depression_REST.bin
+Electrodos: 66 - Muestras: 116692
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 25371
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 25385
+min_value: -31840796 - max_value: 31780584
+Construyendo ...
+Size in kBytes: 25385
+File: 614_Depression_REST.bin
+Electrodos: 67 - Muestras: 250895
+min_value: -31840796 - max_value: 31810675
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 52986
+min_value: -31840796 - max_value: 31810675
+Construyendo ...
+Size in kBytes: 52894
+min_value: -31840796 - max_value: 31810675
+Construyendo ...
+Size in kBytes: 52986
+File: 615_Depression_REST.bin
+Electrodos: 66 - Muestras: 241660
+min_value: -58924 - max_value: 125942
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 29471
+min_value: -58924 - max_value: 125942
+Construyendo ...
+Size in kBytes: 29471
+min_value: -58924 - max_value: 125942
+Construyendo ...
+Size in kBytes: 31831
+File: 616_Depression_REST.bin
+Electrodos: 66 - Muestras: 274160
+min_value: -109846 - max_value: 122217
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 35543
+min_value: -109846 - max_value: 122217
+Construyendo ...
+Size in kBytes: 36647
+min_value: -109846 - max_value: 122217
+Construyendo ...
+Size in kBytes: 37316
+File: 617_Depression_REST.bin
+Electrodos: 67 - Muestras: 228060
+min_value: -41660 - max_value: 123489
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 27673
+min_value: -41660 - max_value: 123489
+Construyendo ...
+Size in kBytes: 28146
+min_value: -41660 - max_value: 123489
+Construyendo ...
+Size in kBytes: 29371
+File: 618_Depression_REST.bin
+Electrodos: 67 - Muestras: 247540
+min_value: -89063 - max_value: 113164
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 30309
+min_value: -89063 - max_value: 113164
+Construyendo ...
+Size in kBytes: 30430
+min_value: -89063 - max_value: 113164
+Construyendo ...
+Size in kBytes: 32182
+File: 619_Depression_REST.bin
+Electrodos: 67 - Muestras: 254895
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 55448
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 55448
+min_value: -31840796 - max_value: 31810846
+Construyendo ...
+Size in kBytes: 55448
+File: 620_Depression_REST.bin
+Electrodos: 67 - Muestras: 246460
+min_value: -80259 - max_value: 70416
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 30598
+min_value: -80259 - max_value: 70416
+Construyendo ...
+Size in kBytes: 31139
+min_value: -80259 - max_value: 70416
+Construyendo ...
+Size in kBytes: 32613
+File: 621_Depression_REST.bin
+Electrodos: 66 - Muestras: 251320
+min_value: -105027 - max_value: 126741
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 31293
+min_value: -105027 - max_value: 126741
+Construyendo ...
+Size in kBytes: 31784
+min_value: -105027 - max_value: 126741
+Construyendo ...
+Size in kBytes: 34024
+File: 622_Depression_REST.bin
+Electrodos: 66 - Muestras: 249760
+min_value: -112719 - max_value: 126417
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 31038
+min_value: -112719 - max_value: 126417
+Construyendo ...
+Size in kBytes: 31526
+min_value: -112719 - max_value: 126417
+Construyendo ...
+Size in kBytes: 33111
+File: 623_Depression_REST.bin
+Electrodos: 66 - Muestras: 269035
+min_value: -31840796 - max_value: 31806788
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 58524
+min_value: -31840796 - max_value: 31806788
+Construyendo ...
+Size in kBytes: 58524
+min_value: -31840796 - max_value: 31806788
+Construyendo ...
+Size in kBytes: 58524
+File: 624_Depression_REST.bin
+Electrodos: 67 - Muestras: 237980
+min_value: -94740 - max_value: 130213
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 30852
+min_value: -94740 - max_value: 130213
+Construyendo ...
+Size in kBytes: 31346
+min_value: -94740 - max_value: 130213
+Construyendo ...
+Size in kBytes: 32537
+File: 625_Depression_REST.bin
+Electrodos: 66 - Muestras: 251900
+min_value: -76847 - max_value: 101032
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 31335
+min_value: -76847 - max_value: 101032
+Construyendo ...
+Size in kBytes: 32134
+min_value: -76847 - max_value: 101032
+Construyendo ...
+Size in kBytes: 33641
+File: 626_Depression_REST.bin
+Electrodos: 67 - Muestras: 250160
+min_value: -67782 - max_value: 62663
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 31149
+min_value: -67782 - max_value: 62663
+Construyendo ...
+Size in kBytes: 32523
+min_value: -67782 - max_value: 62663
+Construyendo ...
+Size in kBytes: 33042
+File: 627_Depression_REST.bin
+Electrodos: 66 - Muestras: 257760
+min_value: -107571 - max_value: 130258
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 33322
+min_value: -107571 - max_value: 130258
+Construyendo ...
+Size in kBytes: 33574
+min_value: -107571 - max_value: 130258
+Construyendo ...
+Size in kBytes: 34895
+File: 628_Depression_REST.bin
+Electrodos: 67 - Muestras: 290020
+min_value: -104727 - max_value: 130354
+Construyendo ...
+nQuadRows: 3 - nQuadCols: 3
+d_quad: 3 - cantQuads: 9
+Total celdas en cuadrantes: 81
+Size in kBytes: 38236
+min_value: -104727 - max_value: 130354
+Construyendo ...
+Size in kBytes: 39050
+min_value: -104727 - max_value: 130354
+Construyendo ...
+Size in kBytes: 40396
+Fecha FIN EEG BIN variante: 2025/06/09 15:47:11

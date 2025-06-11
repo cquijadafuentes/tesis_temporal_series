@@ -1,0 +1,479 @@
+Fecha INICIO EEG BIN variante: 2025/06/09 17:10:10
+Ejecutando size_bin_to_vlc
+File: 507_Depression_REST.bin
+Electrodos: 66 - Muestras: 250734
+id	bc	ed	eg	fib
+507_Depression_REST.bin	52522	36159	45821	35470
+File: 508_Depression_REST.bin
+Electrodos: 66 - Muestras: 244934
+id	bc	ed	eg	fib
+508_Depression_REST.bin	51307	35569	45319	35051
+File: 509_Depression_REST.bin
+Electrodos: 66 - Muestras: 253454
+id	bc	ed	eg	fib
+509_Depression_REST.bin	53092	38220	49605	38221
+File: 510_Depression_REST.bin
+Electrodos: 66 - Muestras: 263834
+id	bc	ed	eg	fib
+510_Depression_REST.bin	55266	38619	49391	38171
+File: 511_Depression_REST.bin
+Electrodos: 67 - Muestras: 245274
+id	bc	ed	eg	fib
+511_Depression_REST.bin	51379	37351	48721	37514
+File: 512_Depression_REST.bin
+Electrodos: 67 - Muestras: 262994
+id	bc	ed	eg	fib
+512_Depression_REST.bin	55090	38631	49462	38228
+File: 513_Depression_REST.bin
+Electrodos: 66 - Muestras: 249234
+id	bc	ed	eg	fib
+513_Depression_REST.bin	52208	36540	46705	36097
+File: 514_Depression_REST.bin
+Electrodos: 67 - Muestras: 247574
+id	bc	ed	eg	fib
+514_Depression_REST.bin	51860	36082	46001	35562
+File: 515_Depression_REST.bin
+Electrodos: 66 - Muestras: 249934
+id	bc	ed	eg	fib
+515_Depression_REST.bin	52355	37079	47726	36841
+File: 516_Depression_REST.bin
+Electrodos: 66 - Muestras: 249874
+id	bc	ed	eg	fib
+516_Depression_REST.bin	52342	36405	46455	35919
+File: 517_Depression_REST.bin
+Electrodos: 67 - Muestras: 262934
+id	bc	ed	eg	fib
+517_Depression_REST.bin	55078	40628	53000	40768
+File: 518_Depression_REST.bin
+Electrodos: 67 - Muestras: 262810
+id	bc	ed	eg	fib
+518_Depression_REST.bin	55052	39315	50888	39247
+File: 519_Depression_REST.bin
+Electrodos: 67 - Muestras: 268274
+id	bc	ed	eg	fib
+519_Depression_REST.bin	56197	41583	54655	41994
+File: 520_Depression_REST.bin
+Electrodos: 67 - Muestras: 251934
+id	bc	ed	eg	fib
+520_Depression_REST.bin	52774	37412	48186	37181
+File: 521_Depression_REST.bin
+Electrodos: 66 - Muestras: 255390
+id	bc	ed	eg	fib
+521_Depression_REST.bin	53498	38572	50128	38628
+File: 522_Depression_REST.bin
+Electrodos: 67 - Muestras: 215744
+id	bc	ed	eg	fib
+522_Depression_REST.bin	45193	31974	41145	31744
+File: 523_Depression_REST.bin
+Electrodos: 67 - Muestras: 251194
+id	bc	ed	eg	fib
+523_Depression_REST.bin	52619	36984	47435	36640
+File: 524_Depression_REST.bin
+Electrodos: 67 - Muestras: 252014
+id	bc	ed	eg	fib
+524_Depression_REST.bin	52790	35859	45230	35057
+File: 525_Depression_REST.bin
+Electrodos: 66 - Muestras: 246934
+id	bc	ed	eg	fib
+525_Depression_REST.bin	51726	35443	44907	34772
+File: 526_Depression_REST.bin
+Electrodos: 66 - Muestras: 251274
+id	bc	ed	eg	fib
+526_Depression_REST.bin	52636	37302	48043	37069
+File: 527_Depression_REST.bin
+Electrodos: 66 - Muestras: 245144
+id	bc	ed	eg	fib
+527_Depression_REST.bin	51351	36309	46762	36095
+File: 528_Depression_REST.bin
+Electrodos: 66 - Muestras: 246874
+id	bc	ed	eg	fib
+528_Depression_REST.bin	51714	34743	43544	33782
+File: 529_Depression_REST.bin
+Electrodos: 67 - Muestras: 256814
+id	bc	ed	eg	fib
+529_Depression_REST.bin	53796	36599	46074	35705
+File: 530_Depression_REST.bin
+Electrodos: 67 - Muestras: 232420
+id	bc	ed	eg	fib
+530_Depression_REST.bin	29053	35012	45379	34971
+File: 531_Depression_REST.bin
+Electrodos: 66 - Muestras: 256320
+id	bc	ed	eg	fib
+531_Depression_REST.bin	30444	38463	49744	38330
+File: 532_Depression_REST.bin
+Electrodos: 67 - Muestras: 248154
+id	bc	ed	eg	fib
+532_Depression_REST.bin	51982	37521	48729	37534
+File: 533_Depression_REST.bin
+Electrodos: 66 - Muestras: 245854
+id	bc	ed	eg	fib
+533_Depression_REST.bin	51500	37378	48713	37497
+File: 534_Depression_REST.bin
+Electrodos: 66 - Muestras: 246634
+id	bc	ed	eg	fib
+534_Depression_REST.bin	51664	36333	46636	36012
+File: 535_Depression_REST.bin
+Electrodos: 67 - Muestras: 248706
+id	bc	ed	eg	fib
+535_Depression_REST.bin	64120	43713	58666	44665
+File: 536_Depression_REST.bin
+Electrodos: 67 - Muestras: 226750
+id	bc	ed	eg	fib
+536_Depression_REST.bin	47498	33817	43631	33651
+File: 537_Depression_REST.bin
+Electrodos: 67 - Muestras: 248014
+id	bc	ed	eg	fib
+537_Depression_REST.bin	51952	37276	48204	37160
+File: 538_Depression_REST.bin
+Electrodos: 66 - Muestras: 252597
+id	bc	ed	eg	fib
+538_Depression_REST.bin	52912	36230	46172	35759
+File: 539_Depression_REST.bin
+Electrodos: 66 - Muestras: 169001
+id	bc	ed	eg	fib
+539_Depression_REST.bin	35401	25214	32533	25103
+File: 540_Depression_REST.bin
+Electrodos: 66 - Muestras: 228941
+id	bc	ed	eg	fib
+540_Depression_REST.bin	59024	32708	41424	32064
+File: 541_Depression_REST.bin
+Electrodos: 66 - Muestras: 250634
+id	bc	ed	eg	fib
+541_Depression_REST.bin	52502	37067	47654	36781
+File: 542_Depression_REST.bin
+Electrodos: 66 - Muestras: 251734
+id	bc	ed	eg	fib
+542_Depression_REST.bin	52732	38962	51132	39361
+File: 543_Depression_REST.bin
+Electrodos: 66 - Muestras: 247260
+id	bc	ed	eg	fib
+543_Depression_REST.bin	30666	36226	46238	35733
+File: 545_Depression_REST.bin
+Electrodos: 66 - Muestras: 248414
+id	bc	ed	eg	fib
+545_Depression_REST.bin	52036	36845	47433	36604
+File: 546_Depression_REST.bin
+Electrodos: 66 - Muestras: 243214
+id	bc	ed	eg	fib
+546_Depression_REST.bin	50947	37223	48671	37439
+File: 547_Depression_REST.bin
+Electrodos: 66 - Muestras: 248631
+id	bc	ed	eg	fib
+547_Depression_REST.bin	52082	36718	47255	36486
+File: 548_Depression_REST.bin
+Electrodos: 66 - Muestras: 253414
+id	bc	ed	eg	fib
+548_Depression_REST.bin	53084	38145	49457	38105
+File: 549_Depression_REST.bin
+Electrodos: 66 - Muestras: 244014
+id	bc	ed	eg	fib
+549_Depression_REST.bin	51115	36887	47958	36959
+File: 550_Depression_REST.bin
+Electrodos: 66 - Muestras: 229092
+id	bc	ed	eg	fib
+550_Depression_REST.bin	47989	34449	44679	34419
+File: 551_Depression_REST.bin
+Electrodos: 66 - Muestras: 244434
+id	bc	ed	eg	fib
+551_Depression_REST.bin	51203	34476	43307	33582
+File: 552_Depression_REST.bin
+Electrodos: 66 - Muestras: 259974
+id	bc	ed	eg	fib
+552_Depression_REST.bin	54458	36792	46222	35850
+File: 553_Depression_REST.bin
+Electrodos: 66 - Muestras: 262354
+id	bc	ed	eg	fib
+553_Depression_REST.bin	54956	36913	46253	35894
+File: 554_Depression_REST.bin
+Electrodos: 67 - Muestras: 267360
+id	bc	ed	eg	fib
+554_Depression_REST.bin	33812	41968	55292	42454
+File: 555_Depression_REST.bin
+Electrodos: 66 - Muestras: 252795
+id	bc	ed	eg	fib
+555_Depression_REST.bin	52954	39741	52361	40198
+File: 556_Depression_REST.bin
+Electrodos: 66 - Muestras: 242820
+id	bc	ed	eg	fib
+556_Depression_REST.bin	29019	34528	43470	33685
+File: 557_Depression_REST.bin
+Electrodos: 67 - Muestras: 241720
+id	bc	ed	eg	fib
+557_Depression_REST.bin	28504	36010	46401	35779
+File: 558_Depression_REST.bin
+Electrodos: 66 - Muestras: 225470
+id	bc	ed	eg	fib
+558_Depression_REST.bin	47230	32439	41108	31821
+File: 559_Depression_REST.bin
+Electrodos: 67 - Muestras: 246315
+id	bc	ed	eg	fib
+559_Depression_REST.bin	51597	37111	48145	37092
+File: 560_Depression_REST.bin
+Electrodos: 67 - Muestras: 241898
+id	bc	ed	eg	fib
+560_Depression_REST.bin	50672	35985	46286	35724
+File: 561_Depression_REST.bin
+Electrodos: 67 - Muestras: 250391
+id	bc	ed	eg	fib
+561_Depression_REST.bin	52450	36013	45699	35381
+File: 562_Depression_REST.bin
+Electrodos: 67 - Muestras: 240972
+id	bc	ed	eg	fib
+562_Depression_REST.bin	50477	35032	44601	34494
+File: 563_Depression_REST.bin
+Electrodos: 67 - Muestras: 239545
+id	bc	ed	eg	fib
+563_Depression_REST.bin	50179	33111	41241	32052
+File: 564_Depression_REST.bin
+Electrodos: 67 - Muestras: 250415
+id	bc	ed	eg	fib
+564_Depression_REST.bin	52456	36224	46033	35618
+File: 565_Depression_REST.bin
+Electrodos: 67 - Muestras: 249375
+id	bc	ed	eg	fib
+565_Depression_REST.bin	52238	36731	47090	36371
+File: 566_Depression_REST.bin
+Electrodos: 67 - Muestras: 250730
+id	bc	ed	eg	fib
+566_Depression_REST.bin	52522	35870	45268	35086
+File: 567_Depression_REST.bin
+Electrodos: 67 - Muestras: 243175
+id	bc	ed	eg	fib
+567_Depression_REST.bin	50939	36183	46552	35912
+File: 568_Depression_REST.bin
+Electrodos: 67 - Muestras: 242780
+id	bc	ed	eg	fib
+568_Depression_REST.bin	29014	34158	42792	33200
+File: 569_Depression_REST.bin
+Electrodos: 67 - Muestras: 250611
+id	bc	ed	eg	fib
+569_Depression_REST.bin	52496	36501	46451	35933
+File: 570_Depression_REST.bin
+Electrodos: 66 - Muestras: 249806
+id	bc	ed	eg	fib
+570_Depression_REST.bin	52328	34805	43493	33788
+File: 573_Depression_REST.bin
+Electrodos: 66 - Muestras: 239226
+id	bc	ed	eg	fib
+573_Depression_REST.bin	50112	35678	46151	35586
+File: 574_Depression_REST.bin
+Electrodos: 66 - Muestras: 250806
+id	bc	ed	eg	fib
+574_Depression_REST.bin	52537	36164	45889	35514
+File: 575_Depression_REST.bin
+Electrodos: 67 - Muestras: 248695
+id	bc	ed	eg	fib
+575_Depression_REST.bin	52095	35288	44335	34375
+File: 576_Depression_REST.bin
+Electrodos: 67 - Muestras: 251300
+id	bc	ed	eg	fib
+576_Depression_REST.bin	31812	37177	47736	36854
+File: 577_Depression_REST.bin
+Electrodos: 66 - Muestras: 268702
+id	bc	ed	eg	fib
+577_Depression_REST.bin	56286	37106	46053	35833
+File: 578_Depression_REST.bin
+Electrodos: 67 - Muestras: 250911
+id	bc	ed	eg	fib
+578_Depression_REST.bin	52559	35837	45183	35013
+File: 579_Depression_REST.bin
+Electrodos: 67 - Muestras: 246960
+id	bc	ed	eg	fib
+579_Depression_REST.bin	31835	35700	45158	34959
+File: 580_Depression_REST.bin
+Electrodos: 67 - Muestras: 275180
+id	bc	ed	eg	fib
+580_Depression_REST.bin	33121	38796	48582	37700
+File: 581_Depression_REST.bin
+Electrodos: 66 - Muestras: 266750
+id	bc	ed	eg	fib
+581_Depression_REST.bin	55877	38493	48751	37757
+File: 582_Depression_REST.bin
+Electrodos: 67 - Muestras: 260340
+id	bc	ed	eg	fib
+582_Depression_REST.bin	32797	37729	47947	37099
+File: 583_Depression_REST.bin
+Electrodos: 67 - Muestras: 254080
+id	bc	ed	eg	fib
+583_Depression_REST.bin	31047	36606	46300	35851
+File: 584_Depression_REST.bin
+Electrodos: 67 - Muestras: 246735
+id	bc	ed	eg	fib
+584_Depression_REST.bin	51685	36951	47616	36740
+File: 585_Depression_REST.bin
+Electrodos: 67 - Muestras: 245060
+id	bc	ed	eg	fib
+585_Depression_REST.bin	29945	34707	43512	33744
+File: 586_Depression_REST.bin
+Electrodos: 67 - Muestras: 232147
+id	bc	ed	eg	fib
+586_Depression_REST.bin	48629	34225	43911	33899
+File: 587_Depression_REST.bin
+Electrodos: 67 - Muestras: 247055
+id	bc	ed	eg	fib
+587_Depression_REST.bin	51752	34845	43749	33934
+File: 588_Depression_REST.bin
+Electrodos: 67 - Muestras: 289886
+id	bc	ed	eg	fib
+588_Depression_REST.bin	60724	41430	52393	40592
+File: 589_Depression_REST.bin
+Electrodos: 66 - Muestras: 246975
+id	bc	ed	eg	fib
+589_Depression_REST.bin	51735	37244	48357	37238
+File: 590_Depression_REST.bin
+Electrodos: 67 - Muestras: 248920
+id	bc	ed	eg	fib
+590_Depression_REST.bin	30113	35149	44016	34147
+File: 591_Depression_REST.bin
+Electrodos: 66 - Muestras: 250735
+id	bc	ed	eg	fib
+591_Depression_REST.bin	52523	40410	53189	40784
+File: 592_Depression_REST.bin
+Electrodos: 67 - Muestras: 251040
+id	bc	ed	eg	fib
+592_Depression_REST.bin	31932	38356	50069	38534
+File: 593_Depression_REST.bin
+Electrodos: 67 - Muestras: 247520
+id	bc	ed	eg	fib
+593_Depression_REST.bin	29339	34762	43412	33699
+File: 594_Depression_REST.bin
+Electrodos: 67 - Muestras: 247855
+id	bc	ed	eg	fib
+594_Depression_REST.bin	51919	36382	46594	35999
+File: 595_Depression_REST.bin
+Electrodos: 67 - Muestras: 247555
+id	bc	ed	eg	fib
+595_Depression_REST.bin	51856	34410	42882	33312
+File: 596_Depression_REST.bin
+Electrodos: 66 - Muestras: 246635
+id	bc	ed	eg	fib
+596_Depression_REST.bin	51664	33638	41544	32339
+File: 597_Depression_REST.bin
+Electrodos: 67 - Muestras: 283820
+id	bc	ed	eg	fib
+597_Depression_REST.bin	36275	41542	53023	40981
+File: 598_Depression_REST.bin
+Electrodos: 66 - Muestras: 227180
+id	bc	ed	eg	fib
+598_Depression_REST.bin	27649	32178	40436	31344
+File: 599_Depression_REST.bin
+Electrodos: 67 - Muestras: 253235
+id	bc	ed	eg	fib
+599_Depression_REST.bin	53046	40322	53462	41011
+File: 600_Depression_REST.bin
+Electrodos: 67 - Muestras: 255446
+id	bc	ed	eg	fib
+600_Depression_REST.bin	53509	37602	48224	37256
+File: 601_Depression_REST.bin
+Electrodos: 67 - Muestras: 246940
+id	bc	ed	eg	fib
+601_Depression_REST.bin	30506	38227	50233	38604
+File: 602_Depression_REST.bin
+Electrodos: 67 - Muestras: 245995
+id	bc	ed	eg	fib
+602_Depression_REST.bin	51530	35258	44537	34502
+File: 603_Depression_REST.bin
+Electrodos: 66 - Muestras: 253520
+id	bc	ed	eg	fib
+603_Depression_REST.bin	30421	35705	44759	34728
+File: 604_Depression_REST.bin
+Electrodos: 66 - Muestras: 248755
+id	bc	ed	eg	fib
+604_Depression_REST.bin	52108	36417	46421	35883
+File: 605_Depression_REST.bin
+Electrodos: 67 - Muestras: 251360
+id	bc	ed	eg	fib
+605_Depression_REST.bin	31604	38201	49721	38282
+File: 606_Depression_REST.bin
+Electrodos: 66 - Muestras: 247710
+id	bc	ed	eg	fib
+606_Depression_REST.bin	51889	37312	48242	37187
+File: 607_Depression_REST.bin
+Electrodos: 67 - Muestras: 244780
+id	bc	ed	eg	fib
+607_Depression_REST.bin	30508	34203	42697	33151
+File: 608_Depression_REST.bin
+Electrodos: 67 - Muestras: 248480
+id	bc	ed	eg	fib
+608_Depression_REST.bin	30545	38351	50295	38678
+File: 609_Depression_REST.bin
+Electrodos: 66 - Muestras: 252860
+id	bc	ed	eg	fib
+609_Depression_REST.bin	31453	36135	45641	35358
+File: 610_Depression_REST.bin
+Electrodos: 66 - Muestras: 245920
+id	bc	ed	eg	fib
+610_Depression_REST.bin	29659	35572	45200	34970
+File: 611_Depression_REST.bin
+Electrodos: 66 - Muestras: 247980
+id	bc	ed	eg	fib
+611_Depression_REST.bin	30665	36467	46659	36044
+File: 612_Depression_REST.bin
+Electrodos: 67 - Muestras: 277160
+id	bc	ed	eg	fib
+612_Depression_REST.bin	34408	40237	51112	39541
+File: 613_Depression_REST.bin
+Electrodos: 66 - Muestras: 116692
+id	bc	ed	eg	fib
+613_Depression_REST.bin	24444	17043	21779	16832
+File: 614_Depression_REST.bin
+Electrodos: 67 - Muestras: 250895
+id	bc	ed	eg	fib
+614_Depression_REST.bin	52556	35908	45423	35183
+File: 615_Depression_REST.bin
+Electrodos: 66 - Muestras: 241660
+id	bc	ed	eg	fib
+615_Depression_REST.bin	29146	35066	44587	34476
+File: 616_Depression_REST.bin
+Electrodos: 66 - Muestras: 274160
+id	bc	ed	eg	fib
+616_Depression_REST.bin	34806	42177	55230	42488
+File: 617_Depression_REST.bin
+Electrodos: 67 - Muestras: 228060
+id	bc	ed	eg	fib
+617_Depression_REST.bin	27478	32169	40378	31316
+File: 618_Depression_REST.bin
+Electrodos: 67 - Muestras: 247540
+id	bc	ed	eg	fib
+618_Depression_REST.bin	30762	35972	45791	35415
+File: 619_Depression_REST.bin
+Electrodos: 67 - Muestras: 254895
+id	bc	ed	eg	fib
+619_Depression_REST.bin	53394	36642	46313	35863
+File: 620_Depression_REST.bin
+Electrodos: 67 - Muestras: 246460
+id	bc	ed	eg	fib
+620_Depression_REST.bin	30116	35139	44319	34341
+File: 621_Depression_REST.bin
+Electrodos: 66 - Muestras: 251320
+id	bc	ed	eg	fib
+621_Depression_REST.bin	31323	38122	49465	38107
+File: 622_Depression_REST.bin
+Electrodos: 66 - Muestras: 249760
+id	bc	ed	eg	fib
+622_Depression_REST.bin	30275	35910	45410	35160
+File: 623_Depression_REST.bin
+Electrodos: 66 - Muestras: 269035
+id	bc	ed	eg	fib
+623_Depression_REST.bin	56356	40192	51712	39906
+File: 624_Depression_REST.bin
+Electrodos: 67 - Muestras: 237980
+id	bc	ed	eg	fib
+624_Depression_REST.bin	30561	33716	42393	32866
+File: 625_Depression_REST.bin
+Electrodos: 66 - Muestras: 251900
+id	bc	ed	eg	fib
+625_Depression_REST.bin	30719	36129	45676	35372
+File: 626_Depression_REST.bin
+Electrodos: 67 - Muestras: 250160
+id	bc	ed	eg	fib
+626_Depression_REST.bin	30751	35761	45185	35005
+File: 627_Depression_REST.bin
+Electrodos: 66 - Muestras: 257760
+id	bc	ed	eg	fib
+627_Depression_REST.bin	32818	40116	52687	40493
+File: 628_Depression_REST.bin
+Electrodos: 67 - Muestras: 290020
+id	bc	ed	eg	fib
+628_Depression_REST.bin	37209	44885	58930	45288
+Fecha FIN EEG BIN variante: 2025/06/09 17:28:34

@@ -1,5 +1,6 @@
 red = "#FF0000"; green = "#00FF00"; blue = "#0000FF"; skyblue = "#87CEEB"; black = "#000000"; darkgreen = "#006400"; darkred = "#8b0000";
 r1 = "#581845"; r2 = "#900C3F"; r3 = "#C70039"; r4 = "#FF5733";
+p1 = "#4a235a"; p2 = "#7d3c98"; p3 = "#884ea0"; p4 = "#bb8fce";
 set grid ytics
 set key out horiz
 
@@ -34,7 +35,7 @@ plot 'eeg_stats_by_mean_3.data' using 3 title 'min value' with linespoints lt 2 
 
 
 set terminal png size 800,300
-set xrange [0:118]
+set xrange [0:120]
 set yrange [-1.25:1.25]
 set xlabel "EEGs"
 
@@ -55,6 +56,37 @@ plot 'eeg_autocorrelation.data' using 6 title 'Columns' with linespoints lt 2 pt
 
 
 
+set terminal png size 800,400
+set yrange [0:80000]
+
+set ylabel "Filesize [KB]"
+set output 'eeg_filesize_all.png'
+plot 'eeg_filesize_all.data' using 2 title '32 bit ints' with linespoints lt 2 pt 2 lc rgb blue,   \
+     '' using 3 title 'Bit compress' with linespoints lt 2 pt 2 lc rgb p1,   \
+     '' using 4 title 'Elias delta' with linespoints lt 2 pt 4 lc rgb r2,   \
+     '' using 5 title 'Elias gamma' with linespoints lt 2 pt 4 lc rgb r3,   \
+     '' using 6 title 'Fibonacci' with linespoints lt 2 pt 4 lc rgb r4,   \
+     '' using 7 title 'GC rows' with linespoints lt 2 pt 3 lc rgb darkgreen,   \
+     '' using 8 title 'GC columns' with linespoints lt 2 pt 3 lc rgb green,   \
+     '' using 9 title 'GC quadrants' with linespoints lt 2 pt 3 lc rgb skyblue
+
+set output 'eeg_filesize_encoders.png'
+plot 'eeg_filesize_all.data' using 2 title '32 bit ints' with linespoints lt 2 pt 2 lc rgb blue,   \
+     '' using 3 title 'Bit compress' with linespoints lt 2 pt 3 lc rgb p1,   \
+     '' using 4 title 'Elias delta' with linespoints lt 2 pt 4 lc rgb r2,   \
+     '' using 5 title 'Elias gamma' with linespoints lt 2 pt 5 lc rgb r3,   \
+     '' using 6 title 'Fibonacci' with linespoints lt 2 pt 6 lc rgb r4
+
+set output 'eeg_filesize_groupcompress.png'
+plot 'eeg_filesize_all.data' using 2 title '32 bit ints' with linespoints lt 2 pt 2 lc rgb blue,   \
+     '' using 7 title 'GC rows' with linespoints lt 2 pt 3 lc rgb darkgreen,   \
+     '' using 8 title 'GC columns' with linespoints lt 2 pt 4 lc rgb darkred,   \
+     '' using 9 title 'GC quadrants' with linespoints lt 2 pt 5 lc rgb skyblue
+
+
+
+
+
 set terminal png size 500,400
 set xrange [10:2000000]
 set logscale x
@@ -72,6 +104,13 @@ plot 'eeg_autocorrelation.data' using 9:2 title 'Temporal (lag_1)' lc rgb r1,   
      '' using 9:3 title 'Temporal (lag_2)' lc rgb r2,   \
      '' using 9:4 title 'Temporal (lag_5)' lc rgb r3,   \
      '' using 9:5 title 'Temporal (lag_{10})' lc rgb r4
+
+
+
+set output 'eeg_filesize_vs_standardeviation.png'
+plot 'eeg_filesize_all.data' using 10:7 title 'GC rows' pt 3 lc rgb darkgreen,   \
+     '' using 10:3 title 'Bit compress' pt 3 lc rgb p1,   \
+     '' using 10:6 title 'Elias delta' pt 4 lc rgb r2
 
 
 
