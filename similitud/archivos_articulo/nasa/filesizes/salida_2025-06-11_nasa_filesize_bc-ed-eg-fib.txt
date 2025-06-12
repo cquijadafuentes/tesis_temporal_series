@@ -1,0 +1,47 @@
+Iniciado en: 2025/06/11 17:01:38
+Corriendo /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/run_c_script.sh /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib /home/cquijada/salida_2025-06-11_nasa_filesize_bc-ed-eg-fib.txt
+ +++++++++ Ejecutando: /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib APCP_NLDAS_FORA0125_H.txt
+ +++++++++ 2025/06/11 17:01:38
+id	bc	ed	eg	fib	BIN
+APCP_NLDAS_FORA0125_H.txt	269142	71793	73236	87959	1081990
+ +++++++++ Ejecutando: /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib CAPE_NLDAS_FORA0125_H.txt
+ +++++++++ 2025/06/11 17:03:19
+id	bc	ed	eg	fib	BIN
+CAPE_NLDAS_FORA0125_H.txt	428517	127060	155063	146246	1081584
+ +++++++++ Ejecutando: /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib CONVfrac_NLDAS_FORA0125_H.txt
+ +++++++++ 2025/06/11 17:06:11
+id	bc	ed	eg	fib	BIN
+CONVfrac_NLDAS_FORA0125_H.txt	195343	40041	40812	63041	1081584
+ +++++++++ Ejecutando: /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib DLWRF_NLDAS_FORA0125_H.txt
+ +++++++++ 2025/06/11 17:08:52
+id	bc	ed	eg	fib	BIN
+DLWRF_NLDAS_FORA0125_H.txt	439513	633889	821041	625039	1081584
+ +++++++++ Ejecutando: /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib DSWRF_NLDAS_FORA0125_H.txt
+ +++++++++ 2025/06/11 17:12:04
+id	bc	ed	eg	fib	BIN
+DSWRF_NLDAS_FORA0125_H.txt	472028	299415	389411	314298	1081584
+ +++++++++ Ejecutando: /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib PEVAP_NLDAS_FORA0125_H.txt
+ +++++++++ 2025/06/11 17:15:06
+id	bc	ed	eg	fib	BIN
+PEVAP_NLDAS_FORA0125_H.txt	193570	163804	163318	153055	1081990
+ +++++++++ Ejecutando: /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib PRES_NLDAS_FORA0125_H.txt
+ +++++++++ 2025/06/11 17:17:52
+id	bc	ed	eg	fib	BIN
+PRES_NLDAS_FORA0125_H.txt	652127	865760	1280917	947389	1081584
+ +++++++++ Ejecutando: /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib SPFH_NLDAS_FORA0125_H.txt
+ +++++++++ 2025/06/11 17:21:30
+id	bc	ed	eg	fib	BIN
+SPFH_NLDAS_FORA0125_H.txt	17014	13881	12596	20922	1081584
+ +++++++++ Ejecutando: /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib TMP_NLDAS_FORA0125_H.txt
+ +++++++++ 2025/06/11 17:23:16
+id	bc	ed	eg	fib	BIN
+TMP_NLDAS_FORA0125_H.txt	419869	634164	817037	634164	1081990
+ +++++++++ Ejecutando: /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib UGRD_NLDAS_FORA0125_H.txt
+ +++++++++ 2025/06/11 17:26:23
+id	bc	ed	eg	fib	BIN
+UGRD_NLDAS_FORA0125_H.txt	304278	391515	452881	358751	1081584
+ +++++++++ Ejecutando: /home/cquijada/tesis_temporal_series/similitud/archivos_articulo/nasa/nasa_bc_ed_eg_fib VGRD_NLDAS_FORA0125_H.txt
+ +++++++++ 2025/06/11 17:29:37
+id	bc	ed	eg	fib	BIN
+VGRD_NLDAS_FORA0125_H.txt	303822	392883	455204	360381	1081584
+Finalizado en: 2025/06/11 17:32:41

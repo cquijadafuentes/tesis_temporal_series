@@ -78,7 +78,7 @@ TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, int
 							val = tseries[posF][posC][k] - tseries[posF][posC][k-1];
 							ivaux[k-1] = zigzag_encode(val);
 						}
-						vlc_vector<> vlcA(ivaux);
+						vlc_vector<coder::fibonacci> vlcA(ivaux);
 						refs.push_back(vlcA);
 						bvQSR[iQuad] = 1;
 						bvSR[iCelda] = 1;
@@ -90,7 +90,7 @@ TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, int
 							val = serieReferencia[k] - tseries[posF][posC][k];
 							ivaux2[k] = zigzag_encode(val);
 						}
-						vlc_vector<> vlcA(ivaux2);
+						vlc_vector<coder::fibonacci> vlcA(ivaux2);
 						series.push_back(ivaux2);
 						bvSF[iCelda] = 0;
 					}
@@ -103,13 +103,13 @@ TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, int
 	for(int i=0; i<ivaux.size(); i++){
 		ivaux[i] = valoresSF[i] - min_value;
 	}
-	fixedValue = vlc_vector<>(ivaux);
+	fixedValue = vlc_vector<coder::fibonacci>(ivaux);
 
 	int_vector<> ivaux2(valoresPVSR.size());
 	for(int i=0; i<ivaux2.size(); i++){
 		ivaux2[i] = valoresPVSR[i] - min_value;
 	}
-	refFirstValue = vlc_vector<>(ivaux2);
+	refFirstValue = vlc_vector<coder::fibonacci>(ivaux2);
 
 	bvQuadNoFijos = sd_vector<>(bvQSR);
 	bvReferencias = sd_vector<>(bvSR);
@@ -143,13 +143,13 @@ TempRasterQuadComp::TempRasterQuadComp(string inputFilename){
 	// --------- Cargando vectores de int_vectors
 	vlc_vector<> tempIV;
 	infile.read((char *)&aux1,sizeof(int));
-	refs = vector<vlc_vector<>>(aux1);
+	refs = vector<vlc_vector<coder::fibonacci>>(aux1);
 	for(int i=0; i<aux1; i++){
 		tempIV.load(infile);
 		refs[i] = tempIV;
 	}
 	infile.read((char *)&aux1,sizeof(int));
-	series = vector<vlc_vector<>>(aux1);
+	series = vector<vlc_vector<coder::fibonacci>>(aux1);
 	for(int i=0; i<aux1; i++){
 		tempIV.load(infile);
 		series[i] = tempIV;

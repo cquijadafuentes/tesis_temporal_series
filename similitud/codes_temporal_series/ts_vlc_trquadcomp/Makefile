@@ -8,9 +8,10 @@ BINS=TRQC_eeg_build_from_bin \
 		TRQC_load_trqc \
 		TRQC_test_eeg_bin_trqc \
 		TRQC_test_nasa_bin_trqc \
-		TRQC_user_menu
+		TRQC_user_menu \
+		TRQC_nasa_build_from_bin_trqc
 
-OBJECTS=TempRaster_RowComp.o
+OBJECTS=TempRaster_QuadComp.o
 
 %.o: %.cpp
 	$(CPP) $(PREFLAGS) -c $< -o $@ $(POSFLAGS)
@@ -32,6 +33,9 @@ TRQC_test_nasa_bin_trqc:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
 TRQC_user_menu:
+	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
+
+TRQC_nasa_build_from_bin_trqc:
 	$(CPP) $(PREFLAGS) -o $@ $@.cpp $(OBJECTS) $(POSFLAGS)
 
 clean:

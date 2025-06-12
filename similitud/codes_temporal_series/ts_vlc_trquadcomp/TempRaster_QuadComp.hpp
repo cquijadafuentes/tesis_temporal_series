@@ -25,10 +25,10 @@ public:
 	int min_value;
 	int max_value;
 
-	vlc_vector<> fixedValue;		//	Primer valor de cada serie fija
-	vlc_vector<> refFirstValue;		//	Primer valor de las series de referencia
-	vector<vlc_vector<>> refs;		//	Series de Referencias
-	vector<vlc_vector<>> series;	//	Series que no son referencia ni fijas
+	vlc_vector<coder::fibonacci> fixedValue;		//	Primer valor de cada serie fija
+	vlc_vector<coder::fibonacci> refFirstValue;		//	Primer valor de las series de referencia
+	vector<vlc_vector<coder::fibonacci>> refs;		//	Series de Referencias
+	vector<vlc_vector<coder::fibonacci>> series;	//	Series que no son referencia ni fijas
 	sd_vector<> bvQuadNoFijos;		//	Cuadrantes no fijos
 	sd_vector<> bvReferencias;		//	Referencias de cuadrantes no fijos
 	sd_vector<> bvSeriesFijas;		//	Series Fijas
