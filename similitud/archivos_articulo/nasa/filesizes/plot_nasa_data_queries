@@ -1,0 +1,43 @@
+red = "#FF0000"; green = "#00FF00"; blue = "#0000FF"; skyblue = "#87CEEB"; black = "#000000"; darkgreen = "#006400"; darkred = "#8b0000"; gold = "#ffd700";
+set grid ytics
+set key out horiz
+set terminal png size 800,400
+
+set xrange [-0.5:10.5]
+set logscale y
+
+set ylabel "Time [ms]"
+set xlabel "Dataset"
+
+set title 'Access Query [10000q - 100r]'
+set output 'nasa_access_query_tk2r_qc.png'
+plot 'data_nasa_queries.txt' using 2:xtic(1) title 'QuadComp' with linespoints lt 2 pt 7 lc rgb blue,   \
+     '' using 3 title 'tk2-raster' with linespoints lt 2 pt 7 lc rgb red
+
+
+set title 'Window Query [10000q - 1r]'
+set output 'nasa_window_query_tk2r_qc.png'
+plot 'data_nasa_queries.txt' using 4:xtic(1) title 'QuadComp' with linespoints lt 2 pt 7 lc rgb blue,   \
+     '' using 5 title 'tk2-raster' with linespoints lt 2 pt 7 lc rgb red
+
+
+set title 'Get Serie Query [10000q - 1r]'
+set output 'nasa_getserie_query_tk2r_qc.png'
+plot 'data_nasa_queries.txt' using 6:xtic(1) title 'QuadComp' with linespoints lt 2 pt 7 lc rgb blue,   \
+     '' using 7 title 'tk2-raster' with linespoints lt 2 pt 7 lc rgb red
+
+
+set title 'Data File Size'
+set ylabel "Filesize [MB]"
+set output 'nasa_datasize_tk2r_qc_[logscale].png'
+plot 'data_nasa_queries.txt' using 10:xtic(1) title 'QuadComp' with linespoints lt 2 pt 7 lc rgb blue,   \
+     '' using 11 title 'tk2-raster' with linespoints lt 2 pt 7 lc rgb red
+
+
+unset logscale y
+set title 'Data File Size'
+set ylabel "Filesize [MB]"
+set output 'nasa_datasize_tk2r_qc.png'
+plot 'data_nasa_queries.txt' using 10:xtic(1) title 'QuadComp' with linespoints lt 2 pt 7 lc rgb blue,   \
+     '' using 11 title 'tk2-raster' with linespoints lt 2 pt 7 lc rgb red
+
