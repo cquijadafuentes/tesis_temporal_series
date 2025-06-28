@@ -107,7 +107,7 @@ plot 'eeg_autocorrelation.data' using 9:2 title 'Temporal (lag_1)' lc rgb r1,   
 
 
 
-set ylabel "Datasize [KB]"
+set ylabel "Filesize [KB]"
 set output 'eeg_filesize_vs_standardeviation.png'
 plot 'eeg_filesize_all.data' using 10:7 title 'GC rows' pt 1 lc rgb blue,   \
      '' using 10:3 title 'Bit compress' pt 1 lc rgb red,   \
