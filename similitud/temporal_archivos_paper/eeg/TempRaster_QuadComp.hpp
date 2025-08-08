@@ -12,7 +12,9 @@ using namespace std;
 using namespace sdsl;
 
 // *********************** CLASE TOPORELGST ***********************
+
 //  --------------------Inicio clase TempRasterQuadComp-------------------
+
 class TempRasterQuadComp{
 public:
 	unsigned int n_rows;		// Filas

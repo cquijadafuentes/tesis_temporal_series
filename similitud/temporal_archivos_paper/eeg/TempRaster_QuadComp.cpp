@@ -48,18 +48,18 @@ TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, int
 	vector<int> valoresPVSR;		// Guarda el primer valor de cada serie de referencia
 	vector<int> valoresSF;		// Guarda el valor de cada serie fija
 	int iFV = 0;
-	for(int fc=0; fc<nQuadRows; fc++){		// fc = fila-cuadrante
-		for(int cc=0; cc<nQuadCols; cc++){	// cc = columna-cuadrante
-			// Procesando primera series del cuadrante
-			int f0c = fc*d_quad;		// Fila cero (0) del cuadrante
-			int c0c = cc*d_quad;		// Columna cero (0) del cuadrante
-			int iQuad = (fc * nQuadCols) + cc;	// Índice del cuadrante en row-major
-			// Procesando el resto de las series del cuadrante
+	for(int fq=0; fq<nQuadRows; fq++){		// fq = fila-'quadrante'
+		for(int cq=0; cq<nQuadCols; cq++){	// cq = columna-'quadrante'
+			// Procesando primera series del 'quadrante'
+			int f0q = fq*d_quad;		// Fila cero (0) del 'quadrante'
+			int c0q = cq*d_quad;		// Columna cero (0) del 'quadrante'
+			int iQuad = (fq * nQuadCols) + cq;	// Índice del 'quadrante' en row-major
+			// Procesando el resto de las series del 'quadrante'
 			vector<int> serieReferencia(n_inst);
-			for(int df=0; df<d_quad && f0c+df < n_rows; df++){		// delta-filas en celdas
-				for(int dc=0; dc<d_quad && c0c+dc < n_cols; dc++){		// delta-columnas en celdas
-					int posF = f0c+df;		// Fila de la celda en evaluación
-					int posC = c0c+dc;		// Columna de la celda en evaluación
+			for(int df=0; df<d_quad && f0q+df < n_rows; df++){		// delta-filas en celdas
+				for(int dc=0; dc<d_quad && c0q+dc < n_cols; dc++){		// delta-columnas en celdas
+					int posF = f0q+df;		// Fila de la celda en evaluación
+					int posC = c0q+dc;		// Columna de la celda en evaluación
 					int iCelda = getQuadLinealPosition(posF, posC);
 					int val;
 					if(esFija(tseries[posF][posC])){
@@ -87,7 +87,7 @@ TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, int
 						// SI hay serie de referencia
 						int_vector<> ivaux2(n_inst);
 						for(int k=0; k<n_inst; k++){
-							val = serieReferencia[k] - tseries[posF][posC][k];
+							val = tseries[posF][posC][k] - serieReferencia[k];
 							ivaux2[k] = zigzag_encode(val);
 						}
 						util::bit_compress(ivaux2);
@@ -108,6 +108,9 @@ TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, int
 	int_vector<> refFirstValue(valoresPVSR.size());
 	for(int i=0; i<valoresPVSR.size(); i++){
 		refFirstValue[i] = valoresPVSR[i] - min_value;
+		if((valoresPVSR[i] - min_value) < 0){
+			cout << "Error! operación [valoresPVSR[i] - min_value] con resultado negativo en bit_vector 'refFirstValue'." << endl;
+		} 
 	}
 	util::bit_compress(refFirstValue);
 
@@ -182,7 +185,7 @@ TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, boo
 					// SI hay serie de referencia
 					int_vector<> ivaux2(n_inst);
 					for(int k=0; k<n_inst; k++){
-						val = serieReferencia[k] - tseries[f][c][k];
+						val = tseries[f][c][k] - serieReferencia[k];
 						ivaux2[k] = zigzag_encode(val);
 					}
 					util::bit_compress(ivaux2);
@@ -191,7 +194,7 @@ TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, boo
 				}
 			}
 		}
-	}else{		
+	}else{
 		for(int c=0; c<n_cols; c++){
 			vector<int> serieReferencia(n_inst);
 			for(int f=0; f<n_rows; f++){
@@ -222,7 +225,7 @@ TempRasterQuadComp::TempRasterQuadComp(vector<vector<vector<int>>> &tseries, boo
 					// SI hay serie de referencia
 					int_vector<> ivaux2(n_inst);
 					for(int k=0; k<n_inst; k++){
-						val = serieReferencia[k] - tseries[f][c][k];
+						val = tseries[f][c][k] - serieReferencia[k];
 						ivaux2[k] = zigzag_encode(val);
 					}
 					util::bit_compress(ivaux2);
@@ -387,7 +390,7 @@ vector<int> TempRasterQuadComp::getSerie(int row, int col){
 	int posSerie = getSeriePositionFromQLP(posQLP, row, col);
 	r = vector<int>(n_inst);
 	for(int i=0; i<n_inst; i++){
-		r[i] = ref[i] - zigzag_decode(series[posSerie][i]);
+		r[i] = zigzag_decode(series[posSerie][i]) + ref[i];
 	}
 	return r;
 }
@@ -506,7 +509,7 @@ int TempRasterQuadComp::queryAccess(int row, int col, int inst, bool mostrarQuer
 	}
 	// 3 - Si no es la referencia, recuperar la serie
 	int posSerie = getSeriePositionFromQLP(posQLP, row, col);
-	int r = ref[inst] - zigzag_decode(series[posSerie][inst]);
+	int r = zigzag_decode(series[posSerie][inst]) + ref[inst];
 	return r;
 }
 
@@ -589,7 +592,7 @@ vector<vector<vector<int>>> TempRasterQuadComp::queryWindow(int rowI, int rowF, 
 					// ----------- Serie Derivada
 					int posSerie = getSeriePositionFromQLP(pQLP, row, col);
 					for(int k=0; k<rTimes; k++){
-						res[i][j][k] = refM[idQuad][timeI+k] - zigzag_decode(series[posSerie][timeI+k]);;
+						res[i][j][k] = zigzag_decode(series[posSerie][timeI+k]) + refM[idQuad][timeI+k];
 					}
 				}
 			}
