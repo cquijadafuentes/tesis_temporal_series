@@ -115,6 +115,16 @@ plot 'eeg_filesize_all.data' using 10:7 title 'GC rows' pt 1 lc rgb blue,   \
 
 
 
+set yrange [0:70]
+set ylabel "Filesize [MB]"
+set output 'eeg_filesize_vs_standardeviation_MB.png'
+plot 'eeg_filesize_all.data' using 10:($7/1024) title 'GC rows' pt 1 lc rgb blue,   \
+     '' using 10:($3/1024) title 'Bit compress' pt 1 lc rgb red,   \
+     '' using 10:($6/1024) title 'Elias delta' pt 2 lc rgb green
+
+
+
+
 set terminal png size 400,300
 unset logscale x
 set logscale y
@@ -125,4 +135,3 @@ set ylabel "Standard Deviation"
 set xlabel "EEGs"
 set output 'eeg_standard_deviation.png'
 plot 'eeg_autocorrelation.data' using 9 title '' pt 3 lc rgb red
-
