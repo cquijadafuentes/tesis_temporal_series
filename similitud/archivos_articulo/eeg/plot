@@ -85,10 +85,29 @@ plot 'eeg_filesize_all.data' using 2 title '32 bit ints' with linespoints lt 2 p
 
 
 
+set yrange [0:80]
+set ylabel "Filesize [MB]"
+
+set output 'eeg_filesize_encoders_MB.png'
+plot 'eeg_filesize_all.data' using ($2/1024) title '32 bit ints' with linespoints lt 2 pt 2 lc rgb blue,   \
+     '' using ($3/1024) title 'Bit compress' with linespoints lt 2 pt 3 lc rgb p1,   \
+     '' using ($4/1024) title 'Elias delta' with linespoints lt 2 pt 4 lc rgb r2,   \
+     '' using ($5/1024) title 'Elias gamma' with linespoints lt 2 pt 5 lc rgb r3,   \
+     '' using ($6/1024) title 'Fibonacci' with linespoints lt 2 pt 6 lc rgb r4
+
+set output 'eeg_filesize_groupcompress_MB.png'
+plot 'eeg_filesize_all.data' using ($2/1024) title '32 bit ints' with linespoints lt 2 pt 2 lc rgb blue,   \
+     '' using ($7/1024) title 'GC rows' with linespoints lt 2 pt 3 lc rgb darkgreen,   \
+     '' using ($8/1024) title 'GC columns' with linespoints lt 2 pt 4 lc rgb darkred,   \
+     '' using ($9/1024) title 'GC quadrants' with linespoints lt 2 pt 5 lc rgb skyblue
+
+
+
 
 
 set terminal png size 500,400
 set xrange [10:2000000]
+set yrange [0:80000]
 set logscale x
 set xtics
 set ylabel "Auto-correlation Index"
