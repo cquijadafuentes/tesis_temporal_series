@@ -45,3 +45,16 @@ plot 'madrid_filesize_encoders.data' using 2:xtic(1) title '32 bit ints' with li
      '' using 6 title 'Fibonacci' with linespoints lt 2 pt 6 lc rgb r4,   \
      '' using 7 title 'GroupComp' with linespoints lt 2 pt 6 lc rgb darkgreen
 
+
+
+set yrange [0:35]
+set ylabel "Filesize [MB]"
+
+set output 'madrid_filesizes_MB.png'
+plot 'madrid_filesize_encoders.data' using ($2/1024):xtic(1) title '32 bit ints' with linespoints lt 2 pt 2 lc rgb blue,   \
+     '' using ($3/1024) title 'Bit compress' with linespoints lt 2 pt 3 lc rgb p1,   \
+     '' using ($4/1024) title 'Elias delta' with linespoints lt 2 pt 4 lc rgb r2,   \
+     '' using ($5/1024) title 'Elias gamma' with linespoints lt 2 pt 5 lc rgb r3,   \
+     '' using ($6/1024) title 'Fibonacci' with linespoints lt 2 pt 6 lc rgb r4,   \
+     '' using ($7/1024) title 'GroupComp' with linespoints lt 2 pt 6 lc rgb darkgreen
+
