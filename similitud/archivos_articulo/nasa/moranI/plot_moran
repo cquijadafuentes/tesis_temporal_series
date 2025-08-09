@@ -4,7 +4,7 @@ set key out horiz
 set terminal png size 500,250
 
 set ylabel "Moran's I"
-set xlabel "Instants"
+set xlabel "Time"
 
 set yrange [-1.1:1.1]
 unset xtics
